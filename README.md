@@ -1,9 +1,8 @@
-# project-name
+# iiot-openapi
 
-Do whatever you want with this template, typically used to create a new project.
+![OpenAPI](https://img.shields.io/badge/spec-OpenAPI%203.1-blue)
 
-## Variables
+## Documentation
 
-> globally replace the following variable(eg, `project-name`) with your project details using your editor's find-and-replace tool.
-
-- project-name: Name of the project
+Auto-published to GitHub Pages:
+[View API documentation](https://hezhangjian.com/iiot-openapi/)
