@@ -1,0 +1,55 @@
+openapi: 3.1.1
+info:
+  title: Model API
+  version: 5.0.0
+servers:
+  - url: https://{endpoint}
+paths:
+  /v5/{project_id}/models:
+    post:
+      operationId: createModel
+      tags:
+        - Model
+      parameters:
+        - name: project_id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: X-Auth-Token
+          in: header
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateModelRequest'
+      responses:
+        "201":
+          description: "Created"
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Model'
+components:
+  schemas:
+    CreateModelRequest:
+      type: object
+      properties:
+        model_id:
+          type: string
+        model_name:
+          type: string
+    Model:
+      allOf:
+        - $ref: '#/components/schemas/CreateModelRequest'
+        - type: object
+          properties:
+            create_time:
+              type: string
+            update_time:
+              type: string
+        
