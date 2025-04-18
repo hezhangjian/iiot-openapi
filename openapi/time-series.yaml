@@ -1,0 +1,111 @@
+openapi: 3.1.1
+info:
+  title: Model API
+  version: 5.0.0
+servers:
+  - url: https://{endpoint}
+paths:
+  /v5/{project_id}/things/{thing_id}/time-series/query:
+    post:
+      summary: 查询 Thing 的属性历史值
+      operationId: queryTimeSeries
+      parameters:
+        - $ref: "#/components/parameters/ProjectId"
+        - $ref: "#/components/parameters/ThingId"
+        - $ref: "#/components/parameters/AuthToken"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TimeSeriesQueryRequest"
+      responses:
+        "200":
+          description: 成功返回
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TimeSeriesQueryResponse"
+components:
+  parameters:
+    AuthToken:
+      name: X-Auth-Token
+      in: header
+      required: true
+      schema:
+        type: string
+    ProjectId:
+      name: project_id
+      in: path
+      required: true
+      schema:
+        type: string
+    ThingId:
+      name: thing_id
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    TimeSeriesQueryRequest:
+      type: object
+      required:
+        - property_paths
+        - time_span
+      properties:
+        property_paths:
+          type: array
+          items:
+            type: string
+        time_span:
+          $ref: "#/components/schemas/TimeSpan"
+        limit:
+          type: integer
+        marker:
+          type: string
+    TimeSpan:
+      type: object
+      required:
+        - from
+        - to
+      properties:
+        from:
+          type: integer
+          format: int64
+          description: 毫秒时间戳（起始）
+        to:
+          type: integer
+          format: int64
+          description: 毫秒时间戳（结束）
+    TimeSeriesQueryResponse:
+      type: object
+      properties:
+        thing_id:
+          type: string
+        data:
+          type: object
+          additionalProperties:
+            $ref: "#/components/schemas/DataList"
+        page_info:
+          type: object
+          additionalProperties: true
+    DataList:
+      type: object
+      properties:
+        timestamps:
+          type: array
+          items:
+            type: integer
+        property_values:
+          type: array
+          items:
+            $ref: "#/components/schemas/PropertyValues"
+    PropertyValues:
+      type: object
+      properties:
+        property_path:
+          type: string
+        values:
+          type: array
+          items:
+            type: string

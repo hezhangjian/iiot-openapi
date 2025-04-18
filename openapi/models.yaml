@@ -11,45 +11,200 @@ paths:
       tags:
         - Model
       parameters:
-        - name: project_id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: X-Auth-Token
-          in: header
-          required: true
-          schema:
-            type: string
+        - $ref: "#/components/parameters/AuthToken"
+        - $ref: "#/components/parameters/ProjectId"
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateModelRequest'
+              $ref: "#/components/schemas/CreateModelRequest"
       responses:
         "201":
           description: "Created"
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Model'
+                $ref: "#/components/schemas/Model"
+  /v5/{project_id}/models/{model_id}:
+    get:
+      summary: 查询单个模型内容
+      operationId: getModel
+      parameters:
+        - $ref: "#/components/parameters/AuthToken"
+        - $ref: "#/components/parameters/ProjectId"
+        - $ref: "#/components/parameters/ModelId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Model"
+    delete:
+      summary: 删除模型
+      operationId: deleteModel
+      parameters:
+        - $ref: "#/components/parameters/ProjectId"
+        - $ref: "#/components/parameters/ModelId"
+        - $ref: "#/components/parameters/AuthToken"
+      responses:
+        "204":
+          description: Deleted
 components:
+  parameters:
+    AuthToken:
+      name: X-Auth-Token
+      in: header
+      required: true
+      schema:
+        type: string
+    ProjectId:
+      name: project_id
+      in: path
+      required: true
+      schema:
+        type: string
+    ModelId:
+      name: model_id
+      in: path
+      required: true
+      schema:
+        type: string
   schemas:
     CreateModelRequest:
       type: object
+      required:
+        - model_id
+        - model_name
       properties:
         model_id:
           type: string
         model_name:
           type: string
+        type:
+          type: string
+          enum:
+            - local
+            - cascade
+        description:
+          type: string
+        properties:
+          type: array
+          items:
+            $ref: "#/components/schemas/PropertyDto"
+        components:
+          type: array
+          items:
+            $ref: "#/components/schemas/ComponentDto"
     Model:
       allOf:
-        - $ref: '#/components/schemas/CreateModelRequest'
+        - $ref: "#/components/schemas/CreateModelRequest"
         - type: object
           properties:
             create_time:
               type: string
             update_time:
               type: string
-        
+    ComponentDto:
+      type: object
+      required:
+        - component_id
+        - component_name
+      properties:
+        component_id:
+          type: string
+        component_name:
+          type: string
+        description:
+          type: string
+        properties:
+          type: array
+          items:
+            $ref: "#/components/schemas/PropertyDto"
+        components:
+          type: array
+          items:
+            $ref: "#/components/schemas/ComponentDto"
+    PropertyDto:
+      type: object
+      required:
+        - property_id
+        - property_name
+        - data_schema
+      properties:
+        property_id:
+          type: string
+        property_name:
+          type: string
+        data_schema:
+          $ref: "#/components/schemas/DataSchema"
+        writable:
+          type: boolean
+        categories:
+          type: array
+          items:
+            type: string
+        description:
+          type: string
+        unit:
+          type: string
+        ref_type:
+          type: string
+          enum: [table, point, property]
+        table_ref:
+          $ref: "#/components/schemas/TableRef"
+    TableRef:
+      type: object
+      properties:
+        table_id:
+          type: string
+        column_id:
+          type: string
+        where:
+          type: object
+          additionalProperties: true
+    DataSchema:
+      type: object
+      required:
+        - type
+      properties:
+        type:
+          type: string
+          enum: [bool, integer, double, object, string, time]
+        integer_schema:
+          $ref: "#/components/schemas/IntegerSchema"
+        double_schema:
+          $ref: "#/components/schemas/DoubleSchema"
+        string_schema:
+          $ref: "#/components/schemas/StringSchema"
+        object_schema:
+          $ref: "#/components/schemas/ObjectSchema"
+    IntegerSchema:
+      type: object
+      properties:
+        min:
+          type: integer
+        max:
+          type: integer
+    DoubleSchema:
+      type: object
+      properties:
+        min:
+          type: number
+        max:
+          type: number
+    StringSchema:
+      type: object
+      properties:
+        min_length:
+          type: integer
+        max_length:
+          type: integer
+    ObjectSchema:
+      type: object
+      properties:
+        min_length:
+          type: integer
+        max_length:
+          type: integer

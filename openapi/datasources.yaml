@@ -1,0 +1,98 @@
+openapi: 3.1.1
+info:
+  title: Model API
+  version: 5.0.0
+servers:
+  - url: https://{endpoint}
+paths:
+  /v5/{project_id}/datasources/{datasource_id}/data:
+    post:
+      operationId: reportToApiDatasource
+      parameters:
+        - $ref: "#/components/parameters/AuthToken"
+        - $ref: "#/components/parameters/ProjectId"
+        - $ref: "#/components/parameters/DatasourceId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DatasourceReportRequest"
+      responses:
+        "200":
+          description: 上报成功
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DatasourceReportResponse"
+        "400":
+          description: 参数错误
+        "401":
+          description: 未授权
+        "500":
+          description: 服务内部错误
+
+components:
+  parameters:
+    AuthToken:
+      name: X-Auth-Token
+      in: header
+      required: true
+      schema:
+        type: string
+    ProjectId:
+      name: project_id
+      in: path
+      required: true
+      schema:
+        type: string
+    DatasourceId:
+      name: datasource_id
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    DatasourceReportRequest:
+      type: object
+      required:
+        - devices
+      properties:
+        devices:
+          type: array
+          items:
+            $ref: "#/components/schemas/ReportDevice"
+    ReportDevice:
+      type: object
+      required:
+        - device_id
+        - services
+      properties:
+        device_id:
+          type: string
+        services:
+          type: array
+          items:
+            $ref: "#/components/schemas/ServiceData"
+    ServiceData:
+      type: object
+      required:
+        - service_id
+        - event_time
+        - properties
+      properties:
+        service_id:
+          type: string
+          description: 多层组件路径
+        event_time:
+          type: string
+          format: date-time
+          description: ISO8601 UTC 格式（yyyy-MM-ddTHH:mm:ss.SSSZ）
+        properties:
+          type: object
+          additionalProperties: true
+    DatasourceReportResponse:
+      type: object
+      properties:
+        successful:
+          type: boolean
