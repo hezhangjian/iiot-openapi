@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from iiot_openapi.models.integer_schema import IntegerSchema
+from iiot-openapi.models.integer_schema import IntegerSchema
 
 # TODO update the JSON string below
 json = "{}"

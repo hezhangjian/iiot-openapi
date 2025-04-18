@@ -22,7 +22,7 @@ jobs:
       - name: Build Redoc HTML from OpenAPI
         run: |
           mkdir -p docs
-          redocly build-docs openapi/models.yaml \
+          redocly build-docs iiot-openapi.yaml \
             --output docs/index.html \
             --title "IIoT OpenAPI Docs"
       - name: Deploy to GitHub Pages

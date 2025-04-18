@@ -1,0 +1,511 @@
+openapi: 3.1.1
+info:
+  title: IIoT OpenAPI
+  version: 5.0.0
+servers:
+  - url: https://{endpoint}
+paths:
+  # Common
+  /v1/iotstage/auth/tokens:
+    post:
+      summary: 获取认证 Token
+      operationId: generateToken
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "#/components/schemas/CreateTokenReqDTO"
+      responses:
+        "200":
+          description: 成功返回 Token
+          headers:
+            X-Subject-Token:
+              schema:
+                type: string
+              description: 返回的用户 token，用于后续调用 API 时放入 X-Auth-Token
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TokenRsp"
+  # Model
+  /v5/{project_id}/models:
+    post:
+      operationId: createModel
+      tags:
+        - Model
+      parameters:
+        - $ref: "#/components/parameters/AuthToken"
+        - $ref: "#/components/parameters/ProjectId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateModelRequest"
+      responses:
+        "201":
+          description: "Created"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Model"
+  /v5/{project_id}/models/{model_id}:
+    get:
+      summary: 查询单个模型内容
+      operationId: getModel
+      parameters:
+        - $ref: "#/components/parameters/AuthToken"
+        - $ref: "#/components/parameters/ProjectId"
+        - $ref: "#/components/parameters/ModelId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Model"
+    delete:
+      summary: 删除模型
+      operationId: deleteModel
+      parameters:
+        - $ref: "#/components/parameters/ProjectId"
+        - $ref: "#/components/parameters/ModelId"
+        - $ref: "#/components/parameters/AuthToken"
+      responses:
+        "204":
+          description: Deleted
+  # Thing
+  /v5/{project_id}/things:
+    post:
+      operationId: createThing
+      parameters:
+        - $ref: "#/components/parameters/AuthToken"
+        - $ref: "#/components/parameters/ProjectId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateThingRequest"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Thing"
+  /v5/{project_id}/things/{thing_id}:
+    get:
+      operationId: getThing
+      parameters:
+        - $ref: "#/components/parameters/AuthToken"
+        - $ref: "#/components/parameters/ProjectId"
+        - $ref: "#/components/parameters/ThingId"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Thing"
+    delete:
+      operationId: deleteThing
+      parameters:
+        - $ref: "#/components/parameters/AuthToken"
+        - $ref: "#/components/parameters/ProjectId"
+        - $ref: "#/components/parameters/ThingId"
+      responses:
+        "204":
+          description: Deleted
+  # Thing TimeSeries
+  /v5/{project_id}/things/{thing_id}/time-series/query:
+    post:
+      summary: 查询 Thing 的属性历史值
+      operationId: queryTimeSeries
+      parameters:
+        - $ref: "#/components/parameters/ProjectId"
+        - $ref: "#/components/parameters/ThingId"
+        - $ref: "#/components/parameters/AuthToken"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TimeSeriesQueryRequest"
+      responses:
+        "200":
+          description: 成功返回
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TimeSeriesQueryResponse"
+  # Datasource
+  /v5/{project_id}/datasources/{datasource_id}/data:
+    post:
+      operationId: reportToApiDatasource
+      parameters:
+        - $ref: "#/components/parameters/AuthToken"
+        - $ref: "#/components/parameters/ProjectId"
+        - $ref: "#/components/parameters/DatasourceId"
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DatasourceReportRequest"
+      responses:
+        "200":
+          description: 上报成功
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DatasourceReportResponse"
+        "400":
+          description: 参数错误
+        "401":
+          description: 未授权
+        "500":
+          description: 服务内部错误
+components:
+  parameters:
+    AuthToken:
+      name: X-Auth-Token
+      in: header
+      required: true
+      schema:
+        type: string
+    ProjectId:
+      name: project_id
+      in: path
+      required: true
+      schema:
+        type: string
+    ModelId:
+      name: model_id
+      in: path
+      required: true
+      schema:
+        type: string
+    ThingId:
+      name: thing_id
+      in: path
+      required: true
+      schema:
+        type: string
+    DatasourceId:
+      name: datasource_id
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    CreateTokenReqDTO:
+      type: object
+      required:
+        - client_id
+        - secret_id
+      properties:
+        client_id:
+          type: string
+        secret_id:
+          type: string
+        project:
+          $ref: "#/components/schemas/Project"
+    Project:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    TokenRsp:
+      type: object
+      properties:
+        access_token:
+          type: string
+        expires_in:
+          type: integer
+    CreateModelRequest:
+      type: object
+      required:
+        - model_id
+        - model_name
+      properties:
+        model_id:
+          type: string
+        model_name:
+          type: string
+        type:
+          type: string
+          enum:
+            - local
+            - cascade
+        description:
+          type: string
+        properties:
+          type: array
+          items:
+            $ref: "#/components/schemas/PropertyDto"
+        components:
+          type: array
+          items:
+            $ref: "#/components/schemas/ComponentDto"
+    Model:
+      allOf:
+        - $ref: "#/components/schemas/CreateModelRequest"
+        - type: object
+          properties:
+            create_time:
+              type: string
+            update_time:
+              type: string
+    ComponentDto:
+      type: object
+      required:
+        - component_id
+        - component_name
+      properties:
+        component_id:
+          type: string
+        component_name:
+          type: string
+        description:
+          type: string
+        properties:
+          type: array
+          items:
+            $ref: "#/components/schemas/PropertyDto"
+        components:
+          type: array
+          items:
+            $ref: "#/components/schemas/ComponentDto"
+    PropertyDto:
+      type: object
+      required:
+        - property_id
+        - property_name
+        - data_schema
+      properties:
+        property_id:
+          type: string
+        property_name:
+          type: string
+        data_schema:
+          $ref: "#/components/schemas/DataSchema"
+        writable:
+          type: boolean
+        categories:
+          type: array
+          items:
+            type: string
+        description:
+          type: string
+        unit:
+          type: string
+        ref_type:
+          type: string
+          enum:
+            - table
+            - point
+            - property
+        table_ref:
+          $ref: "#/components/schemas/TableRef"
+    TableRef:
+      type: object
+      properties:
+        table_id:
+          type: string
+        column_id:
+          type: string
+        where:
+          type: object
+          additionalProperties: true
+    DataSchema:
+      type: object
+      required:
+        - type
+      properties:
+        type:
+          type: string
+          enum: [bool, integer, double, object, string, time]
+        integer_schema:
+          $ref: "#/components/schemas/IntegerSchema"
+        double_schema:
+          $ref: "#/components/schemas/DoubleSchema"
+        string_schema:
+          $ref: "#/components/schemas/StringSchema"
+        object_schema:
+          $ref: "#/components/schemas/ObjectSchema"
+    IntegerSchema:
+      type: object
+      properties:
+        min:
+          type: integer
+        max:
+          type: integer
+    DoubleSchema:
+      type: object
+      properties:
+        min:
+          type: number
+        max:
+          type: number
+    StringSchema:
+      type: object
+      properties:
+        min_length:
+          type: integer
+        max_length:
+          type: integer
+    ObjectSchema:
+      type: object
+      properties:
+        min_length:
+          type: integer
+        max_length:
+          type: integer
+
+    CreateThingRequest:
+      type: object
+      required:
+        - thing_id
+        - model_id
+      properties:
+        thing_id:
+          type: string
+        name:
+          type: string
+        model_id:
+          type: string
+        description:
+          type: string
+        properties:
+          type: object
+          additionalProperties:
+            $ref: "#/components/schemas/PropertyValue"
+    Thing:
+      type: object
+      allOf:
+        - $ref: "#/components/schemas/CreateThingRequest"
+        - type: object
+          properties:
+            created_time:
+              type: string
+            updated_time:
+              type: string
+    PropertyValue:
+      type: object
+      required:
+        - value
+        - type
+      properties:
+        value:
+          type: string
+        type:
+          type: string
+          enum: [bool, integer, double, object, string, time]
+    DatasourceReportRequest:
+      type: object
+      required:
+        - devices
+      properties:
+        devices:
+          type: array
+          items:
+            $ref: "#/components/schemas/ReportDevice"
+    ReportDevice:
+      type: object
+      required:
+        - device_id
+        - services
+      properties:
+        device_id:
+          type: string
+        services:
+          type: array
+          items:
+            $ref: "#/components/schemas/ServiceData"
+    ServiceData:
+      type: object
+      required:
+        - service_id
+        - event_time
+        - properties
+      properties:
+        service_id:
+          type: string
+        event_time:
+          type: string
+          format: date-time
+        properties:
+          type: object
+          additionalProperties: true
+    DatasourceReportResponse:
+      type: object
+      properties:
+        successful:
+          type: boolean
+    TimeSeriesQueryRequest:
+      type: object
+      required:
+        - property_paths
+        - time_span
+      properties:
+        property_paths:
+          type: array
+          items:
+            type: string
+        time_span:
+          $ref: "#/components/schemas/TimeSpan"
+        limit:
+          type: integer
+        marker:
+          type: string
+    TimeSpan:
+      type: object
+      required:
+        - from
+        - to
+      properties:
+        from:
+          type: integer
+          format: int64
+        to:
+          type: integer
+          format: int64
+    TimeSeriesQueryResponse:
+      type: object
+      properties:
+        thing_id:
+          type: string
+        data:
+          type: object
+          additionalProperties:
+            $ref: "#/components/schemas/DataList"
+        page_info:
+          type: object
+          additionalProperties: true
+
+    DataList:
+      type: object
+      properties:
+        timestamps:
+          type: array
+          items:
+            type: integer
+        property_values:
+          type: array
+          items:
+            $ref: "#/components/schemas/PropertyValues"
+    PropertyValues:
+      type: object
+      properties:
+        property_path:
+          type: string
+        values:
+          type: array
+          items:
+            type: string
