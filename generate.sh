@@ -10,7 +10,7 @@ openapi-generator generate \
   -i iiot-openapi.yaml \
   -g python \
   -o python \
-  --package-name iiot-openapi \
+  --package-name iiot_openapi \
   --additional-properties=projectName=iiot-openapi,packageVersion=0.0.1
 
 echo "🚀 Generating TypeScript SDK..."

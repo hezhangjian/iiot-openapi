@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from iiot-openapi.models.create_thing_request import CreateThingRequest
+from iiot_openapi.models.create_thing_request import CreateThingRequest
 
 # TODO update the JSON string below
 json = "{}"

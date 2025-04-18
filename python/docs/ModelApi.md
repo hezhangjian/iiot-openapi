@@ -1,4 +1,4 @@
-# iiot-openapi.ModelApi
+# iiot_openapi.ModelApi
 
 All URIs are relative to *http://https:/*
 
@@ -14,26 +14,26 @@ Method | HTTP request | Description
 
 
 ```python
-import iiot-openapi
-from iiot-openapi.models.create_model_request import CreateModelRequest
-from iiot-openapi.models.model import Model
-from iiot-openapi.rest import ApiException
+import iiot_openapi
+from iiot_openapi.models.create_model_request import CreateModelRequest
+from iiot_openapi.models.model import Model
+from iiot_openapi.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://https:/
 # See configuration.py for a list of all supported configuration parameters.
-configuration = iiot-openapi.Configuration(
+configuration = iiot_openapi.Configuration(
     host = "http://https:/"
 )
 
 
 # Enter a context with an instance of the API client
-with iiot-openapi.ApiClient(configuration) as api_client:
+with iiot_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = iiot-openapi.ModelApi(api_client)
+    api_instance = iiot_openapi.ModelApi(api_client)
     x_auth_token = 'x_auth_token_example' # str | 
     project_id = 'project_id_example' # str | 
-    create_model_request = iiot-openapi.CreateModelRequest() # CreateModelRequest | 
+    create_model_request = iiot_openapi.CreateModelRequest() # CreateModelRequest | 
 
     try:
         api_response = api_instance.create_model(x_auth_token, project_id, create_model_request)

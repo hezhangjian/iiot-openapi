@@ -14,7 +14,7 @@
 
 import unittest
 
-from iiot-openapi.api.model_api import ModelApi
+from iiot_openapi.api.model_api import ModelApi
 
 
 class TestModelApi(unittest.TestCase):

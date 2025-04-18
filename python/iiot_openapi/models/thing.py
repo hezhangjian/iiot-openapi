@@ -17,36 +17,24 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from iiot-openapi.models.component_dto import ComponentDto
-from iiot-openapi.models.property_dto import PropertyDto
+from iiot_openapi.models.property_value import PropertyValue
 from typing import Optional, Set
 from typing_extensions import Self
 
-class Model(BaseModel):
+class Thing(BaseModel):
     """
-    Model
+    Thing
     """ # noqa: E501
+    thing_id: StrictStr
+    name: Optional[StrictStr] = None
     model_id: StrictStr
-    model_name: StrictStr
-    type: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
-    properties: Optional[List[PropertyDto]] = None
-    components: Optional[List[ComponentDto]] = None
-    create_time: Optional[StrictStr] = None
-    update_time: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["model_id", "model_name", "type", "description", "properties", "components", "create_time", "update_time"]
-
-    @field_validator('type')
-    def type_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['local', 'cascade']):
-            raise ValueError("must be one of enum values ('local', 'cascade')")
-        return value
+    properties: Optional[Dict[str, PropertyValue]] = None
+    created_time: Optional[StrictStr] = None
+    updated_time: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["thing_id", "name", "model_id", "description", "properties", "created_time", "updated_time"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -66,7 +54,7 @@ class Model(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of Model from a JSON string"""
+        """Create an instance of Thing from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -87,25 +75,18 @@ class Model(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in properties (list)
-        _items = []
+        # override the default output from pydantic by calling `to_dict()` of each value in properties (dict)
+        _field_dict = {}
         if self.properties:
-            for _item_properties in self.properties:
-                if _item_properties:
-                    _items.append(_item_properties.to_dict())
-            _dict['properties'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in components (list)
-        _items = []
-        if self.components:
-            for _item_components in self.components:
-                if _item_components:
-                    _items.append(_item_components.to_dict())
-            _dict['components'] = _items
+            for _key_properties in self.properties:
+                if self.properties[_key_properties]:
+                    _field_dict[_key_properties] = self.properties[_key_properties].to_dict()
+            _dict['properties'] = _field_dict
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of Model from a dict"""
+        """Create an instance of Thing from a dict"""
         if obj is None:
             return None
 
@@ -113,14 +94,18 @@ class Model(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "thing_id": obj.get("thing_id"),
+            "name": obj.get("name"),
             "model_id": obj.get("model_id"),
-            "model_name": obj.get("model_name"),
-            "type": obj.get("type"),
             "description": obj.get("description"),
-            "properties": [PropertyDto.from_dict(_item) for _item in obj["properties"]] if obj.get("properties") is not None else None,
-            "components": [ComponentDto.from_dict(_item) for _item in obj["components"]] if obj.get("components") is not None else None,
-            "create_time": obj.get("create_time"),
-            "update_time": obj.get("update_time")
+            "properties": dict(
+                (_k, PropertyValue.from_dict(_v))
+                for _k, _v in obj["properties"].items()
+            )
+            if obj.get("properties") is not None
+            else None,
+            "created_time": obj.get("created_time"),
+            "updated_time": obj.get("updated_time")
         })
         return _obj
 

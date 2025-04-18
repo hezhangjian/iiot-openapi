@@ -14,7 +14,7 @@
 
 import unittest
 
-from iiot-openapi.models.project import Project
+from iiot_openapi.models.project import Project
 
 class TestProject(unittest.TestCase):
     """Project unit test stubs"""

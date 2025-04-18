@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from iiot-openapi.models.create_token_req_dto import CreateTokenReqDTO
+from iiot_openapi.models.create_token_req_dto import CreateTokenReqDTO
 
 # TODO update the JSON string below
 json = "{}"

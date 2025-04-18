@@ -14,7 +14,7 @@
 
 import unittest
 
-from iiot-openapi.models.property_values import PropertyValues
+from iiot_openapi.models.property_values import PropertyValues
 
 class TestPropertyValues(unittest.TestCase):
     """PropertyValues unit test stubs"""

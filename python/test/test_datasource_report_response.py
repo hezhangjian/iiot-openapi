@@ -14,7 +14,7 @@
 
 import unittest
 
-from iiot-openapi.models.datasource_report_response import DatasourceReportResponse
+from iiot_openapi.models.datasource_report_response import DatasourceReportResponse
 
 class TestDatasourceReportResponse(unittest.TestCase):
     """DatasourceReportResponse unit test stubs"""

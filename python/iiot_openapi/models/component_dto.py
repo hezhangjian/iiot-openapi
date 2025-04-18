@@ -19,18 +19,20 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from iiot-openapi.models.project import Project
+from iiot_openapi.models.property_dto import PropertyDto
 from typing import Optional, Set
 from typing_extensions import Self
 
-class CreateTokenReqDTO(BaseModel):
+class ComponentDto(BaseModel):
     """
-    CreateTokenReqDTO
+    ComponentDto
     """ # noqa: E501
-    client_id: StrictStr
-    secret_id: StrictStr
-    project: Optional[Project] = None
-    __properties: ClassVar[List[str]] = ["client_id", "secret_id", "project"]
+    component_id: StrictStr
+    component_name: StrictStr
+    description: Optional[StrictStr] = None
+    properties: Optional[List[PropertyDto]] = None
+    components: Optional[List[ComponentDto]] = None
+    __properties: ClassVar[List[str]] = ["component_id", "component_name", "description", "properties", "components"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +52,7 @@ class CreateTokenReqDTO(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of CreateTokenReqDTO from a JSON string"""
+        """Create an instance of ComponentDto from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,14 +73,25 @@ class CreateTokenReqDTO(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of project
-        if self.project:
-            _dict['project'] = self.project.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in properties (list)
+        _items = []
+        if self.properties:
+            for _item_properties in self.properties:
+                if _item_properties:
+                    _items.append(_item_properties.to_dict())
+            _dict['properties'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in components (list)
+        _items = []
+        if self.components:
+            for _item_components in self.components:
+                if _item_components:
+                    _items.append(_item_components.to_dict())
+            _dict['components'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of CreateTokenReqDTO from a dict"""
+        """Create an instance of ComponentDto from a dict"""
         if obj is None:
             return None
 
@@ -86,10 +99,14 @@ class CreateTokenReqDTO(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "client_id": obj.get("client_id"),
-            "secret_id": obj.get("secret_id"),
-            "project": Project.from_dict(obj["project"]) if obj.get("project") is not None else None
+            "component_id": obj.get("component_id"),
+            "component_name": obj.get("component_name"),
+            "description": obj.get("description"),
+            "properties": [PropertyDto.from_dict(_item) for _item in obj["properties"]] if obj.get("properties") is not None else None,
+            "components": [ComponentDto.from_dict(_item) for _item in obj["components"]] if obj.get("components") is not None else None
         })
         return _obj
 
+# TODO: Rewrite to not use raise_errors
+ComponentDto.model_rebuild(raise_errors=False)
 

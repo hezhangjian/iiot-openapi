@@ -14,7 +14,7 @@
 
 import unittest
 
-from iiot-openapi.models.create_thing_request import CreateThingRequest
+from iiot_openapi.models.create_thing_request import CreateThingRequest
 
 class TestCreateThingRequest(unittest.TestCase):
     """CreateThingRequest unit test stubs"""
@@ -40,7 +40,7 @@ class TestCreateThingRequest(unittest.TestCase):
                 model_id = '',
                 description = '',
                 properties = {
-                    'key' : iiot-openapi.models.property_value.PropertyValue(
+                    'key' : iiot_openapi.models.property_value.PropertyValue(
                         value = '', 
                         type = 'bool', )
                     }

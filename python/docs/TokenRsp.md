@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from iiot-openapi.models.token_rsp import TokenRsp
+from iiot_openapi.models.token_rsp import TokenRsp
 
 # TODO update the JSON string below
 json = "{}"

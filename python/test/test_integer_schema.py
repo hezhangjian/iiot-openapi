@@ -14,7 +14,7 @@
 
 import unittest
 
-from iiot-openapi.models.integer_schema import IntegerSchema
+from iiot_openapi.models.integer_schema import IntegerSchema
 
 class TestIntegerSchema(unittest.TestCase):
     """IntegerSchema unit test stubs"""

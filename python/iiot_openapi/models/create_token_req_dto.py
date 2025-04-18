@@ -17,18 +17,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
-from typing import Any, ClassVar, Dict, List
-from iiot-openapi.models.report_device import ReportDevice
+from pydantic import BaseModel, ConfigDict, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional
+from iiot_openapi.models.project import Project
 from typing import Optional, Set
 from typing_extensions import Self
 
-class DatasourceReportRequest(BaseModel):
+class CreateTokenReqDTO(BaseModel):
     """
-    DatasourceReportRequest
+    CreateTokenReqDTO
     """ # noqa: E501
-    devices: List[ReportDevice]
-    __properties: ClassVar[List[str]] = ["devices"]
+    client_id: StrictStr
+    secret_id: StrictStr
+    project: Optional[Project] = None
+    __properties: ClassVar[List[str]] = ["client_id", "secret_id", "project"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -48,7 +50,7 @@ class DatasourceReportRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of DatasourceReportRequest from a JSON string"""
+        """Create an instance of CreateTokenReqDTO from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -69,18 +71,14 @@ class DatasourceReportRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in devices (list)
-        _items = []
-        if self.devices:
-            for _item_devices in self.devices:
-                if _item_devices:
-                    _items.append(_item_devices.to_dict())
-            _dict['devices'] = _items
+        # override the default output from pydantic by calling `to_dict()` of project
+        if self.project:
+            _dict['project'] = self.project.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of DatasourceReportRequest from a dict"""
+        """Create an instance of CreateTokenReqDTO from a dict"""
         if obj is None:
             return None
 
@@ -88,7 +86,9 @@ class DatasourceReportRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "devices": [ReportDevice.from_dict(_item) for _item in obj["devices"]] if obj.get("devices") is not None else None
+            "client_id": obj.get("client_id"),
+            "secret_id": obj.get("secret_id"),
+            "project": Project.from_dict(obj["project"]) if obj.get("project") is not None else None
         })
         return _obj
 

@@ -14,7 +14,7 @@
 
 import unittest
 
-from iiot-openapi.models.data_list import DataList
+from iiot_openapi.models.data_list import DataList
 
 class TestDataList(unittest.TestCase):
     """DataList unit test stubs"""
@@ -39,7 +39,7 @@ class TestDataList(unittest.TestCase):
                     56
                     ],
                 property_values = [
-                    iiot-openapi.models.property_values.PropertyValues(
+                    iiot_openapi.models.property_values.PropertyValues(
                         property_path = '', 
                         values = [
                             ''

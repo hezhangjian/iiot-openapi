@@ -14,7 +14,7 @@
 
 import unittest
 
-from iiot-openapi.models.time_series_query_request import TimeSeriesQueryRequest
+from iiot_openapi.models.time_series_query_request import TimeSeriesQueryRequest
 
 class TestTimeSeriesQueryRequest(unittest.TestCase):
     """TimeSeriesQueryRequest unit test stubs"""
@@ -38,7 +38,7 @@ class TestTimeSeriesQueryRequest(unittest.TestCase):
                 property_paths = [
                     ''
                     ],
-                time_span = iiot-openapi.models.time_span.TimeSpan(
+                time_span = iiot_openapi.models.time_span.TimeSpan(
                     from = 56, 
                     to = 56, ),
                 limit = 56,
@@ -49,7 +49,7 @@ class TestTimeSeriesQueryRequest(unittest.TestCase):
                 property_paths = [
                     ''
                     ],
-                time_span = iiot-openapi.models.time_span.TimeSpan(
+                time_span = iiot_openapi.models.time_span.TimeSpan(
                     from = 56, 
                     to = 56, ),
         )

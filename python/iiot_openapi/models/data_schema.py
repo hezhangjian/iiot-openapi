@@ -19,10 +19,10 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
-from iiot-openapi.models.double_schema import DoubleSchema
-from iiot-openapi.models.integer_schema import IntegerSchema
-from iiot-openapi.models.object_schema import ObjectSchema
-from iiot-openapi.models.string_schema import StringSchema
+from iiot_openapi.models.double_schema import DoubleSchema
+from iiot_openapi.models.integer_schema import IntegerSchema
+from iiot_openapi.models.object_schema import ObjectSchema
+from iiot_openapi.models.string_schema import StringSchema
 from typing import Optional, Set
 from typing_extensions import Self
 

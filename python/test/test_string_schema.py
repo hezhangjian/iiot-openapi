@@ -14,7 +14,7 @@
 
 import unittest
 
-from iiot-openapi.models.string_schema import StringSchema
+from iiot_openapi.models.string_schema import StringSchema
 
 class TestStringSchema(unittest.TestCase):
     """StringSchema unit test stubs"""

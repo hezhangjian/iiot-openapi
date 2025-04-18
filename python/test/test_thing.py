@@ -14,7 +14,7 @@
 
 import unittest
 
-from iiot-openapi.models.thing import Thing
+from iiot_openapi.models.thing import Thing
 
 class TestThing(unittest.TestCase):
     """Thing unit test stubs"""
@@ -40,7 +40,7 @@ class TestThing(unittest.TestCase):
                 model_id = '',
                 description = '',
                 properties = {
-                    'key' : iiot-openapi.models.property_value.PropertyValue(
+                    'key' : iiot_openapi.models.property_value.PropertyValue(
                         value = '', 
                         type = 'bool', )
                     },

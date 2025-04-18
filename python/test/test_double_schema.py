@@ -14,7 +14,7 @@
 
 import unittest
 
-from iiot-openapi.models.double_schema import DoubleSchema
+from iiot_openapi.models.double_schema import DoubleSchema
 
 class TestDoubleSchema(unittest.TestCase):
     """DoubleSchema unit test stubs"""

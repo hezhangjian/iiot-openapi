@@ -17,19 +17,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List
-from iiot-openapi.models.service_data import ServiceData
+from iiot_openapi.models.report_device import ReportDevice
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ReportDevice(BaseModel):
+class DatasourceReportRequest(BaseModel):
     """
-    ReportDevice
+    DatasourceReportRequest
     """ # noqa: E501
-    device_id: StrictStr
-    services: List[ServiceData]
-    __properties: ClassVar[List[str]] = ["device_id", "services"]
+    devices: List[ReportDevice]
+    __properties: ClassVar[List[str]] = ["devices"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -49,7 +48,7 @@ class ReportDevice(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ReportDevice from a JSON string"""
+        """Create an instance of DatasourceReportRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -70,18 +69,18 @@ class ReportDevice(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in services (list)
+        # override the default output from pydantic by calling `to_dict()` of each item in devices (list)
         _items = []
-        if self.services:
-            for _item_services in self.services:
-                if _item_services:
-                    _items.append(_item_services.to_dict())
-            _dict['services'] = _items
+        if self.devices:
+            for _item_devices in self.devices:
+                if _item_devices:
+                    _items.append(_item_devices.to_dict())
+            _dict['devices'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ReportDevice from a dict"""
+        """Create an instance of DatasourceReportRequest from a dict"""
         if obj is None:
             return None
 
@@ -89,8 +88,7 @@ class ReportDevice(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "device_id": obj.get("device_id"),
-            "services": [ServiceData.from_dict(_item) for _item in obj["services"]] if obj.get("services") is not None else None
+            "devices": [ReportDevice.from_dict(_item) for _item in obj["devices"]] if obj.get("devices") is not None else None
         })
         return _obj
 

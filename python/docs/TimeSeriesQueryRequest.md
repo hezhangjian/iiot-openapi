@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from iiot-openapi.models.time_series_query_request import TimeSeriesQueryRequest
+from iiot_openapi.models.time_series_query_request import TimeSeriesQueryRequest
 
 # TODO update the JSON string below
 json = "{}"

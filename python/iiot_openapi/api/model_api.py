@@ -17,12 +17,12 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
 from pydantic import StrictStr
-from iiot-openapi.models.create_model_request import CreateModelRequest
-from iiot-openapi.models.model import Model
+from iiot_openapi.models.create_model_request import CreateModelRequest
+from iiot_openapi.models.model import Model
 
-from iiot-openapi.api_client import ApiClient, RequestSerialized
-from iiot-openapi.api_response import ApiResponse
-from iiot-openapi.rest import RESTResponseType
+from iiot_openapi.api_client import ApiClient, RequestSerialized
+from iiot_openapi.api_response import ApiResponse
+from iiot_openapi.rest import RESTResponseType
 
 
 class ModelApi:

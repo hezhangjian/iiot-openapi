@@ -17,24 +17,21 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from iiot-openapi.models.property_value import PropertyValue
+from iiot_openapi.models.time_span import TimeSpan
 from typing import Optional, Set
 from typing_extensions import Self
 
-class Thing(BaseModel):
+class TimeSeriesQueryRequest(BaseModel):
     """
-    Thing
+    TimeSeriesQueryRequest
     """ # noqa: E501
-    thing_id: StrictStr
-    name: Optional[StrictStr] = None
-    model_id: StrictStr
-    description: Optional[StrictStr] = None
-    properties: Optional[Dict[str, PropertyValue]] = None
-    created_time: Optional[StrictStr] = None
-    updated_time: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["thing_id", "name", "model_id", "description", "properties", "created_time", "updated_time"]
+    property_paths: List[StrictStr]
+    time_span: TimeSpan
+    limit: Optional[StrictInt] = None
+    marker: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["property_paths", "time_span", "limit", "marker"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -54,7 +51,7 @@ class Thing(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of Thing from a JSON string"""
+        """Create an instance of TimeSeriesQueryRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -75,18 +72,14 @@ class Thing(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each value in properties (dict)
-        _field_dict = {}
-        if self.properties:
-            for _key_properties in self.properties:
-                if self.properties[_key_properties]:
-                    _field_dict[_key_properties] = self.properties[_key_properties].to_dict()
-            _dict['properties'] = _field_dict
+        # override the default output from pydantic by calling `to_dict()` of time_span
+        if self.time_span:
+            _dict['time_span'] = self.time_span.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of Thing from a dict"""
+        """Create an instance of TimeSeriesQueryRequest from a dict"""
         if obj is None:
             return None
 
@@ -94,18 +87,10 @@ class Thing(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "thing_id": obj.get("thing_id"),
-            "name": obj.get("name"),
-            "model_id": obj.get("model_id"),
-            "description": obj.get("description"),
-            "properties": dict(
-                (_k, PropertyValue.from_dict(_v))
-                for _k, _v in obj["properties"].items()
-            )
-            if obj.get("properties") is not None
-            else None,
-            "created_time": obj.get("created_time"),
-            "updated_time": obj.get("updated_time")
+            "property_paths": obj.get("property_paths"),
+            "time_span": TimeSpan.from_dict(obj["time_span"]) if obj.get("time_span") is not None else None,
+            "limit": obj.get("limit"),
+            "marker": obj.get("marker")
         })
         return _obj
 

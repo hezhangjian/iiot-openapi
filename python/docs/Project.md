@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from iiot-openapi.models.project import Project
+from iiot_openapi.models.project import Project
 
 # TODO update the JSON string below
 json = "{}"

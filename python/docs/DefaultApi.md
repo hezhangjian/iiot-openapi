@@ -1,4 +1,4 @@
-# iiot-openapi.DefaultApi
+# iiot_openapi.DefaultApi
 
 All URIs are relative to *http://https:/*
 
@@ -21,26 +21,26 @@ Method | HTTP request | Description
 
 
 ```python
-import iiot-openapi
-from iiot-openapi.models.create_thing_request import CreateThingRequest
-from iiot-openapi.models.thing import Thing
-from iiot-openapi.rest import ApiException
+import iiot_openapi
+from iiot_openapi.models.create_thing_request import CreateThingRequest
+from iiot_openapi.models.thing import Thing
+from iiot_openapi.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://https:/
 # See configuration.py for a list of all supported configuration parameters.
-configuration = iiot-openapi.Configuration(
+configuration = iiot_openapi.Configuration(
     host = "http://https:/"
 )
 
 
 # Enter a context with an instance of the API client
-with iiot-openapi.ApiClient(configuration) as api_client:
+with iiot_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = iiot-openapi.DefaultApi(api_client)
+    api_instance = iiot_openapi.DefaultApi(api_client)
     x_auth_token = 'x_auth_token_example' # str | 
     project_id = 'project_id_example' # str | 
-    create_thing_request = iiot-openapi.CreateThingRequest() # CreateThingRequest | 
+    create_thing_request = iiot_openapi.CreateThingRequest() # CreateThingRequest | 
 
     try:
         api_response = api_instance.create_thing(x_auth_token, project_id, create_thing_request)
@@ -91,21 +91,21 @@ No authorization required
 
 
 ```python
-import iiot-openapi
-from iiot-openapi.rest import ApiException
+import iiot_openapi
+from iiot_openapi.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://https:/
 # See configuration.py for a list of all supported configuration parameters.
-configuration = iiot-openapi.Configuration(
+configuration = iiot_openapi.Configuration(
     host = "http://https:/"
 )
 
 
 # Enter a context with an instance of the API client
-with iiot-openapi.ApiClient(configuration) as api_client:
+with iiot_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = iiot-openapi.DefaultApi(api_client)
+    api_instance = iiot_openapi.DefaultApi(api_client)
     project_id = 'project_id_example' # str | 
     model_id = 'model_id_example' # str | 
     x_auth_token = 'x_auth_token_example' # str | 
@@ -156,21 +156,21 @@ No authorization required
 
 
 ```python
-import iiot-openapi
-from iiot-openapi.rest import ApiException
+import iiot_openapi
+from iiot_openapi.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://https:/
 # See configuration.py for a list of all supported configuration parameters.
-configuration = iiot-openapi.Configuration(
+configuration = iiot_openapi.Configuration(
     host = "http://https:/"
 )
 
 
 # Enter a context with an instance of the API client
-with iiot-openapi.ApiClient(configuration) as api_client:
+with iiot_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = iiot-openapi.DefaultApi(api_client)
+    api_instance = iiot_openapi.DefaultApi(api_client)
     x_auth_token = 'x_auth_token_example' # str | 
     project_id = 'project_id_example' # str | 
     thing_id = 'thing_id_example' # str | 
@@ -222,24 +222,24 @@ No authorization required
 
 
 ```python
-import iiot-openapi
-from iiot-openapi.models.create_token_req_dto import CreateTokenReqDTO
-from iiot-openapi.models.token_rsp import TokenRsp
-from iiot-openapi.rest import ApiException
+import iiot_openapi
+from iiot_openapi.models.create_token_req_dto import CreateTokenReqDTO
+from iiot_openapi.models.token_rsp import TokenRsp
+from iiot_openapi.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://https:/
 # See configuration.py for a list of all supported configuration parameters.
-configuration = iiot-openapi.Configuration(
+configuration = iiot_openapi.Configuration(
     host = "http://https:/"
 )
 
 
 # Enter a context with an instance of the API client
-with iiot-openapi.ApiClient(configuration) as api_client:
+with iiot_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = iiot-openapi.DefaultApi(api_client)
-    create_token_req_dto = [iiot-openapi.CreateTokenReqDTO()] # List[CreateTokenReqDTO] | 
+    api_instance = iiot_openapi.DefaultApi(api_client)
+    create_token_req_dto = [iiot_openapi.CreateTokenReqDTO()] # List[CreateTokenReqDTO] | 
 
     try:
         # 获取认证 Token
@@ -289,22 +289,22 @@ No authorization required
 
 
 ```python
-import iiot-openapi
-from iiot-openapi.models.model import Model
-from iiot-openapi.rest import ApiException
+import iiot_openapi
+from iiot_openapi.models.model import Model
+from iiot_openapi.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://https:/
 # See configuration.py for a list of all supported configuration parameters.
-configuration = iiot-openapi.Configuration(
+configuration = iiot_openapi.Configuration(
     host = "http://https:/"
 )
 
 
 # Enter a context with an instance of the API client
-with iiot-openapi.ApiClient(configuration) as api_client:
+with iiot_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = iiot-openapi.DefaultApi(api_client)
+    api_instance = iiot_openapi.DefaultApi(api_client)
     x_auth_token = 'x_auth_token_example' # str | 
     project_id = 'project_id_example' # str | 
     model_id = 'model_id_example' # str | 
@@ -357,22 +357,22 @@ No authorization required
 
 
 ```python
-import iiot-openapi
-from iiot-openapi.models.thing import Thing
-from iiot-openapi.rest import ApiException
+import iiot_openapi
+from iiot_openapi.models.thing import Thing
+from iiot_openapi.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://https:/
 # See configuration.py for a list of all supported configuration parameters.
-configuration = iiot-openapi.Configuration(
+configuration = iiot_openapi.Configuration(
     host = "http://https:/"
 )
 
 
 # Enter a context with an instance of the API client
-with iiot-openapi.ApiClient(configuration) as api_client:
+with iiot_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = iiot-openapi.DefaultApi(api_client)
+    api_instance = iiot_openapi.DefaultApi(api_client)
     x_auth_token = 'x_auth_token_example' # str | 
     project_id = 'project_id_example' # str | 
     thing_id = 'thing_id_example' # str | 
@@ -426,27 +426,27 @@ No authorization required
 
 
 ```python
-import iiot-openapi
-from iiot-openapi.models.time_series_query_request import TimeSeriesQueryRequest
-from iiot-openapi.models.time_series_query_response import TimeSeriesQueryResponse
-from iiot-openapi.rest import ApiException
+import iiot_openapi
+from iiot_openapi.models.time_series_query_request import TimeSeriesQueryRequest
+from iiot_openapi.models.time_series_query_response import TimeSeriesQueryResponse
+from iiot_openapi.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://https:/
 # See configuration.py for a list of all supported configuration parameters.
-configuration = iiot-openapi.Configuration(
+configuration = iiot_openapi.Configuration(
     host = "http://https:/"
 )
 
 
 # Enter a context with an instance of the API client
-with iiot-openapi.ApiClient(configuration) as api_client:
+with iiot_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = iiot-openapi.DefaultApi(api_client)
+    api_instance = iiot_openapi.DefaultApi(api_client)
     project_id = 'project_id_example' # str | 
     thing_id = 'thing_id_example' # str | 
     x_auth_token = 'x_auth_token_example' # str | 
-    time_series_query_request = iiot-openapi.TimeSeriesQueryRequest() # TimeSeriesQueryRequest | 
+    time_series_query_request = iiot_openapi.TimeSeriesQueryRequest() # TimeSeriesQueryRequest | 
 
     try:
         # 查询 Thing 的属性历史值
@@ -497,27 +497,27 @@ No authorization required
 
 
 ```python
-import iiot-openapi
-from iiot-openapi.models.datasource_report_request import DatasourceReportRequest
-from iiot-openapi.models.datasource_report_response import DatasourceReportResponse
-from iiot-openapi.rest import ApiException
+import iiot_openapi
+from iiot_openapi.models.datasource_report_request import DatasourceReportRequest
+from iiot_openapi.models.datasource_report_response import DatasourceReportResponse
+from iiot_openapi.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://https:/
 # See configuration.py for a list of all supported configuration parameters.
-configuration = iiot-openapi.Configuration(
+configuration = iiot_openapi.Configuration(
     host = "http://https:/"
 )
 
 
 # Enter a context with an instance of the API client
-with iiot-openapi.ApiClient(configuration) as api_client:
+with iiot_openapi.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = iiot-openapi.DefaultApi(api_client)
+    api_instance = iiot_openapi.DefaultApi(api_client)
     x_auth_token = 'x_auth_token_example' # str | 
     project_id = 'project_id_example' # str | 
     datasource_id = 'datasource_id_example' # str | 
-    datasource_report_request = iiot-openapi.DatasourceReportRequest() # DatasourceReportRequest | 
+    datasource_report_request = iiot_openapi.DatasourceReportRequest() # DatasourceReportRequest | 
 
     try:
         api_response = api_instance.report_to_api_datasource(x_auth_token, project_id, datasource_id, datasource_report_request)

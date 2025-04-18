@@ -14,7 +14,7 @@
 
 import unittest
 
-from iiot-openapi.models.object_schema import ObjectSchema
+from iiot_openapi.models.object_schema import ObjectSchema
 
 class TestObjectSchema(unittest.TestCase):
     """ObjectSchema unit test stubs"""

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from iiot-openapi.models.service_data import ServiceData
+from iiot_openapi.models.service_data import ServiceData
 
 # TODO update the JSON string below
 json = "{}"

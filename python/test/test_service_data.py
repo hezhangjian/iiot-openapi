@@ -14,7 +14,7 @@
 
 import unittest
 
-from iiot-openapi.models.service_data import ServiceData
+from iiot_openapi.models.service_data import ServiceData
 
 class TestServiceData(unittest.TestCase):
     """ServiceData unit test stubs"""

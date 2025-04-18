@@ -19,20 +19,18 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from iiot-openapi.models.property_dto import PropertyDto
+from iiot_openapi.models.data_list import DataList
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ComponentDto(BaseModel):
+class TimeSeriesQueryResponse(BaseModel):
     """
-    ComponentDto
+    TimeSeriesQueryResponse
     """ # noqa: E501
-    component_id: StrictStr
-    component_name: StrictStr
-    description: Optional[StrictStr] = None
-    properties: Optional[List[PropertyDto]] = None
-    components: Optional[List[ComponentDto]] = None
-    __properties: ClassVar[List[str]] = ["component_id", "component_name", "description", "properties", "components"]
+    thing_id: Optional[StrictStr] = None
+    data: Optional[Dict[str, DataList]] = None
+    page_info: Optional[Dict[str, Any]] = None
+    __properties: ClassVar[List[str]] = ["thing_id", "data", "page_info"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -52,7 +50,7 @@ class ComponentDto(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ComponentDto from a JSON string"""
+        """Create an instance of TimeSeriesQueryResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -73,25 +71,18 @@ class ComponentDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in properties (list)
-        _items = []
-        if self.properties:
-            for _item_properties in self.properties:
-                if _item_properties:
-                    _items.append(_item_properties.to_dict())
-            _dict['properties'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in components (list)
-        _items = []
-        if self.components:
-            for _item_components in self.components:
-                if _item_components:
-                    _items.append(_item_components.to_dict())
-            _dict['components'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each value in data (dict)
+        _field_dict = {}
+        if self.data:
+            for _key_data in self.data:
+                if self.data[_key_data]:
+                    _field_dict[_key_data] = self.data[_key_data].to_dict()
+            _dict['data'] = _field_dict
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ComponentDto from a dict"""
+        """Create an instance of TimeSeriesQueryResponse from a dict"""
         if obj is None:
             return None
 
@@ -99,14 +90,15 @@ class ComponentDto(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "component_id": obj.get("component_id"),
-            "component_name": obj.get("component_name"),
-            "description": obj.get("description"),
-            "properties": [PropertyDto.from_dict(_item) for _item in obj["properties"]] if obj.get("properties") is not None else None,
-            "components": [ComponentDto.from_dict(_item) for _item in obj["components"]] if obj.get("components") is not None else None
+            "thing_id": obj.get("thing_id"),
+            "data": dict(
+                (_k, DataList.from_dict(_v))
+                for _k, _v in obj["data"].items()
+            )
+            if obj.get("data") is not None
+            else None,
+            "page_info": obj.get("page_info")
         })
         return _obj
 
-# TODO: Rewrite to not use raise_errors
-ComponentDto.model_rebuild(raise_errors=False)
 

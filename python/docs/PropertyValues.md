@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from iiot-openapi.models.property_values import PropertyValues
+from iiot_openapi.models.property_values import PropertyValues
 
 # TODO update the JSON string below
 json = "{}"

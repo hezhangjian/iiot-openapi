@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from iiot-openapi.models.datasource_report_request import DatasourceReportRequest
+from iiot_openapi.models.datasource_report_request import DatasourceReportRequest
 
 # TODO update the JSON string below
 json = "{}"

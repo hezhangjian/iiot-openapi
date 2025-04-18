@@ -14,7 +14,7 @@
 
 import unittest
 
-from iiot-openapi.models.component_dto import ComponentDto
+from iiot_openapi.models.component_dto import ComponentDto
 
 class TestComponentDto(unittest.TestCase):
     """ComponentDto unit test stubs"""
@@ -39,21 +39,21 @@ class TestComponentDto(unittest.TestCase):
                 component_name = '',
                 description = '',
                 properties = [
-                    iiot-openapi.models.property_dto.PropertyDto(
+                    iiot_openapi.models.property_dto.PropertyDto(
                         property_id = '', 
                         property_name = '', 
-                        data_schema = iiot-openapi.models.data_schema.DataSchema(
+                        data_schema = iiot_openapi.models.data_schema.DataSchema(
                             type = 'bool', 
-                            integer_schema = iiot-openapi.models.integer_schema.IntegerSchema(
+                            integer_schema = iiot_openapi.models.integer_schema.IntegerSchema(
                                 min = 56, 
                                 max = 56, ), 
-                            double_schema = iiot-openapi.models.double_schema.DoubleSchema(
+                            double_schema = iiot_openapi.models.double_schema.DoubleSchema(
                                 min = 1.337, 
                                 max = 1.337, ), 
-                            string_schema = iiot-openapi.models.string_schema.StringSchema(
+                            string_schema = iiot_openapi.models.string_schema.StringSchema(
                                 min_length = 56, 
                                 max_length = 56, ), 
-                            object_schema = iiot-openapi.models.string_schema.StringSchema(
+                            object_schema = iiot_openapi.models.string_schema.StringSchema(
                                 min_length = 56, 
                                 max_length = 56, ), ), 
                         writable = True, 
@@ -63,32 +63,32 @@ class TestComponentDto(unittest.TestCase):
                         description = '', 
                         unit = '', 
                         ref_type = 'table', 
-                        table_ref = iiot-openapi.models.table_ref.TableRef(
+                        table_ref = iiot_openapi.models.table_ref.TableRef(
                             table_id = '', 
                             column_id = '', 
                             where = { }, ), )
                     ],
                 components = [
-                    iiot-openapi.models.component_dto.ComponentDto(
+                    iiot_openapi.models.component_dto.ComponentDto(
                         component_id = '', 
                         component_name = '', 
                         description = '', 
                         properties = [
-                            iiot-openapi.models.property_dto.PropertyDto(
+                            iiot_openapi.models.property_dto.PropertyDto(
                                 property_id = '', 
                                 property_name = '', 
-                                data_schema = iiot-openapi.models.data_schema.DataSchema(
+                                data_schema = iiot_openapi.models.data_schema.DataSchema(
                                     type = 'bool', 
-                                    integer_schema = iiot-openapi.models.integer_schema.IntegerSchema(
+                                    integer_schema = iiot_openapi.models.integer_schema.IntegerSchema(
                                         min = 56, 
                                         max = 56, ), 
-                                    double_schema = iiot-openapi.models.double_schema.DoubleSchema(
+                                    double_schema = iiot_openapi.models.double_schema.DoubleSchema(
                                         min = 1.337, 
                                         max = 1.337, ), 
-                                    string_schema = iiot-openapi.models.string_schema.StringSchema(
+                                    string_schema = iiot_openapi.models.string_schema.StringSchema(
                                         min_length = 56, 
                                         max_length = 56, ), 
-                                    object_schema = iiot-openapi.models.string_schema.StringSchema(
+                                    object_schema = iiot_openapi.models.string_schema.StringSchema(
                                         min_length = 56, 
                                         max_length = 56, ), ), 
                                 writable = True, 
@@ -98,7 +98,7 @@ class TestComponentDto(unittest.TestCase):
                                 description = '', 
                                 unit = '', 
                                 ref_type = 'table', 
-                                table_ref = iiot-openapi.models.table_ref.TableRef(
+                                table_ref = iiot_openapi.models.table_ref.TableRef(
                                     table_id = '', 
                                     column_id = '', 
                                     where = { }, ), )

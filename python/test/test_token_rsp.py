@@ -14,7 +14,7 @@
 
 import unittest
 
-from iiot-openapi.models.token_rsp import TokenRsp
+from iiot_openapi.models.token_rsp import TokenRsp
 
 class TestTokenRsp(unittest.TestCase):
     """TokenRsp unit test stubs"""

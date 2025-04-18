@@ -14,7 +14,7 @@
 
 import unittest
 
-from iiot-openapi.models.time_span import TimeSpan
+from iiot_openapi.models.time_span import TimeSpan
 
 class TestTimeSpan(unittest.TestCase):
     """TimeSpan unit test stubs"""

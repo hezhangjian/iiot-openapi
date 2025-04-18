@@ -18,19 +18,19 @@ from typing_extensions import Annotated
 
 from pydantic import StrictStr
 from typing import List
-from iiot-openapi.models.create_thing_request import CreateThingRequest
-from iiot-openapi.models.create_token_req_dto import CreateTokenReqDTO
-from iiot-openapi.models.datasource_report_request import DatasourceReportRequest
-from iiot-openapi.models.datasource_report_response import DatasourceReportResponse
-from iiot-openapi.models.model import Model
-from iiot-openapi.models.thing import Thing
-from iiot-openapi.models.time_series_query_request import TimeSeriesQueryRequest
-from iiot-openapi.models.time_series_query_response import TimeSeriesQueryResponse
-from iiot-openapi.models.token_rsp import TokenRsp
+from iiot_openapi.models.create_thing_request import CreateThingRequest
+from iiot_openapi.models.create_token_req_dto import CreateTokenReqDTO
+from iiot_openapi.models.datasource_report_request import DatasourceReportRequest
+from iiot_openapi.models.datasource_report_response import DatasourceReportResponse
+from iiot_openapi.models.model import Model
+from iiot_openapi.models.thing import Thing
+from iiot_openapi.models.time_series_query_request import TimeSeriesQueryRequest
+from iiot_openapi.models.time_series_query_response import TimeSeriesQueryResponse
+from iiot_openapi.models.token_rsp import TokenRsp
 
-from iiot-openapi.api_client import ApiClient, RequestSerialized
-from iiot-openapi.api_response import ApiResponse
-from iiot-openapi.rest import RESTResponseType
+from iiot_openapi.api_client import ApiClient, RequestSerialized
+from iiot_openapi.api_response import ApiResponse
+from iiot_openapi.rest import RESTResponseType
 
 
 class DefaultApi:

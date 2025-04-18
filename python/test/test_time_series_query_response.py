@@ -14,7 +14,7 @@
 
 import unittest
 
-from iiot-openapi.models.time_series_query_response import TimeSeriesQueryResponse
+from iiot_openapi.models.time_series_query_response import TimeSeriesQueryResponse
 
 class TestTimeSeriesQueryResponse(unittest.TestCase):
     """TimeSeriesQueryResponse unit test stubs"""
@@ -37,12 +37,12 @@ class TestTimeSeriesQueryResponse(unittest.TestCase):
             return TimeSeriesQueryResponse(
                 thing_id = '',
                 data = {
-                    'key' : iiot-openapi.models.data_list.DataList(
+                    'key' : iiot_openapi.models.data_list.DataList(
                         timestamps = [
                             56
                             ], 
                         property_values = [
-                            iiot-openapi.models.property_values.PropertyValues(
+                            iiot_openapi.models.property_values.PropertyValues(
                                 property_path = '', 
                                 values = [
                                     ''

@@ -19,14 +19,14 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
-from iiot-openapi.models.component_dto import ComponentDto
-from iiot-openapi.models.property_dto import PropertyDto
+from iiot_openapi.models.component_dto import ComponentDto
+from iiot_openapi.models.property_dto import PropertyDto
 from typing import Optional, Set
 from typing_extensions import Self
 
-class CreateModelRequest(BaseModel):
+class Model(BaseModel):
     """
-    CreateModelRequest
+    Model
     """ # noqa: E501
     model_id: StrictStr
     model_name: StrictStr
@@ -34,7 +34,9 @@ class CreateModelRequest(BaseModel):
     description: Optional[StrictStr] = None
     properties: Optional[List[PropertyDto]] = None
     components: Optional[List[ComponentDto]] = None
-    __properties: ClassVar[List[str]] = ["model_id", "model_name", "type", "description", "properties", "components"]
+    create_time: Optional[StrictStr] = None
+    update_time: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["model_id", "model_name", "type", "description", "properties", "components", "create_time", "update_time"]
 
     @field_validator('type')
     def type_validate_enum(cls, value):
@@ -64,7 +66,7 @@ class CreateModelRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of CreateModelRequest from a JSON string"""
+        """Create an instance of Model from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -103,7 +105,7 @@ class CreateModelRequest(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of CreateModelRequest from a dict"""
+        """Create an instance of Model from a dict"""
         if obj is None:
             return None
 
@@ -116,7 +118,9 @@ class CreateModelRequest(BaseModel):
             "type": obj.get("type"),
             "description": obj.get("description"),
             "properties": [PropertyDto.from_dict(_item) for _item in obj["properties"]] if obj.get("properties") is not None else None,
-            "components": [ComponentDto.from_dict(_item) for _item in obj["components"]] if obj.get("components") is not None else None
+            "components": [ComponentDto.from_dict(_item) for _item in obj["components"]] if obj.get("components") is not None else None,
+            "create_time": obj.get("create_time"),
+            "update_time": obj.get("update_time")
         })
         return _obj
 

@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from iiot-openapi.models.property_value import PropertyValue
+from iiot_openapi.models.property_value import PropertyValue
 from typing import Optional, Set
 from typing_extensions import Self
 

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from iiot-openapi.models.table_ref import TableRef
+from iiot_openapi.models.table_ref import TableRef
 
 # TODO update the JSON string below
 json = "{}"

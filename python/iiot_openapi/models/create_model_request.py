@@ -17,36 +17,33 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
-from iiot-openapi.models.data_schema import DataSchema
-from iiot-openapi.models.table_ref import TableRef
+from iiot_openapi.models.component_dto import ComponentDto
+from iiot_openapi.models.property_dto import PropertyDto
 from typing import Optional, Set
 from typing_extensions import Self
 
-class PropertyDto(BaseModel):
+class CreateModelRequest(BaseModel):
     """
-    PropertyDto
+    CreateModelRequest
     """ # noqa: E501
-    property_id: StrictStr
-    property_name: StrictStr
-    data_schema: DataSchema
-    writable: Optional[StrictBool] = None
-    categories: Optional[List[StrictStr]] = None
+    model_id: StrictStr
+    model_name: StrictStr
+    type: Optional[StrictStr] = None
     description: Optional[StrictStr] = None
-    unit: Optional[StrictStr] = None
-    ref_type: Optional[StrictStr] = None
-    table_ref: Optional[TableRef] = None
-    __properties: ClassVar[List[str]] = ["property_id", "property_name", "data_schema", "writable", "categories", "description", "unit", "ref_type", "table_ref"]
+    properties: Optional[List[PropertyDto]] = None
+    components: Optional[List[ComponentDto]] = None
+    __properties: ClassVar[List[str]] = ["model_id", "model_name", "type", "description", "properties", "components"]
 
-    @field_validator('ref_type')
-    def ref_type_validate_enum(cls, value):
+    @field_validator('type')
+    def type_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['table', 'point', 'property']):
-            raise ValueError("must be one of enum values ('table', 'point', 'property')")
+        if value not in set(['local', 'cascade']):
+            raise ValueError("must be one of enum values ('local', 'cascade')")
         return value
 
     model_config = ConfigDict(
@@ -67,7 +64,7 @@ class PropertyDto(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of PropertyDto from a JSON string"""
+        """Create an instance of CreateModelRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -88,17 +85,25 @@ class PropertyDto(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of data_schema
-        if self.data_schema:
-            _dict['data_schema'] = self.data_schema.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of table_ref
-        if self.table_ref:
-            _dict['table_ref'] = self.table_ref.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in properties (list)
+        _items = []
+        if self.properties:
+            for _item_properties in self.properties:
+                if _item_properties:
+                    _items.append(_item_properties.to_dict())
+            _dict['properties'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in components (list)
+        _items = []
+        if self.components:
+            for _item_components in self.components:
+                if _item_components:
+                    _items.append(_item_components.to_dict())
+            _dict['components'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of PropertyDto from a dict"""
+        """Create an instance of CreateModelRequest from a dict"""
         if obj is None:
             return None
 
@@ -106,15 +111,12 @@ class PropertyDto(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "property_id": obj.get("property_id"),
-            "property_name": obj.get("property_name"),
-            "data_schema": DataSchema.from_dict(obj["data_schema"]) if obj.get("data_schema") is not None else None,
-            "writable": obj.get("writable"),
-            "categories": obj.get("categories"),
+            "model_id": obj.get("model_id"),
+            "model_name": obj.get("model_name"),
+            "type": obj.get("type"),
             "description": obj.get("description"),
-            "unit": obj.get("unit"),
-            "ref_type": obj.get("ref_type"),
-            "table_ref": TableRef.from_dict(obj["table_ref"]) if obj.get("table_ref") is not None else None
+            "properties": [PropertyDto.from_dict(_item) for _item in obj["properties"]] if obj.get("properties") is not None else None,
+            "components": [ComponentDto.from_dict(_item) for _item in obj["components"]] if obj.get("components") is not None else None
         })
         return _obj
 

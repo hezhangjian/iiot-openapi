@@ -14,7 +14,7 @@
 
 import unittest
 
-from iiot-openapi.models.table_ref import TableRef
+from iiot_openapi.models.table_ref import TableRef
 
 class TestTableRef(unittest.TestCase):
     """TableRef unit test stubs"""

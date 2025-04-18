@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from iiot-openapi.models.time_span import TimeSpan
+from iiot_openapi.models.time_span import TimeSpan
 
 # TODO update the JSON string below
 json = "{}"

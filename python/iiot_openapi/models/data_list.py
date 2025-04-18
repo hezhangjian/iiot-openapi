@@ -17,20 +17,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
-from iiot-openapi.models.data_list import DataList
+from iiot_openapi.models.property_values import PropertyValues
 from typing import Optional, Set
 from typing_extensions import Self
 
-class TimeSeriesQueryResponse(BaseModel):
+class DataList(BaseModel):
     """
-    TimeSeriesQueryResponse
+    DataList
     """ # noqa: E501
-    thing_id: Optional[StrictStr] = None
-    data: Optional[Dict[str, DataList]] = None
-    page_info: Optional[Dict[str, Any]] = None
-    __properties: ClassVar[List[str]] = ["thing_id", "data", "page_info"]
+    timestamps: Optional[List[StrictInt]] = None
+    property_values: Optional[List[PropertyValues]] = None
+    __properties: ClassVar[List[str]] = ["timestamps", "property_values"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +49,7 @@ class TimeSeriesQueryResponse(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of TimeSeriesQueryResponse from a JSON string"""
+        """Create an instance of DataList from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,18 +70,18 @@ class TimeSeriesQueryResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each value in data (dict)
-        _field_dict = {}
-        if self.data:
-            for _key_data in self.data:
-                if self.data[_key_data]:
-                    _field_dict[_key_data] = self.data[_key_data].to_dict()
-            _dict['data'] = _field_dict
+        # override the default output from pydantic by calling `to_dict()` of each item in property_values (list)
+        _items = []
+        if self.property_values:
+            for _item_property_values in self.property_values:
+                if _item_property_values:
+                    _items.append(_item_property_values.to_dict())
+            _dict['property_values'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of TimeSeriesQueryResponse from a dict"""
+        """Create an instance of DataList from a dict"""
         if obj is None:
             return None
 
@@ -90,14 +89,8 @@ class TimeSeriesQueryResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "thing_id": obj.get("thing_id"),
-            "data": dict(
-                (_k, DataList.from_dict(_v))
-                for _k, _v in obj["data"].items()
-            )
-            if obj.get("data") is not None
-            else None,
-            "page_info": obj.get("page_info")
+            "timestamps": obj.get("timestamps"),
+            "property_values": [PropertyValues.from_dict(_item) for _item in obj["property_values"]] if obj.get("property_values") is not None else None
         })
         return _obj
 

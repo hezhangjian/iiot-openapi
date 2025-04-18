@@ -14,7 +14,7 @@
 
 import unittest
 
-from iiot-openapi.api.default_api import DefaultApi
+from iiot_openapi.api.default_api import DefaultApi
 
 
 class TestDefaultApi(unittest.TestCase):

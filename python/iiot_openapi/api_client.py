@@ -26,11 +26,11 @@ from urllib.parse import quote
 from typing import Tuple, Optional, List, Dict, Union
 from pydantic import SecretStr
 
-from iiot-openapi.configuration import Configuration
-from iiot-openapi.api_response import ApiResponse, T as ApiResponseT
-import iiot-openapi.models
-from iiot-openapi import rest
-from iiot-openapi.exceptions import (
+from iiot_openapi.configuration import Configuration
+from iiot_openapi.api_response import ApiResponse, T as ApiResponseT
+import iiot_openapi.models
+from iiot_openapi import rest
+from iiot_openapi.exceptions import (
     ApiValueError,
     ApiException,
     BadRequestException,
@@ -449,7 +449,7 @@ class ApiClient:
             if klass in self.NATIVE_TYPES_MAPPING:
                 klass = self.NATIVE_TYPES_MAPPING[klass]
             else:
-                klass = getattr(iiot-openapi.models, klass)
+                klass = getattr(iiot_openapi.models, klass)
 
         if klass in self.PRIMITIVE_TYPES:
             return self.__deserialize_primitive(data, klass)

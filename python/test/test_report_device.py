@@ -14,7 +14,7 @@
 
 import unittest
 
-from iiot-openapi.models.report_device import ReportDevice
+from iiot_openapi.models.report_device import ReportDevice
 
 class TestReportDevice(unittest.TestCase):
     """ReportDevice unit test stubs"""
@@ -37,7 +37,7 @@ class TestReportDevice(unittest.TestCase):
             return ReportDevice(
                 device_id = '',
                 services = [
-                    iiot-openapi.models.service_data.ServiceData(
+                    iiot_openapi.models.service_data.ServiceData(
                         service_id = '', 
                         event_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         properties = { }, )
@@ -47,7 +47,7 @@ class TestReportDevice(unittest.TestCase):
             return ReportDevice(
                 device_id = '',
                 services = [
-                    iiot-openapi.models.service_data.ServiceData(
+                    iiot_openapi.models.service_data.ServiceData(
                         service_id = '', 
                         event_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                         properties = { }, )

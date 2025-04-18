@@ -33,6 +33,7 @@ paths:
   # Model
   /v5/{project_id}/models:
     post:
+      summary: 创建模型
       operationId: createModel
       tags:
         - Model

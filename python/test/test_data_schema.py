@@ -14,7 +14,7 @@
 
 import unittest
 
-from iiot-openapi.models.data_schema import DataSchema
+from iiot_openapi.models.data_schema import DataSchema
 
 class TestDataSchema(unittest.TestCase):
     """DataSchema unit test stubs"""
@@ -36,16 +36,16 @@ class TestDataSchema(unittest.TestCase):
         if include_optional:
             return DataSchema(
                 type = 'bool',
-                integer_schema = iiot-openapi.models.integer_schema.IntegerSchema(
+                integer_schema = iiot_openapi.models.integer_schema.IntegerSchema(
                     min = 56, 
                     max = 56, ),
-                double_schema = iiot-openapi.models.double_schema.DoubleSchema(
+                double_schema = iiot_openapi.models.double_schema.DoubleSchema(
                     min = 1.337, 
                     max = 1.337, ),
-                string_schema = iiot-openapi.models.string_schema.StringSchema(
+                string_schema = iiot_openapi.models.string_schema.StringSchema(
                     min_length = 56, 
                     max_length = 56, ),
-                object_schema = iiot-openapi.models.string_schema.StringSchema(
+                object_schema = iiot_openapi.models.string_schema.StringSchema(
                     min_length = 56, 
                     max_length = 56, )
             )

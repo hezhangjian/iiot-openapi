@@ -14,7 +14,7 @@
 
 import unittest
 
-from iiot-openapi.models.create_token_req_dto import CreateTokenReqDTO
+from iiot_openapi.models.create_token_req_dto import CreateTokenReqDTO
 
 class TestCreateTokenReqDTO(unittest.TestCase):
     """CreateTokenReqDTO unit test stubs"""
@@ -37,7 +37,7 @@ class TestCreateTokenReqDTO(unittest.TestCase):
             return CreateTokenReqDTO(
                 client_id = '',
                 secret_id = '',
-                project = iiot-openapi.models.project.Project(
+                project = iiot_openapi.models.project.Project(
                     id = '', 
                     name = '', )
             )

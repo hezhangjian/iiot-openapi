@@ -17,21 +17,19 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
-from iiot-openapi.models.time_span import TimeSpan
+from pydantic import BaseModel, ConfigDict, StrictStr
+from typing import Any, ClassVar, Dict, List
+from iiot_openapi.models.service_data import ServiceData
 from typing import Optional, Set
 from typing_extensions import Self
 
-class TimeSeriesQueryRequest(BaseModel):
+class ReportDevice(BaseModel):
     """
-    TimeSeriesQueryRequest
+    ReportDevice
     """ # noqa: E501
-    property_paths: List[StrictStr]
-    time_span: TimeSpan
-    limit: Optional[StrictInt] = None
-    marker: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["property_paths", "time_span", "limit", "marker"]
+    device_id: StrictStr
+    services: List[ServiceData]
+    __properties: ClassVar[List[str]] = ["device_id", "services"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -51,7 +49,7 @@ class TimeSeriesQueryRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of TimeSeriesQueryRequest from a JSON string"""
+        """Create an instance of ReportDevice from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -72,14 +70,18 @@ class TimeSeriesQueryRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of time_span
-        if self.time_span:
-            _dict['time_span'] = self.time_span.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in services (list)
+        _items = []
+        if self.services:
+            for _item_services in self.services:
+                if _item_services:
+                    _items.append(_item_services.to_dict())
+            _dict['services'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of TimeSeriesQueryRequest from a dict"""
+        """Create an instance of ReportDevice from a dict"""
         if obj is None:
             return None
 
@@ -87,10 +89,8 @@ class TimeSeriesQueryRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "property_paths": obj.get("property_paths"),
-            "time_span": TimeSpan.from_dict(obj["time_span"]) if obj.get("time_span") is not None else None,
-            "limit": obj.get("limit"),
-            "marker": obj.get("marker")
+            "device_id": obj.get("device_id"),
+            "services": [ServiceData.from_dict(_item) for _item in obj["services"]] if obj.get("services") is not None else None
         })
         return _obj
 

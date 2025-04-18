@@ -14,7 +14,7 @@
 
 import unittest
 
-from iiot-openapi.models.datasource_report_request import DatasourceReportRequest
+from iiot_openapi.models.datasource_report_request import DatasourceReportRequest
 
 class TestDatasourceReportRequest(unittest.TestCase):
     """DatasourceReportRequest unit test stubs"""
@@ -36,10 +36,10 @@ class TestDatasourceReportRequest(unittest.TestCase):
         if include_optional:
             return DatasourceReportRequest(
                 devices = [
-                    iiot-openapi.models.report_device.ReportDevice(
+                    iiot_openapi.models.report_device.ReportDevice(
                         device_id = '', 
                         services = [
-                            iiot-openapi.models.service_data.ServiceData(
+                            iiot_openapi.models.service_data.ServiceData(
                                 service_id = '', 
                                 event_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 properties = { }, )
@@ -49,10 +49,10 @@ class TestDatasourceReportRequest(unittest.TestCase):
         else:
             return DatasourceReportRequest(
                 devices = [
-                    iiot-openapi.models.report_device.ReportDevice(
+                    iiot_openapi.models.report_device.ReportDevice(
                         device_id = '', 
                         services = [
-                            iiot-openapi.models.service_data.ServiceData(
+                            iiot_openapi.models.service_data.ServiceData(
                                 service_id = '', 
                                 event_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
                                 properties = { }, )
