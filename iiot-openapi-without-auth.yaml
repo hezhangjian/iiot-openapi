@@ -26,6 +26,32 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Model'
+    get:
+      summary: 分页查询模型列表
+      operationId: listModels
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Limit'
+      - name: order
+        in: query
+        schema:
+          type: string
+      - name: model_name
+        in: query
+        schema:
+          type: string
+      - name: type
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListModelsResp'
   /v5/{project_id}/models/{model_id}:
     get:
       summary: 查询单个模型内容
@@ -49,6 +75,19 @@ paths:
       responses:
         '204':
           description: Deleted
+    put:
+      summary: 修改模型
+      operationId: updateModel
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ModelId'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Model'
   /v5/{project_id}/things:
     post:
       operationId: createThing
@@ -67,6 +106,31 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Thing'
+    get:
+      operationId: listThings
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Limit'
+      - name: model_id
+        in: query
+        schema:
+          type: string
+      - name: thing_name
+        in: query
+        schema:
+          type: string
+      - name: order
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListThingsResp'
   /v5/{project_id}/things/{thing_id}:
     get:
       operationId: getThing
@@ -88,6 +152,93 @@ paths:
       responses:
         '204':
           description: Deleted
+    put:
+      operationId: updateThing
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ThingId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateThingRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Thing'
+  /v5/{project_id}/things/{thing_id}/properties/set:
+    post:
+      summary: 设置物实例关联的设备属性
+      operationId: setThingProperties
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ThingId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ComponentProperty'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PropertiesSetResp'
+  /v5/{project_id}/things/{thing_id}/properties/get:
+    post:
+      summary: 获取单个实例关联的设备属性值
+      operationId: getThingProperties
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ThingId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PropertiesGetReq'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PropertiesGetResp'
+  /v5/{project_id}/things/{thing_id}/snapshot:
+    get:
+      summary: 查询物实例快照
+      operationId: listThingSnapshot
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ThingId'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListSnapshotResp'
+  /v5/{project_id}/snapshots/get:
+    post:
+      summary: 批量查询物实例快照
+      operationId: batchListSnapshots
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BatchListThingSnapshotsReq'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BatchListThingSnapshotsResp'
   /v5/{project_id}/things/{thing_id}/time-series/query:
     post:
       summary: 查询 Thing 的属性历史值
@@ -133,6 +284,764 @@ paths:
           description: 未授权
         '500':
           description: 服务内部错误
+  /v5/{project_id}/tables:
+    post:
+      summary: 创建表
+      operationId: createTable
+      tags:
+      - Table
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTableRequest'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TableInfo'
+    get:
+      summary: 查询表列表
+      operationId: listTables
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Limit'
+      - name: catalog_id
+        in: query
+        schema:
+          type: string
+      - name: table_name
+        in: query
+        schema:
+          type: string
+      - name: type
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListTablesResp'
+  /v5/{project_id}/tables/{table_id}:
+    get:
+      summary: 查询表详情
+      operationId: showTable
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/TableId'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TableInfo'
+    delete:
+      summary: 删除表
+      operationId: deleteTable
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/TableId'
+      responses:
+        '204':
+          description: Deleted
+    put:
+      summary: 修改表
+      operationId: updateTable
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/TableId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateTableRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TableInfo'
+  /v5/{project_id}/tables/{table_id}/records/save:
+    post:
+      summary: 保存表记录
+      operationId: saveRecords
+      tags:
+      - Record
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/TableId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SaveRecordsRequest'
+      responses:
+        '204':
+          description: Ok
+  /v5/{project_id}/tables/{table_id}/records/query:
+    post:
+      summary: 查询表记录
+      operationId: listRecords
+      tags:
+      - Record
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/TableId'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Limit'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ListRecordsRequest'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TableRecords'
+  /v5/{project_id}/tables/{table_id}/records/delete:
+    post:
+      summary: 删除表记录
+      operationId: deleteRecords
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/TableId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteRecordsRequest'
+      responses:
+        '204':
+          description: Deleted
+  /v5/{project_id}/tables/{table_id}/records/sync:
+    get:
+      summary: 同步表记录
+      operationId: syncRecords
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/TableId'
+      - name: update_time
+        in: query
+        schema:
+          type: string
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: marker
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MarkerTableRecords'
+  /v5/{project_id}/devices:
+    get:
+      summary: 查询设备列表
+      operationId: listDevices
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Limit'
+      - name: device_type
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: order
+        in: query
+        schema:
+          type: string
+      - name: model_id
+        in: query
+        schema:
+          type: string
+      - name: device_name
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListDevicesDTO'
+    post:
+      summary: 创建设备
+      operationId: createDevice
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDeviceReqDTO'
+      responses:
+        '201':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateDeviceRespDTO'
+  /v5/{project_id}/devices/{device_id}:
+    get:
+      summary: 获取指定设备
+      operationId: showDevice
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/DeviceId'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetDeviceRespDTO'
+    put:
+      summary: 修改指定设备
+      operationId: updateDevice
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/DeviceId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateDeviceDTO'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetDeviceRespDTO'
+    delete:
+      summary: 修改指定设备
+      operationId: updateDevice
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/DeviceId'
+      responses:
+        '204':
+          description: Deleted
+  /v5/{project_id}/devices/{device_id}/things:
+    get:
+      summary: 获取指定设备下实例列表
+      operationId: listThingsInDevice
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/DeviceId'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Limit'
+      - name: order
+        in: query
+        schema:
+          type: string
+      - name: model_id
+        in: query
+        schema:
+          type: string
+      - name: thing_id
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThingListDTO'
+    post:
+      summary: 绑定设备与实例
+      operationId: attachThingToDevice
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/DeviceId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AttachThingReqDTO'
+      responses:
+        '200':
+          description: OK
+  /v5/{project_id}/devices/{device_id}/things/{thing_id}:
+    delete:
+      summary: 删除设备与实例绑定关系
+      operationId: detachDeviceAndThing
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/DeviceId'
+      - $ref: '#/components/parameters/ThingId'
+      responses:
+        '204':
+          description: Deleted
+  /v5/{project_id}/analysis-tasks:
+    get:
+      summary: 根据条件查询分析任务列表
+      operationId: listAnalysisTaskPage
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Limit'
+      - name: event_class
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: task_name
+        in: query
+        schema:
+          type: string
+      - name: model_name
+        in: query
+        schema:
+          type: string
+      - name: enabled
+        in: query
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListAnalysisTaskPageRsp'
+  /v5/{project_id}/models/{model_id}/analysis-tasks:
+    get:
+      summary: 查询模型下分析任务列表
+      operationId: listAnalysisTasks
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ModelId'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalysisTaskListRsp'
+    post:
+      summary: 创建单个分析任务
+      operationId: createAnalysisTask
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ModelId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAnalysisTaskReq'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalysisTask'
+  /v5/{project_id}/models/{model_id}/analysis-tasks/{task_id}:
+    get:
+      summary: 查询单个分析任务信息
+      operationId: showAnalysisTask
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ModelId'
+      - $ref: '#/components/parameters/TaskId'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalysisTask'
+    put:
+      summary: 更新单个分析任务信息
+      operationId: updateAnalysisTask
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ModelId'
+      - $ref: '#/components/parameters/TaskId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateAnalysisTaskReq'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalysisTask'
+    delete:
+      summary: 删除单个分析任务
+      operationId: deleteAnalysisTask
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ModelId'
+      - $ref: '#/components/parameters/TaskId'
+      responses:
+        '204':
+          description: Deleted
+  /v5/{project_id}/views:
+    post:
+      summary: 创建视图
+      operationId: createView
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateViewReq'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/View'
+    get:
+      summary: 查询视图列表
+      operationId: listViews
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListViewsResp'
+  /v5/{project_id}/views/{view_id}:
+    get:
+      summary: 查询视图详情
+      operationId: showView
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ViewId'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/View'
+    put:
+      summary: 修改视图
+      operationId: updateView
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ViewId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateViewReq'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/View'
+    delete:
+      summary: 删除视图
+      operationId: deleteView
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ViewId'
+      responses:
+        '204':
+          description: Deleted
+  /v5/{project_id}/views/{view_id}/nodes/add:
+    post:
+      summary: 添加视图节点
+      operationId: addViewNodes
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ViewId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddViewNodesReq'
+      responses:
+        '204':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/View'
+  /v5/{project_id}/views/{view_id}/nodes/query:
+    post:
+      summary: 查询视图节点
+      operationId: showViewNodes
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ViewId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QueryViewNodesReq'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QueryViewNodesRsp'
+  /v5/{project_id}/views/{view_id}/nodes/delete:
+    post:
+      summary: 删除视图节点
+      operationId: deleteViewNodes
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ViewId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteViewNodesReq'
+      responses:
+        '204':
+          description: Deleted
+  /v5/{project_id}/views/{view_id}/nodes/modify:
+    post:
+      summary: 修改视图节点
+      operationId: modifyViewNodes
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ViewId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModifyViewNodesReq'
+      responses:
+        '204':
+          description: OK
+  /v5/{project_id}/views/{view_id}/data:
+    get:
+      summary: 查询视图数据
+      operationId: modifyViewNodes
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ViewId'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ViewData'
+  /v5/{project_id}/dictionaries:
+    post:
+      summary: 创建字典
+      operationId: modifyViewNodes
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDictionaryReq'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dictionary'
+    get:
+      summary: 查询字典列表
+      operationId: listDictionaries
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Limit'
+      - name: catalog_id
+        in: query
+        schema:
+          type: string
+      - name: dic_name
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListDictionariesResp'
+  /v5/{project_id}/dictionaries/{dic_id}:
+    get:
+      summary: 查询字典详情
+      operationId: showDictionary
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/DicId'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dictionary'
+    put:
+      summary: 修改字典
+      operationId: updateDictionary
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/DicId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateDictionaryReq'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dictionary'
+    delete:
+      summary: 删除字典
+      operationId: deleteDictionary
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/DicId'
+      responses:
+        '204':
+          description: Deleted
+  /v5/{project_id}/catalogs:
+    post:
+      summary: 创建目录
+      operationId: createCatalog
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCatalogReq'
+      responses:
+        '201':
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Catalog'
+    put:
+      summary: 批量修改目录
+      operationId: updateCatalogs
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCatalogsReq'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateCatalogsResp'
+    get:
+      summary: 查询目录列表
+      operationId: listCatalogs
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Limit'
+      - name: parent_id
+        in: query
+        schema:
+          type: string
+      - name: catalog_name
+        in: query
+        schema:
+          type: string
+      - name: type
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListCatalogsResp'
+  /v5/{project_id}/catalogs/{catalog_id}:
+    get:
+      summary: 查询目录详情
+      operationId: showCatalog
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/CatalogId'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Catalog'
+    put:
+      summary: 修改目录
+      operationId: updateCatalog
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/CatalogId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCatalogReq'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Catalog'
+    delete:
+      summary: 删除目录
+      operationId: deleteCatalog
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/DicId'
+      responses:
+        '204':
+          description: Deleted
 components:
   parameters:
     ProjectId:
@@ -153,12 +1062,53 @@ components:
       required: true
       schema:
         type: string
+    TableId:
+      name: table_id
+      in: path
+      required: true
+      schema:
+        type: string
+    DeviceId:
+      name: device_id
+      in: path
+      schema:
+        type: string
+    TaskId:
+      name: task_id
+      in: path
+      schema:
+        type: string
+    ViewId:
+      name: view_id
+      in: path
+      schema:
+        type: string
+    DicId:
+      name: dic_id
+      in: path
+      schema:
+        type: string
+    CatalogId:
+      name: catalog_id
+      in: path
+      schema:
+        type: string
     DatasourceId:
       name: datasource_id
       in: path
       required: true
       schema:
         type: string
+    Offset:
+      name: offset
+      in: query
+      schema:
+        type: integer
+    Limit:
+      name: limit
+      in: query
+      schema:
+        type: integer
   schemas:
     CreateModelRequest:
       type: object
@@ -194,6 +1144,35 @@ components:
             type: string
           update_time:
             type: string
+    ListModelsResp:
+      type: object
+      properties:
+        models:
+          type: array
+          items:
+            $ref: '#/components/schemas/BriefModel'
+        count:
+          type: integer
+    BriefModel:
+      type: object
+      properties:
+        model_id:
+          type: string
+        model_name:
+          type: string
+        description:
+          type: string
+        type:
+          type: string
+          enum:
+          - local
+          - cascade
+        sync_count:
+          type: integer
+        create_time:
+          type: string
+        update_time:
+          type: string
     ComponentDto:
       type: object
       required:
@@ -323,6 +1302,77 @@ components:
           type: object
           additionalProperties:
             $ref: '#/components/schemas/PropertyValue'
+    UpdateThingRequest:
+      type: object
+      properties:
+        thing_name:
+          type: string
+        tags:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/PropertyValue'
+        properties:
+          type: object
+          $ref: '#/components/schemas/ReferenceConfDetails'
+        components:
+          type: object
+          $ref: '#/components/schemas/ComponentReferenceConfDetails'
+        create_time:
+          type: string
+        update_time:
+          type: string
+    ReferenceConfDetails:
+      type: object
+      properties:
+        property_ref:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/PropertyRef'
+        value:
+          type: object
+        update_time:
+          type: string
+    ComponentReferenceConfDetails:
+      type: object
+      properties:
+        properties:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/ReferenceConfDetails'
+        components:
+          type: object
+          $ref: '#/components/schemas/ComponentReferenceConfDetails'
+    PropertyRef:
+      type: object
+      properties:
+        thing_id:
+          type: string
+        property_path:
+          type: string
+    ListThingsResp:
+      type: object
+      properties:
+        things:
+          type: array
+          items:
+            $ref: '#/components/schemas/BriefThing'
+        count:
+          type: integer
+    BriefThing:
+      type: object
+      properties:
+        thing_id:
+          type: string
+        thing_name:
+          type: string
+        model_id:
+          type: string
+        model_name:
+          type: string
+        create_time:
+          type: string
+        update_time:
+          type: string
     Thing:
       type: object
       allOf:
@@ -350,6 +1400,23 @@ components:
           - object
           - string
           - time
+    PropertyValueObject:
+      type: object
+      required:
+      - value
+      - object
+      properties:
+        value:
+          type: string
+        object:
+          type: object
+    PropertyValueTime:
+      type: object
+      properties:
+        value:
+          type: object
+        time:
+          type: string
     DatasourceReportRequest:
       type: object
       required:
@@ -451,3 +1518,1206 @@ components:
           type: array
           items:
             type: string
+    CreateTableRequest:
+      type: object
+      required:
+      - table_id
+      - table_name
+      - type
+      - table_schema
+      properties:
+        table_id:
+          type: string
+        table_name:
+          type: string
+        type:
+          type: string
+        catalog_id:
+          type: string
+        description:
+          type: string
+        table_schema:
+          $ref: '#/components/schemas/TableSchema'
+        aging_settings:
+          $ref: '#/components/schemas/AgingSettings'
+    TableSchema:
+      type: object
+      required:
+      - columns
+      - primary_key
+      properties:
+        columns:
+          type: array
+          items:
+            $ref: '#/components/schemas/ColumnSchema'
+        primary_key:
+          type: array
+          items:
+            type: string
+        indexes:
+          type: array
+          items:
+            $ref: '#/components/schemas/IndexSchema'
+    ColumnSchema:
+      type: object
+      required:
+      - id
+      - name
+      - data_schema
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        dic_id:
+          type: string
+        data_schema:
+          type: array
+          items:
+            $ref: '#/components/schemas/DataSchema'
+    IndexSchema:
+      type: object
+      required:
+      - name
+      - columns_ids
+      properties:
+        name:
+          type: string
+        columns_ids:
+          type: array
+          items:
+            type: string
+    AgingSettings:
+      type: object
+      properties:
+        retention_period:
+          type: string
+    TableInfo:
+      allOf:
+      - $ref: '#/components/schemas/CreateTableRequest'
+      - type: object
+        properties:
+          create_time:
+            type: string
+          update_time:
+            type: string
+          original_reports:
+            $ref: '#/components/schemas/OriginalReports'
+          integrated_reports:
+            $ref: '#/components/schemas/IntegratedReports'
+          itstat_reports:
+            $ref: '#/components/schemas/ITStatReports'
+          otstat_reports:
+            $ref: '#/components/schemas/OtstatReports'
+    OriginalReports:
+      type: object
+      properties:
+        sync_time:
+          type: string
+        aging_time:
+          type: string
+    IntegratedReports:
+      type: object
+      properties:
+        integrated_time:
+          type: string
+        aging_time:
+          type: string
+        integrated_status:
+          type: string
+        integrated_result:
+          type: string
+    ITStatReports:
+      type: object
+      properties:
+        stat_time:
+          type: string
+        aging_time:
+          type: string
+        stat_status:
+          type: string
+        stat_result:
+          type: string
+    OtstatReports:
+      type: object
+      properties:
+        stat_time:
+          type: string
+        aging_time:
+          type: string
+        stat_status:
+          type: string
+        stat_result:
+          type: string
+    UpdateTableRequest:
+      type: object
+      properties:
+        table_name:
+          type: string
+        catalog_id:
+          type: string
+        description:
+          type: string
+        table_schema:
+          $ref: '#/components/schemas/UpdateTableSchema'
+        aging_settings:
+          $ref: '#/components/schemas/AgingSettings'
+    UpdateTableSchema:
+      type: object
+      required:
+      - columns
+      properties:
+        columns:
+          type: array
+          items:
+            $ref: '#/components/schemas/UpdateColumnSchema'
+    UpdateColumnSchema:
+      type: object
+      required:
+      - id
+      - name
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    ListTablesResp:
+      type: object
+      properties:
+        count:
+          type: integer
+        tables:
+          type: array
+          items:
+            $ref: '#/components/schemas/BriefTable'
+    BriefTable:
+      type: object
+      properties:
+        table_id:
+          type: string
+        table_name:
+          type: string
+        type:
+          type: string
+        catalog_id:
+          type: string
+        description:
+          type: string
+        create_time:
+          type: string
+        update_time:
+          type: string
+        original_reports:
+          $ref: '#/components/schemas/OriginalReports'
+        integrated_reports:
+          $ref: '#/components/schemas/IntegratedReports'
+        itstat_reports:
+          $ref: '#/components/schemas/ITStatReports'
+        otstat_reports:
+          $ref: '#/components/schemas/OtstatReports'
+        process_settings:
+          $ref: '#/components/schemas/BriefProcessSettings'
+    BriefProcessSettings:
+      type: object
+      required:
+      - enabled
+      - schedule_type
+      - period
+      properties:
+        enabled:
+          type: boolean
+        schedule_type:
+          type: string
+        period:
+          type: string
+    SaveRecordsRequest:
+      type: object
+      properties:
+        columns:
+          type: array
+          items:
+            type: string
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/RecordValues'
+        column_values:
+          type: array
+          items:
+            type: object
+    RecordValues:
+      type: array
+      items:
+        type: object
+    ListRecordsRequest:
+      type: object
+      properties:
+        index_columns:
+          type: array
+          items:
+            $ref: '#/components/schemas/RecordFilter'
+    RecordFilter:
+      type: object
+      properties:
+        column_id:
+          type: string
+        operator:
+          type: string
+        value:
+          type: object
+    TableRecords:
+      type: object
+      properties:
+        count:
+          type: integer
+        columns:
+          type: array
+          items:
+            type: string
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/RecordValues'
+    DeleteRecordsRequest:
+      type: object
+      required:
+      - primary_key
+      - values
+      properties:
+        primary_key:
+          type: array
+          items:
+            type: string
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/RecordValues'
+    MarkerTableRecords:
+      type: object
+      properties:
+        page_info:
+          $ref: '#/components/schemas/PageInfo'
+        columns:
+          type: array
+          items:
+            type: string
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/RecordValues'
+    PageInfo:
+      type: object
+      properties:
+        next_marker:
+          type: string
+    ComponentProperty:
+      type: object
+      properties:
+        properties:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/PropertyValueObject'
+        components:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/ComponentProperty'
+    PropertiesSetResp:
+      type: object
+      properties:
+        result_code:
+          type: integer
+        result_desc:
+          type: string
+    PropertiesGetReq:
+      type: object
+      properties:
+        properties:
+          type: array
+          items:
+            type: string
+        components:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/PropertiesGetReq'
+    PropertiesGetResp:
+      type: object
+      properties:
+        properties:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/PropertyValueObject'
+        components:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/ComponentProperty'
+        result_code:
+          type: integer
+        result_desc:
+          type: string
+    ListSnapshotResp:
+      type: object
+      properties:
+        properties:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/PropertyValueTime'
+        components:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/ListSnapshotResp'
+    BatchListThingSnapshotsReq:
+      type: object
+      required:
+      - things
+      properties:
+        things:
+          type: array
+          items:
+            type: object
+            required:
+            - thing_id
+            properties:
+              type: array
+              itmes:
+                type: string
+            components:
+              type: object
+              additionalProperties:
+                $ref: '#/components/schemas/PropertiesGetReq'
+    BatchListThingSnapshotsResp:
+      type: object
+      properties:
+        things:
+          type: array
+          items:
+            type: object
+            properties:
+              thing_id:
+                type: string
+              properties:
+                type: object
+                additionalProperties:
+                  $ref: '#/components/schemas/PropertyValueTime'
+              components:
+                type: object
+                additionalProperties:
+                  $ref: '#/components/schemas/ListSnapshotResp'
+    ListDevicesDTO:
+      type: object
+      properties:
+        devices:
+          type: array
+          items:
+            $ref: '#/components/schemas/DeviceDTO'
+        count:
+          type: integer
+    DeviceDTO:
+      type: object
+      properties:
+        device_id:
+          type: string
+        device_name:
+          type: string
+        device_type:
+          type: string
+        device_status:
+          type: string
+        thing_name:
+          type: string
+        model_id:
+          type: string
+        model_name:
+          type: string
+        create_time:
+          type: string
+        update_time:
+          type: string
+    CreateDeviceReqDTO:
+      type: object
+      required:
+      - device_id
+      - device_name
+      - device_type
+      properties:
+        device_id:
+          type: string
+        device_name:
+          type: string
+        device_type:
+          type: string
+    CreateDeviceRespDTO:
+      type: object
+      properties:
+        device_id:
+          type: string
+        device_name:
+          type: string
+        device_type:
+          type: string
+        auth_info:
+          $ref: '#/components/schemas/AuthInfoDTO'
+        create_time:
+          type: string
+        update_time:
+          type: string
+    AuthInfoDTO:
+      type: object
+      properties:
+        secret:
+          type: string
+    GetDeviceRespDTO:
+      type: object
+      properties:
+        device_id:
+          type: string
+        device_name:
+          type: string
+        device_type:
+          type: string
+        device_status:
+          type: string
+        create_time:
+          type: string
+        update_time:
+          type: string
+    UpdateDeviceDTO:
+      type: object
+      properties:
+        device_name:
+          type: string
+    ThingListDTO:
+      type: object
+      properties:
+        things:
+          type: array
+          items:
+            $ref: '#/components/schemas/ThingDTO'
+        count:
+          type: integer
+    ThingDTO:
+      type: object
+      properties:
+        thing_id:
+          type: string
+        thing_name:
+          type: string
+        model_id:
+          type: string
+        model_name:
+          type: string
+    AttachThingReqDTO:
+      type: object
+      required:
+      - thing_id
+      properties:
+        thing_id:
+          type: string
+    ListAnalysisTaskPageRsp:
+      type: object
+      properties:
+        tasks:
+          type: array
+          items:
+            $ref: '#/components/schemas/BriefAnalysisTask'
+        count:
+          type: integer
+    BriefAnalysisTask:
+      type: object
+      properties:
+        task_id:
+          type: string
+        task_name:
+          type: string
+        calc_type:
+          type: string
+        schedule_type:
+          type: string
+        period:
+          type: string
+        enabled:
+          type: boolean
+        event_class_id:
+          type: string
+        event_class_name:
+          type: string
+        model_id:
+          type: string
+        model_name:
+          type: string
+        create_time:
+          type: string
+        update_time:
+          type: string
+    AnalysisTaskListRsp:
+      type: object
+      properties:
+        tasks:
+          type: array
+          items:
+            $ref: '#/components/schemas/BriefAnalysisTask'
+    CleanAnalysisSettingsDto:
+      type: object
+      properties:
+        clean_settings:
+          $ref: '#/components/schemas/CleanSettings'
+    CleanSettings:
+      type: object
+      required:
+      - expressions
+      properties:
+        condition:
+          type: string
+        expressions:
+          tyep: array
+          items:
+            $ref: '#/components/schemas/Expression'
+    Expression:
+      type: object
+      required:
+      - name
+      - expression
+      properties:
+        name:
+          type: string
+        condition:
+          type: string
+        expression:
+          type: string
+        property_path:
+          type: string
+    EventGenAnalysisSettingsDto:
+      type: object
+      properties:
+        event_class:
+          type: string
+        event_gen_settings:
+          $ref: '#/components/schemas/EventGenSetting'
+    EventTrigger:
+      type: object
+      required:
+      - condition
+      properties:
+        condition:
+          type: string
+        duratioin:
+          type: string
+    EventGenSetting:
+      type: object
+      required:
+      - expressions
+      properties:
+        start_trigger:
+          $ref: '#/components/schemas/EventTrigger'
+        end_trigger:
+          $ref: '#/components/schemas/EventTrigger'
+        expressions:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventGenExpression'
+        outputs:
+          $ref: '#/components/schemas/EventGenOutput'
+        subevents:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubEventGenSetting'
+    SubEventGenSetting:
+      type: object
+      required:
+      - name
+      - start_trigger
+      properties:
+        name:
+          type: string
+        start_trigger:
+          $ref: '#/components/schemas/EventTrigger'
+        end_trigger:
+          $ref: '#/components/schemas/EventTrigger'
+        expressions:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventGenExpression'
+        outputs:
+          $ref: '#/components/schemas/EventGenOutput'
+    EventGenOutput:
+      type: object
+      required:
+      - columns
+      properties:
+        columns:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventOutputExpression'
+    EventOutputExpression:
+      type: object
+      required:
+      - expression
+      - column_id
+      properties:
+        expression:
+          type: string
+        column_id:
+          type: string
+    EventGenExpression:
+      type: object
+      required:
+      - name
+      - expression
+      properties:
+        name:
+          type: string
+        class:
+          type: string
+        condition:
+          type: string
+        expression:
+          type: string
+        triggers:
+          type: array
+          items:
+            type: string
+    ComplexAnalysisSettingsDto:
+      type: object
+      properties:
+        complex_settings:
+          $ref: '#/components/schemas/ComplexSetting'
+    ComplexSetting:
+      type: object
+      required:
+      - expressions
+      - outputs
+      properties:
+        start_trigger:
+          $ref: '#/components/schemas/EventTrigger'
+        end_trigger:
+          $ref: '#/components/schemas/EventTrigger'
+        expressions:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventGenExpression'
+        outputs:
+          $ref: '#/components/schemas/PropGenOutput'
+        subevents:
+          type: array
+          items:
+            $ref: '#/components/schemas/SubEventPropSetting'
+    PropGenOutput:
+      type: object
+      required:
+      - properties
+      properties:
+        properties:
+          type: array
+          items:
+            $ref: '#/components/schemas/PropOutputExpression'
+    PropOutputExpression:
+      type: object
+      required:
+      - expression
+      - property_path
+      properties:
+        expression:
+          type: string
+        property_path:
+          type: string
+    SubEventPropSetting:
+      type: object
+      required:
+      - name
+      - start_trigger
+      properties:
+        name:
+          type: string
+        start_trigger:
+          $ref: '#/components/schemas/EventTrigger'
+        end_trigger:
+          $ref: '#/components/schemas/EventTrigger'
+        expressions:
+          type: array
+          items:
+            $ref: '#/components/schemas/EventGenExpression'
+    ExpressionAnalysisSettingsDto:
+      type: object
+      properties:
+        expression_settings:
+          $ref: '#/components/schemas/ExpressionSettings'
+    ExpressionSettings:
+      type: object
+      required:
+      - expressions
+      properties:
+        condition:
+          type: string
+        expressions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Expression'
+    CreateAnalysisTaskReq:
+      type: object
+      required:
+      - task_name
+      - enabled
+      - calc_type
+      - schedule_type
+      allOf:
+      - $ref: '#/components/schemas/CleanAnalysisSettingsDto'
+      - $ref: '#/components/schemas/EventGenAnalysisSettingsDto'
+      - $ref: '#/components/schemas/ComplexAnalysisSettingsDto'
+      - $ref: '#/components/schemas/ExpressionAnalysisSettingsDto'
+      - properties:
+          task_name:
+            type: string
+          enabled:
+            type: boolean
+          calc_type:
+            type: string
+          schedule_type:
+            type: string
+          period:
+            type: string
+          tag_matchers:
+            type: array
+            items:
+              $ref: '#/components/schemas/TagMatcher'
+    TagMatcher:
+      type: object
+      required:
+      - match
+      - name
+      - values
+      properties:
+        match:
+          type: string
+        name:
+          type: string
+        values:
+          type: array
+          items:
+            type: string
+    AnalysisTask:
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/CleanAnalysisSettingsDto'
+      - $ref: '#/components/schemas/EventGenAnalysisSettingsDto'
+      - $ref: '#/components/schemas/ComplexAnalysisSettingsDto'
+      - $ref: '#/components/schemas/ExpressionAnalysisSettingsDto'
+      - properties:
+          task_id:
+            type: string
+          task_name:
+            type: string
+          enabled:
+            type: boolean
+          calc_type:
+            type: string
+          schedule_type:
+            type: string
+          period:
+            type: string
+          tag_matchers:
+            type: array
+            items:
+              $ref: '#/components/schemas/TagMatcher'
+          create_time:
+            type: string
+          update_time:
+            type: string
+    UpdateAnalysisTaskReq:
+      type: object
+      allOf:
+      - $ref: '#/components/schemas/CleanAnalysisSettingsDto'
+      - $ref: '#/components/schemas/EventGenAnalysisSettingsDto'
+      - $ref: '#/components/schemas/ComplexAnalysisSettingsDto'
+      - $ref: '#/components/schemas/ExpressionAnalysisSettingsDto'
+      - properties:
+          task_name:
+            type: string
+          enabled:
+            type: boolean
+          period:
+            type: string
+          tag_matchers:
+            type: array
+            items:
+              $ref: '#/components/schemas/TagMatcher'
+          condition:
+            type: string
+          expressions:
+            type: array
+            items:
+              $ref: '#/components/schemas/Expression'
+    CreateViewReq:
+      type: object
+      required:
+      - view_id
+      - view_name
+      properties:
+        view_id:
+          type: string
+        view_name:
+          type: string
+        description:
+          type: string
+    ViewLevel:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    View:
+      type: object
+      properties:
+        view_id:
+          type: string
+        view_name:
+          type: string
+        description:
+          type: string
+        levels:
+          type: array
+          items:
+            $ref: '#/components/schemas/ViewLevel'
+        create_time:
+          type: string
+        update_time:
+          type: string
+    BriefView:
+      type: object
+      properties:
+        view_id:
+          type: string
+        view_name:
+          type: string
+        description:
+          type: string
+        create_time:
+          type: string
+        update_time:
+          type: string
+    ListViewsResp:
+      type: object
+      properties:
+        views:
+          type: array
+          items:
+            $ref: '#/components/schemas/BriefView'
+        count:
+          type: integer
+    UpdateViewReq:
+      type: object
+      properties:
+        view_name:
+          type: string
+        description:
+          type: string
+        levels:
+          type: array
+          items:
+            $ref: '#/components/schemas/ViewLevel'
+    CatalogNode:
+      type: object
+      required:
+      - level_id
+      - node_id
+      - node_name
+      - display_order
+      properties:
+        level_id:
+          type: string
+        node_id:
+          type: string
+        node_name:
+          type: string
+        display_order:
+          type: integer
+    ThingNode:
+      type: object
+      required:
+      - thing_id
+      properties:
+        thing_id:
+          type: string
+    AddViewNodesReq:
+      type: object
+      properties:
+        parent_id:
+          type: string
+        catalog_node:
+          $ref: '#/components/schemas/CatalogNode'
+        thing_nodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ThingNode'
+    QueryViewNodesReq:
+      type: object
+      properties:
+        node_id:
+          type: string
+    EnrichedCatalogNode:
+      type: object
+      properties:
+        level_id:
+          type: string
+        node_id:
+          type: string
+        node_name:
+          type: string
+        display_order:
+          type: integer
+        create_time:
+          type: string
+        update_time:
+          type: string
+    EnrichedThingNode:
+      type: object
+      properties:
+        thing_id:
+          type: string
+        thing_name:
+          type: string
+        model_id:
+          type: string
+        create_time:
+          type: string
+        update_time:
+          type: string
+    QueryViewNodesRsp:
+      type: object
+      properties:
+        level_id:
+          type: string
+        node_id:
+          type: string
+        node_name:
+          type: string
+        display_order:
+          type: integer
+        create_time:
+          type: string
+        update_time:
+          type: string
+        catalog_nodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnrichedCatalogNode'
+        thing_nodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/EnrichedThingNode'
+    DeleteViewNodesReq:
+      type: object
+      properties:
+        node_id:
+          type: string
+        thing_id:
+          type: string
+    ModifyCatalogNode:
+      type: object
+      required:
+      - node_id
+      properties:
+        node_id:
+          type: string
+        node_name:
+          type: string
+        display_order:
+          type: integer
+    ModifyViewNodesReq:
+      type: object
+      required:
+      - catalog_nodes
+      properties:
+        catalog_nodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/ModifyCatalogNode'
+    viewRowData:
+      type: array
+      items:
+        type: string
+    ViewData:
+      type: object
+      properties:
+        count:
+          type: integer
+        columns:
+          type: array
+          items:
+            type: string
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/viewRowData'
+    DicItem:
+      type: object
+      required:
+      - value
+      - name
+      properties:
+        value:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+    CreateDictionaryReq:
+      type: object
+      required:
+      - dic_id
+      - dic_name
+      - data_type
+      - catalog_id
+      - values
+      properties:
+        dic_id:
+          type: string
+        dic_name:
+          type: string
+        data_type:
+          type: string
+        catalog_id:
+          type: string
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/DicItem'
+    Dictionary:
+      type: object
+      required:
+      - dic_id
+      - dic_name
+      - data_type
+      - catalog_id
+      - values
+      - create_time
+      - update_time
+      properties:
+        dic_id:
+          type: string
+        dic_name:
+          type: string
+        data_type:
+          type: string
+        catalog_id:
+          type: string
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/DicItem'
+        create_time:
+          type: string
+        update_time:
+          type: string
+    BriefDictionary:
+      type: object
+      properties:
+        dic_id:
+          type: string
+        dic_name:
+          type: string
+        data_type:
+          type: string
+        catalog_id:
+          type: string
+        create_time:
+          type: string
+        update_time:
+          type: string
+    ListDictionariesResp:
+      type: object
+      properties:
+        dictionaries:
+          type: array
+          items:
+            $ref: '#/components/schemas/BriefDictionary'
+        count:
+          type: integer
+    UpdateDictionaryReq:
+      type: object
+      properties:
+        dic_name:
+          type: string
+        catalog_id:
+          type: string
+        values:
+          type: array
+          items:
+            $ref: '#/components/schemas/DicItem'
+    CreateCatalogReq:
+      type: object
+      required:
+      - catalog_id
+      - catalog_name
+      - type
+      - display_order
+      - parent_id
+      properties:
+        catalog_id:
+          type: string
+        catalog_name:
+          type: string
+        type:
+          type: string
+        display_order:
+          type: integer
+        parent_id:
+          type: string
+    Catalog:
+      type: object
+      properties:
+        catalog_id:
+          type: string
+        catalog_name:
+          type: string
+        type:
+          type: string
+        display_order:
+          type: integer
+        parent_id:
+          type: string
+        create_time:
+          type: string
+        update_time:
+          type: string
+    ListCatalogsResp:
+      type: object
+      properties:
+        catalogs:
+          type: array
+          items:
+            $ref: '#/components/schemas/Catalog'
+        count:
+          type: integer
+    UpdateCatalogReq:
+      type: object
+      required:
+      - catalog_name
+      properties:
+        catalog_name:
+          type: string
+    CatalogOrder:
+      type: object
+      required:
+      - catalog_id
+      - display_order
+      properties:
+        catalog_id:
+          type: string
+        display_order:
+          type: integer
+    UpdateCatalogsReq:
+      type: object
+      required:
+      - catalogs
+      properties:
+        catalogs:
+          type: array
+          items:
+            $ref: '#/components/schemas/CatalogOrder'
+    UpdateCatalogsResp:
+      type: object
+      properties:
+        catalogs:
+          type: array
+          items:
+            $ref: '#/components/schemas/CatalogOrder'
