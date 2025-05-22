@@ -37,6 +37,7 @@ export interface CreateModelOperationRequest {
 export class ModelApi extends runtime.BaseAPI {
 
     /**
+     * 创建模型
      */
     async createModelRaw(requestParameters: CreateModelOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Model>> {
         if (requestParameters['xAuthToken'] == null) {
@@ -82,6 +83,7 @@ export class ModelApi extends runtime.BaseAPI {
     }
 
     /**
+     * 创建模型
      */
     async createModel(requestParameters: CreateModelOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Model> {
         const response = await this.createModelRaw(requestParameters, initOverrides);

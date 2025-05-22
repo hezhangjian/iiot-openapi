@@ -15,36 +15,225 @@
 
 import * as runtime from '../runtime';
 import type {
+  AddViewNodesReq,
+  AnalysisTask,
+  AnalysisTaskListRsp,
+  AttachThingReqDTO,
+  BatchListThingSnapshotsReq,
+  BatchListThingSnapshotsResp,
+  Catalog,
+  ComponentProperty,
+  CreateAnalysisTaskReq,
+  CreateCatalogReq,
+  CreateDeviceReqDTO,
+  CreateDeviceRespDTO,
+  CreateDictionaryReq,
   CreateThingRequest,
   CreateTokenReqDTO,
+  CreateViewReq,
   DatasourceReportRequest,
   DatasourceReportResponse,
+  DeleteRecordsRequest,
+  DeleteViewNodesReq,
+  Dictionary,
+  GetDeviceRespDTO,
+  ListAnalysisTaskPageRsp,
+  ListCatalogsResp,
+  ListDevicesDTO,
+  ListDictionariesResp,
+  ListModelsResp,
+  ListSnapshotResp,
+  ListTablesResp,
+  ListThingsResp,
+  ListViewsResp,
+  MarkerTableRecords,
   Model,
+  ModifyViewNodesReq,
+  PropertiesGetReq,
+  PropertiesGetResp,
+  PropertiesSetResp,
+  QueryViewNodesReq,
+  QueryViewNodesRsp,
+  TableInfo,
   Thing,
+  ThingListDTO,
   TimeSeriesQueryRequest,
   TimeSeriesQueryResponse,
-  TokenRsp,
+  Token,
+  UpdateAnalysisTaskReq,
+  UpdateCatalogReq,
+  UpdateCatalogsReq,
+  UpdateCatalogsResp,
+  UpdateDeviceDTO,
+  UpdateDictionaryReq,
+  UpdateModelReq,
+  UpdateTableRequest,
+  UpdateThingRequest,
+  UpdateViewReq,
+  View,
+  ViewData,
 } from '../models/index';
 import {
+    AddViewNodesReqFromJSON,
+    AddViewNodesReqToJSON,
+    AnalysisTaskFromJSON,
+    AnalysisTaskToJSON,
+    AnalysisTaskListRspFromJSON,
+    AnalysisTaskListRspToJSON,
+    AttachThingReqDTOFromJSON,
+    AttachThingReqDTOToJSON,
+    BatchListThingSnapshotsReqFromJSON,
+    BatchListThingSnapshotsReqToJSON,
+    BatchListThingSnapshotsRespFromJSON,
+    BatchListThingSnapshotsRespToJSON,
+    CatalogFromJSON,
+    CatalogToJSON,
+    ComponentPropertyFromJSON,
+    ComponentPropertyToJSON,
+    CreateAnalysisTaskReqFromJSON,
+    CreateAnalysisTaskReqToJSON,
+    CreateCatalogReqFromJSON,
+    CreateCatalogReqToJSON,
+    CreateDeviceReqDTOFromJSON,
+    CreateDeviceReqDTOToJSON,
+    CreateDeviceRespDTOFromJSON,
+    CreateDeviceRespDTOToJSON,
+    CreateDictionaryReqFromJSON,
+    CreateDictionaryReqToJSON,
     CreateThingRequestFromJSON,
     CreateThingRequestToJSON,
     CreateTokenReqDTOFromJSON,
     CreateTokenReqDTOToJSON,
+    CreateViewReqFromJSON,
+    CreateViewReqToJSON,
     DatasourceReportRequestFromJSON,
     DatasourceReportRequestToJSON,
     DatasourceReportResponseFromJSON,
     DatasourceReportResponseToJSON,
+    DeleteRecordsRequestFromJSON,
+    DeleteRecordsRequestToJSON,
+    DeleteViewNodesReqFromJSON,
+    DeleteViewNodesReqToJSON,
+    DictionaryFromJSON,
+    DictionaryToJSON,
+    GetDeviceRespDTOFromJSON,
+    GetDeviceRespDTOToJSON,
+    ListAnalysisTaskPageRspFromJSON,
+    ListAnalysisTaskPageRspToJSON,
+    ListCatalogsRespFromJSON,
+    ListCatalogsRespToJSON,
+    ListDevicesDTOFromJSON,
+    ListDevicesDTOToJSON,
+    ListDictionariesRespFromJSON,
+    ListDictionariesRespToJSON,
+    ListModelsRespFromJSON,
+    ListModelsRespToJSON,
+    ListSnapshotRespFromJSON,
+    ListSnapshotRespToJSON,
+    ListTablesRespFromJSON,
+    ListTablesRespToJSON,
+    ListThingsRespFromJSON,
+    ListThingsRespToJSON,
+    ListViewsRespFromJSON,
+    ListViewsRespToJSON,
+    MarkerTableRecordsFromJSON,
+    MarkerTableRecordsToJSON,
     ModelFromJSON,
     ModelToJSON,
+    ModifyViewNodesReqFromJSON,
+    ModifyViewNodesReqToJSON,
+    PropertiesGetReqFromJSON,
+    PropertiesGetReqToJSON,
+    PropertiesGetRespFromJSON,
+    PropertiesGetRespToJSON,
+    PropertiesSetRespFromJSON,
+    PropertiesSetRespToJSON,
+    QueryViewNodesReqFromJSON,
+    QueryViewNodesReqToJSON,
+    QueryViewNodesRspFromJSON,
+    QueryViewNodesRspToJSON,
+    TableInfoFromJSON,
+    TableInfoToJSON,
     ThingFromJSON,
     ThingToJSON,
+    ThingListDTOFromJSON,
+    ThingListDTOToJSON,
     TimeSeriesQueryRequestFromJSON,
     TimeSeriesQueryRequestToJSON,
     TimeSeriesQueryResponseFromJSON,
     TimeSeriesQueryResponseToJSON,
-    TokenRspFromJSON,
-    TokenRspToJSON,
+    TokenFromJSON,
+    TokenToJSON,
+    UpdateAnalysisTaskReqFromJSON,
+    UpdateAnalysisTaskReqToJSON,
+    UpdateCatalogReqFromJSON,
+    UpdateCatalogReqToJSON,
+    UpdateCatalogsReqFromJSON,
+    UpdateCatalogsReqToJSON,
+    UpdateCatalogsRespFromJSON,
+    UpdateCatalogsRespToJSON,
+    UpdateDeviceDTOFromJSON,
+    UpdateDeviceDTOToJSON,
+    UpdateDictionaryReqFromJSON,
+    UpdateDictionaryReqToJSON,
+    UpdateModelReqFromJSON,
+    UpdateModelReqToJSON,
+    UpdateTableRequestFromJSON,
+    UpdateTableRequestToJSON,
+    UpdateThingRequestFromJSON,
+    UpdateThingRequestToJSON,
+    UpdateViewReqFromJSON,
+    UpdateViewReqToJSON,
+    ViewFromJSON,
+    ViewToJSON,
+    ViewDataFromJSON,
+    ViewDataToJSON,
 } from '../models/index';
+
+export interface AddViewNodesRequest {
+    xAuthToken: string;
+    projectId: string;
+    viewId: string;
+    addViewNodesReq?: AddViewNodesReq;
+}
+
+export interface AttachThingToDeviceRequest {
+    xAuthToken: string;
+    projectId: string;
+    deviceId: string;
+    attachThingReqDTO?: AttachThingReqDTO;
+}
+
+export interface BatchListSnapshotsRequest {
+    xAuthToken: string;
+    projectId: string;
+    batchListThingSnapshotsReq: BatchListThingSnapshotsReq;
+}
+
+export interface CreateAnalysisTaskRequest {
+    xAuthToken: string;
+    projectId: string;
+    modelId: string;
+    createAnalysisTaskReq?: CreateAnalysisTaskReq;
+}
+
+export interface CreateCatalogRequest {
+    xAuthToken: string;
+    projectId: string;
+    createCatalogReq?: CreateCatalogReq;
+}
+
+export interface CreateDeviceRequest {
+    xAuthToken: string;
+    projectId: string;
+    createDeviceReqDTO?: CreateDeviceReqDTO;
+}
+
+export interface CreateDictionaryRequest {
+    xAuthToken: string;
+    projectId: string;
+    createDictionaryReq?: CreateDictionaryReq;
+}
 
 export interface CreateThingOperationRequest {
     xAuthToken: string;
@@ -52,10 +241,54 @@ export interface CreateThingOperationRequest {
     createThingRequest: CreateThingRequest;
 }
 
-export interface DeleteModelRequest {
+export interface CreateViewRequest {
+    xAuthToken: string;
+    projectId: string;
+    createViewReq?: CreateViewReq;
+}
+
+export interface DeleteAnalysisTaskRequest {
+    xAuthToken: string;
     projectId: string;
     modelId: string;
+    taskId: string;
+}
+
+export interface DeleteCatalogRequest {
     xAuthToken: string;
+    projectId: string;
+    dicId: string;
+}
+
+export interface DeleteDeviceRequest {
+    xAuthToken: string;
+    projectId: string;
+    deviceId: string;
+}
+
+export interface DeleteDictionaryRequest {
+    xAuthToken: string;
+    projectId: string;
+    dicId: string;
+}
+
+export interface DeleteModelRequest {
+    xAuthToken: string;
+    projectId: string;
+    modelId: string;
+}
+
+export interface DeleteRecordsOperationRequest {
+    xAuthToken: string;
+    projectId: string;
+    tableId: string;
+    deleteRecordsRequest?: DeleteRecordsRequest;
+}
+
+export interface DeleteTableRequest {
+    xAuthToken: string;
+    projectId: string;
+    tableId: string;
 }
 
 export interface DeleteThingRequest {
@@ -64,8 +297,28 @@ export interface DeleteThingRequest {
     thingId: string;
 }
 
+export interface DeleteViewRequest {
+    xAuthToken: string;
+    projectId: string;
+    viewId: string;
+}
+
+export interface DeleteViewNodesRequest {
+    xAuthToken: string;
+    projectId: string;
+    viewId: string;
+    deleteViewNodesReq?: DeleteViewNodesReq;
+}
+
+export interface DetachDeviceAndThingRequest {
+    xAuthToken: string;
+    projectId: string;
+    deviceId: string;
+    thingId: string;
+}
+
 export interface GenerateTokenRequest {
-    createTokenReqDTO: Array<CreateTokenReqDTO>;
+    createTokenReqDTO: CreateTokenReqDTO;
 }
 
 export interface GetModelRequest {
@@ -80,10 +333,129 @@ export interface GetThingRequest {
     thingId: string;
 }
 
-export interface QueryTimeSeriesRequest {
+export interface GetThingPropertiesRequest {
+    xAuthToken: string;
     projectId: string;
     thingId: string;
+    propertiesGetReq?: PropertiesGetReq;
+}
+
+export interface GetViewDataRequest {
     xAuthToken: string;
+    projectId: string;
+    viewId: string;
+}
+
+export interface ListAnalysisTaskPageRequest {
+    xAuthToken: string;
+    projectId: string;
+    eventClass: string;
+    offset?: number;
+    limit?: number;
+    taskName?: string;
+    modelName?: string;
+    enabled?: boolean;
+}
+
+export interface ListAnalysisTasksRequest {
+    xAuthToken: string;
+    projectId: string;
+    modelId: string;
+}
+
+export interface ListCatalogsRequest {
+    xAuthToken: string;
+    projectId: string;
+    offset?: number;
+    limit?: number;
+    parentId?: string;
+    catalogName?: string;
+    type?: string;
+}
+
+export interface ListDevicesRequest {
+    xAuthToken: string;
+    projectId: string;
+    deviceType: string;
+    offset?: number;
+    limit?: number;
+    order?: string;
+    modelId?: string;
+    deviceName?: string;
+}
+
+export interface ListDictionariesRequest {
+    xAuthToken: string;
+    projectId: string;
+    offset?: number;
+    limit?: number;
+    catalogId?: string;
+    dicName?: string;
+}
+
+export interface ListModelsRequest {
+    xAuthToken: string;
+    projectId: string;
+    offset?: number;
+    limit?: number;
+    order?: string;
+    modelName?: string;
+    type?: string;
+}
+
+export interface ListTablesRequest {
+    xAuthToken: string;
+    projectId: string;
+    offset?: number;
+    limit?: number;
+    catalogId?: string;
+    tableName?: string;
+    type?: string;
+}
+
+export interface ListThingSnapshotRequest {
+    xAuthToken: string;
+    projectId: string;
+    thingId: string;
+}
+
+export interface ListThingsRequest {
+    xAuthToken: string;
+    projectId: string;
+    offset?: number;
+    limit?: number;
+    modelId?: string;
+    thingName?: string;
+    order?: string;
+}
+
+export interface ListThingsInDeviceRequest {
+    xAuthToken: string;
+    projectId: string;
+    deviceId: string;
+    offset?: number;
+    limit?: number;
+    order?: string;
+    modelId?: string;
+    thingId?: string;
+}
+
+export interface ListViewsRequest {
+    xAuthToken: string;
+    projectId: string;
+}
+
+export interface ModifyViewNodesRequest {
+    xAuthToken: string;
+    projectId: string;
+    viewId: string;
+    modifyViewNodesReq?: ModifyViewNodesReq;
+}
+
+export interface QueryTimeSeriesRequest {
+    xAuthToken: string;
+    projectId: string;
+    thingId: string;
     timeSeriesQueryRequest: TimeSeriesQueryRequest;
 }
 
@@ -94,10 +466,489 @@ export interface ReportToApiDatasourceRequest {
     datasourceReportRequest: DatasourceReportRequest;
 }
 
+export interface SetThingPropertiesRequest {
+    xAuthToken: string;
+    projectId: string;
+    thingId: string;
+    componentProperty?: ComponentProperty;
+}
+
+export interface ShowAnalysisTaskRequest {
+    xAuthToken: string;
+    projectId: string;
+    modelId: string;
+    taskId: string;
+}
+
+export interface ShowCatalogRequest {
+    xAuthToken: string;
+    projectId: string;
+    catalogId: string;
+}
+
+export interface ShowDeviceRequest {
+    xAuthToken: string;
+    projectId: string;
+    deviceId: string;
+}
+
+export interface ShowDictionaryRequest {
+    xAuthToken: string;
+    projectId: string;
+    dicId: string;
+}
+
+export interface ShowTableRequest {
+    xAuthToken: string;
+    projectId: string;
+    tableId: string;
+}
+
+export interface ShowViewRequest {
+    xAuthToken: string;
+    projectId: string;
+    viewId: string;
+}
+
+export interface ShowViewNodesRequest {
+    xAuthToken: string;
+    projectId: string;
+    viewId: string;
+    queryViewNodesReq?: QueryViewNodesReq;
+}
+
+export interface SyncRecordsRequest {
+    xAuthToken: string;
+    projectId: string;
+    tableId: string;
+    updateTime?: string;
+    limit?: number;
+    marker?: string;
+}
+
+export interface UpdateAnalysisTaskRequest {
+    xAuthToken: string;
+    projectId: string;
+    modelId: string;
+    taskId: string;
+    updateAnalysisTaskReq: UpdateAnalysisTaskReq;
+}
+
+export interface UpdateCatalogRequest {
+    xAuthToken: string;
+    projectId: string;
+    catalogId: string;
+    updateCatalogReq?: UpdateCatalogReq;
+}
+
+export interface UpdateCatalogsRequest {
+    xAuthToken: string;
+    projectId: string;
+    updateCatalogsReq?: UpdateCatalogsReq;
+}
+
+export interface UpdateDeviceRequest {
+    xAuthToken: string;
+    projectId: string;
+    deviceId: string;
+    updateDeviceDTO?: UpdateDeviceDTO;
+}
+
+export interface UpdateDictionaryRequest {
+    xAuthToken: string;
+    projectId: string;
+    dicId: string;
+    updateDictionaryReq?: UpdateDictionaryReq;
+}
+
+export interface UpdateModelRequest {
+    xAuthToken: string;
+    projectId: string;
+    modelId: string;
+    updateModelReq: UpdateModelReq;
+}
+
+export interface UpdateTableOperationRequest {
+    xAuthToken: string;
+    projectId: string;
+    tableId: string;
+    updateTableRequest?: UpdateTableRequest;
+}
+
+export interface UpdateThingOperationRequest {
+    xAuthToken: string;
+    projectId: string;
+    thingId: string;
+    updateThingRequest: UpdateThingRequest;
+}
+
+export interface UpdateViewRequest {
+    xAuthToken: string;
+    projectId: string;
+    viewId: string;
+    updateViewReq?: UpdateViewReq;
+}
+
 /**
  * 
  */
 export class DefaultApi extends runtime.BaseAPI {
+
+    /**
+     * 添加视图节点
+     */
+    async addViewNodesRaw(requestParameters: AddViewNodesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<View>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling addViewNodes().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling addViewNodes().'
+            );
+        }
+
+        if (requestParameters['viewId'] == null) {
+            throw new runtime.RequiredError(
+                'viewId',
+                'Required parameter "viewId" was null or undefined when calling addViewNodes().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/views/{view_id}/nodes/add`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"view_id"}}`, encodeURIComponent(String(requestParameters['viewId']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: AddViewNodesReqToJSON(requestParameters['addViewNodesReq']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ViewFromJSON(jsonValue));
+    }
+
+    /**
+     * 添加视图节点
+     */
+    async addViewNodes(requestParameters: AddViewNodesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<View> {
+        const response = await this.addViewNodesRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 绑定设备与实例
+     */
+    async attachThingToDeviceRaw(requestParameters: AttachThingToDeviceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling attachThingToDevice().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling attachThingToDevice().'
+            );
+        }
+
+        if (requestParameters['deviceId'] == null) {
+            throw new runtime.RequiredError(
+                'deviceId',
+                'Required parameter "deviceId" was null or undefined when calling attachThingToDevice().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/devices/{device_id}/things`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"device_id"}}`, encodeURIComponent(String(requestParameters['deviceId']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: AttachThingReqDTOToJSON(requestParameters['attachThingReqDTO']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * 绑定设备与实例
+     */
+    async attachThingToDevice(requestParameters: AttachThingToDeviceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.attachThingToDeviceRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * 批量查询物实例快照
+     */
+    async batchListSnapshotsRaw(requestParameters: BatchListSnapshotsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<BatchListThingSnapshotsResp>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling batchListSnapshots().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling batchListSnapshots().'
+            );
+        }
+
+        if (requestParameters['batchListThingSnapshotsReq'] == null) {
+            throw new runtime.RequiredError(
+                'batchListThingSnapshotsReq',
+                'Required parameter "batchListThingSnapshotsReq" was null or undefined when calling batchListSnapshots().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/snapshots/get`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: BatchListThingSnapshotsReqToJSON(requestParameters['batchListThingSnapshotsReq']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => BatchListThingSnapshotsRespFromJSON(jsonValue));
+    }
+
+    /**
+     * 批量查询物实例快照
+     */
+    async batchListSnapshots(requestParameters: BatchListSnapshotsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<BatchListThingSnapshotsResp> {
+        const response = await this.batchListSnapshotsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 创建单个分析任务
+     */
+    async createAnalysisTaskRaw(requestParameters: CreateAnalysisTaskRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AnalysisTask>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling createAnalysisTask().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling createAnalysisTask().'
+            );
+        }
+
+        if (requestParameters['modelId'] == null) {
+            throw new runtime.RequiredError(
+                'modelId',
+                'Required parameter "modelId" was null or undefined when calling createAnalysisTask().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/models/{model_id}/analysis-tasks`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"model_id"}}`, encodeURIComponent(String(requestParameters['modelId']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateAnalysisTaskReqToJSON(requestParameters['createAnalysisTaskReq']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => AnalysisTaskFromJSON(jsonValue));
+    }
+
+    /**
+     * 创建单个分析任务
+     */
+    async createAnalysisTask(requestParameters: CreateAnalysisTaskRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AnalysisTask> {
+        const response = await this.createAnalysisTaskRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 创建目录
+     */
+    async createCatalogRaw(requestParameters: CreateCatalogRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Catalog>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling createCatalog().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling createCatalog().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/catalogs`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateCatalogReqToJSON(requestParameters['createCatalogReq']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CatalogFromJSON(jsonValue));
+    }
+
+    /**
+     * 创建目录
+     */
+    async createCatalog(requestParameters: CreateCatalogRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Catalog> {
+        const response = await this.createCatalogRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 创建设备
+     */
+    async createDeviceRaw(requestParameters: CreateDeviceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<CreateDeviceRespDTO>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling createDevice().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling createDevice().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/devices`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateDeviceReqDTOToJSON(requestParameters['createDeviceReqDTO']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CreateDeviceRespDTOFromJSON(jsonValue));
+    }
+
+    /**
+     * 创建设备
+     */
+    async createDevice(requestParameters: CreateDeviceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<CreateDeviceRespDTO> {
+        const response = await this.createDeviceRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 创建字典
+     */
+    async createDictionaryRaw(requestParameters: CreateDictionaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Dictionary>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling createDictionary().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling createDictionary().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/dictionaries`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateDictionaryReqToJSON(requestParameters['createDictionaryReq']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => DictionaryFromJSON(jsonValue));
+    }
+
+    /**
+     * 创建字典
+     */
+    async createDictionary(requestParameters: CreateDictionaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Dictionary> {
+        const response = await this.createDictionaryRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
 
     /**
      */
@@ -152,9 +1003,270 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * 创建视图
+     */
+    async createViewRaw(requestParameters: CreateViewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<View>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling createView().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling createView().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/views`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: CreateViewReqToJSON(requestParameters['createViewReq']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ViewFromJSON(jsonValue));
+    }
+
+    /**
+     * 创建视图
+     */
+    async createView(requestParameters: CreateViewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<View> {
+        const response = await this.createViewRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 删除单个分析任务
+     */
+    async deleteAnalysisTaskRaw(requestParameters: DeleteAnalysisTaskRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling deleteAnalysisTask().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling deleteAnalysisTask().'
+            );
+        }
+
+        if (requestParameters['modelId'] == null) {
+            throw new runtime.RequiredError(
+                'modelId',
+                'Required parameter "modelId" was null or undefined when calling deleteAnalysisTask().'
+            );
+        }
+
+        if (requestParameters['taskId'] == null) {
+            throw new runtime.RequiredError(
+                'taskId',
+                'Required parameter "taskId" was null or undefined when calling deleteAnalysisTask().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/models/{model_id}/analysis-tasks/{task_id}`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"model_id"}}`, encodeURIComponent(String(requestParameters['modelId']))).replace(`{${"task_id"}}`, encodeURIComponent(String(requestParameters['taskId']))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * 删除单个分析任务
+     */
+    async deleteAnalysisTask(requestParameters: DeleteAnalysisTaskRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteAnalysisTaskRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * 删除目录
+     */
+    async deleteCatalogRaw(requestParameters: DeleteCatalogRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling deleteCatalog().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling deleteCatalog().'
+            );
+        }
+
+        if (requestParameters['dicId'] == null) {
+            throw new runtime.RequiredError(
+                'dicId',
+                'Required parameter "dicId" was null or undefined when calling deleteCatalog().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/catalogs/{catalog_id}`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"dic_id"}}`, encodeURIComponent(String(requestParameters['dicId']))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * 删除目录
+     */
+    async deleteCatalog(requestParameters: DeleteCatalogRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteCatalogRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * 删除指定设备
+     */
+    async deleteDeviceRaw(requestParameters: DeleteDeviceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling deleteDevice().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling deleteDevice().'
+            );
+        }
+
+        if (requestParameters['deviceId'] == null) {
+            throw new runtime.RequiredError(
+                'deviceId',
+                'Required parameter "deviceId" was null or undefined when calling deleteDevice().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/devices/{device_id}`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"device_id"}}`, encodeURIComponent(String(requestParameters['deviceId']))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * 删除指定设备
+     */
+    async deleteDevice(requestParameters: DeleteDeviceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteDeviceRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * 删除字典
+     */
+    async deleteDictionaryRaw(requestParameters: DeleteDictionaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling deleteDictionary().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling deleteDictionary().'
+            );
+        }
+
+        if (requestParameters['dicId'] == null) {
+            throw new runtime.RequiredError(
+                'dicId',
+                'Required parameter "dicId" was null or undefined when calling deleteDictionary().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/dictionaries/{dic_id}`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"dic_id"}}`, encodeURIComponent(String(requestParameters['dicId']))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * 删除字典
+     */
+    async deleteDictionary(requestParameters: DeleteDictionaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteDictionaryRaw(requestParameters, initOverrides);
+    }
+
+    /**
      * 删除模型
      */
     async deleteModelRaw(requestParameters: DeleteModelRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling deleteModel().'
+            );
+        }
+
         if (requestParameters['projectId'] == null) {
             throw new runtime.RequiredError(
                 'projectId',
@@ -166,13 +1278,6 @@ export class DefaultApi extends runtime.BaseAPI {
             throw new runtime.RequiredError(
                 'modelId',
                 'Required parameter "modelId" was null or undefined when calling deleteModel().'
-            );
-        }
-
-        if (requestParameters['xAuthToken'] == null) {
-            throw new runtime.RequiredError(
-                'xAuthToken',
-                'Required parameter "xAuthToken" was null or undefined when calling deleteModel().'
             );
         }
 
@@ -199,6 +1304,109 @@ export class DefaultApi extends runtime.BaseAPI {
      */
     async deleteModel(requestParameters: DeleteModelRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.deleteModelRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * 删除表记录
+     */
+    async deleteRecordsRaw(requestParameters: DeleteRecordsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling deleteRecords().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling deleteRecords().'
+            );
+        }
+
+        if (requestParameters['tableId'] == null) {
+            throw new runtime.RequiredError(
+                'tableId',
+                'Required parameter "tableId" was null or undefined when calling deleteRecords().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/tables/{table_id}/records/delete`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"table_id"}}`, encodeURIComponent(String(requestParameters['tableId']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteRecordsRequestToJSON(requestParameters['deleteRecordsRequest']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * 删除表记录
+     */
+    async deleteRecords(requestParameters: DeleteRecordsOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteRecordsRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * 删除表
+     */
+    async deleteTableRaw(requestParameters: DeleteTableRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling deleteTable().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling deleteTable().'
+            );
+        }
+
+        if (requestParameters['tableId'] == null) {
+            throw new runtime.RequiredError(
+                'tableId',
+                'Required parameter "tableId" was null or undefined when calling deleteTable().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/tables/{table_id}`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"table_id"}}`, encodeURIComponent(String(requestParameters['tableId']))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * 删除表
+     */
+    async deleteTable(requestParameters: DeleteTableRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteTableRaw(requestParameters, initOverrides);
     }
 
     /**
@@ -250,9 +1458,169 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * 删除视图
+     */
+    async deleteViewRaw(requestParameters: DeleteViewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling deleteView().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling deleteView().'
+            );
+        }
+
+        if (requestParameters['viewId'] == null) {
+            throw new runtime.RequiredError(
+                'viewId',
+                'Required parameter "viewId" was null or undefined when calling deleteView().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/views/{view_id}`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"view_id"}}`, encodeURIComponent(String(requestParameters['viewId']))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * 删除视图
+     */
+    async deleteView(requestParameters: DeleteViewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteViewRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * 删除视图节点
+     */
+    async deleteViewNodesRaw(requestParameters: DeleteViewNodesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling deleteViewNodes().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling deleteViewNodes().'
+            );
+        }
+
+        if (requestParameters['viewId'] == null) {
+            throw new runtime.RequiredError(
+                'viewId',
+                'Required parameter "viewId" was null or undefined when calling deleteViewNodes().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/views/{view_id}/nodes/delete`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"view_id"}}`, encodeURIComponent(String(requestParameters['viewId']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: DeleteViewNodesReqToJSON(requestParameters['deleteViewNodesReq']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * 删除视图节点
+     */
+    async deleteViewNodes(requestParameters: DeleteViewNodesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.deleteViewNodesRaw(requestParameters, initOverrides);
+    }
+
+    /**
+     * 删除设备与实例绑定关系
+     */
+    async detachDeviceAndThingRaw(requestParameters: DetachDeviceAndThingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling detachDeviceAndThing().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling detachDeviceAndThing().'
+            );
+        }
+
+        if (requestParameters['deviceId'] == null) {
+            throw new runtime.RequiredError(
+                'deviceId',
+                'Required parameter "deviceId" was null or undefined when calling detachDeviceAndThing().'
+            );
+        }
+
+        if (requestParameters['thingId'] == null) {
+            throw new runtime.RequiredError(
+                'thingId',
+                'Required parameter "thingId" was null or undefined when calling detachDeviceAndThing().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/devices/{device_id}/things/{thing_id}`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"device_id"}}`, encodeURIComponent(String(requestParameters['deviceId']))).replace(`{${"thing_id"}}`, encodeURIComponent(String(requestParameters['thingId']))),
+            method: 'DELETE',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * 删除设备与实例绑定关系
+     */
+    async detachDeviceAndThing(requestParameters: DetachDeviceAndThingRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.detachDeviceAndThingRaw(requestParameters, initOverrides);
+    }
+
+    /**
      * 获取认证 Token
      */
-    async generateTokenRaw(requestParameters: GenerateTokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TokenRsp>> {
+    async generateTokenRaw(requestParameters: GenerateTokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Token>> {
         if (requestParameters['createTokenReqDTO'] == null) {
             throw new runtime.RequiredError(
                 'createTokenReqDTO',
@@ -271,16 +1639,16 @@ export class DefaultApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: requestParameters['createTokenReqDTO']!.map(CreateTokenReqDTOToJSON),
+            body: CreateTokenReqDTOToJSON(requestParameters['createTokenReqDTO']),
         }, initOverrides);
 
-        return new runtime.JSONApiResponse(response, (jsonValue) => TokenRspFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => TokenFromJSON(jsonValue));
     }
 
     /**
      * 获取认证 Token
      */
-    async generateToken(requestParameters: GenerateTokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TokenRsp> {
+    async generateToken(requestParameters: GenerateTokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Token> {
         const response = await this.generateTokenRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -386,9 +1754,855 @@ export class DefaultApi extends runtime.BaseAPI {
     }
 
     /**
+     * 获取单个实例关联的设备属性值
+     */
+    async getThingPropertiesRaw(requestParameters: GetThingPropertiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PropertiesGetResp>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling getThingProperties().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling getThingProperties().'
+            );
+        }
+
+        if (requestParameters['thingId'] == null) {
+            throw new runtime.RequiredError(
+                'thingId',
+                'Required parameter "thingId" was null or undefined when calling getThingProperties().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/things/{thing_id}/properties/get`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"thing_id"}}`, encodeURIComponent(String(requestParameters['thingId']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: PropertiesGetReqToJSON(requestParameters['propertiesGetReq']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PropertiesGetRespFromJSON(jsonValue));
+    }
+
+    /**
+     * 获取单个实例关联的设备属性值
+     */
+    async getThingProperties(requestParameters: GetThingPropertiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PropertiesGetResp> {
+        const response = await this.getThingPropertiesRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 查询视图数据
+     */
+    async getViewDataRaw(requestParameters: GetViewDataRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ViewData>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling getViewData().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling getViewData().'
+            );
+        }
+
+        if (requestParameters['viewId'] == null) {
+            throw new runtime.RequiredError(
+                'viewId',
+                'Required parameter "viewId" was null or undefined when calling getViewData().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/views/{view_id}/data`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"view_id"}}`, encodeURIComponent(String(requestParameters['viewId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ViewDataFromJSON(jsonValue));
+    }
+
+    /**
+     * 查询视图数据
+     */
+    async getViewData(requestParameters: GetViewDataRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ViewData> {
+        const response = await this.getViewDataRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 根据条件查询分析任务列表
+     */
+    async listAnalysisTaskPageRaw(requestParameters: ListAnalysisTaskPageRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ListAnalysisTaskPageRsp>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling listAnalysisTaskPage().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling listAnalysisTaskPage().'
+            );
+        }
+
+        if (requestParameters['eventClass'] == null) {
+            throw new runtime.RequiredError(
+                'eventClass',
+                'Required parameter "eventClass" was null or undefined when calling listAnalysisTaskPage().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['offset'] != null) {
+            queryParameters['offset'] = requestParameters['offset'];
+        }
+
+        if (requestParameters['limit'] != null) {
+            queryParameters['limit'] = requestParameters['limit'];
+        }
+
+        if (requestParameters['eventClass'] != null) {
+            queryParameters['event_class'] = requestParameters['eventClass'];
+        }
+
+        if (requestParameters['taskName'] != null) {
+            queryParameters['task_name'] = requestParameters['taskName'];
+        }
+
+        if (requestParameters['modelName'] != null) {
+            queryParameters['model_name'] = requestParameters['modelName'];
+        }
+
+        if (requestParameters['enabled'] != null) {
+            queryParameters['enabled'] = requestParameters['enabled'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/analysis-tasks`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ListAnalysisTaskPageRspFromJSON(jsonValue));
+    }
+
+    /**
+     * 根据条件查询分析任务列表
+     */
+    async listAnalysisTaskPage(requestParameters: ListAnalysisTaskPageRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ListAnalysisTaskPageRsp> {
+        const response = await this.listAnalysisTaskPageRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 查询模型下分析任务列表
+     */
+    async listAnalysisTasksRaw(requestParameters: ListAnalysisTasksRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AnalysisTaskListRsp>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling listAnalysisTasks().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling listAnalysisTasks().'
+            );
+        }
+
+        if (requestParameters['modelId'] == null) {
+            throw new runtime.RequiredError(
+                'modelId',
+                'Required parameter "modelId" was null or undefined when calling listAnalysisTasks().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/models/{model_id}/analysis-tasks`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"model_id"}}`, encodeURIComponent(String(requestParameters['modelId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => AnalysisTaskListRspFromJSON(jsonValue));
+    }
+
+    /**
+     * 查询模型下分析任务列表
+     */
+    async listAnalysisTasks(requestParameters: ListAnalysisTasksRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AnalysisTaskListRsp> {
+        const response = await this.listAnalysisTasksRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 查询目录列表
+     */
+    async listCatalogsRaw(requestParameters: ListCatalogsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ListCatalogsResp>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling listCatalogs().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling listCatalogs().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['offset'] != null) {
+            queryParameters['offset'] = requestParameters['offset'];
+        }
+
+        if (requestParameters['limit'] != null) {
+            queryParameters['limit'] = requestParameters['limit'];
+        }
+
+        if (requestParameters['parentId'] != null) {
+            queryParameters['parent_id'] = requestParameters['parentId'];
+        }
+
+        if (requestParameters['catalogName'] != null) {
+            queryParameters['catalog_name'] = requestParameters['catalogName'];
+        }
+
+        if (requestParameters['type'] != null) {
+            queryParameters['type'] = requestParameters['type'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/catalogs`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ListCatalogsRespFromJSON(jsonValue));
+    }
+
+    /**
+     * 查询目录列表
+     */
+    async listCatalogs(requestParameters: ListCatalogsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ListCatalogsResp> {
+        const response = await this.listCatalogsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 查询设备列表
+     */
+    async listDevicesRaw(requestParameters: ListDevicesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ListDevicesDTO>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling listDevices().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling listDevices().'
+            );
+        }
+
+        if (requestParameters['deviceType'] == null) {
+            throw new runtime.RequiredError(
+                'deviceType',
+                'Required parameter "deviceType" was null or undefined when calling listDevices().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['offset'] != null) {
+            queryParameters['offset'] = requestParameters['offset'];
+        }
+
+        if (requestParameters['limit'] != null) {
+            queryParameters['limit'] = requestParameters['limit'];
+        }
+
+        if (requestParameters['deviceType'] != null) {
+            queryParameters['device_type'] = requestParameters['deviceType'];
+        }
+
+        if (requestParameters['order'] != null) {
+            queryParameters['order'] = requestParameters['order'];
+        }
+
+        if (requestParameters['modelId'] != null) {
+            queryParameters['model_id'] = requestParameters['modelId'];
+        }
+
+        if (requestParameters['deviceName'] != null) {
+            queryParameters['device_name'] = requestParameters['deviceName'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/devices`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ListDevicesDTOFromJSON(jsonValue));
+    }
+
+    /**
+     * 查询设备列表
+     */
+    async listDevices(requestParameters: ListDevicesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ListDevicesDTO> {
+        const response = await this.listDevicesRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 查询字典列表
+     */
+    async listDictionariesRaw(requestParameters: ListDictionariesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ListDictionariesResp>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling listDictionaries().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling listDictionaries().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['offset'] != null) {
+            queryParameters['offset'] = requestParameters['offset'];
+        }
+
+        if (requestParameters['limit'] != null) {
+            queryParameters['limit'] = requestParameters['limit'];
+        }
+
+        if (requestParameters['catalogId'] != null) {
+            queryParameters['catalog_id'] = requestParameters['catalogId'];
+        }
+
+        if (requestParameters['dicName'] != null) {
+            queryParameters['dic_name'] = requestParameters['dicName'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/dictionaries`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ListDictionariesRespFromJSON(jsonValue));
+    }
+
+    /**
+     * 查询字典列表
+     */
+    async listDictionaries(requestParameters: ListDictionariesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ListDictionariesResp> {
+        const response = await this.listDictionariesRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 分页查询模型列表
+     */
+    async listModelsRaw(requestParameters: ListModelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ListModelsResp>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling listModels().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling listModels().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['offset'] != null) {
+            queryParameters['offset'] = requestParameters['offset'];
+        }
+
+        if (requestParameters['limit'] != null) {
+            queryParameters['limit'] = requestParameters['limit'];
+        }
+
+        if (requestParameters['order'] != null) {
+            queryParameters['order'] = requestParameters['order'];
+        }
+
+        if (requestParameters['modelName'] != null) {
+            queryParameters['model_name'] = requestParameters['modelName'];
+        }
+
+        if (requestParameters['type'] != null) {
+            queryParameters['type'] = requestParameters['type'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/models`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ListModelsRespFromJSON(jsonValue));
+    }
+
+    /**
+     * 分页查询模型列表
+     */
+    async listModels(requestParameters: ListModelsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ListModelsResp> {
+        const response = await this.listModelsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 查询表列表
+     */
+    async listTablesRaw(requestParameters: ListTablesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ListTablesResp>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling listTables().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling listTables().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['offset'] != null) {
+            queryParameters['offset'] = requestParameters['offset'];
+        }
+
+        if (requestParameters['limit'] != null) {
+            queryParameters['limit'] = requestParameters['limit'];
+        }
+
+        if (requestParameters['catalogId'] != null) {
+            queryParameters['catalog_id'] = requestParameters['catalogId'];
+        }
+
+        if (requestParameters['tableName'] != null) {
+            queryParameters['table_name'] = requestParameters['tableName'];
+        }
+
+        if (requestParameters['type'] != null) {
+            queryParameters['type'] = requestParameters['type'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/tables`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ListTablesRespFromJSON(jsonValue));
+    }
+
+    /**
+     * 查询表列表
+     */
+    async listTables(requestParameters: ListTablesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ListTablesResp> {
+        const response = await this.listTablesRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 查询物实例快照
+     */
+    async listThingSnapshotRaw(requestParameters: ListThingSnapshotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ListSnapshotResp>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling listThingSnapshot().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling listThingSnapshot().'
+            );
+        }
+
+        if (requestParameters['thingId'] == null) {
+            throw new runtime.RequiredError(
+                'thingId',
+                'Required parameter "thingId" was null or undefined when calling listThingSnapshot().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/things/{thing_id}/snapshot`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"thing_id"}}`, encodeURIComponent(String(requestParameters['thingId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ListSnapshotRespFromJSON(jsonValue));
+    }
+
+    /**
+     * 查询物实例快照
+     */
+    async listThingSnapshot(requestParameters: ListThingSnapshotRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ListSnapshotResp> {
+        const response = await this.listThingSnapshotRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async listThingsRaw(requestParameters: ListThingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ListThingsResp>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling listThings().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling listThings().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['offset'] != null) {
+            queryParameters['offset'] = requestParameters['offset'];
+        }
+
+        if (requestParameters['limit'] != null) {
+            queryParameters['limit'] = requestParameters['limit'];
+        }
+
+        if (requestParameters['modelId'] != null) {
+            queryParameters['model_id'] = requestParameters['modelId'];
+        }
+
+        if (requestParameters['thingName'] != null) {
+            queryParameters['thing_name'] = requestParameters['thingName'];
+        }
+
+        if (requestParameters['order'] != null) {
+            queryParameters['order'] = requestParameters['order'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/things`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ListThingsRespFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async listThings(requestParameters: ListThingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ListThingsResp> {
+        const response = await this.listThingsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 获取指定设备下实例列表
+     */
+    async listThingsInDeviceRaw(requestParameters: ListThingsInDeviceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ThingListDTO>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling listThingsInDevice().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling listThingsInDevice().'
+            );
+        }
+
+        if (requestParameters['deviceId'] == null) {
+            throw new runtime.RequiredError(
+                'deviceId',
+                'Required parameter "deviceId" was null or undefined when calling listThingsInDevice().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['offset'] != null) {
+            queryParameters['offset'] = requestParameters['offset'];
+        }
+
+        if (requestParameters['limit'] != null) {
+            queryParameters['limit'] = requestParameters['limit'];
+        }
+
+        if (requestParameters['order'] != null) {
+            queryParameters['order'] = requestParameters['order'];
+        }
+
+        if (requestParameters['modelId'] != null) {
+            queryParameters['model_id'] = requestParameters['modelId'];
+        }
+
+        if (requestParameters['thingId'] != null) {
+            queryParameters['thing_id'] = requestParameters['thingId'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/devices/{device_id}/things`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"device_id"}}`, encodeURIComponent(String(requestParameters['deviceId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ThingListDTOFromJSON(jsonValue));
+    }
+
+    /**
+     * 获取指定设备下实例列表
+     */
+    async listThingsInDevice(requestParameters: ListThingsInDeviceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ThingListDTO> {
+        const response = await this.listThingsInDeviceRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 查询视图列表
+     */
+    async listViewsRaw(requestParameters: ListViewsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ListViewsResp>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling listViews().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling listViews().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/views`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ListViewsRespFromJSON(jsonValue));
+    }
+
+    /**
+     * 查询视图列表
+     */
+    async listViews(requestParameters: ListViewsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ListViewsResp> {
+        const response = await this.listViewsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 修改视图节点
+     */
+    async modifyViewNodesRaw(requestParameters: ModifyViewNodesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling modifyViewNodes().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling modifyViewNodes().'
+            );
+        }
+
+        if (requestParameters['viewId'] == null) {
+            throw new runtime.RequiredError(
+                'viewId',
+                'Required parameter "viewId" was null or undefined when calling modifyViewNodes().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/views/{view_id}/nodes/modify`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"view_id"}}`, encodeURIComponent(String(requestParameters['viewId']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ModifyViewNodesReqToJSON(requestParameters['modifyViewNodesReq']),
+        }, initOverrides);
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     * 修改视图节点
+     */
+    async modifyViewNodes(requestParameters: ModifyViewNodesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+        await this.modifyViewNodesRaw(requestParameters, initOverrides);
+    }
+
+    /**
      * 查询 Thing 的属性历史值
      */
     async queryTimeSeriesRaw(requestParameters: QueryTimeSeriesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TimeSeriesQueryResponse>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling queryTimeSeries().'
+            );
+        }
+
         if (requestParameters['projectId'] == null) {
             throw new runtime.RequiredError(
                 'projectId',
@@ -400,13 +2614,6 @@ export class DefaultApi extends runtime.BaseAPI {
             throw new runtime.RequiredError(
                 'thingId',
                 'Required parameter "thingId" was null or undefined when calling queryTimeSeries().'
-            );
-        }
-
-        if (requestParameters['xAuthToken'] == null) {
-            throw new runtime.RequiredError(
-                'xAuthToken',
-                'Required parameter "xAuthToken" was null or undefined when calling queryTimeSeries().'
             );
         }
 
@@ -502,6 +2709,995 @@ export class DefaultApi extends runtime.BaseAPI {
      */
     async reportToApiDatasource(requestParameters: ReportToApiDatasourceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DatasourceReportResponse> {
         const response = await this.reportToApiDatasourceRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 设置物实例关联的设备属性
+     */
+    async setThingPropertiesRaw(requestParameters: SetThingPropertiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<PropertiesSetResp>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling setThingProperties().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling setThingProperties().'
+            );
+        }
+
+        if (requestParameters['thingId'] == null) {
+            throw new runtime.RequiredError(
+                'thingId',
+                'Required parameter "thingId" was null or undefined when calling setThingProperties().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/things/{thing_id}/properties/set`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"thing_id"}}`, encodeURIComponent(String(requestParameters['thingId']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ComponentPropertyToJSON(requestParameters['componentProperty']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => PropertiesSetRespFromJSON(jsonValue));
+    }
+
+    /**
+     * 设置物实例关联的设备属性
+     */
+    async setThingProperties(requestParameters: SetThingPropertiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<PropertiesSetResp> {
+        const response = await this.setThingPropertiesRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 查询单个分析任务信息
+     */
+    async showAnalysisTaskRaw(requestParameters: ShowAnalysisTaskRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AnalysisTask>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling showAnalysisTask().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling showAnalysisTask().'
+            );
+        }
+
+        if (requestParameters['modelId'] == null) {
+            throw new runtime.RequiredError(
+                'modelId',
+                'Required parameter "modelId" was null or undefined when calling showAnalysisTask().'
+            );
+        }
+
+        if (requestParameters['taskId'] == null) {
+            throw new runtime.RequiredError(
+                'taskId',
+                'Required parameter "taskId" was null or undefined when calling showAnalysisTask().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/models/{model_id}/analysis-tasks/{task_id}`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"model_id"}}`, encodeURIComponent(String(requestParameters['modelId']))).replace(`{${"task_id"}}`, encodeURIComponent(String(requestParameters['taskId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => AnalysisTaskFromJSON(jsonValue));
+    }
+
+    /**
+     * 查询单个分析任务信息
+     */
+    async showAnalysisTask(requestParameters: ShowAnalysisTaskRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AnalysisTask> {
+        const response = await this.showAnalysisTaskRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 查询目录详情
+     */
+    async showCatalogRaw(requestParameters: ShowCatalogRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Catalog>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling showCatalog().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling showCatalog().'
+            );
+        }
+
+        if (requestParameters['catalogId'] == null) {
+            throw new runtime.RequiredError(
+                'catalogId',
+                'Required parameter "catalogId" was null or undefined when calling showCatalog().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/catalogs/{catalog_id}`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"catalog_id"}}`, encodeURIComponent(String(requestParameters['catalogId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CatalogFromJSON(jsonValue));
+    }
+
+    /**
+     * 查询目录详情
+     */
+    async showCatalog(requestParameters: ShowCatalogRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Catalog> {
+        const response = await this.showCatalogRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 获取指定设备
+     */
+    async showDeviceRaw(requestParameters: ShowDeviceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetDeviceRespDTO>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling showDevice().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling showDevice().'
+            );
+        }
+
+        if (requestParameters['deviceId'] == null) {
+            throw new runtime.RequiredError(
+                'deviceId',
+                'Required parameter "deviceId" was null or undefined when calling showDevice().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/devices/{device_id}`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"device_id"}}`, encodeURIComponent(String(requestParameters['deviceId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetDeviceRespDTOFromJSON(jsonValue));
+    }
+
+    /**
+     * 获取指定设备
+     */
+    async showDevice(requestParameters: ShowDeviceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetDeviceRespDTO> {
+        const response = await this.showDeviceRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 查询字典详情
+     */
+    async showDictionaryRaw(requestParameters: ShowDictionaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Dictionary>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling showDictionary().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling showDictionary().'
+            );
+        }
+
+        if (requestParameters['dicId'] == null) {
+            throw new runtime.RequiredError(
+                'dicId',
+                'Required parameter "dicId" was null or undefined when calling showDictionary().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/dictionaries/{dic_id}`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"dic_id"}}`, encodeURIComponent(String(requestParameters['dicId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => DictionaryFromJSON(jsonValue));
+    }
+
+    /**
+     * 查询字典详情
+     */
+    async showDictionary(requestParameters: ShowDictionaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Dictionary> {
+        const response = await this.showDictionaryRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 查询表详情
+     */
+    async showTableRaw(requestParameters: ShowTableRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TableInfo>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling showTable().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling showTable().'
+            );
+        }
+
+        if (requestParameters['tableId'] == null) {
+            throw new runtime.RequiredError(
+                'tableId',
+                'Required parameter "tableId" was null or undefined when calling showTable().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/tables/{table_id}`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"table_id"}}`, encodeURIComponent(String(requestParameters['tableId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => TableInfoFromJSON(jsonValue));
+    }
+
+    /**
+     * 查询表详情
+     */
+    async showTable(requestParameters: ShowTableRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TableInfo> {
+        const response = await this.showTableRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 查询视图详情
+     */
+    async showViewRaw(requestParameters: ShowViewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<View>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling showView().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling showView().'
+            );
+        }
+
+        if (requestParameters['viewId'] == null) {
+            throw new runtime.RequiredError(
+                'viewId',
+                'Required parameter "viewId" was null or undefined when calling showView().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/views/{view_id}`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"view_id"}}`, encodeURIComponent(String(requestParameters['viewId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ViewFromJSON(jsonValue));
+    }
+
+    /**
+     * 查询视图详情
+     */
+    async showView(requestParameters: ShowViewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<View> {
+        const response = await this.showViewRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 查询视图节点
+     */
+    async showViewNodesRaw(requestParameters: ShowViewNodesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<QueryViewNodesRsp>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling showViewNodes().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling showViewNodes().'
+            );
+        }
+
+        if (requestParameters['viewId'] == null) {
+            throw new runtime.RequiredError(
+                'viewId',
+                'Required parameter "viewId" was null or undefined when calling showViewNodes().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/views/{view_id}/nodes/query`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"view_id"}}`, encodeURIComponent(String(requestParameters['viewId']))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: QueryViewNodesReqToJSON(requestParameters['queryViewNodesReq']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => QueryViewNodesRspFromJSON(jsonValue));
+    }
+
+    /**
+     * 查询视图节点
+     */
+    async showViewNodes(requestParameters: ShowViewNodesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<QueryViewNodesRsp> {
+        const response = await this.showViewNodesRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 同步表记录
+     */
+    async syncRecordsRaw(requestParameters: SyncRecordsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MarkerTableRecords>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling syncRecords().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling syncRecords().'
+            );
+        }
+
+        if (requestParameters['tableId'] == null) {
+            throw new runtime.RequiredError(
+                'tableId',
+                'Required parameter "tableId" was null or undefined when calling syncRecords().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        if (requestParameters['updateTime'] != null) {
+            queryParameters['update_time'] = requestParameters['updateTime'];
+        }
+
+        if (requestParameters['limit'] != null) {
+            queryParameters['limit'] = requestParameters['limit'];
+        }
+
+        if (requestParameters['marker'] != null) {
+            queryParameters['marker'] = requestParameters['marker'];
+        }
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/tables/{table_id}/records/sync`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"table_id"}}`, encodeURIComponent(String(requestParameters['tableId']))),
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => MarkerTableRecordsFromJSON(jsonValue));
+    }
+
+    /**
+     * 同步表记录
+     */
+    async syncRecords(requestParameters: SyncRecordsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MarkerTableRecords> {
+        const response = await this.syncRecordsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 更新单个分析任务信息
+     */
+    async updateAnalysisTaskRaw(requestParameters: UpdateAnalysisTaskRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AnalysisTask>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling updateAnalysisTask().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling updateAnalysisTask().'
+            );
+        }
+
+        if (requestParameters['modelId'] == null) {
+            throw new runtime.RequiredError(
+                'modelId',
+                'Required parameter "modelId" was null or undefined when calling updateAnalysisTask().'
+            );
+        }
+
+        if (requestParameters['taskId'] == null) {
+            throw new runtime.RequiredError(
+                'taskId',
+                'Required parameter "taskId" was null or undefined when calling updateAnalysisTask().'
+            );
+        }
+
+        if (requestParameters['updateAnalysisTaskReq'] == null) {
+            throw new runtime.RequiredError(
+                'updateAnalysisTaskReq',
+                'Required parameter "updateAnalysisTaskReq" was null or undefined when calling updateAnalysisTask().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/models/{model_id}/analysis-tasks/{task_id}`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"model_id"}}`, encodeURIComponent(String(requestParameters['modelId']))).replace(`{${"task_id"}}`, encodeURIComponent(String(requestParameters['taskId']))),
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateAnalysisTaskReqToJSON(requestParameters['updateAnalysisTaskReq']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => AnalysisTaskFromJSON(jsonValue));
+    }
+
+    /**
+     * 更新单个分析任务信息
+     */
+    async updateAnalysisTask(requestParameters: UpdateAnalysisTaskRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AnalysisTask> {
+        const response = await this.updateAnalysisTaskRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 修改目录
+     */
+    async updateCatalogRaw(requestParameters: UpdateCatalogRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Catalog>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling updateCatalog().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling updateCatalog().'
+            );
+        }
+
+        if (requestParameters['catalogId'] == null) {
+            throw new runtime.RequiredError(
+                'catalogId',
+                'Required parameter "catalogId" was null or undefined when calling updateCatalog().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/catalogs/{catalog_id}`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"catalog_id"}}`, encodeURIComponent(String(requestParameters['catalogId']))),
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateCatalogReqToJSON(requestParameters['updateCatalogReq']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CatalogFromJSON(jsonValue));
+    }
+
+    /**
+     * 修改目录
+     */
+    async updateCatalog(requestParameters: UpdateCatalogRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Catalog> {
+        const response = await this.updateCatalogRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 批量修改目录
+     */
+    async updateCatalogsRaw(requestParameters: UpdateCatalogsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateCatalogsResp>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling updateCatalogs().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling updateCatalogs().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/catalogs`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))),
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateCatalogsReqToJSON(requestParameters['updateCatalogsReq']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateCatalogsRespFromJSON(jsonValue));
+    }
+
+    /**
+     * 批量修改目录
+     */
+    async updateCatalogs(requestParameters: UpdateCatalogsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateCatalogsResp> {
+        const response = await this.updateCatalogsRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 修改指定设备
+     */
+    async updateDeviceRaw(requestParameters: UpdateDeviceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<GetDeviceRespDTO>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling updateDevice().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling updateDevice().'
+            );
+        }
+
+        if (requestParameters['deviceId'] == null) {
+            throw new runtime.RequiredError(
+                'deviceId',
+                'Required parameter "deviceId" was null or undefined when calling updateDevice().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/devices/{device_id}`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"device_id"}}`, encodeURIComponent(String(requestParameters['deviceId']))),
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateDeviceDTOToJSON(requestParameters['updateDeviceDTO']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => GetDeviceRespDTOFromJSON(jsonValue));
+    }
+
+    /**
+     * 修改指定设备
+     */
+    async updateDevice(requestParameters: UpdateDeviceRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<GetDeviceRespDTO> {
+        const response = await this.updateDeviceRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 修改字典
+     */
+    async updateDictionaryRaw(requestParameters: UpdateDictionaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Dictionary>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling updateDictionary().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling updateDictionary().'
+            );
+        }
+
+        if (requestParameters['dicId'] == null) {
+            throw new runtime.RequiredError(
+                'dicId',
+                'Required parameter "dicId" was null or undefined when calling updateDictionary().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/dictionaries/{dic_id}`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"dic_id"}}`, encodeURIComponent(String(requestParameters['dicId']))),
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateDictionaryReqToJSON(requestParameters['updateDictionaryReq']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => DictionaryFromJSON(jsonValue));
+    }
+
+    /**
+     * 修改字典
+     */
+    async updateDictionary(requestParameters: UpdateDictionaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Dictionary> {
+        const response = await this.updateDictionaryRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 修改模型
+     */
+    async updateModelRaw(requestParameters: UpdateModelRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Model>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling updateModel().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling updateModel().'
+            );
+        }
+
+        if (requestParameters['modelId'] == null) {
+            throw new runtime.RequiredError(
+                'modelId',
+                'Required parameter "modelId" was null or undefined when calling updateModel().'
+            );
+        }
+
+        if (requestParameters['updateModelReq'] == null) {
+            throw new runtime.RequiredError(
+                'updateModelReq',
+                'Required parameter "updateModelReq" was null or undefined when calling updateModel().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/models/{model_id}`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"model_id"}}`, encodeURIComponent(String(requestParameters['modelId']))),
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateModelReqToJSON(requestParameters['updateModelReq']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ModelFromJSON(jsonValue));
+    }
+
+    /**
+     * 修改模型
+     */
+    async updateModel(requestParameters: UpdateModelRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Model> {
+        const response = await this.updateModelRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 修改表
+     */
+    async updateTableRaw(requestParameters: UpdateTableOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TableInfo>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling updateTable().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling updateTable().'
+            );
+        }
+
+        if (requestParameters['tableId'] == null) {
+            throw new runtime.RequiredError(
+                'tableId',
+                'Required parameter "tableId" was null or undefined when calling updateTable().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/tables/{table_id}`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"table_id"}}`, encodeURIComponent(String(requestParameters['tableId']))),
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateTableRequestToJSON(requestParameters['updateTableRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => TableInfoFromJSON(jsonValue));
+    }
+
+    /**
+     * 修改表
+     */
+    async updateTable(requestParameters: UpdateTableOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TableInfo> {
+        const response = await this.updateTableRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     */
+    async updateThingRaw(requestParameters: UpdateThingOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Thing>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling updateThing().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling updateThing().'
+            );
+        }
+
+        if (requestParameters['thingId'] == null) {
+            throw new runtime.RequiredError(
+                'thingId',
+                'Required parameter "thingId" was null or undefined when calling updateThing().'
+            );
+        }
+
+        if (requestParameters['updateThingRequest'] == null) {
+            throw new runtime.RequiredError(
+                'updateThingRequest',
+                'Required parameter "updateThingRequest" was null or undefined when calling updateThing().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/things/{thing_id}`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"thing_id"}}`, encodeURIComponent(String(requestParameters['thingId']))),
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateThingRequestToJSON(requestParameters['updateThingRequest']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ThingFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async updateThing(requestParameters: UpdateThingOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Thing> {
+        const response = await this.updateThingRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
+     * 修改视图
+     */
+    async updateViewRaw(requestParameters: UpdateViewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<View>> {
+        if (requestParameters['xAuthToken'] == null) {
+            throw new runtime.RequiredError(
+                'xAuthToken',
+                'Required parameter "xAuthToken" was null or undefined when calling updateView().'
+            );
+        }
+
+        if (requestParameters['projectId'] == null) {
+            throw new runtime.RequiredError(
+                'projectId',
+                'Required parameter "projectId" was null or undefined when calling updateView().'
+            );
+        }
+
+        if (requestParameters['viewId'] == null) {
+            throw new runtime.RequiredError(
+                'viewId',
+                'Required parameter "viewId" was null or undefined when calling updateView().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        if (requestParameters['xAuthToken'] != null) {
+            headerParameters['X-Auth-Token'] = String(requestParameters['xAuthToken']);
+        }
+
+        const response = await this.request({
+            path: `/v5/{project_id}/views/{view_id}`.replace(`{${"project_id"}}`, encodeURIComponent(String(requestParameters['projectId']))).replace(`{${"view_id"}}`, encodeURIComponent(String(requestParameters['viewId']))),
+            method: 'PUT',
+            headers: headerParameters,
+            query: queryParameters,
+            body: UpdateViewReqToJSON(requestParameters['updateViewReq']),
+        }, initOverrides);
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ViewFromJSON(jsonValue));
+    }
+
+    /**
+     * 修改视图
+     */
+    async updateView(requestParameters: UpdateViewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<View> {
+        const response = await this.updateViewRaw(requestParameters, initOverrides);
         return await response.value();
     }
 

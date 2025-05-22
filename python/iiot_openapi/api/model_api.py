@@ -57,7 +57,7 @@ class ModelApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Model:
-        """create_model
+        """创建模型
 
 
         :param x_auth_token: (required)
@@ -131,7 +131,7 @@ class ModelApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Model]:
-        """create_model
+        """创建模型
 
 
         :param x_auth_token: (required)
@@ -205,7 +205,7 @@ class ModelApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """create_model
+        """创建模型
 
 
         :param x_auth_token: (required)

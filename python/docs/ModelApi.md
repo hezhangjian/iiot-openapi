@@ -4,11 +4,13 @@ All URIs are relative to *http://https:/*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_model**](ModelApi.md#create_model) | **POST** /v5/{project_id}/models | 
+[**create_model**](ModelApi.md#create_model) | **POST** /v5/{project_id}/models | 创建模型
 
 
 # **create_model**
 > Model create_model(x_auth_token, project_id, create_model_request)
+
+创建模型
 
 ### Example
 
@@ -36,6 +38,7 @@ with iiot_openapi.ApiClient(configuration) as api_client:
     create_model_request = iiot_openapi.CreateModelRequest() # CreateModelRequest | 
 
     try:
+        # 创建模型
         api_response = api_instance.create_model(x_auth_token, project_id, create_model_request)
         print("The response of ModelApi->create_model:\n")
         pprint(api_response)

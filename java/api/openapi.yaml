@@ -1,0 +1,2980 @@
+openapi: 3.1.1
+info:
+  title: IIoT OpenAPI
+  version: 5.0.0
+servers:
+- url: "https://{endpoint}"
+paths:
+  /v1/iotstage/auth/tokens:
+    post:
+      operationId: generateToken
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTokenReqDTO'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Token'
+          description: 成功返回 Token
+          headers:
+            X-Subject-Token:
+              description: 返回的用户 token，用于后续调用 API 时放入 X-Auth-Token
+              explode: false
+              schema:
+                type: string
+              style: simple
+      summary: 获取认证 Token
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/models:
+    get:
+      operationId: listModels
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Limit'
+      - explode: true
+        in: query
+        name: order
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: model_name
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: type
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListModelsResp'
+          description: OK
+      summary: 分页查询模型列表
+      x-accepts:
+      - application/json
+    post:
+      operationId: createModel
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateModelRequest'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Model'
+          description: Created
+      summary: 创建模型
+      tags:
+      - Model
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/models/{model_id}:
+    delete:
+      operationId: deleteModel
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ModelId'
+      responses:
+        "204":
+          description: Deleted
+      summary: 删除模型
+      x-accepts:
+      - application/json
+    get:
+      operationId: getModel
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ModelId'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Model'
+          description: OK
+      summary: 查询单个模型内容
+      x-accepts:
+      - application/json
+    put:
+      operationId: updateModel
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ModelId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateModelReq'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Model'
+          description: OK
+      summary: 修改模型
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/things:
+    get:
+      operationId: listThings
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Limit'
+      - explode: true
+        in: query
+        name: model_id
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: thing_name
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: order
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListThingsResp'
+          description: OK
+      x-accepts:
+      - application/json
+    post:
+      operationId: createThing
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateThingRequest'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Thing'
+          description: Created
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/things/{thing_id}:
+    delete:
+      operationId: deleteThing
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ThingId'
+      responses:
+        "204":
+          description: Deleted
+      x-accepts:
+      - application/json
+    get:
+      operationId: getThing
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ThingId'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Thing'
+          description: OK
+      x-accepts:
+      - application/json
+    put:
+      operationId: updateThing
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ThingId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateThingRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Thing'
+          description: OK
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/things/{thing_id}/properties/set:
+    post:
+      operationId: setThingProperties
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ThingId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ComponentProperty'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PropertiesSetResp'
+          description: OK
+      summary: 设置物实例关联的设备属性
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/things/{thing_id}/properties/get:
+    post:
+      operationId: getThingProperties
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ThingId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PropertiesGetReq'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PropertiesGetResp'
+          description: OK
+      summary: 获取单个实例关联的设备属性值
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/things/{thing_id}/snapshot:
+    get:
+      operationId: listThingSnapshot
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ThingId'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListSnapshotResp'
+          description: OK
+      summary: 查询物实例快照
+      x-accepts:
+      - application/json
+  /v5/{project_id}/snapshots/get:
+    post:
+      operationId: batchListSnapshots
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BatchListThingSnapshotsReq'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BatchListThingSnapshotsResp'
+          description: OK
+      summary: 批量查询物实例快照
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/things/{thing_id}/time-series/query:
+    post:
+      operationId: queryTimeSeries
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ThingId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TimeSeriesQueryRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TimeSeriesQueryResponse'
+          description: 成功返回
+      summary: 查询 Thing 的属性历史值
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/datasources/{datasource_id}/data:
+    post:
+      operationId: reportToApiDatasource
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/DatasourceId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DatasourceReportRequest'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DatasourceReportResponse'
+          description: 上报成功
+        "400":
+          description: 参数错误
+        "401":
+          description: 未授权
+        "500":
+          description: 服务内部错误
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/tables:
+    get:
+      operationId: listTables
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Limit'
+      - explode: true
+        in: query
+        name: catalog_id
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: table_name
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: type
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListTablesResp'
+          description: OK
+      summary: 查询表列表
+      x-accepts:
+      - application/json
+    post:
+      operationId: createTable
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTableRequest'
+        required: true
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TableInfo'
+          description: Created
+      summary: 创建表
+      tags:
+      - Table
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/tables/{table_id}:
+    delete:
+      operationId: deleteTable
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/TableId'
+      responses:
+        "204":
+          description: Deleted
+      summary: 删除表
+      x-accepts:
+      - application/json
+    get:
+      operationId: showTable
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/TableId'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TableInfo'
+          description: OK
+      summary: 查询表详情
+      x-accepts:
+      - application/json
+    put:
+      operationId: updateTable
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/TableId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateTableRequest'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TableInfo'
+          description: OK
+      summary: 修改表
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/tables/{table_id}/records/save:
+    post:
+      operationId: saveRecords
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/TableId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SaveRecordsRequest'
+        required: true
+      responses:
+        "204":
+          description: Ok
+      summary: 保存表记录
+      tags:
+      - Record
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/tables/{table_id}/records/query:
+    post:
+      operationId: listRecords
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/TableId'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Limit'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ListRecordsRequest'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TableRecords'
+          description: OK
+      summary: 查询表记录
+      tags:
+      - Record
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/tables/{table_id}/records/delete:
+    post:
+      operationId: deleteRecords
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/TableId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteRecordsRequest'
+      responses:
+        "204":
+          description: Deleted
+      summary: 删除表记录
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/tables/{table_id}/records/sync:
+    get:
+      operationId: syncRecords
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/TableId'
+      - explode: true
+        in: query
+        name: update_time
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: marker
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MarkerTableRecords'
+          description: OK
+      summary: 同步表记录
+      x-accepts:
+      - application/json
+  /v5/{project_id}/devices:
+    get:
+      operationId: listDevices
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Limit'
+      - explode: true
+        in: query
+        name: device_type
+        required: true
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: order
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: model_id
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: device_name
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListDevicesDTO'
+          description: OK
+      summary: 查询设备列表
+      x-accepts:
+      - application/json
+    post:
+      operationId: createDevice
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDeviceReqDTO'
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CreateDeviceRespDTO'
+          description: OK
+      summary: 创建设备
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/devices/{device_id}:
+    delete:
+      operationId: deleteDevice
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/DeviceId'
+      responses:
+        "204":
+          description: Deleted
+      summary: 删除指定设备
+      x-accepts:
+      - application/json
+    get:
+      operationId: showDevice
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/DeviceId'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetDeviceRespDTO'
+          description: OK
+      summary: 获取指定设备
+      x-accepts:
+      - application/json
+    put:
+      operationId: updateDevice
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/DeviceId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateDeviceDTO'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetDeviceRespDTO'
+          description: OK
+      summary: 修改指定设备
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/devices/{device_id}/things:
+    get:
+      operationId: listThingsInDevice
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/DeviceId'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Limit'
+      - explode: true
+        in: query
+        name: order
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: model_id
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: thing_id
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ThingListDTO'
+          description: OK
+      summary: 获取指定设备下实例列表
+      x-accepts:
+      - application/json
+    post:
+      operationId: attachThingToDevice
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/DeviceId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AttachThingReqDTO'
+      responses:
+        "200":
+          description: OK
+      summary: 绑定设备与实例
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/devices/{device_id}/things/{thing_id}:
+    delete:
+      operationId: detachDeviceAndThing
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/DeviceId'
+      - $ref: '#/components/parameters/ThingId'
+      responses:
+        "204":
+          description: Deleted
+      summary: 删除设备与实例绑定关系
+      x-accepts:
+      - application/json
+  /v5/{project_id}/analysis-tasks:
+    get:
+      operationId: listAnalysisTaskPage
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Limit'
+      - explode: true
+        in: query
+        name: event_class
+        required: true
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: task_name
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: model_name
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: enabled
+        required: false
+        schema:
+          type: boolean
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListAnalysisTaskPageRsp'
+          description: OK
+      summary: 根据条件查询分析任务列表
+      x-accepts:
+      - application/json
+  /v5/{project_id}/models/{model_id}/analysis-tasks:
+    get:
+      operationId: listAnalysisTasks
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ModelId'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalysisTaskListRsp'
+          description: OK
+      summary: 查询模型下分析任务列表
+      x-accepts:
+      - application/json
+    post:
+      operationId: createAnalysisTask
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ModelId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateAnalysisTaskReq'
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalysisTask'
+          description: Created
+      summary: 创建单个分析任务
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/models/{model_id}/analysis-tasks/{task_id}:
+    delete:
+      operationId: deleteAnalysisTask
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ModelId'
+      - $ref: '#/components/parameters/TaskId'
+      responses:
+        "204":
+          description: Deleted
+      summary: 删除单个分析任务
+      x-accepts:
+      - application/json
+    get:
+      operationId: showAnalysisTask
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ModelId'
+      - $ref: '#/components/parameters/TaskId'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalysisTask'
+          description: OK
+      summary: 查询单个分析任务信息
+      x-accepts:
+      - application/json
+    put:
+      operationId: updateAnalysisTask
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ModelId'
+      - $ref: '#/components/parameters/TaskId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateAnalysisTaskReq'
+        required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalysisTask'
+          description: OK
+      summary: 更新单个分析任务信息
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/views:
+    get:
+      operationId: listViews
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListViewsResp'
+          description: OK
+      summary: 查询视图列表
+      x-accepts:
+      - application/json
+    post:
+      operationId: createView
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateViewReq'
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/View'
+          description: Created
+      summary: 创建视图
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/views/{view_id}:
+    delete:
+      operationId: deleteView
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ViewId'
+      responses:
+        "204":
+          description: Deleted
+      summary: 删除视图
+      x-accepts:
+      - application/json
+    get:
+      operationId: showView
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ViewId'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/View'
+          description: OK
+      summary: 查询视图详情
+      x-accepts:
+      - application/json
+    put:
+      operationId: updateView
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ViewId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateViewReq'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/View'
+          description: OK
+      summary: 修改视图
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/views/{view_id}/nodes/add:
+    post:
+      operationId: addViewNodes
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ViewId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddViewNodesReq'
+      responses:
+        "204":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/View'
+          description: OK
+      summary: 添加视图节点
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/views/{view_id}/nodes/query:
+    post:
+      operationId: showViewNodes
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ViewId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/QueryViewNodesReq'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/QueryViewNodesRsp'
+          description: OK
+      summary: 查询视图节点
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/views/{view_id}/nodes/delete:
+    post:
+      operationId: deleteViewNodes
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ViewId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DeleteViewNodesReq'
+      responses:
+        "204":
+          description: Deleted
+      summary: 删除视图节点
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/views/{view_id}/nodes/modify:
+    post:
+      operationId: modifyViewNodes
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ViewId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModifyViewNodesReq'
+      responses:
+        "204":
+          description: OK
+      summary: 修改视图节点
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/views/{view_id}/data:
+    get:
+      operationId: getViewData
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/ViewId'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ViewData'
+          description: OK
+      summary: 查询视图数据
+      x-accepts:
+      - application/json
+  /v5/{project_id}/dictionaries:
+    get:
+      operationId: listDictionaries
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Limit'
+      - explode: true
+        in: query
+        name: catalog_id
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: dic_name
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListDictionariesResp'
+          description: OK
+      summary: 查询字典列表
+      x-accepts:
+      - application/json
+    post:
+      operationId: createDictionary
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateDictionaryReq'
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dictionary'
+          description: Created
+      summary: 创建字典
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/dictionaries/{dic_id}:
+    delete:
+      operationId: deleteDictionary
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/DicId'
+      responses:
+        "204":
+          description: Deleted
+      summary: 删除字典
+      x-accepts:
+      - application/json
+    get:
+      operationId: showDictionary
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/DicId'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dictionary'
+          description: OK
+      summary: 查询字典详情
+      x-accepts:
+      - application/json
+    put:
+      operationId: updateDictionary
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/DicId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateDictionaryReq'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Dictionary'
+          description: OK
+      summary: 修改字典
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/catalogs:
+    get:
+      operationId: listCatalogs
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/Offset'
+      - $ref: '#/components/parameters/Limit'
+      - explode: true
+        in: query
+        name: parent_id
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: catalog_name
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: type
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListCatalogsResp'
+          description: OK
+      summary: 查询目录列表
+      x-accepts:
+      - application/json
+    post:
+      operationId: createCatalog
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateCatalogReq'
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Catalog'
+          description: Created
+      summary: 创建目录
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+    put:
+      operationId: updateCatalogs
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCatalogsReq'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UpdateCatalogsResp'
+          description: OK
+      summary: 批量修改目录
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+  /v5/{project_id}/catalogs/{catalog_id}:
+    delete:
+      operationId: deleteCatalog
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/DicId'
+      responses:
+        "204":
+          description: Deleted
+      summary: 删除目录
+      x-accepts:
+      - application/json
+    get:
+      operationId: showCatalog
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/CatalogId'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Catalog'
+          description: OK
+      summary: 查询目录详情
+      x-accepts:
+      - application/json
+    put:
+      operationId: updateCatalog
+      parameters:
+      - $ref: '#/components/parameters/AuthToken'
+      - $ref: '#/components/parameters/ProjectId'
+      - $ref: '#/components/parameters/CatalogId'
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateCatalogReq'
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Catalog'
+          description: OK
+      summary: 修改目录
+      x-content-type: application/json
+      x-accepts:
+      - application/json
+components:
+  parameters:
+    AuthToken:
+      explode: false
+      in: header
+      name: X-Auth-Token
+      required: true
+      schema:
+        type: string
+      style: simple
+    ProjectId:
+      explode: false
+      in: path
+      name: project_id
+      required: true
+      schema:
+        type: string
+      style: simple
+    ModelId:
+      explode: false
+      in: path
+      name: model_id
+      required: true
+      schema:
+        type: string
+      style: simple
+    ThingId:
+      explode: false
+      in: path
+      name: thing_id
+      required: true
+      schema:
+        type: string
+      style: simple
+    TableId:
+      explode: false
+      in: path
+      name: table_id
+      required: true
+      schema:
+        type: string
+      style: simple
+    DeviceId:
+      explode: false
+      in: path
+      name: device_id
+      required: true
+      schema:
+        type: string
+      style: simple
+    TaskId:
+      explode: false
+      in: path
+      name: task_id
+      required: true
+      schema:
+        type: string
+      style: simple
+    ViewId:
+      explode: false
+      in: path
+      name: view_id
+      required: true
+      schema:
+        type: string
+      style: simple
+    DicId:
+      explode: false
+      in: path
+      name: dic_id
+      required: true
+      schema:
+        type: string
+      style: simple
+    CatalogId:
+      explode: false
+      in: path
+      name: catalog_id
+      required: true
+      schema:
+        type: string
+      style: simple
+    DatasourceId:
+      explode: false
+      in: path
+      name: datasource_id
+      required: true
+      schema:
+        type: string
+      style: simple
+    Offset:
+      explode: true
+      in: query
+      name: offset
+      required: false
+      schema:
+        type: integer
+      style: form
+    Limit:
+      explode: true
+      in: query
+      name: limit
+      required: false
+      schema:
+        type: integer
+      style: form
+  schemas:
+    CreateTokenReqDTO:
+      properties:
+        client_id:
+          type: string
+        secret_id:
+          type: string
+        project:
+          $ref: '#/components/schemas/Project'
+      required:
+      - client_id
+      - secret_id
+    Project:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    Token:
+      properties:
+        issued_at:
+          type: string
+        expires_at:
+          type: integer
+    CreateModelRequest:
+      properties:
+        model_id:
+          type: string
+        model_name:
+          type: string
+        type:
+          enum:
+          - local
+          - cascade
+          type: string
+        description:
+          type: string
+        properties:
+          items:
+            $ref: '#/components/schemas/PropertyDto'
+          type: array
+        components:
+          items:
+            $ref: '#/components/schemas/ComponentDto'
+          type: array
+      required:
+      - model_id
+      - model_name
+    Model:
+      allOf:
+      - $ref: '#/components/schemas/CreateModelRequest'
+      - properties:
+          create_time:
+            type: string
+          update_time:
+            type: string
+    UpdateModelReq:
+      properties:
+        model_name:
+          type: string
+        description:
+          type: string
+        properties:
+          items:
+            $ref: '#/components/schemas/PropertyDto'
+          type: array
+        components:
+          items:
+            $ref: '#/components/schemas/ComponentDto'
+          type: array
+    ListModelsResp:
+      properties:
+        models:
+          items:
+            $ref: '#/components/schemas/BriefModel'
+          type: array
+        count:
+          type: integer
+    BriefModel:
+      properties:
+        model_id:
+          type: string
+        model_name:
+          type: string
+        description:
+          type: string
+        type:
+          enum:
+          - local
+          - cascade
+          type: string
+        sync_count:
+          type: integer
+        create_time:
+          type: string
+        update_time:
+          type: string
+    ComponentDto:
+      properties:
+        component_id:
+          type: string
+        component_name:
+          type: string
+        description:
+          type: string
+        properties:
+          items:
+            $ref: '#/components/schemas/PropertyDto'
+          type: array
+        components:
+          items:
+            $ref: '#/components/schemas/ComponentDto'
+          type: array
+      required:
+      - component_id
+      - component_name
+    PropertyDto:
+      properties:
+        property_id:
+          type: string
+        property_name:
+          type: string
+        data_schema:
+          $ref: '#/components/schemas/DataSchema'
+        writable:
+          type: boolean
+        categories:
+          items:
+            type: string
+          type: array
+        description:
+          type: string
+        unit:
+          type: string
+        ref_type:
+          enum:
+          - table
+          - point
+          - property
+          type: string
+        table_ref:
+          $ref: '#/components/schemas/TableRef'
+      required:
+      - data_schema
+      - property_id
+      - property_name
+    TableRef:
+      properties:
+        table_id:
+          type: string
+        column_id:
+          type: string
+        where:
+          additionalProperties: true
+          type: object
+    DataSchema:
+      properties:
+        type:
+          enum:
+          - bool
+          - integer
+          - double
+          - object
+          - string
+          - time
+          type: string
+        integer_schema:
+          $ref: '#/components/schemas/IntegerSchema'
+        double_schema:
+          $ref: '#/components/schemas/DoubleSchema'
+        string_schema:
+          $ref: '#/components/schemas/StringSchema'
+        object_schema:
+          $ref: '#/components/schemas/ObjectSchema'
+      required:
+      - type
+    IntegerSchema:
+      properties:
+        min:
+          type: integer
+        max:
+          type: integer
+    DoubleSchema:
+      properties:
+        min:
+          type: number
+        max:
+          type: number
+    StringSchema:
+      properties:
+        min_length:
+          type: integer
+        max_length:
+          type: integer
+    ObjectSchema:
+      properties:
+        min_length:
+          type: integer
+        max_length:
+          type: integer
+    CreateThingRequest:
+      properties:
+        thing_id:
+          type: string
+        name:
+          type: string
+        model_id:
+          type: string
+        description:
+          type: string
+        properties:
+          additionalProperties:
+            $ref: '#/components/schemas/PropertyValue'
+      required:
+      - model_id
+      - thing_id
+    UpdateThingRequest:
+      properties:
+        thing_name:
+          type: string
+        tags:
+          additionalProperties:
+            $ref: '#/components/schemas/PropertyValue'
+        properties:
+          $ref: '#/components/schemas/ReferenceConfDetails'
+        components:
+          $ref: '#/components/schemas/ComponentReferenceConfDetails'
+        create_time:
+          type: string
+        update_time:
+          type: string
+    ReferenceConfDetails:
+      properties:
+        property_ref:
+          additionalProperties:
+            $ref: '#/components/schemas/PropertyRef'
+        value:
+          type: object
+        update_time:
+          type: string
+    ComponentReferenceConfDetails:
+      properties:
+        properties:
+          additionalProperties:
+            $ref: '#/components/schemas/ReferenceConfDetails'
+        components:
+          $ref: '#/components/schemas/ComponentReferenceConfDetails'
+    PropertyRef:
+      properties:
+        thing_id:
+          type: string
+        property_path:
+          type: string
+    ListThingsResp:
+      properties:
+        things:
+          items:
+            $ref: '#/components/schemas/BriefThing'
+          type: array
+        count:
+          type: integer
+    BriefThing:
+      properties:
+        thing_id:
+          type: string
+        thing_name:
+          type: string
+        model_id:
+          type: string
+        model_name:
+          type: string
+        create_time:
+          type: string
+        update_time:
+          type: string
+    Thing:
+      allOf:
+      - $ref: '#/components/schemas/CreateThingRequest'
+      - properties:
+          created_time:
+            type: string
+          updated_time:
+            type: string
+    PropertyValue:
+      properties:
+        value:
+          type: string
+        type:
+          enum:
+          - bool
+          - integer
+          - double
+          - object
+          - string
+          - time
+          type: string
+      required:
+      - type
+      - value
+    PropertyValueObject:
+      properties:
+        value:
+          type: string
+        object:
+          type: object
+      required:
+      - object
+      - value
+    PropertyValueTime:
+      properties:
+        value:
+          type: object
+        time:
+          type: string
+    DatasourceReportRequest:
+      properties:
+        devices:
+          items:
+            $ref: '#/components/schemas/ReportDevice'
+          type: array
+      required:
+      - devices
+    ReportDevice:
+      properties:
+        device_id:
+          type: string
+        services:
+          items:
+            $ref: '#/components/schemas/ServiceData'
+          type: array
+      required:
+      - device_id
+      - services
+    ServiceData:
+      properties:
+        service_id:
+          type: string
+        event_time:
+          format: date-time
+          type: string
+        properties:
+          additionalProperties: true
+          type: object
+      required:
+      - event_time
+      - properties
+      - service_id
+    DatasourceReportResponse:
+      properties:
+        successful:
+          type: boolean
+    TimeSeriesQueryRequest:
+      properties:
+        property_paths:
+          items:
+            type: string
+          type: array
+        time_span:
+          $ref: '#/components/schemas/TimeSpan'
+        limit:
+          type: integer
+        marker:
+          type: string
+      required:
+      - property_paths
+      - time_span
+    TimeSpan:
+      properties:
+        from:
+          format: int64
+          type: integer
+        to:
+          format: int64
+          type: integer
+      required:
+      - from
+      - to
+    TimeSeriesQueryResponse:
+      properties:
+        thing_id:
+          type: string
+        data:
+          additionalProperties:
+            $ref: '#/components/schemas/DataList'
+        page_info:
+          additionalProperties: true
+          type: object
+    DataList:
+      properties:
+        timestamps:
+          items:
+            type: integer
+          type: array
+        property_values:
+          items:
+            $ref: '#/components/schemas/PropertyValues'
+          type: array
+    PropertyValues:
+      properties:
+        property_path:
+          type: string
+        values:
+          items:
+            type: string
+          type: array
+    CreateTableRequest:
+      properties:
+        table_id:
+          type: string
+        table_name:
+          type: string
+        type:
+          type: string
+        catalog_id:
+          type: string
+        description:
+          type: string
+        table_schema:
+          $ref: '#/components/schemas/TableSchema'
+        aging_settings:
+          $ref: '#/components/schemas/AgingSettings'
+      required:
+      - table_id
+      - table_name
+      - table_schema
+      - type
+    TableSchema:
+      properties:
+        columns:
+          items:
+            $ref: '#/components/schemas/ColumnSchema'
+          type: array
+        primary_key:
+          items:
+            type: string
+          type: array
+        indexes:
+          items:
+            $ref: '#/components/schemas/IndexSchema'
+          type: array
+      required:
+      - columns
+      - primary_key
+    ColumnSchema:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        dic_id:
+          type: string
+        data_schema:
+          items:
+            $ref: '#/components/schemas/DataSchema'
+          type: array
+      required:
+      - data_schema
+      - id
+      - name
+    IndexSchema:
+      properties:
+        name:
+          type: string
+        columns_ids:
+          items:
+            type: string
+          type: array
+      required:
+      - columns_ids
+      - name
+    AgingSettings:
+      properties:
+        retention_period:
+          type: string
+    TableInfo:
+      allOf:
+      - $ref: '#/components/schemas/CreateTableRequest'
+      - properties:
+          create_time:
+            type: string
+          update_time:
+            type: string
+          original_reports:
+            $ref: '#/components/schemas/OriginalReports'
+          integrated_reports:
+            $ref: '#/components/schemas/IntegratedReports'
+          itstat_reports:
+            $ref: '#/components/schemas/ITStatReports'
+          otstat_reports:
+            $ref: '#/components/schemas/OtstatReports'
+    OriginalReports:
+      properties:
+        sync_time:
+          type: string
+        aging_time:
+          type: string
+    IntegratedReports:
+      properties:
+        integrated_time:
+          type: string
+        aging_time:
+          type: string
+        integrated_status:
+          type: string
+        integrated_result:
+          type: string
+    ITStatReports:
+      properties:
+        stat_time:
+          type: string
+        aging_time:
+          type: string
+        stat_status:
+          type: string
+        stat_result:
+          type: string
+    OtstatReports:
+      properties:
+        stat_time:
+          type: string
+        aging_time:
+          type: string
+        stat_status:
+          type: string
+        stat_result:
+          type: string
+    UpdateTableRequest:
+      properties:
+        table_name:
+          type: string
+        catalog_id:
+          type: string
+        description:
+          type: string
+        table_schema:
+          $ref: '#/components/schemas/UpdateTableSchema'
+        aging_settings:
+          $ref: '#/components/schemas/AgingSettings'
+    UpdateTableSchema:
+      properties:
+        columns:
+          items:
+            $ref: '#/components/schemas/UpdateColumnSchema'
+          type: array
+      required:
+      - columns
+    UpdateColumnSchema:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+      required:
+      - id
+      - name
+    ListTablesResp:
+      properties:
+        count:
+          type: integer
+        tables:
+          items:
+            $ref: '#/components/schemas/BriefTable'
+          type: array
+    BriefTable:
+      properties:
+        table_id:
+          type: string
+        table_name:
+          type: string
+        type:
+          type: string
+        catalog_id:
+          type: string
+        description:
+          type: string
+        create_time:
+          type: string
+        update_time:
+          type: string
+        original_reports:
+          $ref: '#/components/schemas/OriginalReports'
+        integrated_reports:
+          $ref: '#/components/schemas/IntegratedReports'
+        itstat_reports:
+          $ref: '#/components/schemas/ITStatReports'
+        otstat_reports:
+          $ref: '#/components/schemas/OtstatReports'
+        process_settings:
+          $ref: '#/components/schemas/BriefProcessSettings'
+    BriefProcessSettings:
+      properties:
+        enabled:
+          type: boolean
+        schedule_type:
+          type: string
+        period:
+          type: string
+      required:
+      - enabled
+      - period
+      - schedule_type
+    SaveRecordsRequest:
+      properties:
+        columns:
+          items:
+            type: string
+          type: array
+        values:
+          items:
+            $ref: '#/components/schemas/RecordValues'
+          type: array
+        column_values:
+          items:
+            type: object
+          type: array
+    RecordValues:
+      items:
+        type: object
+      type: array
+    ListRecordsRequest:
+      properties:
+        index_columns:
+          items:
+            $ref: '#/components/schemas/RecordFilter'
+          type: array
+    RecordFilter:
+      properties:
+        column_id:
+          type: string
+        operator:
+          type: string
+        value:
+          type: object
+    TableRecords:
+      properties:
+        count:
+          type: integer
+        columns:
+          items:
+            type: string
+          type: array
+        values:
+          items:
+            $ref: '#/components/schemas/RecordValues'
+          type: array
+    DeleteRecordsRequest:
+      properties:
+        primary_key:
+          items:
+            type: string
+          type: array
+        values:
+          items:
+            $ref: '#/components/schemas/RecordValues'
+          type: array
+      required:
+      - primary_key
+      - values
+    MarkerTableRecords:
+      properties:
+        page_info:
+          $ref: '#/components/schemas/PageInfo'
+        columns:
+          items:
+            type: string
+          type: array
+        values:
+          items:
+            $ref: '#/components/schemas/RecordValues'
+          type: array
+    PageInfo:
+      properties:
+        next_marker:
+          type: string
+    ComponentProperty:
+      properties:
+        properties:
+          additionalProperties:
+            $ref: '#/components/schemas/PropertyValueObject'
+        components:
+          additionalProperties:
+            $ref: '#/components/schemas/ComponentProperty'
+    PropertiesSetResp:
+      properties:
+        result_code:
+          type: integer
+        result_desc:
+          type: string
+    PropertiesGetReq:
+      properties:
+        properties:
+          items:
+            type: string
+          type: array
+        components:
+          additionalProperties:
+            $ref: '#/components/schemas/PropertiesGetReq'
+    PropertiesGetResp:
+      properties:
+        properties:
+          additionalProperties:
+            $ref: '#/components/schemas/PropertyValueObject'
+        components:
+          additionalProperties:
+            $ref: '#/components/schemas/ComponentProperty'
+        result_code:
+          type: integer
+        result_desc:
+          type: string
+    ListSnapshotResp:
+      properties:
+        properties:
+          additionalProperties:
+            $ref: '#/components/schemas/PropertyValueTime'
+        components:
+          additionalProperties:
+            $ref: '#/components/schemas/ListSnapshotResp'
+    BatchListThingSnapshotsReq:
+      properties:
+        things:
+          items:
+            $ref: '#/components/schemas/BatchListThingSnapshotsReq_things_inner'
+          type: array
+      required:
+      - things
+    BatchListThingSnapshotsResp:
+      properties:
+        things:
+          items:
+            $ref: '#/components/schemas/BatchListThingSnapshotsResp_things_inner'
+          type: array
+    ListDevicesDTO:
+      properties:
+        devices:
+          items:
+            $ref: '#/components/schemas/DeviceDTO'
+          type: array
+        count:
+          type: integer
+    DeviceDTO:
+      properties:
+        device_id:
+          type: string
+        device_name:
+          type: string
+        device_type:
+          type: string
+        device_status:
+          type: string
+        thing_name:
+          type: string
+        model_id:
+          type: string
+        model_name:
+          type: string
+        create_time:
+          type: string
+        update_time:
+          type: string
+    CreateDeviceReqDTO:
+      properties:
+        device_id:
+          type: string
+        device_name:
+          type: string
+        device_type:
+          type: string
+      required:
+      - device_id
+      - device_name
+      - device_type
+    CreateDeviceRespDTO:
+      properties:
+        device_id:
+          type: string
+        device_name:
+          type: string
+        device_type:
+          type: string
+        auth_info:
+          $ref: '#/components/schemas/AuthInfoDTO'
+        create_time:
+          type: string
+        update_time:
+          type: string
+    AuthInfoDTO:
+      properties:
+        secret:
+          type: string
+    GetDeviceRespDTO:
+      properties:
+        device_id:
+          type: string
+        device_name:
+          type: string
+        device_type:
+          type: string
+        device_status:
+          type: string
+        create_time:
+          type: string
+        update_time:
+          type: string
+    UpdateDeviceDTO:
+      properties:
+        device_name:
+          type: string
+    ThingListDTO:
+      properties:
+        things:
+          items:
+            $ref: '#/components/schemas/ThingDTO'
+          type: array
+        count:
+          type: integer
+    ThingDTO:
+      properties:
+        thing_id:
+          type: string
+        thing_name:
+          type: string
+        model_id:
+          type: string
+        model_name:
+          type: string
+    AttachThingReqDTO:
+      properties:
+        thing_id:
+          type: string
+      required:
+      - thing_id
+    ListAnalysisTaskPageRsp:
+      properties:
+        tasks:
+          items:
+            $ref: '#/components/schemas/BriefAnalysisTask'
+          type: array
+        count:
+          type: integer
+    BriefAnalysisTask:
+      properties:
+        task_id:
+          type: string
+        task_name:
+          type: string
+        calc_type:
+          type: string
+        schedule_type:
+          type: string
+        period:
+          type: string
+        enabled:
+          type: boolean
+        event_class_id:
+          type: string
+        event_class_name:
+          type: string
+        model_id:
+          type: string
+        model_name:
+          type: string
+        create_time:
+          type: string
+        update_time:
+          type: string
+    AnalysisTaskListRsp:
+      properties:
+        tasks:
+          items:
+            $ref: '#/components/schemas/BriefAnalysisTask'
+          type: array
+    CleanAnalysisSettingsDto:
+      properties:
+        clean_settings:
+          $ref: '#/components/schemas/CleanSettings'
+    CleanSettings:
+      properties:
+        condition:
+          type: string
+        expressions: {}
+      required:
+      - expressions
+    Expression:
+      properties:
+        name:
+          type: string
+        condition:
+          type: string
+        expression:
+          type: string
+        property_path:
+          type: string
+      required:
+      - expression
+      - name
+    EventGenAnalysisSettingsDto:
+      properties:
+        event_class:
+          type: string
+        event_gen_settings:
+          $ref: '#/components/schemas/EventGenSetting'
+    EventTrigger:
+      properties:
+        condition:
+          type: string
+        duratioin:
+          type: string
+      required:
+      - condition
+    EventGenSetting:
+      properties:
+        start_trigger:
+          $ref: '#/components/schemas/EventTrigger'
+        end_trigger:
+          $ref: '#/components/schemas/EventTrigger'
+        expressions:
+          items:
+            $ref: '#/components/schemas/EventGenExpression'
+          type: array
+        outputs:
+          $ref: '#/components/schemas/EventGenOutput'
+        subevents:
+          items:
+            $ref: '#/components/schemas/SubEventGenSetting'
+          type: array
+      required:
+      - expressions
+    SubEventGenSetting:
+      properties:
+        name:
+          type: string
+        start_trigger:
+          $ref: '#/components/schemas/EventTrigger'
+        end_trigger:
+          $ref: '#/components/schemas/EventTrigger'
+        expressions:
+          items:
+            $ref: '#/components/schemas/EventGenExpression'
+          type: array
+        outputs:
+          $ref: '#/components/schemas/EventGenOutput'
+      required:
+      - name
+      - start_trigger
+    EventGenOutput:
+      properties:
+        columns:
+          items:
+            $ref: '#/components/schemas/EventOutputExpression'
+          type: array
+      required:
+      - columns
+    EventOutputExpression:
+      properties:
+        expression:
+          type: string
+        column_id:
+          type: string
+      required:
+      - column_id
+      - expression
+    EventGenExpression:
+      properties:
+        name:
+          type: string
+        class:
+          type: string
+        condition:
+          type: string
+        expression:
+          type: string
+        triggers:
+          items:
+            type: string
+          type: array
+      required:
+      - expression
+      - name
+    ComplexAnalysisSettingsDto:
+      properties:
+        complex_settings:
+          $ref: '#/components/schemas/ComplexSetting'
+    ComplexSetting:
+      properties:
+        start_trigger:
+          $ref: '#/components/schemas/EventTrigger'
+        end_trigger:
+          $ref: '#/components/schemas/EventTrigger'
+        expressions:
+          items:
+            $ref: '#/components/schemas/EventGenExpression'
+          type: array
+        outputs:
+          $ref: '#/components/schemas/PropGenOutput'
+        subevents:
+          items:
+            $ref: '#/components/schemas/SubEventPropSetting'
+          type: array
+      required:
+      - expressions
+      - outputs
+    PropGenOutput:
+      properties:
+        properties:
+          items:
+            $ref: '#/components/schemas/PropOutputExpression'
+          type: array
+      required:
+      - properties
+    PropOutputExpression:
+      properties:
+        expression:
+          type: string
+        property_path:
+          type: string
+      required:
+      - expression
+      - property_path
+    SubEventPropSetting:
+      properties:
+        name:
+          type: string
+        start_trigger:
+          $ref: '#/components/schemas/EventTrigger'
+        end_trigger:
+          $ref: '#/components/schemas/EventTrigger'
+        expressions:
+          items:
+            $ref: '#/components/schemas/EventGenExpression'
+          type: array
+      required:
+      - name
+      - start_trigger
+    ExpressionAnalysisSettingsDto:
+      properties:
+        expression_settings:
+          $ref: '#/components/schemas/ExpressionSettings'
+    ExpressionSettings:
+      properties:
+        condition:
+          type: string
+        expressions:
+          items:
+            $ref: '#/components/schemas/Expression'
+          type: array
+      required:
+      - expressions
+    CreateAnalysisTaskReq:
+      allOf:
+      - $ref: '#/components/schemas/CleanAnalysisSettingsDto'
+      - $ref: '#/components/schemas/EventGenAnalysisSettingsDto'
+      - $ref: '#/components/schemas/ComplexAnalysisSettingsDto'
+      - $ref: '#/components/schemas/ExpressionAnalysisSettingsDto'
+      - properties:
+          task_name:
+            type: string
+          enabled:
+            type: boolean
+          calc_type:
+            type: string
+          schedule_type:
+            type: string
+          period:
+            type: string
+          tag_matchers:
+            items:
+              $ref: '#/components/schemas/TagMatcher'
+            type: array
+      required:
+      - calc_type
+      - enabled
+      - schedule_type
+      - task_name
+    TagMatcher:
+      properties:
+        match:
+          type: string
+        name:
+          type: string
+        values:
+          items:
+            type: string
+          type: array
+      required:
+      - match
+      - name
+      - values
+    AnalysisTask:
+      allOf:
+      - $ref: '#/components/schemas/CleanAnalysisSettingsDto'
+      - $ref: '#/components/schemas/EventGenAnalysisSettingsDto'
+      - $ref: '#/components/schemas/ComplexAnalysisSettingsDto'
+      - $ref: '#/components/schemas/ExpressionAnalysisSettingsDto'
+      - properties:
+          task_id:
+            type: string
+          task_name:
+            type: string
+          enabled:
+            type: boolean
+          calc_type:
+            type: string
+          schedule_type:
+            type: string
+          period:
+            type: string
+          tag_matchers:
+            items:
+              $ref: '#/components/schemas/TagMatcher'
+            type: array
+          create_time:
+            type: string
+          update_time:
+            type: string
+    UpdateAnalysisTaskReq:
+      allOf:
+      - $ref: '#/components/schemas/CleanAnalysisSettingsDto'
+      - $ref: '#/components/schemas/EventGenAnalysisSettingsDto'
+      - $ref: '#/components/schemas/ComplexAnalysisSettingsDto'
+      - $ref: '#/components/schemas/ExpressionAnalysisSettingsDto'
+      - properties:
+          task_name:
+            type: string
+          enabled:
+            type: boolean
+          period:
+            type: string
+          tag_matchers:
+            items:
+              $ref: '#/components/schemas/TagMatcher'
+            type: array
+          condition:
+            type: string
+          expressions:
+            items:
+              $ref: '#/components/schemas/Expression'
+            type: array
+    CreateViewReq:
+      properties:
+        view_id:
+          type: string
+        view_name:
+          type: string
+        description:
+          type: string
+      required:
+      - view_id
+      - view_name
+    ViewLevel:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    View:
+      properties:
+        view_id:
+          type: string
+        view_name:
+          type: string
+        description:
+          type: string
+        levels:
+          items:
+            $ref: '#/components/schemas/ViewLevel'
+          type: array
+        create_time:
+          type: string
+        update_time:
+          type: string
+    BriefView:
+      properties:
+        view_id:
+          type: string
+        view_name:
+          type: string
+        description:
+          type: string
+        create_time:
+          type: string
+        update_time:
+          type: string
+    ListViewsResp:
+      properties:
+        views:
+          items:
+            $ref: '#/components/schemas/BriefView'
+          type: array
+        count:
+          type: integer
+    UpdateViewReq:
+      properties:
+        view_name:
+          type: string
+        description:
+          type: string
+        levels:
+          items:
+            $ref: '#/components/schemas/ViewLevel'
+          type: array
+    CatalogNode:
+      properties:
+        level_id:
+          type: string
+        node_id:
+          type: string
+        node_name:
+          type: string
+        display_order:
+          type: integer
+      required:
+      - display_order
+      - level_id
+      - node_id
+      - node_name
+    ThingNode:
+      properties:
+        thing_id:
+          type: string
+      required:
+      - thing_id
+    AddViewNodesReq:
+      properties:
+        parent_id:
+          type: string
+        catalog_node:
+          $ref: '#/components/schemas/CatalogNode'
+        thing_nodes:
+          items:
+            $ref: '#/components/schemas/ThingNode'
+          type: array
+    QueryViewNodesReq:
+      properties:
+        node_id:
+          type: string
+    EnrichedCatalogNode:
+      properties:
+        level_id:
+          type: string
+        node_id:
+          type: string
+        node_name:
+          type: string
+        display_order:
+          type: integer
+        create_time:
+          type: string
+        update_time:
+          type: string
+    EnrichedThingNode:
+      properties:
+        thing_id:
+          type: string
+        thing_name:
+          type: string
+        model_id:
+          type: string
+        create_time:
+          type: string
+        update_time:
+          type: string
+    QueryViewNodesRsp:
+      properties:
+        level_id:
+          type: string
+        node_id:
+          type: string
+        node_name:
+          type: string
+        display_order:
+          type: integer
+        create_time:
+          type: string
+        update_time:
+          type: string
+        catalog_nodes:
+          items:
+            $ref: '#/components/schemas/EnrichedCatalogNode'
+          type: array
+        thing_nodes:
+          items:
+            $ref: '#/components/schemas/EnrichedThingNode'
+          type: array
+    DeleteViewNodesReq:
+      properties:
+        node_id:
+          type: string
+        thing_id:
+          type: string
+    ModifyCatalogNode:
+      properties:
+        node_id:
+          type: string
+        node_name:
+          type: string
+        display_order:
+          type: integer
+      required:
+      - node_id
+    ModifyViewNodesReq:
+      properties:
+        catalog_nodes:
+          items:
+            $ref: '#/components/schemas/ModifyCatalogNode'
+          type: array
+      required:
+      - catalog_nodes
+    viewRowData:
+      items:
+        type: string
+      type: array
+    ViewData:
+      properties:
+        count:
+          type: integer
+        columns:
+          items:
+            type: string
+          type: array
+        values:
+          items:
+            $ref: '#/components/schemas/viewRowData'
+          type: array
+    DicItem:
+      properties:
+        value:
+          type: string
+        name:
+          type: string
+        description:
+          type: string
+      required:
+      - name
+      - value
+    CreateDictionaryReq:
+      properties:
+        dic_id:
+          type: string
+        dic_name:
+          type: string
+        data_type:
+          type: string
+        catalog_id:
+          type: string
+        values:
+          items:
+            $ref: '#/components/schemas/DicItem'
+          type: array
+      required:
+      - catalog_id
+      - data_type
+      - dic_id
+      - dic_name
+      - values
+    Dictionary:
+      properties:
+        dic_id:
+          type: string
+        dic_name:
+          type: string
+        data_type:
+          type: string
+        catalog_id:
+          type: string
+        values:
+          items:
+            $ref: '#/components/schemas/DicItem'
+          type: array
+        create_time:
+          type: string
+        update_time:
+          type: string
+      required:
+      - catalog_id
+      - create_time
+      - data_type
+      - dic_id
+      - dic_name
+      - update_time
+      - values
+    BriefDictionary:
+      properties:
+        dic_id:
+          type: string
+        dic_name:
+          type: string
+        data_type:
+          type: string
+        catalog_id:
+          type: string
+        create_time:
+          type: string
+        update_time:
+          type: string
+    ListDictionariesResp:
+      properties:
+        dictionaries:
+          items:
+            $ref: '#/components/schemas/BriefDictionary'
+          type: array
+        count:
+          type: integer
+    UpdateDictionaryReq:
+      properties:
+        dic_name:
+          type: string
+        catalog_id:
+          type: string
+        values:
+          items:
+            $ref: '#/components/schemas/DicItem'
+          type: array
+    CreateCatalogReq:
+      properties:
+        catalog_id:
+          type: string
+        catalog_name:
+          type: string
+        type:
+          type: string
+        display_order:
+          type: integer
+        parent_id:
+          type: string
+      required:
+      - catalog_id
+      - catalog_name
+      - display_order
+      - parent_id
+      - type
+    Catalog:
+      properties:
+        catalog_id:
+          type: string
+        catalog_name:
+          type: string
+        type:
+          type: string
+        display_order:
+          type: integer
+        parent_id:
+          type: string
+        create_time:
+          type: string
+        update_time:
+          type: string
+    ListCatalogsResp:
+      properties:
+        catalogs:
+          items:
+            $ref: '#/components/schemas/Catalog'
+          type: array
+        count:
+          type: integer
+    UpdateCatalogReq:
+      properties:
+        catalog_name:
+          type: string
+      required:
+      - catalog_name
+    CatalogOrder:
+      properties:
+        catalog_id:
+          type: string
+        display_order:
+          type: integer
+      required:
+      - catalog_id
+      - display_order
+    UpdateCatalogsReq:
+      properties:
+        catalogs:
+          items:
+            $ref: '#/components/schemas/CatalogOrder'
+          type: array
+      required:
+      - catalogs
+    UpdateCatalogsResp:
+      properties:
+        catalogs:
+          items:
+            $ref: '#/components/schemas/CatalogOrder'
+          type: array
+    BatchListThingSnapshotsReq_things_inner:
+      properties:
+        thing_id:
+          type: string
+        components:
+          additionalProperties:
+            $ref: '#/components/schemas/PropertiesGetReq'
+      required:
+      - thing_id
+    BatchListThingSnapshotsResp_things_inner:
+      properties:
+        thing_id:
+          type: string
+        properties:
+          additionalProperties:
+            $ref: '#/components/schemas/PropertyValueTime'
+        components:
+          additionalProperties:
+            $ref: '#/components/schemas/ListSnapshotResp'
+

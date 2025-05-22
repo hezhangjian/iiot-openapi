@@ -11,6 +11,14 @@ rm -rf "$PYTHON_DIR"
 rm -rf "$RUST_DIR"
 rm -rf "$TS_DIR"
 
+echo "Java SDK.."
+openapi-generator generate \
+  -i "$SPEC_FILE" \
+  -g java \
+  -o java \
+  --global-property models,supportingFiles \
+  --additional-properties=packageName=iiot-openapi,packageVersion=0.0.1
+
 echo "🚀 Generating Python SDK..."
 openapi-generator generate \
   -i "$SPEC_FILE" \

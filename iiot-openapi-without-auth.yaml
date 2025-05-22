@@ -81,6 +81,12 @@ paths:
       parameters:
       - $ref: '#/components/parameters/ProjectId'
       - $ref: '#/components/parameters/ModelId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateModelReq'
       responses:
         '200':
           description: OK
@@ -226,6 +232,8 @@ paths:
     post:
       summary: 批量查询物实例快照
       operationId: batchListSnapshots
+      parameters:
+      - $ref: '#/components/parameters/ProjectId'
       requestBody:
         required: true
         content:
@@ -536,8 +544,8 @@ paths:
               schema:
                 $ref: '#/components/schemas/GetDeviceRespDTO'
     delete:
-      summary: 修改指定设备
-      operationId: updateDevice
+      summary: 删除指定设备
+      operationId: deleteDevice
       parameters:
       - $ref: '#/components/parameters/ProjectId'
       - $ref: '#/components/parameters/DeviceId'
@@ -848,7 +856,7 @@ paths:
   /v5/{project_id}/views/{view_id}/data:
     get:
       summary: 查询视图数据
-      operationId: modifyViewNodes
+      operationId: getViewData
       parameters:
       - $ref: '#/components/parameters/ProjectId'
       - $ref: '#/components/parameters/ViewId'
@@ -862,7 +870,7 @@ paths:
   /v5/{project_id}/dictionaries:
     post:
       summary: 创建字典
-      operationId: modifyViewNodes
+      operationId: createDictionary
       parameters:
       - $ref: '#/components/parameters/ProjectId'
       requestBody:
@@ -1071,26 +1079,31 @@ components:
     DeviceId:
       name: device_id
       in: path
+      required: true
       schema:
         type: string
     TaskId:
       name: task_id
       in: path
+      required: true
       schema:
         type: string
     ViewId:
       name: view_id
       in: path
+      required: true
       schema:
         type: string
     DicId:
       name: dic_id
       in: path
+      required: true
       schema:
         type: string
     CatalogId:
       name: catalog_id
       in: path
+      required: true
       schema:
         type: string
     DatasourceId:
@@ -1144,6 +1157,21 @@ components:
             type: string
           update_time:
             type: string
+    UpdateModelReq:
+      type: object
+      properties:
+        model_name:
+          type: string
+        description:
+          type: string
+        properties:
+          type: array
+          items:
+            $ref: '#/components/schemas/PropertyDto'
+        components:
+          type: array
+          items:
+            $ref: '#/components/schemas/ComponentDto'
     ListModelsResp:
       type: object
       properties:
@@ -1877,13 +1905,12 @@ components:
             required:
             - thing_id
             properties:
-              type: array
-              itmes:
+              thing_id:
                 type: string
-            components:
-              type: object
-              additionalProperties:
-                $ref: '#/components/schemas/PropertiesGetReq'
+              components:
+                type: object
+                additionalProperties:
+                  $ref: '#/components/schemas/PropertiesGetReq'
     BatchListThingSnapshotsResp:
       type: object
       properties:
