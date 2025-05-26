@@ -54,37 +54,37 @@ import org.openapitools.client.JSON;
 /**
  * ComplexSetting
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class ComplexSetting {
   public static final String SERIALIZED_NAME_START_TRIGGER = "start_trigger";
   @SerializedName(SERIALIZED_NAME_START_TRIGGER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private EventTrigger startTrigger;
 
   public static final String SERIALIZED_NAME_END_TRIGGER = "end_trigger";
   @SerializedName(SERIALIZED_NAME_END_TRIGGER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private EventTrigger endTrigger;
 
   public static final String SERIALIZED_NAME_EXPRESSIONS = "expressions";
   @SerializedName(SERIALIZED_NAME_EXPRESSIONS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<EventGenExpression> expressions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_OUTPUTS = "outputs";
   @SerializedName(SERIALIZED_NAME_OUTPUTS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private PropGenOutput outputs;
 
   public static final String SERIALIZED_NAME_SUBEVENTS = "subevents";
   @SerializedName(SERIALIZED_NAME_SUBEVENTS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<SubEventPropSetting> subevents = new ArrayList<>();
 
   public ComplexSetting() {
   }
 
-  public ComplexSetting startTrigger(@javax.annotation.Nullable EventTrigger startTrigger) {
+  public ComplexSetting startTrigger(@jakarta.annotation.Nullable EventTrigger startTrigger) {
     this.startTrigger = startTrigger;
     return this;
   }
@@ -93,17 +93,17 @@ public class ComplexSetting {
    * Get startTrigger
    * @return startTrigger
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public EventTrigger getStartTrigger() {
     return startTrigger;
   }
 
-  public void setStartTrigger(@javax.annotation.Nullable EventTrigger startTrigger) {
+  public void setStartTrigger(@jakarta.annotation.Nullable EventTrigger startTrigger) {
     this.startTrigger = startTrigger;
   }
 
 
-  public ComplexSetting endTrigger(@javax.annotation.Nullable EventTrigger endTrigger) {
+  public ComplexSetting endTrigger(@jakarta.annotation.Nullable EventTrigger endTrigger) {
     this.endTrigger = endTrigger;
     return this;
   }
@@ -112,17 +112,17 @@ public class ComplexSetting {
    * Get endTrigger
    * @return endTrigger
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public EventTrigger getEndTrigger() {
     return endTrigger;
   }
 
-  public void setEndTrigger(@javax.annotation.Nullable EventTrigger endTrigger) {
+  public void setEndTrigger(@jakarta.annotation.Nullable EventTrigger endTrigger) {
     this.endTrigger = endTrigger;
   }
 
 
-  public ComplexSetting expressions(@javax.annotation.Nonnull List<EventGenExpression> expressions) {
+  public ComplexSetting expressions(@jakarta.annotation.Nonnull List<EventGenExpression> expressions) {
     this.expressions = expressions;
     return this;
   }
@@ -139,17 +139,17 @@ public class ComplexSetting {
    * Get expressions
    * @return expressions
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<EventGenExpression> getExpressions() {
     return expressions;
   }
 
-  public void setExpressions(@javax.annotation.Nonnull List<EventGenExpression> expressions) {
+  public void setExpressions(@jakarta.annotation.Nonnull List<EventGenExpression> expressions) {
     this.expressions = expressions;
   }
 
 
-  public ComplexSetting outputs(@javax.annotation.Nonnull PropGenOutput outputs) {
+  public ComplexSetting outputs(@jakarta.annotation.Nonnull PropGenOutput outputs) {
     this.outputs = outputs;
     return this;
   }
@@ -158,17 +158,17 @@ public class ComplexSetting {
    * Get outputs
    * @return outputs
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public PropGenOutput getOutputs() {
     return outputs;
   }
 
-  public void setOutputs(@javax.annotation.Nonnull PropGenOutput outputs) {
+  public void setOutputs(@jakarta.annotation.Nonnull PropGenOutput outputs) {
     this.outputs = outputs;
   }
 
 
-  public ComplexSetting subevents(@javax.annotation.Nullable List<SubEventPropSetting> subevents) {
+  public ComplexSetting subevents(@jakarta.annotation.Nullable List<SubEventPropSetting> subevents) {
     this.subevents = subevents;
     return this;
   }
@@ -185,12 +185,12 @@ public class ComplexSetting {
    * Get subevents
    * @return subevents
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<SubEventPropSetting> getSubevents() {
     return subevents;
   }
 
-  public void setSubevents(@javax.annotation.Nullable List<SubEventPropSetting> subevents) {
+  public void setSubevents(@jakarta.annotation.Nullable List<SubEventPropSetting> subevents) {
     this.subevents = subevents;
   }
 

@@ -48,27 +48,27 @@ import org.openapitools.client.JSON;
 /**
  * DicItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class DicItem {
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String value;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public DicItem() {
   }
 
-  public DicItem value(@javax.annotation.Nonnull String value) {
+  public DicItem value(@jakarta.annotation.Nonnull String value) {
     this.value = value;
     return this;
   }
@@ -77,17 +77,17 @@ public class DicItem {
    * Get value
    * @return value
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nonnull String value) {
+  public void setValue(@jakarta.annotation.Nonnull String value) {
     this.value = value;
   }
 
 
-  public DicItem name(@javax.annotation.Nonnull String name) {
+  public DicItem name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -96,17 +96,17 @@ public class DicItem {
    * Get name
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public DicItem description(@javax.annotation.Nullable String description) {
+  public DicItem description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -115,12 +115,12 @@ public class DicItem {
    * Get description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 

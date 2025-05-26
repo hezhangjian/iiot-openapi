@@ -51,17 +51,17 @@ import org.openapitools.client.JSON;
 /**
  * EventGenOutput
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class EventGenOutput {
   public static final String SERIALIZED_NAME_COLUMNS = "columns";
   @SerializedName(SERIALIZED_NAME_COLUMNS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<EventOutputExpression> columns = new ArrayList<>();
 
   public EventGenOutput() {
   }
 
-  public EventGenOutput columns(@javax.annotation.Nonnull List<EventOutputExpression> columns) {
+  public EventGenOutput columns(@jakarta.annotation.Nonnull List<EventOutputExpression> columns) {
     this.columns = columns;
     return this;
   }
@@ -78,12 +78,12 @@ public class EventGenOutput {
    * Get columns
    * @return columns
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<EventOutputExpression> getColumns() {
     return columns;
   }
 
-  public void setColumns(@javax.annotation.Nonnull List<EventOutputExpression> columns) {
+  public void setColumns(@jakarta.annotation.Nonnull List<EventOutputExpression> columns) {
     this.columns = columns;
   }
 

@@ -49,27 +49,27 @@ import org.openapitools.client.JSON;
 /**
  * CreateTokenReqDTO
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class CreateTokenReqDTO {
   public static final String SERIALIZED_NAME_CLIENT_ID = "client_id";
   @SerializedName(SERIALIZED_NAME_CLIENT_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String clientId;
 
   public static final String SERIALIZED_NAME_SECRET_ID = "secret_id";
   @SerializedName(SERIALIZED_NAME_SECRET_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String secretId;
 
   public static final String SERIALIZED_NAME_PROJECT = "project";
   @SerializedName(SERIALIZED_NAME_PROJECT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Project project;
 
   public CreateTokenReqDTO() {
   }
 
-  public CreateTokenReqDTO clientId(@javax.annotation.Nonnull String clientId) {
+  public CreateTokenReqDTO clientId(@jakarta.annotation.Nonnull String clientId) {
     this.clientId = clientId;
     return this;
   }
@@ -78,17 +78,17 @@ public class CreateTokenReqDTO {
    * Get clientId
    * @return clientId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getClientId() {
     return clientId;
   }
 
-  public void setClientId(@javax.annotation.Nonnull String clientId) {
+  public void setClientId(@jakarta.annotation.Nonnull String clientId) {
     this.clientId = clientId;
   }
 
 
-  public CreateTokenReqDTO secretId(@javax.annotation.Nonnull String secretId) {
+  public CreateTokenReqDTO secretId(@jakarta.annotation.Nonnull String secretId) {
     this.secretId = secretId;
     return this;
   }
@@ -97,17 +97,17 @@ public class CreateTokenReqDTO {
    * Get secretId
    * @return secretId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getSecretId() {
     return secretId;
   }
 
-  public void setSecretId(@javax.annotation.Nonnull String secretId) {
+  public void setSecretId(@jakarta.annotation.Nonnull String secretId) {
     this.secretId = secretId;
   }
 
 
-  public CreateTokenReqDTO project(@javax.annotation.Nullable Project project) {
+  public CreateTokenReqDTO project(@jakarta.annotation.Nullable Project project) {
     this.project = project;
     return this;
   }
@@ -116,12 +116,12 @@ public class CreateTokenReqDTO {
    * Get project
    * @return project
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Project getProject() {
     return project;
   }
 
-  public void setProject(@javax.annotation.Nullable Project project) {
+  public void setProject(@jakarta.annotation.Nullable Project project) {
     this.project = project;
   }
 

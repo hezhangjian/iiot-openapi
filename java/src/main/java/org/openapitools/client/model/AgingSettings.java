@@ -48,17 +48,17 @@ import org.openapitools.client.JSON;
 /**
  * AgingSettings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class AgingSettings {
   public static final String SERIALIZED_NAME_RETENTION_PERIOD = "retention_period";
   @SerializedName(SERIALIZED_NAME_RETENTION_PERIOD)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String retentionPeriod;
 
   public AgingSettings() {
   }
 
-  public AgingSettings retentionPeriod(@javax.annotation.Nullable String retentionPeriod) {
+  public AgingSettings retentionPeriod(@jakarta.annotation.Nullable String retentionPeriod) {
     this.retentionPeriod = retentionPeriod;
     return this;
   }
@@ -67,12 +67,12 @@ public class AgingSettings {
    * Get retentionPeriod
    * @return retentionPeriod
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getRetentionPeriod() {
     return retentionPeriod;
   }
 
-  public void setRetentionPeriod(@javax.annotation.Nullable String retentionPeriod) {
+  public void setRetentionPeriod(@jakarta.annotation.Nullable String retentionPeriod) {
     this.retentionPeriod = retentionPeriod;
   }
 

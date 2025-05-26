@@ -49,22 +49,22 @@ import org.openapitools.client.JSON;
 /**
  * EventGenAnalysisSettingsDto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class EventGenAnalysisSettingsDto {
   public static final String SERIALIZED_NAME_EVENT_CLASS = "event_class";
   @SerializedName(SERIALIZED_NAME_EVENT_CLASS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String eventClass;
 
   public static final String SERIALIZED_NAME_EVENT_GEN_SETTINGS = "event_gen_settings";
   @SerializedName(SERIALIZED_NAME_EVENT_GEN_SETTINGS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private EventGenSetting eventGenSettings;
 
   public EventGenAnalysisSettingsDto() {
   }
 
-  public EventGenAnalysisSettingsDto eventClass(@javax.annotation.Nullable String eventClass) {
+  public EventGenAnalysisSettingsDto eventClass(@jakarta.annotation.Nullable String eventClass) {
     this.eventClass = eventClass;
     return this;
   }
@@ -73,17 +73,17 @@ public class EventGenAnalysisSettingsDto {
    * Get eventClass
    * @return eventClass
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEventClass() {
     return eventClass;
   }
 
-  public void setEventClass(@javax.annotation.Nullable String eventClass) {
+  public void setEventClass(@jakarta.annotation.Nullable String eventClass) {
     this.eventClass = eventClass;
   }
 
 
-  public EventGenAnalysisSettingsDto eventGenSettings(@javax.annotation.Nullable EventGenSetting eventGenSettings) {
+  public EventGenAnalysisSettingsDto eventGenSettings(@jakarta.annotation.Nullable EventGenSetting eventGenSettings) {
     this.eventGenSettings = eventGenSettings;
     return this;
   }
@@ -92,12 +92,12 @@ public class EventGenAnalysisSettingsDto {
    * Get eventGenSettings
    * @return eventGenSettings
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public EventGenSetting getEventGenSettings() {
     return eventGenSettings;
   }
 
-  public void setEventGenSettings(@javax.annotation.Nullable EventGenSetting eventGenSettings) {
+  public void setEventGenSettings(@jakarta.annotation.Nullable EventGenSetting eventGenSettings) {
     this.eventGenSettings = eventGenSettings;
   }
 

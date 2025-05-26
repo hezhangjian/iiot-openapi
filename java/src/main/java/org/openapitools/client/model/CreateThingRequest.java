@@ -51,37 +51,37 @@ import org.openapitools.client.JSON;
 /**
  * CreateThingRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class CreateThingRequest {
   public static final String SERIALIZED_NAME_THING_ID = "thing_id";
   @SerializedName(SERIALIZED_NAME_THING_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String thingId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_MODEL_ID = "model_id";
   @SerializedName(SERIALIZED_NAME_MODEL_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String modelId;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Map<String, PropertyValue> properties = new HashMap<>();
 
   public CreateThingRequest() {
   }
 
-  public CreateThingRequest thingId(@javax.annotation.Nonnull String thingId) {
+  public CreateThingRequest thingId(@jakarta.annotation.Nonnull String thingId) {
     this.thingId = thingId;
     return this;
   }
@@ -90,17 +90,17 @@ public class CreateThingRequest {
    * Get thingId
    * @return thingId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getThingId() {
     return thingId;
   }
 
-  public void setThingId(@javax.annotation.Nonnull String thingId) {
+  public void setThingId(@jakarta.annotation.Nonnull String thingId) {
     this.thingId = thingId;
   }
 
 
-  public CreateThingRequest name(@javax.annotation.Nullable String name) {
+  public CreateThingRequest name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -109,17 +109,17 @@ public class CreateThingRequest {
    * Get name
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public CreateThingRequest modelId(@javax.annotation.Nonnull String modelId) {
+  public CreateThingRequest modelId(@jakarta.annotation.Nonnull String modelId) {
     this.modelId = modelId;
     return this;
   }
@@ -128,17 +128,17 @@ public class CreateThingRequest {
    * Get modelId
    * @return modelId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getModelId() {
     return modelId;
   }
 
-  public void setModelId(@javax.annotation.Nonnull String modelId) {
+  public void setModelId(@jakarta.annotation.Nonnull String modelId) {
     this.modelId = modelId;
   }
 
 
-  public CreateThingRequest description(@javax.annotation.Nullable String description) {
+  public CreateThingRequest description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -147,17 +147,17 @@ public class CreateThingRequest {
    * Get description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public CreateThingRequest properties(@javax.annotation.Nullable Map<String, PropertyValue> properties) {
+  public CreateThingRequest properties(@jakarta.annotation.Nullable Map<String, PropertyValue> properties) {
     this.properties = properties;
     return this;
   }
@@ -174,12 +174,12 @@ public class CreateThingRequest {
    * Get properties
    * @return properties
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Map<String, PropertyValue> getProperties() {
     return properties;
   }
 
-  public void setProperties(@javax.annotation.Nullable Map<String, PropertyValue> properties) {
+  public void setProperties(@jakarta.annotation.Nullable Map<String, PropertyValue> properties) {
     this.properties = properties;
   }
 

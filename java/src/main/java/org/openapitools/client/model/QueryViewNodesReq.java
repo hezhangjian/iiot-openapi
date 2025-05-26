@@ -48,17 +48,17 @@ import org.openapitools.client.JSON;
 /**
  * QueryViewNodesReq
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class QueryViewNodesReq {
   public static final String SERIALIZED_NAME_NODE_ID = "node_id";
   @SerializedName(SERIALIZED_NAME_NODE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String nodeId;
 
   public QueryViewNodesReq() {
   }
 
-  public QueryViewNodesReq nodeId(@javax.annotation.Nullable String nodeId) {
+  public QueryViewNodesReq nodeId(@jakarta.annotation.Nullable String nodeId) {
     this.nodeId = nodeId;
     return this;
   }
@@ -67,12 +67,12 @@ public class QueryViewNodesReq {
    * Get nodeId
    * @return nodeId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getNodeId() {
     return nodeId;
   }
 
-  public void setNodeId(@javax.annotation.Nullable String nodeId) {
+  public void setNodeId(@jakarta.annotation.Nullable String nodeId) {
     this.nodeId = nodeId;
   }
 

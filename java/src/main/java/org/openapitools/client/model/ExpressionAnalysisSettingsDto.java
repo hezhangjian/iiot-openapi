@@ -49,17 +49,17 @@ import org.openapitools.client.JSON;
 /**
  * ExpressionAnalysisSettingsDto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class ExpressionAnalysisSettingsDto {
   public static final String SERIALIZED_NAME_EXPRESSION_SETTINGS = "expression_settings";
   @SerializedName(SERIALIZED_NAME_EXPRESSION_SETTINGS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ExpressionSettings expressionSettings;
 
   public ExpressionAnalysisSettingsDto() {
   }
 
-  public ExpressionAnalysisSettingsDto expressionSettings(@javax.annotation.Nullable ExpressionSettings expressionSettings) {
+  public ExpressionAnalysisSettingsDto expressionSettings(@jakarta.annotation.Nullable ExpressionSettings expressionSettings) {
     this.expressionSettings = expressionSettings;
     return this;
   }
@@ -68,12 +68,12 @@ public class ExpressionAnalysisSettingsDto {
    * Get expressionSettings
    * @return expressionSettings
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ExpressionSettings getExpressionSettings() {
     return expressionSettings;
   }
 
-  public void setExpressionSettings(@javax.annotation.Nullable ExpressionSettings expressionSettings) {
+  public void setExpressionSettings(@jakarta.annotation.Nullable ExpressionSettings expressionSettings) {
     this.expressionSettings = expressionSettings;
   }
 

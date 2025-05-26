@@ -48,32 +48,32 @@ import org.openapitools.client.JSON;
 /**
  * CatalogNode
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class CatalogNode {
   public static final String SERIALIZED_NAME_LEVEL_ID = "level_id";
   @SerializedName(SERIALIZED_NAME_LEVEL_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String levelId;
 
   public static final String SERIALIZED_NAME_NODE_ID = "node_id";
   @SerializedName(SERIALIZED_NAME_NODE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String nodeId;
 
   public static final String SERIALIZED_NAME_NODE_NAME = "node_name";
   @SerializedName(SERIALIZED_NAME_NODE_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String nodeName;
 
   public static final String SERIALIZED_NAME_DISPLAY_ORDER = "display_order";
   @SerializedName(SERIALIZED_NAME_DISPLAY_ORDER)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer displayOrder;
 
   public CatalogNode() {
   }
 
-  public CatalogNode levelId(@javax.annotation.Nonnull String levelId) {
+  public CatalogNode levelId(@jakarta.annotation.Nonnull String levelId) {
     this.levelId = levelId;
     return this;
   }
@@ -82,17 +82,17 @@ public class CatalogNode {
    * Get levelId
    * @return levelId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getLevelId() {
     return levelId;
   }
 
-  public void setLevelId(@javax.annotation.Nonnull String levelId) {
+  public void setLevelId(@jakarta.annotation.Nonnull String levelId) {
     this.levelId = levelId;
   }
 
 
-  public CatalogNode nodeId(@javax.annotation.Nonnull String nodeId) {
+  public CatalogNode nodeId(@jakarta.annotation.Nonnull String nodeId) {
     this.nodeId = nodeId;
     return this;
   }
@@ -101,17 +101,17 @@ public class CatalogNode {
    * Get nodeId
    * @return nodeId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getNodeId() {
     return nodeId;
   }
 
-  public void setNodeId(@javax.annotation.Nonnull String nodeId) {
+  public void setNodeId(@jakarta.annotation.Nonnull String nodeId) {
     this.nodeId = nodeId;
   }
 
 
-  public CatalogNode nodeName(@javax.annotation.Nonnull String nodeName) {
+  public CatalogNode nodeName(@jakarta.annotation.Nonnull String nodeName) {
     this.nodeName = nodeName;
     return this;
   }
@@ -120,17 +120,17 @@ public class CatalogNode {
    * Get nodeName
    * @return nodeName
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getNodeName() {
     return nodeName;
   }
 
-  public void setNodeName(@javax.annotation.Nonnull String nodeName) {
+  public void setNodeName(@jakarta.annotation.Nonnull String nodeName) {
     this.nodeName = nodeName;
   }
 
 
-  public CatalogNode displayOrder(@javax.annotation.Nonnull Integer displayOrder) {
+  public CatalogNode displayOrder(@jakarta.annotation.Nonnull Integer displayOrder) {
     this.displayOrder = displayOrder;
     return this;
   }
@@ -139,12 +139,12 @@ public class CatalogNode {
    * Get displayOrder
    * @return displayOrder
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getDisplayOrder() {
     return displayOrder;
   }
 
-  public void setDisplayOrder(@javax.annotation.Nonnull Integer displayOrder) {
+  public void setDisplayOrder(@jakarta.annotation.Nonnull Integer displayOrder) {
     this.displayOrder = displayOrder;
   }
 

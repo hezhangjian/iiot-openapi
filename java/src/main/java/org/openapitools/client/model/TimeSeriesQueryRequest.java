@@ -51,32 +51,32 @@ import org.openapitools.client.JSON;
 /**
  * TimeSeriesQueryRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class TimeSeriesQueryRequest {
   public static final String SERIALIZED_NAME_PROPERTY_PATHS = "property_paths";
   @SerializedName(SERIALIZED_NAME_PROPERTY_PATHS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> propertyPaths = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TIME_SPAN = "time_span";
   @SerializedName(SERIALIZED_NAME_TIME_SPAN)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private TimeSpan timeSpan;
 
   public static final String SERIALIZED_NAME_LIMIT = "limit";
   @SerializedName(SERIALIZED_NAME_LIMIT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer limit;
 
   public static final String SERIALIZED_NAME_MARKER = "marker";
   @SerializedName(SERIALIZED_NAME_MARKER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String marker;
 
   public TimeSeriesQueryRequest() {
   }
 
-  public TimeSeriesQueryRequest propertyPaths(@javax.annotation.Nonnull List<String> propertyPaths) {
+  public TimeSeriesQueryRequest propertyPaths(@jakarta.annotation.Nonnull List<String> propertyPaths) {
     this.propertyPaths = propertyPaths;
     return this;
   }
@@ -93,17 +93,17 @@ public class TimeSeriesQueryRequest {
    * Get propertyPaths
    * @return propertyPaths
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getPropertyPaths() {
     return propertyPaths;
   }
 
-  public void setPropertyPaths(@javax.annotation.Nonnull List<String> propertyPaths) {
+  public void setPropertyPaths(@jakarta.annotation.Nonnull List<String> propertyPaths) {
     this.propertyPaths = propertyPaths;
   }
 
 
-  public TimeSeriesQueryRequest timeSpan(@javax.annotation.Nonnull TimeSpan timeSpan) {
+  public TimeSeriesQueryRequest timeSpan(@jakarta.annotation.Nonnull TimeSpan timeSpan) {
     this.timeSpan = timeSpan;
     return this;
   }
@@ -112,17 +112,17 @@ public class TimeSeriesQueryRequest {
    * Get timeSpan
    * @return timeSpan
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public TimeSpan getTimeSpan() {
     return timeSpan;
   }
 
-  public void setTimeSpan(@javax.annotation.Nonnull TimeSpan timeSpan) {
+  public void setTimeSpan(@jakarta.annotation.Nonnull TimeSpan timeSpan) {
     this.timeSpan = timeSpan;
   }
 
 
-  public TimeSeriesQueryRequest limit(@javax.annotation.Nullable Integer limit) {
+  public TimeSeriesQueryRequest limit(@jakarta.annotation.Nullable Integer limit) {
     this.limit = limit;
     return this;
   }
@@ -131,17 +131,17 @@ public class TimeSeriesQueryRequest {
    * Get limit
    * @return limit
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getLimit() {
     return limit;
   }
 
-  public void setLimit(@javax.annotation.Nullable Integer limit) {
+  public void setLimit(@jakarta.annotation.Nullable Integer limit) {
     this.limit = limit;
   }
 
 
-  public TimeSeriesQueryRequest marker(@javax.annotation.Nullable String marker) {
+  public TimeSeriesQueryRequest marker(@jakarta.annotation.Nullable String marker) {
     this.marker = marker;
     return this;
   }
@@ -150,12 +150,12 @@ public class TimeSeriesQueryRequest {
    * Get marker
    * @return marker
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getMarker() {
     return marker;
   }
 
-  public void setMarker(@javax.annotation.Nullable String marker) {
+  public void setMarker(@jakarta.annotation.Nullable String marker) {
     this.marker = marker;
   }
 

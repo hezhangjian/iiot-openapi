@@ -48,22 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * UpdateColumnSchema
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class UpdateColumnSchema {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public UpdateColumnSchema() {
   }
 
-  public UpdateColumnSchema id(@javax.annotation.Nonnull String id) {
+  public UpdateColumnSchema id(@jakarta.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
@@ -72,17 +72,17 @@ public class UpdateColumnSchema {
    * Get id
    * @return id
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nonnull String id) {
+  public void setId(@jakarta.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public UpdateColumnSchema name(@javax.annotation.Nonnull String name) {
+  public UpdateColumnSchema name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -91,12 +91,12 @@ public class UpdateColumnSchema {
    * Get name
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 

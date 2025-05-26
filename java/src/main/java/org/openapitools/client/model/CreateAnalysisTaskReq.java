@@ -55,67 +55,67 @@ import org.openapitools.client.JSON;
 /**
  * CreateAnalysisTaskReq
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class CreateAnalysisTaskReq {
   public static final String SERIALIZED_NAME_CLEAN_SETTINGS = "clean_settings";
   @SerializedName(SERIALIZED_NAME_CLEAN_SETTINGS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CleanSettings cleanSettings;
 
   public static final String SERIALIZED_NAME_EVENT_CLASS = "event_class";
   @SerializedName(SERIALIZED_NAME_EVENT_CLASS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String eventClass;
 
   public static final String SERIALIZED_NAME_EVENT_GEN_SETTINGS = "event_gen_settings";
   @SerializedName(SERIALIZED_NAME_EVENT_GEN_SETTINGS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private EventGenSetting eventGenSettings;
 
   public static final String SERIALIZED_NAME_COMPLEX_SETTINGS = "complex_settings";
   @SerializedName(SERIALIZED_NAME_COMPLEX_SETTINGS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ComplexSetting complexSettings;
 
   public static final String SERIALIZED_NAME_EXPRESSION_SETTINGS = "expression_settings";
   @SerializedName(SERIALIZED_NAME_EXPRESSION_SETTINGS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ExpressionSettings expressionSettings;
 
   public static final String SERIALIZED_NAME_TASK_NAME = "task_name";
   @SerializedName(SERIALIZED_NAME_TASK_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String taskName;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_CALC_TYPE = "calc_type";
   @SerializedName(SERIALIZED_NAME_CALC_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String calcType;
 
   public static final String SERIALIZED_NAME_SCHEDULE_TYPE = "schedule_type";
   @SerializedName(SERIALIZED_NAME_SCHEDULE_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String scheduleType;
 
   public static final String SERIALIZED_NAME_PERIOD = "period";
   @SerializedName(SERIALIZED_NAME_PERIOD)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String period;
 
   public static final String SERIALIZED_NAME_TAG_MATCHERS = "tag_matchers";
   @SerializedName(SERIALIZED_NAME_TAG_MATCHERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<TagMatcher> tagMatchers = new ArrayList<>();
 
   public CreateAnalysisTaskReq() {
   }
 
-  public CreateAnalysisTaskReq cleanSettings(@javax.annotation.Nullable CleanSettings cleanSettings) {
+  public CreateAnalysisTaskReq cleanSettings(@jakarta.annotation.Nullable CleanSettings cleanSettings) {
     this.cleanSettings = cleanSettings;
     return this;
   }
@@ -124,17 +124,17 @@ public class CreateAnalysisTaskReq {
    * Get cleanSettings
    * @return cleanSettings
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CleanSettings getCleanSettings() {
     return cleanSettings;
   }
 
-  public void setCleanSettings(@javax.annotation.Nullable CleanSettings cleanSettings) {
+  public void setCleanSettings(@jakarta.annotation.Nullable CleanSettings cleanSettings) {
     this.cleanSettings = cleanSettings;
   }
 
 
-  public CreateAnalysisTaskReq eventClass(@javax.annotation.Nullable String eventClass) {
+  public CreateAnalysisTaskReq eventClass(@jakarta.annotation.Nullable String eventClass) {
     this.eventClass = eventClass;
     return this;
   }
@@ -143,17 +143,17 @@ public class CreateAnalysisTaskReq {
    * Get eventClass
    * @return eventClass
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEventClass() {
     return eventClass;
   }
 
-  public void setEventClass(@javax.annotation.Nullable String eventClass) {
+  public void setEventClass(@jakarta.annotation.Nullable String eventClass) {
     this.eventClass = eventClass;
   }
 
 
-  public CreateAnalysisTaskReq eventGenSettings(@javax.annotation.Nullable EventGenSetting eventGenSettings) {
+  public CreateAnalysisTaskReq eventGenSettings(@jakarta.annotation.Nullable EventGenSetting eventGenSettings) {
     this.eventGenSettings = eventGenSettings;
     return this;
   }
@@ -162,17 +162,17 @@ public class CreateAnalysisTaskReq {
    * Get eventGenSettings
    * @return eventGenSettings
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public EventGenSetting getEventGenSettings() {
     return eventGenSettings;
   }
 
-  public void setEventGenSettings(@javax.annotation.Nullable EventGenSetting eventGenSettings) {
+  public void setEventGenSettings(@jakarta.annotation.Nullable EventGenSetting eventGenSettings) {
     this.eventGenSettings = eventGenSettings;
   }
 
 
-  public CreateAnalysisTaskReq complexSettings(@javax.annotation.Nullable ComplexSetting complexSettings) {
+  public CreateAnalysisTaskReq complexSettings(@jakarta.annotation.Nullable ComplexSetting complexSettings) {
     this.complexSettings = complexSettings;
     return this;
   }
@@ -181,17 +181,17 @@ public class CreateAnalysisTaskReq {
    * Get complexSettings
    * @return complexSettings
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ComplexSetting getComplexSettings() {
     return complexSettings;
   }
 
-  public void setComplexSettings(@javax.annotation.Nullable ComplexSetting complexSettings) {
+  public void setComplexSettings(@jakarta.annotation.Nullable ComplexSetting complexSettings) {
     this.complexSettings = complexSettings;
   }
 
 
-  public CreateAnalysisTaskReq expressionSettings(@javax.annotation.Nullable ExpressionSettings expressionSettings) {
+  public CreateAnalysisTaskReq expressionSettings(@jakarta.annotation.Nullable ExpressionSettings expressionSettings) {
     this.expressionSettings = expressionSettings;
     return this;
   }
@@ -200,17 +200,17 @@ public class CreateAnalysisTaskReq {
    * Get expressionSettings
    * @return expressionSettings
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ExpressionSettings getExpressionSettings() {
     return expressionSettings;
   }
 
-  public void setExpressionSettings(@javax.annotation.Nullable ExpressionSettings expressionSettings) {
+  public void setExpressionSettings(@jakarta.annotation.Nullable ExpressionSettings expressionSettings) {
     this.expressionSettings = expressionSettings;
   }
 
 
-  public CreateAnalysisTaskReq taskName(@javax.annotation.Nonnull String taskName) {
+  public CreateAnalysisTaskReq taskName(@jakarta.annotation.Nonnull String taskName) {
     this.taskName = taskName;
     return this;
   }
@@ -219,17 +219,17 @@ public class CreateAnalysisTaskReq {
    * Get taskName
    * @return taskName
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getTaskName() {
     return taskName;
   }
 
-  public void setTaskName(@javax.annotation.Nonnull String taskName) {
+  public void setTaskName(@jakarta.annotation.Nonnull String taskName) {
     this.taskName = taskName;
   }
 
 
-  public CreateAnalysisTaskReq enabled(@javax.annotation.Nonnull Boolean enabled) {
+  public CreateAnalysisTaskReq enabled(@jakarta.annotation.Nonnull Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -238,17 +238,17 @@ public class CreateAnalysisTaskReq {
    * Get enabled
    * @return enabled
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nonnull Boolean enabled) {
+  public void setEnabled(@jakarta.annotation.Nonnull Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public CreateAnalysisTaskReq calcType(@javax.annotation.Nonnull String calcType) {
+  public CreateAnalysisTaskReq calcType(@jakarta.annotation.Nonnull String calcType) {
     this.calcType = calcType;
     return this;
   }
@@ -257,17 +257,17 @@ public class CreateAnalysisTaskReq {
    * Get calcType
    * @return calcType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCalcType() {
     return calcType;
   }
 
-  public void setCalcType(@javax.annotation.Nonnull String calcType) {
+  public void setCalcType(@jakarta.annotation.Nonnull String calcType) {
     this.calcType = calcType;
   }
 
 
-  public CreateAnalysisTaskReq scheduleType(@javax.annotation.Nonnull String scheduleType) {
+  public CreateAnalysisTaskReq scheduleType(@jakarta.annotation.Nonnull String scheduleType) {
     this.scheduleType = scheduleType;
     return this;
   }
@@ -276,17 +276,17 @@ public class CreateAnalysisTaskReq {
    * Get scheduleType
    * @return scheduleType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getScheduleType() {
     return scheduleType;
   }
 
-  public void setScheduleType(@javax.annotation.Nonnull String scheduleType) {
+  public void setScheduleType(@jakarta.annotation.Nonnull String scheduleType) {
     this.scheduleType = scheduleType;
   }
 
 
-  public CreateAnalysisTaskReq period(@javax.annotation.Nullable String period) {
+  public CreateAnalysisTaskReq period(@jakarta.annotation.Nullable String period) {
     this.period = period;
     return this;
   }
@@ -295,17 +295,17 @@ public class CreateAnalysisTaskReq {
    * Get period
    * @return period
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPeriod() {
     return period;
   }
 
-  public void setPeriod(@javax.annotation.Nullable String period) {
+  public void setPeriod(@jakarta.annotation.Nullable String period) {
     this.period = period;
   }
 
 
-  public CreateAnalysisTaskReq tagMatchers(@javax.annotation.Nullable List<TagMatcher> tagMatchers) {
+  public CreateAnalysisTaskReq tagMatchers(@jakarta.annotation.Nullable List<TagMatcher> tagMatchers) {
     this.tagMatchers = tagMatchers;
     return this;
   }
@@ -322,12 +322,12 @@ public class CreateAnalysisTaskReq {
    * Get tagMatchers
    * @return tagMatchers
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<TagMatcher> getTagMatchers() {
     return tagMatchers;
   }
 
-  public void setTagMatchers(@javax.annotation.Nullable List<TagMatcher> tagMatchers) {
+  public void setTagMatchers(@jakarta.annotation.Nullable List<TagMatcher> tagMatchers) {
     this.tagMatchers = tagMatchers;
   }
 

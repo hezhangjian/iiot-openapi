@@ -51,32 +51,32 @@ import org.openapitools.client.JSON;
 /**
  * ColumnSchema
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class ColumnSchema {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String id;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_DIC_ID = "dic_id";
   @SerializedName(SERIALIZED_NAME_DIC_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String dicId;
 
   public static final String SERIALIZED_NAME_DATA_SCHEMA = "data_schema";
   @SerializedName(SERIALIZED_NAME_DATA_SCHEMA)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<DataSchema> dataSchema = new ArrayList<>();
 
   public ColumnSchema() {
   }
 
-  public ColumnSchema id(@javax.annotation.Nonnull String id) {
+  public ColumnSchema id(@jakarta.annotation.Nonnull String id) {
     this.id = id;
     return this;
   }
@@ -85,17 +85,17 @@ public class ColumnSchema {
    * Get id
    * @return id
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nonnull String id) {
+  public void setId(@jakarta.annotation.Nonnull String id) {
     this.id = id;
   }
 
 
-  public ColumnSchema name(@javax.annotation.Nonnull String name) {
+  public ColumnSchema name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -104,17 +104,17 @@ public class ColumnSchema {
    * Get name
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public ColumnSchema dicId(@javax.annotation.Nullable String dicId) {
+  public ColumnSchema dicId(@jakarta.annotation.Nullable String dicId) {
     this.dicId = dicId;
     return this;
   }
@@ -123,17 +123,17 @@ public class ColumnSchema {
    * Get dicId
    * @return dicId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDicId() {
     return dicId;
   }
 
-  public void setDicId(@javax.annotation.Nullable String dicId) {
+  public void setDicId(@jakarta.annotation.Nullable String dicId) {
     this.dicId = dicId;
   }
 
 
-  public ColumnSchema dataSchema(@javax.annotation.Nonnull List<DataSchema> dataSchema) {
+  public ColumnSchema dataSchema(@jakarta.annotation.Nonnull List<DataSchema> dataSchema) {
     this.dataSchema = dataSchema;
     return this;
   }
@@ -150,12 +150,12 @@ public class ColumnSchema {
    * Get dataSchema
    * @return dataSchema
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<DataSchema> getDataSchema() {
     return dataSchema;
   }
 
-  public void setDataSchema(@javax.annotation.Nonnull List<DataSchema> dataSchema) {
+  public void setDataSchema(@jakarta.annotation.Nonnull List<DataSchema> dataSchema) {
     this.dataSchema = dataSchema;
   }
 

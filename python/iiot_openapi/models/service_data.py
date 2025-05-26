@@ -17,7 +17,6 @@ import pprint
 import re  # noqa: F401
 import json
 
-from datetime import datetime
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
@@ -28,7 +27,7 @@ class ServiceData(BaseModel):
     ServiceData
     """ # noqa: E501
     service_id: StrictStr
-    event_time: datetime
+    event_time: StrictStr
     properties: Dict[str, Any]
     __properties: ClassVar[List[str]] = ["service_id", "event_time", "properties"]
 

@@ -51,27 +51,27 @@ import org.openapitools.client.JSON;
 /**
  * UpdateDictionaryReq
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class UpdateDictionaryReq {
   public static final String SERIALIZED_NAME_DIC_NAME = "dic_name";
   @SerializedName(SERIALIZED_NAME_DIC_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String dicName;
 
   public static final String SERIALIZED_NAME_CATALOG_ID = "catalog_id";
   @SerializedName(SERIALIZED_NAME_CATALOG_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String catalogId;
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<DicItem> values = new ArrayList<>();
 
   public UpdateDictionaryReq() {
   }
 
-  public UpdateDictionaryReq dicName(@javax.annotation.Nullable String dicName) {
+  public UpdateDictionaryReq dicName(@jakarta.annotation.Nullable String dicName) {
     this.dicName = dicName;
     return this;
   }
@@ -80,17 +80,17 @@ public class UpdateDictionaryReq {
    * Get dicName
    * @return dicName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDicName() {
     return dicName;
   }
 
-  public void setDicName(@javax.annotation.Nullable String dicName) {
+  public void setDicName(@jakarta.annotation.Nullable String dicName) {
     this.dicName = dicName;
   }
 
 
-  public UpdateDictionaryReq catalogId(@javax.annotation.Nullable String catalogId) {
+  public UpdateDictionaryReq catalogId(@jakarta.annotation.Nullable String catalogId) {
     this.catalogId = catalogId;
     return this;
   }
@@ -99,17 +99,17 @@ public class UpdateDictionaryReq {
    * Get catalogId
    * @return catalogId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCatalogId() {
     return catalogId;
   }
 
-  public void setCatalogId(@javax.annotation.Nullable String catalogId) {
+  public void setCatalogId(@jakarta.annotation.Nullable String catalogId) {
     this.catalogId = catalogId;
   }
 
 
-  public UpdateDictionaryReq values(@javax.annotation.Nullable List<DicItem> values) {
+  public UpdateDictionaryReq values(@jakarta.annotation.Nullable List<DicItem> values) {
     this.values = values;
     return this;
   }
@@ -126,12 +126,12 @@ public class UpdateDictionaryReq {
    * Get values
    * @return values
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<DicItem> getValues() {
     return values;
   }
 
-  public void setValues(@javax.annotation.Nullable List<DicItem> values) {
+  public void setValues(@jakarta.annotation.Nullable List<DicItem> values) {
     this.values = values;
   }
 

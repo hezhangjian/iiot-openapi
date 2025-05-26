@@ -51,22 +51,22 @@ import org.openapitools.client.JSON;
 /**
  * ListTablesResp
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class ListTablesResp {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer count;
 
   public static final String SERIALIZED_NAME_TABLES = "tables";
   @SerializedName(SERIALIZED_NAME_TABLES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<BriefTable> tables = new ArrayList<>();
 
   public ListTablesResp() {
   }
 
-  public ListTablesResp count(@javax.annotation.Nullable Integer count) {
+  public ListTablesResp count(@jakarta.annotation.Nullable Integer count) {
     this.count = count;
     return this;
   }
@@ -75,17 +75,17 @@ public class ListTablesResp {
    * Get count
    * @return count
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getCount() {
     return count;
   }
 
-  public void setCount(@javax.annotation.Nullable Integer count) {
+  public void setCount(@jakarta.annotation.Nullable Integer count) {
     this.count = count;
   }
 
 
-  public ListTablesResp tables(@javax.annotation.Nullable List<BriefTable> tables) {
+  public ListTablesResp tables(@jakarta.annotation.Nullable List<BriefTable> tables) {
     this.tables = tables;
     return this;
   }
@@ -102,12 +102,12 @@ public class ListTablesResp {
    * Get tables
    * @return tables
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<BriefTable> getTables() {
     return tables;
   }
 
-  public void setTables(@javax.annotation.Nullable List<BriefTable> tables) {
+  public void setTables(@jakarta.annotation.Nullable List<BriefTable> tables) {
     this.tables = tables;
   }
 

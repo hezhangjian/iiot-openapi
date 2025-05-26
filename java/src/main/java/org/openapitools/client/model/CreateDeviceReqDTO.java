@@ -48,27 +48,27 @@ import org.openapitools.client.JSON;
 /**
  * CreateDeviceReqDTO
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class CreateDeviceReqDTO {
   public static final String SERIALIZED_NAME_DEVICE_ID = "device_id";
   @SerializedName(SERIALIZED_NAME_DEVICE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String deviceId;
 
   public static final String SERIALIZED_NAME_DEVICE_NAME = "device_name";
   @SerializedName(SERIALIZED_NAME_DEVICE_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String deviceName;
 
   public static final String SERIALIZED_NAME_DEVICE_TYPE = "device_type";
   @SerializedName(SERIALIZED_NAME_DEVICE_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String deviceType;
 
   public CreateDeviceReqDTO() {
   }
 
-  public CreateDeviceReqDTO deviceId(@javax.annotation.Nonnull String deviceId) {
+  public CreateDeviceReqDTO deviceId(@jakarta.annotation.Nonnull String deviceId) {
     this.deviceId = deviceId;
     return this;
   }
@@ -77,17 +77,17 @@ public class CreateDeviceReqDTO {
    * Get deviceId
    * @return deviceId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getDeviceId() {
     return deviceId;
   }
 
-  public void setDeviceId(@javax.annotation.Nonnull String deviceId) {
+  public void setDeviceId(@jakarta.annotation.Nonnull String deviceId) {
     this.deviceId = deviceId;
   }
 
 
-  public CreateDeviceReqDTO deviceName(@javax.annotation.Nonnull String deviceName) {
+  public CreateDeviceReqDTO deviceName(@jakarta.annotation.Nonnull String deviceName) {
     this.deviceName = deviceName;
     return this;
   }
@@ -96,17 +96,17 @@ public class CreateDeviceReqDTO {
    * Get deviceName
    * @return deviceName
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getDeviceName() {
     return deviceName;
   }
 
-  public void setDeviceName(@javax.annotation.Nonnull String deviceName) {
+  public void setDeviceName(@jakarta.annotation.Nonnull String deviceName) {
     this.deviceName = deviceName;
   }
 
 
-  public CreateDeviceReqDTO deviceType(@javax.annotation.Nonnull String deviceType) {
+  public CreateDeviceReqDTO deviceType(@jakarta.annotation.Nonnull String deviceType) {
     this.deviceType = deviceType;
     return this;
   }
@@ -115,12 +115,12 @@ public class CreateDeviceReqDTO {
    * Get deviceType
    * @return deviceType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getDeviceType() {
     return deviceType;
   }
 
-  public void setDeviceType(@javax.annotation.Nonnull String deviceType) {
+  public void setDeviceType(@jakarta.annotation.Nonnull String deviceType) {
     this.deviceType = deviceType;
   }
 

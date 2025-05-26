@@ -50,22 +50,22 @@ import org.openapitools.client.JSON;
 /**
  * DeleteRecordsRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class DeleteRecordsRequest {
   public static final String SERIALIZED_NAME_PRIMARY_KEY = "primary_key";
   @SerializedName(SERIALIZED_NAME_PRIMARY_KEY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> primaryKey = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<List<Object>> values = new ArrayList<>();
 
   public DeleteRecordsRequest() {
   }
 
-  public DeleteRecordsRequest primaryKey(@javax.annotation.Nonnull List<String> primaryKey) {
+  public DeleteRecordsRequest primaryKey(@jakarta.annotation.Nonnull List<String> primaryKey) {
     this.primaryKey = primaryKey;
     return this;
   }
@@ -82,17 +82,17 @@ public class DeleteRecordsRequest {
    * Get primaryKey
    * @return primaryKey
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getPrimaryKey() {
     return primaryKey;
   }
 
-  public void setPrimaryKey(@javax.annotation.Nonnull List<String> primaryKey) {
+  public void setPrimaryKey(@jakarta.annotation.Nonnull List<String> primaryKey) {
     this.primaryKey = primaryKey;
   }
 
 
-  public DeleteRecordsRequest values(@javax.annotation.Nonnull List<List<Object>> values) {
+  public DeleteRecordsRequest values(@jakarta.annotation.Nonnull List<List<Object>> values) {
     this.values = values;
     return this;
   }
@@ -109,12 +109,12 @@ public class DeleteRecordsRequest {
    * Get values
    * @return values
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<List<Object>> getValues() {
     return values;
   }
 
-  public void setValues(@javax.annotation.Nonnull List<List<Object>> values) {
+  public void setValues(@jakarta.annotation.Nonnull List<List<Object>> values) {
     this.values = values;
   }
 

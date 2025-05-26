@@ -51,22 +51,22 @@ import org.openapitools.client.JSON;
 /**
  * ListViewsResp
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class ListViewsResp {
   public static final String SERIALIZED_NAME_VIEWS = "views";
   @SerializedName(SERIALIZED_NAME_VIEWS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<BriefView> views = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer count;
 
   public ListViewsResp() {
   }
 
-  public ListViewsResp views(@javax.annotation.Nullable List<BriefView> views) {
+  public ListViewsResp views(@jakarta.annotation.Nullable List<BriefView> views) {
     this.views = views;
     return this;
   }
@@ -83,17 +83,17 @@ public class ListViewsResp {
    * Get views
    * @return views
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<BriefView> getViews() {
     return views;
   }
 
-  public void setViews(@javax.annotation.Nullable List<BriefView> views) {
+  public void setViews(@jakarta.annotation.Nullable List<BriefView> views) {
     this.views = views;
   }
 
 
-  public ListViewsResp count(@javax.annotation.Nullable Integer count) {
+  public ListViewsResp count(@jakarta.annotation.Nullable Integer count) {
     this.count = count;
     return this;
   }
@@ -102,12 +102,12 @@ public class ListViewsResp {
    * Get count
    * @return count
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getCount() {
     return count;
   }
 
-  public void setCount(@javax.annotation.Nullable Integer count) {
+  public void setCount(@jakarta.annotation.Nullable Integer count) {
     this.count = count;
   }
 

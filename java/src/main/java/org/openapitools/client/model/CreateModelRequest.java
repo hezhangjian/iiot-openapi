@@ -52,16 +52,16 @@ import org.openapitools.client.JSON;
 /**
  * CreateModelRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class CreateModelRequest {
   public static final String SERIALIZED_NAME_MODEL_ID = "model_id";
   @SerializedName(SERIALIZED_NAME_MODEL_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String modelId;
 
   public static final String SERIALIZED_NAME_MODEL_NAME = "model_name";
   @SerializedName(SERIALIZED_NAME_MODEL_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String modelName;
 
   /**
@@ -118,28 +118,28 @@ public class CreateModelRequest {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<PropertyDto> properties = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_COMPONENTS = "components";
   @SerializedName(SERIALIZED_NAME_COMPONENTS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<ComponentDto> components = new ArrayList<>();
 
   public CreateModelRequest() {
   }
 
-  public CreateModelRequest modelId(@javax.annotation.Nonnull String modelId) {
+  public CreateModelRequest modelId(@jakarta.annotation.Nonnull String modelId) {
     this.modelId = modelId;
     return this;
   }
@@ -148,17 +148,17 @@ public class CreateModelRequest {
    * Get modelId
    * @return modelId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getModelId() {
     return modelId;
   }
 
-  public void setModelId(@javax.annotation.Nonnull String modelId) {
+  public void setModelId(@jakarta.annotation.Nonnull String modelId) {
     this.modelId = modelId;
   }
 
 
-  public CreateModelRequest modelName(@javax.annotation.Nonnull String modelName) {
+  public CreateModelRequest modelName(@jakarta.annotation.Nonnull String modelName) {
     this.modelName = modelName;
     return this;
   }
@@ -167,17 +167,17 @@ public class CreateModelRequest {
    * Get modelName
    * @return modelName
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getModelName() {
     return modelName;
   }
 
-  public void setModelName(@javax.annotation.Nonnull String modelName) {
+  public void setModelName(@jakarta.annotation.Nonnull String modelName) {
     this.modelName = modelName;
   }
 
 
-  public CreateModelRequest type(@javax.annotation.Nullable TypeEnum type) {
+  public CreateModelRequest type(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -186,17 +186,17 @@ public class CreateModelRequest {
    * Get type
    * @return type
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nullable TypeEnum type) {
+  public void setType(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public CreateModelRequest description(@javax.annotation.Nullable String description) {
+  public CreateModelRequest description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -205,17 +205,17 @@ public class CreateModelRequest {
    * Get description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public CreateModelRequest properties(@javax.annotation.Nullable List<PropertyDto> properties) {
+  public CreateModelRequest properties(@jakarta.annotation.Nullable List<PropertyDto> properties) {
     this.properties = properties;
     return this;
   }
@@ -232,17 +232,17 @@ public class CreateModelRequest {
    * Get properties
    * @return properties
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<PropertyDto> getProperties() {
     return properties;
   }
 
-  public void setProperties(@javax.annotation.Nullable List<PropertyDto> properties) {
+  public void setProperties(@jakarta.annotation.Nullable List<PropertyDto> properties) {
     this.properties = properties;
   }
 
 
-  public CreateModelRequest components(@javax.annotation.Nullable List<ComponentDto> components) {
+  public CreateModelRequest components(@jakarta.annotation.Nullable List<ComponentDto> components) {
     this.components = components;
     return this;
   }
@@ -259,12 +259,12 @@ public class CreateModelRequest {
    * Get components
    * @return components
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<ComponentDto> getComponents() {
     return components;
   }
 
-  public void setComponents(@javax.annotation.Nullable List<ComponentDto> components) {
+  public void setComponents(@jakarta.annotation.Nullable List<ComponentDto> components) {
     this.components = components;
   }
 

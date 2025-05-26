@@ -48,22 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * ObjectSchema
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class ObjectSchema {
   public static final String SERIALIZED_NAME_MIN_LENGTH = "min_length";
   @SerializedName(SERIALIZED_NAME_MIN_LENGTH)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer minLength;
 
   public static final String SERIALIZED_NAME_MAX_LENGTH = "max_length";
   @SerializedName(SERIALIZED_NAME_MAX_LENGTH)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer maxLength;
 
   public ObjectSchema() {
   }
 
-  public ObjectSchema minLength(@javax.annotation.Nullable Integer minLength) {
+  public ObjectSchema minLength(@jakarta.annotation.Nullable Integer minLength) {
     this.minLength = minLength;
     return this;
   }
@@ -72,17 +72,17 @@ public class ObjectSchema {
    * Get minLength
    * @return minLength
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getMinLength() {
     return minLength;
   }
 
-  public void setMinLength(@javax.annotation.Nullable Integer minLength) {
+  public void setMinLength(@jakarta.annotation.Nullable Integer minLength) {
     this.minLength = minLength;
   }
 
 
-  public ObjectSchema maxLength(@javax.annotation.Nullable Integer maxLength) {
+  public ObjectSchema maxLength(@jakarta.annotation.Nullable Integer maxLength) {
     this.maxLength = maxLength;
     return this;
   }
@@ -91,12 +91,12 @@ public class ObjectSchema {
    * Get maxLength
    * @return maxLength
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getMaxLength() {
     return maxLength;
   }
 
-  public void setMaxLength(@javax.annotation.Nullable Integer maxLength) {
+  public void setMaxLength(@jakarta.annotation.Nullable Integer maxLength) {
     this.maxLength = maxLength;
   }
 

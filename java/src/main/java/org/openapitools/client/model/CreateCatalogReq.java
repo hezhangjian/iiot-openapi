@@ -48,37 +48,37 @@ import org.openapitools.client.JSON;
 /**
  * CreateCatalogReq
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class CreateCatalogReq {
   public static final String SERIALIZED_NAME_CATALOG_ID = "catalog_id";
   @SerializedName(SERIALIZED_NAME_CATALOG_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String catalogId;
 
   public static final String SERIALIZED_NAME_CATALOG_NAME = "catalog_name";
   @SerializedName(SERIALIZED_NAME_CATALOG_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String catalogName;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String type;
 
   public static final String SERIALIZED_NAME_DISPLAY_ORDER = "display_order";
   @SerializedName(SERIALIZED_NAME_DISPLAY_ORDER)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer displayOrder;
 
   public static final String SERIALIZED_NAME_PARENT_ID = "parent_id";
   @SerializedName(SERIALIZED_NAME_PARENT_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String parentId;
 
   public CreateCatalogReq() {
   }
 
-  public CreateCatalogReq catalogId(@javax.annotation.Nonnull String catalogId) {
+  public CreateCatalogReq catalogId(@jakarta.annotation.Nonnull String catalogId) {
     this.catalogId = catalogId;
     return this;
   }
@@ -87,17 +87,17 @@ public class CreateCatalogReq {
    * Get catalogId
    * @return catalogId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCatalogId() {
     return catalogId;
   }
 
-  public void setCatalogId(@javax.annotation.Nonnull String catalogId) {
+  public void setCatalogId(@jakarta.annotation.Nonnull String catalogId) {
     this.catalogId = catalogId;
   }
 
 
-  public CreateCatalogReq catalogName(@javax.annotation.Nonnull String catalogName) {
+  public CreateCatalogReq catalogName(@jakarta.annotation.Nonnull String catalogName) {
     this.catalogName = catalogName;
     return this;
   }
@@ -106,17 +106,17 @@ public class CreateCatalogReq {
    * Get catalogName
    * @return catalogName
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCatalogName() {
     return catalogName;
   }
 
-  public void setCatalogName(@javax.annotation.Nonnull String catalogName) {
+  public void setCatalogName(@jakarta.annotation.Nonnull String catalogName) {
     this.catalogName = catalogName;
   }
 
 
-  public CreateCatalogReq type(@javax.annotation.Nonnull String type) {
+  public CreateCatalogReq type(@jakarta.annotation.Nonnull String type) {
     this.type = type;
     return this;
   }
@@ -125,17 +125,17 @@ public class CreateCatalogReq {
    * Get type
    * @return type
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nonnull String type) {
+  public void setType(@jakarta.annotation.Nonnull String type) {
     this.type = type;
   }
 
 
-  public CreateCatalogReq displayOrder(@javax.annotation.Nonnull Integer displayOrder) {
+  public CreateCatalogReq displayOrder(@jakarta.annotation.Nonnull Integer displayOrder) {
     this.displayOrder = displayOrder;
     return this;
   }
@@ -144,17 +144,17 @@ public class CreateCatalogReq {
    * Get displayOrder
    * @return displayOrder
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getDisplayOrder() {
     return displayOrder;
   }
 
-  public void setDisplayOrder(@javax.annotation.Nonnull Integer displayOrder) {
+  public void setDisplayOrder(@jakarta.annotation.Nonnull Integer displayOrder) {
     this.displayOrder = displayOrder;
   }
 
 
-  public CreateCatalogReq parentId(@javax.annotation.Nonnull String parentId) {
+  public CreateCatalogReq parentId(@jakarta.annotation.Nonnull String parentId) {
     this.parentId = parentId;
     return this;
   }
@@ -163,12 +163,12 @@ public class CreateCatalogReq {
    * Get parentId
    * @return parentId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getParentId() {
     return parentId;
   }
 
-  public void setParentId(@javax.annotation.Nonnull String parentId) {
+  public void setParentId(@jakarta.annotation.Nonnull String parentId) {
     this.parentId = parentId;
   }
 

@@ -50,37 +50,37 @@ import org.openapitools.client.JSON;
 /**
  * EventGenExpression
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class EventGenExpression {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_PROPERTY_CLASS = "class";
   @SerializedName(SERIALIZED_NAME_PROPERTY_CLASS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String propertyClass;
 
   public static final String SERIALIZED_NAME_CONDITION = "condition";
   @SerializedName(SERIALIZED_NAME_CONDITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String condition;
 
   public static final String SERIALIZED_NAME_EXPRESSION = "expression";
   @SerializedName(SERIALIZED_NAME_EXPRESSION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String expression;
 
   public static final String SERIALIZED_NAME_TRIGGERS = "triggers";
   @SerializedName(SERIALIZED_NAME_TRIGGERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> triggers = new ArrayList<>();
 
   public EventGenExpression() {
   }
 
-  public EventGenExpression name(@javax.annotation.Nonnull String name) {
+  public EventGenExpression name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -89,17 +89,17 @@ public class EventGenExpression {
    * Get name
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public EventGenExpression propertyClass(@javax.annotation.Nullable String propertyClass) {
+  public EventGenExpression propertyClass(@jakarta.annotation.Nullable String propertyClass) {
     this.propertyClass = propertyClass;
     return this;
   }
@@ -108,17 +108,17 @@ public class EventGenExpression {
    * Get propertyClass
    * @return propertyClass
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPropertyClass() {
     return propertyClass;
   }
 
-  public void setPropertyClass(@javax.annotation.Nullable String propertyClass) {
+  public void setPropertyClass(@jakarta.annotation.Nullable String propertyClass) {
     this.propertyClass = propertyClass;
   }
 
 
-  public EventGenExpression condition(@javax.annotation.Nullable String condition) {
+  public EventGenExpression condition(@jakarta.annotation.Nullable String condition) {
     this.condition = condition;
     return this;
   }
@@ -127,17 +127,17 @@ public class EventGenExpression {
    * Get condition
    * @return condition
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCondition() {
     return condition;
   }
 
-  public void setCondition(@javax.annotation.Nullable String condition) {
+  public void setCondition(@jakarta.annotation.Nullable String condition) {
     this.condition = condition;
   }
 
 
-  public EventGenExpression expression(@javax.annotation.Nonnull String expression) {
+  public EventGenExpression expression(@jakarta.annotation.Nonnull String expression) {
     this.expression = expression;
     return this;
   }
@@ -146,17 +146,17 @@ public class EventGenExpression {
    * Get expression
    * @return expression
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getExpression() {
     return expression;
   }
 
-  public void setExpression(@javax.annotation.Nonnull String expression) {
+  public void setExpression(@jakarta.annotation.Nonnull String expression) {
     this.expression = expression;
   }
 
 
-  public EventGenExpression triggers(@javax.annotation.Nullable List<String> triggers) {
+  public EventGenExpression triggers(@jakarta.annotation.Nullable List<String> triggers) {
     this.triggers = triggers;
     return this;
   }
@@ -173,12 +173,12 @@ public class EventGenExpression {
    * Get triggers
    * @return triggers
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getTriggers() {
     return triggers;
   }
 
-  public void setTriggers(@javax.annotation.Nullable List<String> triggers) {
+  public void setTriggers(@jakarta.annotation.Nullable List<String> triggers) {
     this.triggers = triggers;
   }
 

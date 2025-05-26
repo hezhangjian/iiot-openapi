@@ -52,27 +52,27 @@ import org.openapitools.client.JSON;
 /**
  * AddViewNodesReq
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class AddViewNodesReq {
   public static final String SERIALIZED_NAME_PARENT_ID = "parent_id";
   @SerializedName(SERIALIZED_NAME_PARENT_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String parentId;
 
   public static final String SERIALIZED_NAME_CATALOG_NODE = "catalog_node";
   @SerializedName(SERIALIZED_NAME_CATALOG_NODE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CatalogNode catalogNode;
 
   public static final String SERIALIZED_NAME_THING_NODES = "thing_nodes";
   @SerializedName(SERIALIZED_NAME_THING_NODES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<ThingNode> thingNodes = new ArrayList<>();
 
   public AddViewNodesReq() {
   }
 
-  public AddViewNodesReq parentId(@javax.annotation.Nullable String parentId) {
+  public AddViewNodesReq parentId(@jakarta.annotation.Nullable String parentId) {
     this.parentId = parentId;
     return this;
   }
@@ -81,17 +81,17 @@ public class AddViewNodesReq {
    * Get parentId
    * @return parentId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getParentId() {
     return parentId;
   }
 
-  public void setParentId(@javax.annotation.Nullable String parentId) {
+  public void setParentId(@jakarta.annotation.Nullable String parentId) {
     this.parentId = parentId;
   }
 
 
-  public AddViewNodesReq catalogNode(@javax.annotation.Nullable CatalogNode catalogNode) {
+  public AddViewNodesReq catalogNode(@jakarta.annotation.Nullable CatalogNode catalogNode) {
     this.catalogNode = catalogNode;
     return this;
   }
@@ -100,17 +100,17 @@ public class AddViewNodesReq {
    * Get catalogNode
    * @return catalogNode
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CatalogNode getCatalogNode() {
     return catalogNode;
   }
 
-  public void setCatalogNode(@javax.annotation.Nullable CatalogNode catalogNode) {
+  public void setCatalogNode(@jakarta.annotation.Nullable CatalogNode catalogNode) {
     this.catalogNode = catalogNode;
   }
 
 
-  public AddViewNodesReq thingNodes(@javax.annotation.Nullable List<ThingNode> thingNodes) {
+  public AddViewNodesReq thingNodes(@jakarta.annotation.Nullable List<ThingNode> thingNodes) {
     this.thingNodes = thingNodes;
     return this;
   }
@@ -127,12 +127,12 @@ public class AddViewNodesReq {
    * Get thingNodes
    * @return thingNodes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<ThingNode> getThingNodes() {
     return thingNodes;
   }
 
-  public void setThingNodes(@javax.annotation.Nullable List<ThingNode> thingNodes) {
+  public void setThingNodes(@jakarta.annotation.Nullable List<ThingNode> thingNodes) {
     this.thingNodes = thingNodes;
   }
 

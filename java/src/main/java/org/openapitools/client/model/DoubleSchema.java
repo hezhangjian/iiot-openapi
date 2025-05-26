@@ -49,22 +49,22 @@ import org.openapitools.client.JSON;
 /**
  * DoubleSchema
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class DoubleSchema {
   public static final String SERIALIZED_NAME_MIN = "min";
   @SerializedName(SERIALIZED_NAME_MIN)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private BigDecimal min;
 
   public static final String SERIALIZED_NAME_MAX = "max";
   @SerializedName(SERIALIZED_NAME_MAX)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private BigDecimal max;
 
   public DoubleSchema() {
   }
 
-  public DoubleSchema min(@javax.annotation.Nullable BigDecimal min) {
+  public DoubleSchema min(@jakarta.annotation.Nullable BigDecimal min) {
     this.min = min;
     return this;
   }
@@ -73,17 +73,17 @@ public class DoubleSchema {
    * Get min
    * @return min
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public BigDecimal getMin() {
     return min;
   }
 
-  public void setMin(@javax.annotation.Nullable BigDecimal min) {
+  public void setMin(@jakarta.annotation.Nullable BigDecimal min) {
     this.min = min;
   }
 
 
-  public DoubleSchema max(@javax.annotation.Nullable BigDecimal max) {
+  public DoubleSchema max(@jakarta.annotation.Nullable BigDecimal max) {
     this.max = max;
     return this;
   }
@@ -92,12 +92,12 @@ public class DoubleSchema {
    * Get max
    * @return max
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public BigDecimal getMax() {
     return max;
   }
 
-  public void setMax(@javax.annotation.Nullable BigDecimal max) {
+  public void setMax(@jakarta.annotation.Nullable BigDecimal max) {
     this.max = max;
   }
 

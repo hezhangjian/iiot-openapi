@@ -51,22 +51,22 @@ import org.openapitools.client.JSON;
 /**
  * ListDictionariesResp
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class ListDictionariesResp {
   public static final String SERIALIZED_NAME_DICTIONARIES = "dictionaries";
   @SerializedName(SERIALIZED_NAME_DICTIONARIES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<BriefDictionary> dictionaries = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer count;
 
   public ListDictionariesResp() {
   }
 
-  public ListDictionariesResp dictionaries(@javax.annotation.Nullable List<BriefDictionary> dictionaries) {
+  public ListDictionariesResp dictionaries(@jakarta.annotation.Nullable List<BriefDictionary> dictionaries) {
     this.dictionaries = dictionaries;
     return this;
   }
@@ -83,17 +83,17 @@ public class ListDictionariesResp {
    * Get dictionaries
    * @return dictionaries
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<BriefDictionary> getDictionaries() {
     return dictionaries;
   }
 
-  public void setDictionaries(@javax.annotation.Nullable List<BriefDictionary> dictionaries) {
+  public void setDictionaries(@jakarta.annotation.Nullable List<BriefDictionary> dictionaries) {
     this.dictionaries = dictionaries;
   }
 
 
-  public ListDictionariesResp count(@javax.annotation.Nullable Integer count) {
+  public ListDictionariesResp count(@jakarta.annotation.Nullable Integer count) {
     this.count = count;
     return this;
   }
@@ -102,12 +102,12 @@ public class ListDictionariesResp {
    * Get count
    * @return count
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getCount() {
     return count;
   }
 
-  public void setCount(@javax.annotation.Nullable Integer count) {
+  public void setCount(@jakarta.annotation.Nullable Integer count) {
     this.count = count;
   }
 

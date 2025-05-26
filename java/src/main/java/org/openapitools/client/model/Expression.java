@@ -48,32 +48,32 @@ import org.openapitools.client.JSON;
 /**
  * Expression
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class Expression {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_CONDITION = "condition";
   @SerializedName(SERIALIZED_NAME_CONDITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String condition;
 
   public static final String SERIALIZED_NAME_EXPRESSION = "expression";
   @SerializedName(SERIALIZED_NAME_EXPRESSION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String expression;
 
   public static final String SERIALIZED_NAME_PROPERTY_PATH = "property_path";
   @SerializedName(SERIALIZED_NAME_PROPERTY_PATH)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String propertyPath;
 
   public Expression() {
   }
 
-  public Expression name(@javax.annotation.Nonnull String name) {
+  public Expression name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -82,17 +82,17 @@ public class Expression {
    * Get name
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public Expression condition(@javax.annotation.Nullable String condition) {
+  public Expression condition(@jakarta.annotation.Nullable String condition) {
     this.condition = condition;
     return this;
   }
@@ -101,17 +101,17 @@ public class Expression {
    * Get condition
    * @return condition
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCondition() {
     return condition;
   }
 
-  public void setCondition(@javax.annotation.Nullable String condition) {
+  public void setCondition(@jakarta.annotation.Nullable String condition) {
     this.condition = condition;
   }
 
 
-  public Expression expression(@javax.annotation.Nonnull String expression) {
+  public Expression expression(@jakarta.annotation.Nonnull String expression) {
     this.expression = expression;
     return this;
   }
@@ -120,17 +120,17 @@ public class Expression {
    * Get expression
    * @return expression
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getExpression() {
     return expression;
   }
 
-  public void setExpression(@javax.annotation.Nonnull String expression) {
+  public void setExpression(@jakarta.annotation.Nonnull String expression) {
     this.expression = expression;
   }
 
 
-  public Expression propertyPath(@javax.annotation.Nullable String propertyPath) {
+  public Expression propertyPath(@jakarta.annotation.Nullable String propertyPath) {
     this.propertyPath = propertyPath;
     return this;
   }
@@ -139,12 +139,12 @@ public class Expression {
    * Get propertyPath
    * @return propertyPath
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPropertyPath() {
     return propertyPath;
   }
 
-  public void setPropertyPath(@javax.annotation.Nullable String propertyPath) {
+  public void setPropertyPath(@jakarta.annotation.Nullable String propertyPath) {
     this.propertyPath = propertyPath;
   }
 

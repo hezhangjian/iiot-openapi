@@ -50,27 +50,27 @@ import org.openapitools.client.JSON;
 /**
  * SaveRecordsRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class SaveRecordsRequest {
   public static final String SERIALIZED_NAME_COLUMNS = "columns";
   @SerializedName(SERIALIZED_NAME_COLUMNS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> columns = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<List<Object>> values = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_COLUMN_VALUES = "column_values";
   @SerializedName(SERIALIZED_NAME_COLUMN_VALUES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<Object> columnValues = new ArrayList<>();
 
   public SaveRecordsRequest() {
   }
 
-  public SaveRecordsRequest columns(@javax.annotation.Nullable List<String> columns) {
+  public SaveRecordsRequest columns(@jakarta.annotation.Nullable List<String> columns) {
     this.columns = columns;
     return this;
   }
@@ -87,17 +87,17 @@ public class SaveRecordsRequest {
    * Get columns
    * @return columns
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getColumns() {
     return columns;
   }
 
-  public void setColumns(@javax.annotation.Nullable List<String> columns) {
+  public void setColumns(@jakarta.annotation.Nullable List<String> columns) {
     this.columns = columns;
   }
 
 
-  public SaveRecordsRequest values(@javax.annotation.Nullable List<List<Object>> values) {
+  public SaveRecordsRequest values(@jakarta.annotation.Nullable List<List<Object>> values) {
     this.values = values;
     return this;
   }
@@ -114,17 +114,17 @@ public class SaveRecordsRequest {
    * Get values
    * @return values
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<List<Object>> getValues() {
     return values;
   }
 
-  public void setValues(@javax.annotation.Nullable List<List<Object>> values) {
+  public void setValues(@jakarta.annotation.Nullable List<List<Object>> values) {
     this.values = values;
   }
 
 
-  public SaveRecordsRequest columnValues(@javax.annotation.Nullable List<Object> columnValues) {
+  public SaveRecordsRequest columnValues(@jakarta.annotation.Nullable List<Object> columnValues) {
     this.columnValues = columnValues;
     return this;
   }
@@ -141,12 +141,12 @@ public class SaveRecordsRequest {
    * Get columnValues
    * @return columnValues
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<Object> getColumnValues() {
     return columnValues;
   }
 
-  public void setColumnValues(@javax.annotation.Nullable List<Object> columnValues) {
+  public void setColumnValues(@jakarta.annotation.Nullable List<Object> columnValues) {
     this.columnValues = columnValues;
   }
 

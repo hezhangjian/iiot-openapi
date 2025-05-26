@@ -48,22 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * EventTrigger
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class EventTrigger {
   public static final String SERIALIZED_NAME_CONDITION = "condition";
   @SerializedName(SERIALIZED_NAME_CONDITION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String condition;
 
   public static final String SERIALIZED_NAME_DURATIOIN = "duratioin";
   @SerializedName(SERIALIZED_NAME_DURATIOIN)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String duratioin;
 
   public EventTrigger() {
   }
 
-  public EventTrigger condition(@javax.annotation.Nonnull String condition) {
+  public EventTrigger condition(@jakarta.annotation.Nonnull String condition) {
     this.condition = condition;
     return this;
   }
@@ -72,17 +72,17 @@ public class EventTrigger {
    * Get condition
    * @return condition
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCondition() {
     return condition;
   }
 
-  public void setCondition(@javax.annotation.Nonnull String condition) {
+  public void setCondition(@jakarta.annotation.Nonnull String condition) {
     this.condition = condition;
   }
 
 
-  public EventTrigger duratioin(@javax.annotation.Nullable String duratioin) {
+  public EventTrigger duratioin(@jakarta.annotation.Nullable String duratioin) {
     this.duratioin = duratioin;
     return this;
   }
@@ -91,12 +91,12 @@ public class EventTrigger {
    * Get duratioin
    * @return duratioin
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDuratioin() {
     return duratioin;
   }
 
-  public void setDuratioin(@javax.annotation.Nullable String duratioin) {
+  public void setDuratioin(@jakarta.annotation.Nullable String duratioin) {
     this.duratioin = duratioin;
   }
 

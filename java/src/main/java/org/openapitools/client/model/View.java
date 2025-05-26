@@ -51,42 +51,42 @@ import org.openapitools.client.JSON;
 /**
  * View
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class View {
   public static final String SERIALIZED_NAME_VIEW_ID = "view_id";
   @SerializedName(SERIALIZED_NAME_VIEW_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String viewId;
 
   public static final String SERIALIZED_NAME_VIEW_NAME = "view_name";
   @SerializedName(SERIALIZED_NAME_VIEW_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String viewName;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_LEVELS = "levels";
   @SerializedName(SERIALIZED_NAME_LEVELS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<ViewLevel> levels = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CREATE_TIME = "create_time";
   @SerializedName(SERIALIZED_NAME_CREATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createTime;
 
   public static final String SERIALIZED_NAME_UPDATE_TIME = "update_time";
   @SerializedName(SERIALIZED_NAME_UPDATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updateTime;
 
   public View() {
   }
 
-  public View viewId(@javax.annotation.Nullable String viewId) {
+  public View viewId(@jakarta.annotation.Nullable String viewId) {
     this.viewId = viewId;
     return this;
   }
@@ -95,17 +95,17 @@ public class View {
    * Get viewId
    * @return viewId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getViewId() {
     return viewId;
   }
 
-  public void setViewId(@javax.annotation.Nullable String viewId) {
+  public void setViewId(@jakarta.annotation.Nullable String viewId) {
     this.viewId = viewId;
   }
 
 
-  public View viewName(@javax.annotation.Nullable String viewName) {
+  public View viewName(@jakarta.annotation.Nullable String viewName) {
     this.viewName = viewName;
     return this;
   }
@@ -114,17 +114,17 @@ public class View {
    * Get viewName
    * @return viewName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getViewName() {
     return viewName;
   }
 
-  public void setViewName(@javax.annotation.Nullable String viewName) {
+  public void setViewName(@jakarta.annotation.Nullable String viewName) {
     this.viewName = viewName;
   }
 
 
-  public View description(@javax.annotation.Nullable String description) {
+  public View description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -133,17 +133,17 @@ public class View {
    * Get description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public View levels(@javax.annotation.Nullable List<ViewLevel> levels) {
+  public View levels(@jakarta.annotation.Nullable List<ViewLevel> levels) {
     this.levels = levels;
     return this;
   }
@@ -160,17 +160,17 @@ public class View {
    * Get levels
    * @return levels
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<ViewLevel> getLevels() {
     return levels;
   }
 
-  public void setLevels(@javax.annotation.Nullable List<ViewLevel> levels) {
+  public void setLevels(@jakarta.annotation.Nullable List<ViewLevel> levels) {
     this.levels = levels;
   }
 
 
-  public View createTime(@javax.annotation.Nullable String createTime) {
+  public View createTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
     return this;
   }
@@ -179,17 +179,17 @@ public class View {
    * Get createTime
    * @return createTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(@javax.annotation.Nullable String createTime) {
+  public void setCreateTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
   }
 
 
-  public View updateTime(@javax.annotation.Nullable String updateTime) {
+  public View updateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
     return this;
   }
@@ -198,12 +198,12 @@ public class View {
    * Get updateTime
    * @return updateTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdateTime() {
     return updateTime;
   }
 
-  public void setUpdateTime(@javax.annotation.Nullable String updateTime) {
+  public void setUpdateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
   }
 

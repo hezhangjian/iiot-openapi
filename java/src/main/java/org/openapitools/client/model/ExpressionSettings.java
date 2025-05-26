@@ -51,22 +51,22 @@ import org.openapitools.client.JSON;
 /**
  * ExpressionSettings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class ExpressionSettings {
   public static final String SERIALIZED_NAME_CONDITION = "condition";
   @SerializedName(SERIALIZED_NAME_CONDITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String condition;
 
   public static final String SERIALIZED_NAME_EXPRESSIONS = "expressions";
   @SerializedName(SERIALIZED_NAME_EXPRESSIONS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<Expression> expressions = new ArrayList<>();
 
   public ExpressionSettings() {
   }
 
-  public ExpressionSettings condition(@javax.annotation.Nullable String condition) {
+  public ExpressionSettings condition(@jakarta.annotation.Nullable String condition) {
     this.condition = condition;
     return this;
   }
@@ -75,17 +75,17 @@ public class ExpressionSettings {
    * Get condition
    * @return condition
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCondition() {
     return condition;
   }
 
-  public void setCondition(@javax.annotation.Nullable String condition) {
+  public void setCondition(@jakarta.annotation.Nullable String condition) {
     this.condition = condition;
   }
 
 
-  public ExpressionSettings expressions(@javax.annotation.Nonnull List<Expression> expressions) {
+  public ExpressionSettings expressions(@jakarta.annotation.Nonnull List<Expression> expressions) {
     this.expressions = expressions;
     return this;
   }
@@ -102,12 +102,12 @@ public class ExpressionSettings {
    * Get expressions
    * @return expressions
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<Expression> getExpressions() {
     return expressions;
   }
 
-  public void setExpressions(@javax.annotation.Nonnull List<Expression> expressions) {
+  public void setExpressions(@jakarta.annotation.Nonnull List<Expression> expressions) {
     this.expressions = expressions;
   }
 

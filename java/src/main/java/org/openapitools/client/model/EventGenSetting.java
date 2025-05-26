@@ -54,37 +54,37 @@ import org.openapitools.client.JSON;
 /**
  * EventGenSetting
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class EventGenSetting {
   public static final String SERIALIZED_NAME_START_TRIGGER = "start_trigger";
   @SerializedName(SERIALIZED_NAME_START_TRIGGER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private EventTrigger startTrigger;
 
   public static final String SERIALIZED_NAME_END_TRIGGER = "end_trigger";
   @SerializedName(SERIALIZED_NAME_END_TRIGGER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private EventTrigger endTrigger;
 
   public static final String SERIALIZED_NAME_EXPRESSIONS = "expressions";
   @SerializedName(SERIALIZED_NAME_EXPRESSIONS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<EventGenExpression> expressions = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_OUTPUTS = "outputs";
   @SerializedName(SERIALIZED_NAME_OUTPUTS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private EventGenOutput outputs;
 
   public static final String SERIALIZED_NAME_SUBEVENTS = "subevents";
   @SerializedName(SERIALIZED_NAME_SUBEVENTS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<SubEventGenSetting> subevents = new ArrayList<>();
 
   public EventGenSetting() {
   }
 
-  public EventGenSetting startTrigger(@javax.annotation.Nullable EventTrigger startTrigger) {
+  public EventGenSetting startTrigger(@jakarta.annotation.Nullable EventTrigger startTrigger) {
     this.startTrigger = startTrigger;
     return this;
   }
@@ -93,17 +93,17 @@ public class EventGenSetting {
    * Get startTrigger
    * @return startTrigger
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public EventTrigger getStartTrigger() {
     return startTrigger;
   }
 
-  public void setStartTrigger(@javax.annotation.Nullable EventTrigger startTrigger) {
+  public void setStartTrigger(@jakarta.annotation.Nullable EventTrigger startTrigger) {
     this.startTrigger = startTrigger;
   }
 
 
-  public EventGenSetting endTrigger(@javax.annotation.Nullable EventTrigger endTrigger) {
+  public EventGenSetting endTrigger(@jakarta.annotation.Nullable EventTrigger endTrigger) {
     this.endTrigger = endTrigger;
     return this;
   }
@@ -112,17 +112,17 @@ public class EventGenSetting {
    * Get endTrigger
    * @return endTrigger
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public EventTrigger getEndTrigger() {
     return endTrigger;
   }
 
-  public void setEndTrigger(@javax.annotation.Nullable EventTrigger endTrigger) {
+  public void setEndTrigger(@jakarta.annotation.Nullable EventTrigger endTrigger) {
     this.endTrigger = endTrigger;
   }
 
 
-  public EventGenSetting expressions(@javax.annotation.Nonnull List<EventGenExpression> expressions) {
+  public EventGenSetting expressions(@jakarta.annotation.Nonnull List<EventGenExpression> expressions) {
     this.expressions = expressions;
     return this;
   }
@@ -139,17 +139,17 @@ public class EventGenSetting {
    * Get expressions
    * @return expressions
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<EventGenExpression> getExpressions() {
     return expressions;
   }
 
-  public void setExpressions(@javax.annotation.Nonnull List<EventGenExpression> expressions) {
+  public void setExpressions(@jakarta.annotation.Nonnull List<EventGenExpression> expressions) {
     this.expressions = expressions;
   }
 
 
-  public EventGenSetting outputs(@javax.annotation.Nullable EventGenOutput outputs) {
+  public EventGenSetting outputs(@jakarta.annotation.Nullable EventGenOutput outputs) {
     this.outputs = outputs;
     return this;
   }
@@ -158,17 +158,17 @@ public class EventGenSetting {
    * Get outputs
    * @return outputs
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public EventGenOutput getOutputs() {
     return outputs;
   }
 
-  public void setOutputs(@javax.annotation.Nullable EventGenOutput outputs) {
+  public void setOutputs(@jakarta.annotation.Nullable EventGenOutput outputs) {
     this.outputs = outputs;
   }
 
 
-  public EventGenSetting subevents(@javax.annotation.Nullable List<SubEventGenSetting> subevents) {
+  public EventGenSetting subevents(@jakarta.annotation.Nullable List<SubEventGenSetting> subevents) {
     this.subevents = subevents;
     return this;
   }
@@ -185,12 +185,12 @@ public class EventGenSetting {
    * Get subevents
    * @return subevents
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<SubEventGenSetting> getSubevents() {
     return subevents;
   }
 
-  public void setSubevents(@javax.annotation.Nullable List<SubEventGenSetting> subevents) {
+  public void setSubevents(@jakarta.annotation.Nullable List<SubEventGenSetting> subevents) {
     this.subevents = subevents;
   }
 

@@ -52,32 +52,32 @@ import org.openapitools.client.JSON;
 /**
  * UpdateModelReq
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class UpdateModelReq {
   public static final String SERIALIZED_NAME_MODEL_NAME = "model_name";
   @SerializedName(SERIALIZED_NAME_MODEL_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String modelName;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<PropertyDto> properties = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_COMPONENTS = "components";
   @SerializedName(SERIALIZED_NAME_COMPONENTS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<ComponentDto> components = new ArrayList<>();
 
   public UpdateModelReq() {
   }
 
-  public UpdateModelReq modelName(@javax.annotation.Nullable String modelName) {
+  public UpdateModelReq modelName(@jakarta.annotation.Nullable String modelName) {
     this.modelName = modelName;
     return this;
   }
@@ -86,17 +86,17 @@ public class UpdateModelReq {
    * Get modelName
    * @return modelName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getModelName() {
     return modelName;
   }
 
-  public void setModelName(@javax.annotation.Nullable String modelName) {
+  public void setModelName(@jakarta.annotation.Nullable String modelName) {
     this.modelName = modelName;
   }
 
 
-  public UpdateModelReq description(@javax.annotation.Nullable String description) {
+  public UpdateModelReq description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -105,17 +105,17 @@ public class UpdateModelReq {
    * Get description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateModelReq properties(@javax.annotation.Nullable List<PropertyDto> properties) {
+  public UpdateModelReq properties(@jakarta.annotation.Nullable List<PropertyDto> properties) {
     this.properties = properties;
     return this;
   }
@@ -132,17 +132,17 @@ public class UpdateModelReq {
    * Get properties
    * @return properties
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<PropertyDto> getProperties() {
     return properties;
   }
 
-  public void setProperties(@javax.annotation.Nullable List<PropertyDto> properties) {
+  public void setProperties(@jakarta.annotation.Nullable List<PropertyDto> properties) {
     this.properties = properties;
   }
 
 
-  public UpdateModelReq components(@javax.annotation.Nullable List<ComponentDto> components) {
+  public UpdateModelReq components(@jakarta.annotation.Nullable List<ComponentDto> components) {
     this.components = components;
     return this;
   }
@@ -159,12 +159,12 @@ public class UpdateModelReq {
    * Get components
    * @return components
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<ComponentDto> getComponents() {
     return components;
   }
 
-  public void setComponents(@javax.annotation.Nullable List<ComponentDto> components) {
+  public void setComponents(@jakarta.annotation.Nullable List<ComponentDto> components) {
     this.components = components;
   }
 

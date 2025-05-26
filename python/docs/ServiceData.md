@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **service_id** | **str** |  | 
-**event_time** | **datetime** |  | 
+**event_time** | **str** |  | 
 **properties** | **Dict[str, object]** |  | 
 
 ## Example

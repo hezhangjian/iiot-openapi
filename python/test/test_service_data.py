@@ -36,13 +36,13 @@ class TestServiceData(unittest.TestCase):
         if include_optional:
             return ServiceData(
                 service_id = '',
-                event_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                event_time = '',
                 properties = { }
             )
         else:
             return ServiceData(
                 service_id = '',
-                event_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'),
+                event_time = '',
                 properties = { },
         )
         """

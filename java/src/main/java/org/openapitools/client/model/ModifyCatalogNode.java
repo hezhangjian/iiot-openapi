@@ -48,27 +48,27 @@ import org.openapitools.client.JSON;
 /**
  * ModifyCatalogNode
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class ModifyCatalogNode {
   public static final String SERIALIZED_NAME_NODE_ID = "node_id";
   @SerializedName(SERIALIZED_NAME_NODE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String nodeId;
 
   public static final String SERIALIZED_NAME_NODE_NAME = "node_name";
   @SerializedName(SERIALIZED_NAME_NODE_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String nodeName;
 
   public static final String SERIALIZED_NAME_DISPLAY_ORDER = "display_order";
   @SerializedName(SERIALIZED_NAME_DISPLAY_ORDER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer displayOrder;
 
   public ModifyCatalogNode() {
   }
 
-  public ModifyCatalogNode nodeId(@javax.annotation.Nonnull String nodeId) {
+  public ModifyCatalogNode nodeId(@jakarta.annotation.Nonnull String nodeId) {
     this.nodeId = nodeId;
     return this;
   }
@@ -77,17 +77,17 @@ public class ModifyCatalogNode {
    * Get nodeId
    * @return nodeId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getNodeId() {
     return nodeId;
   }
 
-  public void setNodeId(@javax.annotation.Nonnull String nodeId) {
+  public void setNodeId(@jakarta.annotation.Nonnull String nodeId) {
     this.nodeId = nodeId;
   }
 
 
-  public ModifyCatalogNode nodeName(@javax.annotation.Nullable String nodeName) {
+  public ModifyCatalogNode nodeName(@jakarta.annotation.Nullable String nodeName) {
     this.nodeName = nodeName;
     return this;
   }
@@ -96,17 +96,17 @@ public class ModifyCatalogNode {
    * Get nodeName
    * @return nodeName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getNodeName() {
     return nodeName;
   }
 
-  public void setNodeName(@javax.annotation.Nullable String nodeName) {
+  public void setNodeName(@jakarta.annotation.Nullable String nodeName) {
     this.nodeName = nodeName;
   }
 
 
-  public ModifyCatalogNode displayOrder(@javax.annotation.Nullable Integer displayOrder) {
+  public ModifyCatalogNode displayOrder(@jakarta.annotation.Nullable Integer displayOrder) {
     this.displayOrder = displayOrder;
     return this;
   }
@@ -115,12 +115,12 @@ public class ModifyCatalogNode {
    * Get displayOrder
    * @return displayOrder
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getDisplayOrder() {
     return displayOrder;
   }
 
-  public void setDisplayOrder(@javax.annotation.Nullable Integer displayOrder) {
+  public void setDisplayOrder(@jakarta.annotation.Nullable Integer displayOrder) {
     this.displayOrder = displayOrder;
   }
 

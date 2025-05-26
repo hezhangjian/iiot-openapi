@@ -50,37 +50,37 @@ import org.openapitools.client.JSON;
 /**
  * UpdateTableRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class UpdateTableRequest {
   public static final String SERIALIZED_NAME_TABLE_NAME = "table_name";
   @SerializedName(SERIALIZED_NAME_TABLE_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String tableName;
 
   public static final String SERIALIZED_NAME_CATALOG_ID = "catalog_id";
   @SerializedName(SERIALIZED_NAME_CATALOG_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String catalogId;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_TABLE_SCHEMA = "table_schema";
   @SerializedName(SERIALIZED_NAME_TABLE_SCHEMA)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private UpdateTableSchema tableSchema;
 
   public static final String SERIALIZED_NAME_AGING_SETTINGS = "aging_settings";
   @SerializedName(SERIALIZED_NAME_AGING_SETTINGS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AgingSettings agingSettings;
 
   public UpdateTableRequest() {
   }
 
-  public UpdateTableRequest tableName(@javax.annotation.Nullable String tableName) {
+  public UpdateTableRequest tableName(@jakarta.annotation.Nullable String tableName) {
     this.tableName = tableName;
     return this;
   }
@@ -89,17 +89,17 @@ public class UpdateTableRequest {
    * Get tableName
    * @return tableName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTableName() {
     return tableName;
   }
 
-  public void setTableName(@javax.annotation.Nullable String tableName) {
+  public void setTableName(@jakarta.annotation.Nullable String tableName) {
     this.tableName = tableName;
   }
 
 
-  public UpdateTableRequest catalogId(@javax.annotation.Nullable String catalogId) {
+  public UpdateTableRequest catalogId(@jakarta.annotation.Nullable String catalogId) {
     this.catalogId = catalogId;
     return this;
   }
@@ -108,17 +108,17 @@ public class UpdateTableRequest {
    * Get catalogId
    * @return catalogId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCatalogId() {
     return catalogId;
   }
 
-  public void setCatalogId(@javax.annotation.Nullable String catalogId) {
+  public void setCatalogId(@jakarta.annotation.Nullable String catalogId) {
     this.catalogId = catalogId;
   }
 
 
-  public UpdateTableRequest description(@javax.annotation.Nullable String description) {
+  public UpdateTableRequest description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -127,17 +127,17 @@ public class UpdateTableRequest {
    * Get description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public UpdateTableRequest tableSchema(@javax.annotation.Nullable UpdateTableSchema tableSchema) {
+  public UpdateTableRequest tableSchema(@jakarta.annotation.Nullable UpdateTableSchema tableSchema) {
     this.tableSchema = tableSchema;
     return this;
   }
@@ -146,17 +146,17 @@ public class UpdateTableRequest {
    * Get tableSchema
    * @return tableSchema
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public UpdateTableSchema getTableSchema() {
     return tableSchema;
   }
 
-  public void setTableSchema(@javax.annotation.Nullable UpdateTableSchema tableSchema) {
+  public void setTableSchema(@jakarta.annotation.Nullable UpdateTableSchema tableSchema) {
     this.tableSchema = tableSchema;
   }
 
 
-  public UpdateTableRequest agingSettings(@javax.annotation.Nullable AgingSettings agingSettings) {
+  public UpdateTableRequest agingSettings(@jakarta.annotation.Nullable AgingSettings agingSettings) {
     this.agingSettings = agingSettings;
     return this;
   }
@@ -165,12 +165,12 @@ public class UpdateTableRequest {
    * Get agingSettings
    * @return agingSettings
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AgingSettings getAgingSettings() {
     return agingSettings;
   }
 
-  public void setAgingSettings(@javax.annotation.Nullable AgingSettings agingSettings) {
+  public void setAgingSettings(@jakarta.annotation.Nullable AgingSettings agingSettings) {
     this.agingSettings = agingSettings;
   }
 

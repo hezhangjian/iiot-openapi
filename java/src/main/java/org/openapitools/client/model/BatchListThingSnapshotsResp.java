@@ -51,17 +51,17 @@ import org.openapitools.client.JSON;
 /**
  * BatchListThingSnapshotsResp
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class BatchListThingSnapshotsResp {
   public static final String SERIALIZED_NAME_THINGS = "things";
   @SerializedName(SERIALIZED_NAME_THINGS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<BatchListThingSnapshotsRespThingsInner> things = new ArrayList<>();
 
   public BatchListThingSnapshotsResp() {
   }
 
-  public BatchListThingSnapshotsResp things(@javax.annotation.Nullable List<BatchListThingSnapshotsRespThingsInner> things) {
+  public BatchListThingSnapshotsResp things(@jakarta.annotation.Nullable List<BatchListThingSnapshotsRespThingsInner> things) {
     this.things = things;
     return this;
   }
@@ -78,12 +78,12 @@ public class BatchListThingSnapshotsResp {
    * Get things
    * @return things
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<BatchListThingSnapshotsRespThingsInner> getThings() {
     return things;
   }
 
-  public void setThings(@javax.annotation.Nullable List<BatchListThingSnapshotsRespThingsInner> things) {
+  public void setThings(@jakarta.annotation.Nullable List<BatchListThingSnapshotsRespThingsInner> things) {
     this.things = things;
   }
 

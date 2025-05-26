@@ -51,17 +51,17 @@ import org.openapitools.client.JSON;
 /**
  * UpdateTableSchema
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class UpdateTableSchema {
   public static final String SERIALIZED_NAME_COLUMNS = "columns";
   @SerializedName(SERIALIZED_NAME_COLUMNS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<UpdateColumnSchema> columns = new ArrayList<>();
 
   public UpdateTableSchema() {
   }
 
-  public UpdateTableSchema columns(@javax.annotation.Nonnull List<UpdateColumnSchema> columns) {
+  public UpdateTableSchema columns(@jakarta.annotation.Nonnull List<UpdateColumnSchema> columns) {
     this.columns = columns;
     return this;
   }
@@ -78,12 +78,12 @@ public class UpdateTableSchema {
    * Get columns
    * @return columns
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<UpdateColumnSchema> getColumns() {
     return columns;
   }
 
-  public void setColumns(@javax.annotation.Nonnull List<UpdateColumnSchema> columns) {
+  public void setColumns(@jakarta.annotation.Nonnull List<UpdateColumnSchema> columns) {
     this.columns = columns;
   }
 

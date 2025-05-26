@@ -48,22 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * OriginalReports
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class OriginalReports {
   public static final String SERIALIZED_NAME_SYNC_TIME = "sync_time";
   @SerializedName(SERIALIZED_NAME_SYNC_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String syncTime;
 
   public static final String SERIALIZED_NAME_AGING_TIME = "aging_time";
   @SerializedName(SERIALIZED_NAME_AGING_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String agingTime;
 
   public OriginalReports() {
   }
 
-  public OriginalReports syncTime(@javax.annotation.Nullable String syncTime) {
+  public OriginalReports syncTime(@jakarta.annotation.Nullable String syncTime) {
     this.syncTime = syncTime;
     return this;
   }
@@ -72,17 +72,17 @@ public class OriginalReports {
    * Get syncTime
    * @return syncTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSyncTime() {
     return syncTime;
   }
 
-  public void setSyncTime(@javax.annotation.Nullable String syncTime) {
+  public void setSyncTime(@jakarta.annotation.Nullable String syncTime) {
     this.syncTime = syncTime;
   }
 
 
-  public OriginalReports agingTime(@javax.annotation.Nullable String agingTime) {
+  public OriginalReports agingTime(@jakarta.annotation.Nullable String agingTime) {
     this.agingTime = agingTime;
     return this;
   }
@@ -91,12 +91,12 @@ public class OriginalReports {
    * Get agingTime
    * @return agingTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAgingTime() {
     return agingTime;
   }
 
-  public void setAgingTime(@javax.annotation.Nullable String agingTime) {
+  public void setAgingTime(@jakarta.annotation.Nullable String agingTime) {
     this.agingTime = agingTime;
   }
 

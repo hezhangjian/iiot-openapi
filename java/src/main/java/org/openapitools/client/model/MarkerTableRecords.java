@@ -51,27 +51,27 @@ import org.openapitools.client.JSON;
 /**
  * MarkerTableRecords
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class MarkerTableRecords {
   public static final String SERIALIZED_NAME_PAGE_INFO = "page_info";
   @SerializedName(SERIALIZED_NAME_PAGE_INFO)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private PageInfo pageInfo;
 
   public static final String SERIALIZED_NAME_COLUMNS = "columns";
   @SerializedName(SERIALIZED_NAME_COLUMNS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> columns = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<List<Object>> values = new ArrayList<>();
 
   public MarkerTableRecords() {
   }
 
-  public MarkerTableRecords pageInfo(@javax.annotation.Nullable PageInfo pageInfo) {
+  public MarkerTableRecords pageInfo(@jakarta.annotation.Nullable PageInfo pageInfo) {
     this.pageInfo = pageInfo;
     return this;
   }
@@ -80,17 +80,17 @@ public class MarkerTableRecords {
    * Get pageInfo
    * @return pageInfo
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public PageInfo getPageInfo() {
     return pageInfo;
   }
 
-  public void setPageInfo(@javax.annotation.Nullable PageInfo pageInfo) {
+  public void setPageInfo(@jakarta.annotation.Nullable PageInfo pageInfo) {
     this.pageInfo = pageInfo;
   }
 
 
-  public MarkerTableRecords columns(@javax.annotation.Nullable List<String> columns) {
+  public MarkerTableRecords columns(@jakarta.annotation.Nullable List<String> columns) {
     this.columns = columns;
     return this;
   }
@@ -107,17 +107,17 @@ public class MarkerTableRecords {
    * Get columns
    * @return columns
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getColumns() {
     return columns;
   }
 
-  public void setColumns(@javax.annotation.Nullable List<String> columns) {
+  public void setColumns(@jakarta.annotation.Nullable List<String> columns) {
     this.columns = columns;
   }
 
 
-  public MarkerTableRecords values(@javax.annotation.Nullable List<List<Object>> values) {
+  public MarkerTableRecords values(@jakarta.annotation.Nullable List<List<Object>> values) {
     this.values = values;
     return this;
   }
@@ -134,12 +134,12 @@ public class MarkerTableRecords {
    * Get values
    * @return values
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<List<Object>> getValues() {
     return values;
   }
 
-  public void setValues(@javax.annotation.Nullable List<List<Object>> values) {
+  public void setValues(@jakarta.annotation.Nullable List<List<Object>> values) {
     this.values = values;
   }
 

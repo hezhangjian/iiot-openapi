@@ -53,72 +53,72 @@ import org.openapitools.client.JSON;
 /**
  * BriefTable
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class BriefTable {
   public static final String SERIALIZED_NAME_TABLE_ID = "table_id";
   @SerializedName(SERIALIZED_NAME_TABLE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String tableId;
 
   public static final String SERIALIZED_NAME_TABLE_NAME = "table_name";
   @SerializedName(SERIALIZED_NAME_TABLE_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String tableName;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String type;
 
   public static final String SERIALIZED_NAME_CATALOG_ID = "catalog_id";
   @SerializedName(SERIALIZED_NAME_CATALOG_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String catalogId;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_CREATE_TIME = "create_time";
   @SerializedName(SERIALIZED_NAME_CREATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createTime;
 
   public static final String SERIALIZED_NAME_UPDATE_TIME = "update_time";
   @SerializedName(SERIALIZED_NAME_UPDATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updateTime;
 
   public static final String SERIALIZED_NAME_ORIGINAL_REPORTS = "original_reports";
   @SerializedName(SERIALIZED_NAME_ORIGINAL_REPORTS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private OriginalReports originalReports;
 
   public static final String SERIALIZED_NAME_INTEGRATED_REPORTS = "integrated_reports";
   @SerializedName(SERIALIZED_NAME_INTEGRATED_REPORTS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IntegratedReports integratedReports;
 
   public static final String SERIALIZED_NAME_ITSTAT_REPORTS = "itstat_reports";
   @SerializedName(SERIALIZED_NAME_ITSTAT_REPORTS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ITStatReports itstatReports;
 
   public static final String SERIALIZED_NAME_OTSTAT_REPORTS = "otstat_reports";
   @SerializedName(SERIALIZED_NAME_OTSTAT_REPORTS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private OtstatReports otstatReports;
 
   public static final String SERIALIZED_NAME_PROCESS_SETTINGS = "process_settings";
   @SerializedName(SERIALIZED_NAME_PROCESS_SETTINGS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private BriefProcessSettings processSettings;
 
   public BriefTable() {
   }
 
-  public BriefTable tableId(@javax.annotation.Nullable String tableId) {
+  public BriefTable tableId(@jakarta.annotation.Nullable String tableId) {
     this.tableId = tableId;
     return this;
   }
@@ -127,17 +127,17 @@ public class BriefTable {
    * Get tableId
    * @return tableId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTableId() {
     return tableId;
   }
 
-  public void setTableId(@javax.annotation.Nullable String tableId) {
+  public void setTableId(@jakarta.annotation.Nullable String tableId) {
     this.tableId = tableId;
   }
 
 
-  public BriefTable tableName(@javax.annotation.Nullable String tableName) {
+  public BriefTable tableName(@jakarta.annotation.Nullable String tableName) {
     this.tableName = tableName;
     return this;
   }
@@ -146,17 +146,17 @@ public class BriefTable {
    * Get tableName
    * @return tableName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTableName() {
     return tableName;
   }
 
-  public void setTableName(@javax.annotation.Nullable String tableName) {
+  public void setTableName(@jakarta.annotation.Nullable String tableName) {
     this.tableName = tableName;
   }
 
 
-  public BriefTable type(@javax.annotation.Nullable String type) {
+  public BriefTable type(@jakarta.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
@@ -165,17 +165,17 @@ public class BriefTable {
    * Get type
    * @return type
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nullable String type) {
+  public void setType(@jakarta.annotation.Nullable String type) {
     this.type = type;
   }
 
 
-  public BriefTable catalogId(@javax.annotation.Nullable String catalogId) {
+  public BriefTable catalogId(@jakarta.annotation.Nullable String catalogId) {
     this.catalogId = catalogId;
     return this;
   }
@@ -184,17 +184,17 @@ public class BriefTable {
    * Get catalogId
    * @return catalogId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCatalogId() {
     return catalogId;
   }
 
-  public void setCatalogId(@javax.annotation.Nullable String catalogId) {
+  public void setCatalogId(@jakarta.annotation.Nullable String catalogId) {
     this.catalogId = catalogId;
   }
 
 
-  public BriefTable description(@javax.annotation.Nullable String description) {
+  public BriefTable description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -203,17 +203,17 @@ public class BriefTable {
    * Get description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public BriefTable createTime(@javax.annotation.Nullable String createTime) {
+  public BriefTable createTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
     return this;
   }
@@ -222,17 +222,17 @@ public class BriefTable {
    * Get createTime
    * @return createTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(@javax.annotation.Nullable String createTime) {
+  public void setCreateTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
   }
 
 
-  public BriefTable updateTime(@javax.annotation.Nullable String updateTime) {
+  public BriefTable updateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
     return this;
   }
@@ -241,17 +241,17 @@ public class BriefTable {
    * Get updateTime
    * @return updateTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdateTime() {
     return updateTime;
   }
 
-  public void setUpdateTime(@javax.annotation.Nullable String updateTime) {
+  public void setUpdateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
   }
 
 
-  public BriefTable originalReports(@javax.annotation.Nullable OriginalReports originalReports) {
+  public BriefTable originalReports(@jakarta.annotation.Nullable OriginalReports originalReports) {
     this.originalReports = originalReports;
     return this;
   }
@@ -260,17 +260,17 @@ public class BriefTable {
    * Get originalReports
    * @return originalReports
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public OriginalReports getOriginalReports() {
     return originalReports;
   }
 
-  public void setOriginalReports(@javax.annotation.Nullable OriginalReports originalReports) {
+  public void setOriginalReports(@jakarta.annotation.Nullable OriginalReports originalReports) {
     this.originalReports = originalReports;
   }
 
 
-  public BriefTable integratedReports(@javax.annotation.Nullable IntegratedReports integratedReports) {
+  public BriefTable integratedReports(@jakarta.annotation.Nullable IntegratedReports integratedReports) {
     this.integratedReports = integratedReports;
     return this;
   }
@@ -279,17 +279,17 @@ public class BriefTable {
    * Get integratedReports
    * @return integratedReports
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IntegratedReports getIntegratedReports() {
     return integratedReports;
   }
 
-  public void setIntegratedReports(@javax.annotation.Nullable IntegratedReports integratedReports) {
+  public void setIntegratedReports(@jakarta.annotation.Nullable IntegratedReports integratedReports) {
     this.integratedReports = integratedReports;
   }
 
 
-  public BriefTable itstatReports(@javax.annotation.Nullable ITStatReports itstatReports) {
+  public BriefTable itstatReports(@jakarta.annotation.Nullable ITStatReports itstatReports) {
     this.itstatReports = itstatReports;
     return this;
   }
@@ -298,17 +298,17 @@ public class BriefTable {
    * Get itstatReports
    * @return itstatReports
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ITStatReports getItstatReports() {
     return itstatReports;
   }
 
-  public void setItstatReports(@javax.annotation.Nullable ITStatReports itstatReports) {
+  public void setItstatReports(@jakarta.annotation.Nullable ITStatReports itstatReports) {
     this.itstatReports = itstatReports;
   }
 
 
-  public BriefTable otstatReports(@javax.annotation.Nullable OtstatReports otstatReports) {
+  public BriefTable otstatReports(@jakarta.annotation.Nullable OtstatReports otstatReports) {
     this.otstatReports = otstatReports;
     return this;
   }
@@ -317,17 +317,17 @@ public class BriefTable {
    * Get otstatReports
    * @return otstatReports
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public OtstatReports getOtstatReports() {
     return otstatReports;
   }
 
-  public void setOtstatReports(@javax.annotation.Nullable OtstatReports otstatReports) {
+  public void setOtstatReports(@jakarta.annotation.Nullable OtstatReports otstatReports) {
     this.otstatReports = otstatReports;
   }
 
 
-  public BriefTable processSettings(@javax.annotation.Nullable BriefProcessSettings processSettings) {
+  public BriefTable processSettings(@jakarta.annotation.Nullable BriefProcessSettings processSettings) {
     this.processSettings = processSettings;
     return this;
   }
@@ -336,12 +336,12 @@ public class BriefTable {
    * Get processSettings
    * @return processSettings
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public BriefProcessSettings getProcessSettings() {
     return processSettings;
   }
 
-  public void setProcessSettings(@javax.annotation.Nullable BriefProcessSettings processSettings) {
+  public void setProcessSettings(@jakarta.annotation.Nullable BriefProcessSettings processSettings) {
     this.processSettings = processSettings;
   }
 

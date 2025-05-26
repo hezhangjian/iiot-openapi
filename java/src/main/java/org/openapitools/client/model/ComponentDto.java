@@ -51,37 +51,37 @@ import org.openapitools.client.JSON;
 /**
  * ComponentDto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class ComponentDto {
   public static final String SERIALIZED_NAME_COMPONENT_ID = "component_id";
   @SerializedName(SERIALIZED_NAME_COMPONENT_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String componentId;
 
   public static final String SERIALIZED_NAME_COMPONENT_NAME = "component_name";
   @SerializedName(SERIALIZED_NAME_COMPONENT_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String componentName;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<PropertyDto> properties = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_COMPONENTS = "components";
   @SerializedName(SERIALIZED_NAME_COMPONENTS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<ComponentDto> components = new ArrayList<>();
 
   public ComponentDto() {
   }
 
-  public ComponentDto componentId(@javax.annotation.Nonnull String componentId) {
+  public ComponentDto componentId(@jakarta.annotation.Nonnull String componentId) {
     this.componentId = componentId;
     return this;
   }
@@ -90,17 +90,17 @@ public class ComponentDto {
    * Get componentId
    * @return componentId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getComponentId() {
     return componentId;
   }
 
-  public void setComponentId(@javax.annotation.Nonnull String componentId) {
+  public void setComponentId(@jakarta.annotation.Nonnull String componentId) {
     this.componentId = componentId;
   }
 
 
-  public ComponentDto componentName(@javax.annotation.Nonnull String componentName) {
+  public ComponentDto componentName(@jakarta.annotation.Nonnull String componentName) {
     this.componentName = componentName;
     return this;
   }
@@ -109,17 +109,17 @@ public class ComponentDto {
    * Get componentName
    * @return componentName
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getComponentName() {
     return componentName;
   }
 
-  public void setComponentName(@javax.annotation.Nonnull String componentName) {
+  public void setComponentName(@jakarta.annotation.Nonnull String componentName) {
     this.componentName = componentName;
   }
 
 
-  public ComponentDto description(@javax.annotation.Nullable String description) {
+  public ComponentDto description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -128,17 +128,17 @@ public class ComponentDto {
    * Get description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public ComponentDto properties(@javax.annotation.Nullable List<PropertyDto> properties) {
+  public ComponentDto properties(@jakarta.annotation.Nullable List<PropertyDto> properties) {
     this.properties = properties;
     return this;
   }
@@ -155,17 +155,17 @@ public class ComponentDto {
    * Get properties
    * @return properties
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<PropertyDto> getProperties() {
     return properties;
   }
 
-  public void setProperties(@javax.annotation.Nullable List<PropertyDto> properties) {
+  public void setProperties(@jakarta.annotation.Nullable List<PropertyDto> properties) {
     this.properties = properties;
   }
 
 
-  public ComponentDto components(@javax.annotation.Nullable List<ComponentDto> components) {
+  public ComponentDto components(@jakarta.annotation.Nullable List<ComponentDto> components) {
     this.components = components;
     return this;
   }
@@ -182,12 +182,12 @@ public class ComponentDto {
    * Get components
    * @return components
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<ComponentDto> getComponents() {
     return components;
   }
 
-  public void setComponents(@javax.annotation.Nullable List<ComponentDto> components) {
+  public void setComponents(@jakarta.annotation.Nullable List<ComponentDto> components) {
     this.components = components;
   }
 

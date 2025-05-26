@@ -1813,7 +1813,6 @@ components:
         service_id:
           type: string
         event_time:
-          format: date-time
           type: string
         properties:
           additionalProperties: true

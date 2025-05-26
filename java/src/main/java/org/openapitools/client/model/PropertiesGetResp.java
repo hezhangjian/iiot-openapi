@@ -52,32 +52,32 @@ import org.openapitools.client.JSON;
 /**
  * PropertiesGetResp
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class PropertiesGetResp {
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Map<String, PropertyValueObject> properties = new HashMap<>();
 
   public static final String SERIALIZED_NAME_COMPONENTS = "components";
   @SerializedName(SERIALIZED_NAME_COMPONENTS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Map<String, ComponentProperty> components = new HashMap<>();
 
   public static final String SERIALIZED_NAME_RESULT_CODE = "result_code";
   @SerializedName(SERIALIZED_NAME_RESULT_CODE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer resultCode;
 
   public static final String SERIALIZED_NAME_RESULT_DESC = "result_desc";
   @SerializedName(SERIALIZED_NAME_RESULT_DESC)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String resultDesc;
 
   public PropertiesGetResp() {
   }
 
-  public PropertiesGetResp properties(@javax.annotation.Nullable Map<String, PropertyValueObject> properties) {
+  public PropertiesGetResp properties(@jakarta.annotation.Nullable Map<String, PropertyValueObject> properties) {
     this.properties = properties;
     return this;
   }
@@ -94,17 +94,17 @@ public class PropertiesGetResp {
    * Get properties
    * @return properties
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Map<String, PropertyValueObject> getProperties() {
     return properties;
   }
 
-  public void setProperties(@javax.annotation.Nullable Map<String, PropertyValueObject> properties) {
+  public void setProperties(@jakarta.annotation.Nullable Map<String, PropertyValueObject> properties) {
     this.properties = properties;
   }
 
 
-  public PropertiesGetResp components(@javax.annotation.Nullable Map<String, ComponentProperty> components) {
+  public PropertiesGetResp components(@jakarta.annotation.Nullable Map<String, ComponentProperty> components) {
     this.components = components;
     return this;
   }
@@ -121,17 +121,17 @@ public class PropertiesGetResp {
    * Get components
    * @return components
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Map<String, ComponentProperty> getComponents() {
     return components;
   }
 
-  public void setComponents(@javax.annotation.Nullable Map<String, ComponentProperty> components) {
+  public void setComponents(@jakarta.annotation.Nullable Map<String, ComponentProperty> components) {
     this.components = components;
   }
 
 
-  public PropertiesGetResp resultCode(@javax.annotation.Nullable Integer resultCode) {
+  public PropertiesGetResp resultCode(@jakarta.annotation.Nullable Integer resultCode) {
     this.resultCode = resultCode;
     return this;
   }
@@ -140,17 +140,17 @@ public class PropertiesGetResp {
    * Get resultCode
    * @return resultCode
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getResultCode() {
     return resultCode;
   }
 
-  public void setResultCode(@javax.annotation.Nullable Integer resultCode) {
+  public void setResultCode(@jakarta.annotation.Nullable Integer resultCode) {
     this.resultCode = resultCode;
   }
 
 
-  public PropertiesGetResp resultDesc(@javax.annotation.Nullable String resultDesc) {
+  public PropertiesGetResp resultDesc(@jakarta.annotation.Nullable String resultDesc) {
     this.resultDesc = resultDesc;
     return this;
   }
@@ -159,12 +159,12 @@ public class PropertiesGetResp {
    * Get resultDesc
    * @return resultDesc
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getResultDesc() {
     return resultDesc;
   }
 
-  public void setResultDesc(@javax.annotation.Nullable String resultDesc) {
+  public void setResultDesc(@jakarta.annotation.Nullable String resultDesc) {
     this.resultDesc = resultDesc;
   }
 

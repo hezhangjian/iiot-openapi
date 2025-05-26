@@ -49,17 +49,17 @@ import org.openapitools.client.JSON;
 /**
  * ComplexAnalysisSettingsDto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class ComplexAnalysisSettingsDto {
   public static final String SERIALIZED_NAME_COMPLEX_SETTINGS = "complex_settings";
   @SerializedName(SERIALIZED_NAME_COMPLEX_SETTINGS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ComplexSetting complexSettings;
 
   public ComplexAnalysisSettingsDto() {
   }
 
-  public ComplexAnalysisSettingsDto complexSettings(@javax.annotation.Nullable ComplexSetting complexSettings) {
+  public ComplexAnalysisSettingsDto complexSettings(@jakarta.annotation.Nullable ComplexSetting complexSettings) {
     this.complexSettings = complexSettings;
     return this;
   }
@@ -68,12 +68,12 @@ public class ComplexAnalysisSettingsDto {
    * Get complexSettings
    * @return complexSettings
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ComplexSetting getComplexSettings() {
     return complexSettings;
   }
 
-  public void setComplexSettings(@javax.annotation.Nullable ComplexSetting complexSettings) {
+  public void setComplexSettings(@jakarta.annotation.Nullable ComplexSetting complexSettings) {
     this.complexSettings = complexSettings;
   }
 

@@ -52,16 +52,16 @@ import org.openapitools.client.JSON;
 /**
  * Model
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class Model {
   public static final String SERIALIZED_NAME_MODEL_ID = "model_id";
   @SerializedName(SERIALIZED_NAME_MODEL_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String modelId;
 
   public static final String SERIALIZED_NAME_MODEL_NAME = "model_name";
   @SerializedName(SERIALIZED_NAME_MODEL_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String modelName;
 
   /**
@@ -118,38 +118,38 @@ public class Model {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<PropertyDto> properties = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_COMPONENTS = "components";
   @SerializedName(SERIALIZED_NAME_COMPONENTS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<ComponentDto> components = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CREATE_TIME = "create_time";
   @SerializedName(SERIALIZED_NAME_CREATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createTime;
 
   public static final String SERIALIZED_NAME_UPDATE_TIME = "update_time";
   @SerializedName(SERIALIZED_NAME_UPDATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updateTime;
 
   public Model() {
   }
 
-  public Model modelId(@javax.annotation.Nonnull String modelId) {
+  public Model modelId(@jakarta.annotation.Nonnull String modelId) {
     this.modelId = modelId;
     return this;
   }
@@ -158,17 +158,17 @@ public class Model {
    * Get modelId
    * @return modelId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getModelId() {
     return modelId;
   }
 
-  public void setModelId(@javax.annotation.Nonnull String modelId) {
+  public void setModelId(@jakarta.annotation.Nonnull String modelId) {
     this.modelId = modelId;
   }
 
 
-  public Model modelName(@javax.annotation.Nonnull String modelName) {
+  public Model modelName(@jakarta.annotation.Nonnull String modelName) {
     this.modelName = modelName;
     return this;
   }
@@ -177,17 +177,17 @@ public class Model {
    * Get modelName
    * @return modelName
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getModelName() {
     return modelName;
   }
 
-  public void setModelName(@javax.annotation.Nonnull String modelName) {
+  public void setModelName(@jakarta.annotation.Nonnull String modelName) {
     this.modelName = modelName;
   }
 
 
-  public Model type(@javax.annotation.Nullable TypeEnum type) {
+  public Model type(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -196,17 +196,17 @@ public class Model {
    * Get type
    * @return type
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nullable TypeEnum type) {
+  public void setType(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public Model description(@javax.annotation.Nullable String description) {
+  public Model description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -215,17 +215,17 @@ public class Model {
    * Get description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public Model properties(@javax.annotation.Nullable List<PropertyDto> properties) {
+  public Model properties(@jakarta.annotation.Nullable List<PropertyDto> properties) {
     this.properties = properties;
     return this;
   }
@@ -242,17 +242,17 @@ public class Model {
    * Get properties
    * @return properties
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<PropertyDto> getProperties() {
     return properties;
   }
 
-  public void setProperties(@javax.annotation.Nullable List<PropertyDto> properties) {
+  public void setProperties(@jakarta.annotation.Nullable List<PropertyDto> properties) {
     this.properties = properties;
   }
 
 
-  public Model components(@javax.annotation.Nullable List<ComponentDto> components) {
+  public Model components(@jakarta.annotation.Nullable List<ComponentDto> components) {
     this.components = components;
     return this;
   }
@@ -269,17 +269,17 @@ public class Model {
    * Get components
    * @return components
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<ComponentDto> getComponents() {
     return components;
   }
 
-  public void setComponents(@javax.annotation.Nullable List<ComponentDto> components) {
+  public void setComponents(@jakarta.annotation.Nullable List<ComponentDto> components) {
     this.components = components;
   }
 
 
-  public Model createTime(@javax.annotation.Nullable String createTime) {
+  public Model createTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
     return this;
   }
@@ -288,17 +288,17 @@ public class Model {
    * Get createTime
    * @return createTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(@javax.annotation.Nullable String createTime) {
+  public void setCreateTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
   }
 
 
-  public Model updateTime(@javax.annotation.Nullable String updateTime) {
+  public Model updateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
     return this;
   }
@@ -307,12 +307,12 @@ public class Model {
    * Get updateTime
    * @return updateTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdateTime() {
     return updateTime;
   }
 
-  public void setUpdateTime(@javax.annotation.Nullable String updateTime) {
+  public void setUpdateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
   }
 

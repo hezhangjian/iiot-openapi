@@ -48,22 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * DeleteViewNodesReq
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class DeleteViewNodesReq {
   public static final String SERIALIZED_NAME_NODE_ID = "node_id";
   @SerializedName(SERIALIZED_NAME_NODE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String nodeId;
 
   public static final String SERIALIZED_NAME_THING_ID = "thing_id";
   @SerializedName(SERIALIZED_NAME_THING_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String thingId;
 
   public DeleteViewNodesReq() {
   }
 
-  public DeleteViewNodesReq nodeId(@javax.annotation.Nullable String nodeId) {
+  public DeleteViewNodesReq nodeId(@jakarta.annotation.Nullable String nodeId) {
     this.nodeId = nodeId;
     return this;
   }
@@ -72,17 +72,17 @@ public class DeleteViewNodesReq {
    * Get nodeId
    * @return nodeId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getNodeId() {
     return nodeId;
   }
 
-  public void setNodeId(@javax.annotation.Nullable String nodeId) {
+  public void setNodeId(@jakarta.annotation.Nullable String nodeId) {
     this.nodeId = nodeId;
   }
 
 
-  public DeleteViewNodesReq thingId(@javax.annotation.Nullable String thingId) {
+  public DeleteViewNodesReq thingId(@jakarta.annotation.Nullable String thingId) {
     this.thingId = thingId;
     return this;
   }
@@ -91,12 +91,12 @@ public class DeleteViewNodesReq {
    * Get thingId
    * @return thingId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getThingId() {
     return thingId;
   }
 
-  public void setThingId(@javax.annotation.Nullable String thingId) {
+  public void setThingId(@jakarta.annotation.Nullable String thingId) {
     this.thingId = thingId;
   }
 

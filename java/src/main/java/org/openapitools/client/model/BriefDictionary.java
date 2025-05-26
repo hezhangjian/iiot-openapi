@@ -48,42 +48,42 @@ import org.openapitools.client.JSON;
 /**
  * BriefDictionary
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class BriefDictionary {
   public static final String SERIALIZED_NAME_DIC_ID = "dic_id";
   @SerializedName(SERIALIZED_NAME_DIC_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String dicId;
 
   public static final String SERIALIZED_NAME_DIC_NAME = "dic_name";
   @SerializedName(SERIALIZED_NAME_DIC_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String dicName;
 
   public static final String SERIALIZED_NAME_DATA_TYPE = "data_type";
   @SerializedName(SERIALIZED_NAME_DATA_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String dataType;
 
   public static final String SERIALIZED_NAME_CATALOG_ID = "catalog_id";
   @SerializedName(SERIALIZED_NAME_CATALOG_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String catalogId;
 
   public static final String SERIALIZED_NAME_CREATE_TIME = "create_time";
   @SerializedName(SERIALIZED_NAME_CREATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createTime;
 
   public static final String SERIALIZED_NAME_UPDATE_TIME = "update_time";
   @SerializedName(SERIALIZED_NAME_UPDATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updateTime;
 
   public BriefDictionary() {
   }
 
-  public BriefDictionary dicId(@javax.annotation.Nullable String dicId) {
+  public BriefDictionary dicId(@jakarta.annotation.Nullable String dicId) {
     this.dicId = dicId;
     return this;
   }
@@ -92,17 +92,17 @@ public class BriefDictionary {
    * Get dicId
    * @return dicId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDicId() {
     return dicId;
   }
 
-  public void setDicId(@javax.annotation.Nullable String dicId) {
+  public void setDicId(@jakarta.annotation.Nullable String dicId) {
     this.dicId = dicId;
   }
 
 
-  public BriefDictionary dicName(@javax.annotation.Nullable String dicName) {
+  public BriefDictionary dicName(@jakarta.annotation.Nullable String dicName) {
     this.dicName = dicName;
     return this;
   }
@@ -111,17 +111,17 @@ public class BriefDictionary {
    * Get dicName
    * @return dicName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDicName() {
     return dicName;
   }
 
-  public void setDicName(@javax.annotation.Nullable String dicName) {
+  public void setDicName(@jakarta.annotation.Nullable String dicName) {
     this.dicName = dicName;
   }
 
 
-  public BriefDictionary dataType(@javax.annotation.Nullable String dataType) {
+  public BriefDictionary dataType(@jakarta.annotation.Nullable String dataType) {
     this.dataType = dataType;
     return this;
   }
@@ -130,17 +130,17 @@ public class BriefDictionary {
    * Get dataType
    * @return dataType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDataType() {
     return dataType;
   }
 
-  public void setDataType(@javax.annotation.Nullable String dataType) {
+  public void setDataType(@jakarta.annotation.Nullable String dataType) {
     this.dataType = dataType;
   }
 
 
-  public BriefDictionary catalogId(@javax.annotation.Nullable String catalogId) {
+  public BriefDictionary catalogId(@jakarta.annotation.Nullable String catalogId) {
     this.catalogId = catalogId;
     return this;
   }
@@ -149,17 +149,17 @@ public class BriefDictionary {
    * Get catalogId
    * @return catalogId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCatalogId() {
     return catalogId;
   }
 
-  public void setCatalogId(@javax.annotation.Nullable String catalogId) {
+  public void setCatalogId(@jakarta.annotation.Nullable String catalogId) {
     this.catalogId = catalogId;
   }
 
 
-  public BriefDictionary createTime(@javax.annotation.Nullable String createTime) {
+  public BriefDictionary createTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
     return this;
   }
@@ -168,17 +168,17 @@ public class BriefDictionary {
    * Get createTime
    * @return createTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(@javax.annotation.Nullable String createTime) {
+  public void setCreateTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
   }
 
 
-  public BriefDictionary updateTime(@javax.annotation.Nullable String updateTime) {
+  public BriefDictionary updateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
     return this;
   }
@@ -187,12 +187,12 @@ public class BriefDictionary {
    * Get updateTime
    * @return updateTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdateTime() {
     return updateTime;
   }
 
-  public void setUpdateTime(@javax.annotation.Nullable String updateTime) {
+  public void setUpdateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
   }
 

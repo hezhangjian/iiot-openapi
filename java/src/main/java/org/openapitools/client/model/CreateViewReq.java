@@ -48,27 +48,27 @@ import org.openapitools.client.JSON;
 /**
  * CreateViewReq
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class CreateViewReq {
   public static final String SERIALIZED_NAME_VIEW_ID = "view_id";
   @SerializedName(SERIALIZED_NAME_VIEW_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String viewId;
 
   public static final String SERIALIZED_NAME_VIEW_NAME = "view_name";
   @SerializedName(SERIALIZED_NAME_VIEW_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String viewName;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public CreateViewReq() {
   }
 
-  public CreateViewReq viewId(@javax.annotation.Nonnull String viewId) {
+  public CreateViewReq viewId(@jakarta.annotation.Nonnull String viewId) {
     this.viewId = viewId;
     return this;
   }
@@ -77,17 +77,17 @@ public class CreateViewReq {
    * Get viewId
    * @return viewId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getViewId() {
     return viewId;
   }
 
-  public void setViewId(@javax.annotation.Nonnull String viewId) {
+  public void setViewId(@jakarta.annotation.Nonnull String viewId) {
     this.viewId = viewId;
   }
 
 
-  public CreateViewReq viewName(@javax.annotation.Nonnull String viewName) {
+  public CreateViewReq viewName(@jakarta.annotation.Nonnull String viewName) {
     this.viewName = viewName;
     return this;
   }
@@ -96,17 +96,17 @@ public class CreateViewReq {
    * Get viewName
    * @return viewName
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getViewName() {
     return viewName;
   }
 
-  public void setViewName(@javax.annotation.Nonnull String viewName) {
+  public void setViewName(@jakarta.annotation.Nonnull String viewName) {
     this.viewName = viewName;
   }
 
 
-  public CreateViewReq description(@javax.annotation.Nullable String description) {
+  public CreateViewReq description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -115,12 +115,12 @@ public class CreateViewReq {
    * Get description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 

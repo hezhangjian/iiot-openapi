@@ -48,17 +48,17 @@ import org.openapitools.client.JSON;
 /**
  * AuthInfoDTO
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class AuthInfoDTO {
   public static final String SERIALIZED_NAME_SECRET = "secret";
   @SerializedName(SERIALIZED_NAME_SECRET)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String secret;
 
   public AuthInfoDTO() {
   }
 
-  public AuthInfoDTO secret(@javax.annotation.Nullable String secret) {
+  public AuthInfoDTO secret(@jakarta.annotation.Nullable String secret) {
     this.secret = secret;
     return this;
   }
@@ -67,12 +67,12 @@ public class AuthInfoDTO {
    * Get secret
    * @return secret
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getSecret() {
     return secret;
   }
 
-  public void setSecret(@javax.annotation.Nullable String secret) {
+  public void setSecret(@jakarta.annotation.Nullable String secret) {
     this.secret = secret;
   }
 

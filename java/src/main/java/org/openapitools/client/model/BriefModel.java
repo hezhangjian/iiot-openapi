@@ -48,21 +48,21 @@ import org.openapitools.client.JSON;
 /**
  * BriefModel
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class BriefModel {
   public static final String SERIALIZED_NAME_MODEL_ID = "model_id";
   @SerializedName(SERIALIZED_NAME_MODEL_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String modelId;
 
   public static final String SERIALIZED_NAME_MODEL_NAME = "model_name";
   @SerializedName(SERIALIZED_NAME_MODEL_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String modelName;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   /**
@@ -119,28 +119,28 @@ public class BriefModel {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_SYNC_COUNT = "sync_count";
   @SerializedName(SERIALIZED_NAME_SYNC_COUNT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer syncCount;
 
   public static final String SERIALIZED_NAME_CREATE_TIME = "create_time";
   @SerializedName(SERIALIZED_NAME_CREATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createTime;
 
   public static final String SERIALIZED_NAME_UPDATE_TIME = "update_time";
   @SerializedName(SERIALIZED_NAME_UPDATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updateTime;
 
   public BriefModel() {
   }
 
-  public BriefModel modelId(@javax.annotation.Nullable String modelId) {
+  public BriefModel modelId(@jakarta.annotation.Nullable String modelId) {
     this.modelId = modelId;
     return this;
   }
@@ -149,17 +149,17 @@ public class BriefModel {
    * Get modelId
    * @return modelId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getModelId() {
     return modelId;
   }
 
-  public void setModelId(@javax.annotation.Nullable String modelId) {
+  public void setModelId(@jakarta.annotation.Nullable String modelId) {
     this.modelId = modelId;
   }
 
 
-  public BriefModel modelName(@javax.annotation.Nullable String modelName) {
+  public BriefModel modelName(@jakarta.annotation.Nullable String modelName) {
     this.modelName = modelName;
     return this;
   }
@@ -168,17 +168,17 @@ public class BriefModel {
    * Get modelName
    * @return modelName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getModelName() {
     return modelName;
   }
 
-  public void setModelName(@javax.annotation.Nullable String modelName) {
+  public void setModelName(@jakarta.annotation.Nullable String modelName) {
     this.modelName = modelName;
   }
 
 
-  public BriefModel description(@javax.annotation.Nullable String description) {
+  public BriefModel description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -187,17 +187,17 @@ public class BriefModel {
    * Get description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public BriefModel type(@javax.annotation.Nullable TypeEnum type) {
+  public BriefModel type(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -206,17 +206,17 @@ public class BriefModel {
    * Get type
    * @return type
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nullable TypeEnum type) {
+  public void setType(@jakarta.annotation.Nullable TypeEnum type) {
     this.type = type;
   }
 
 
-  public BriefModel syncCount(@javax.annotation.Nullable Integer syncCount) {
+  public BriefModel syncCount(@jakarta.annotation.Nullable Integer syncCount) {
     this.syncCount = syncCount;
     return this;
   }
@@ -225,17 +225,17 @@ public class BriefModel {
    * Get syncCount
    * @return syncCount
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getSyncCount() {
     return syncCount;
   }
 
-  public void setSyncCount(@javax.annotation.Nullable Integer syncCount) {
+  public void setSyncCount(@jakarta.annotation.Nullable Integer syncCount) {
     this.syncCount = syncCount;
   }
 
 
-  public BriefModel createTime(@javax.annotation.Nullable String createTime) {
+  public BriefModel createTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
     return this;
   }
@@ -244,17 +244,17 @@ public class BriefModel {
    * Get createTime
    * @return createTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(@javax.annotation.Nullable String createTime) {
+  public void setCreateTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
   }
 
 
-  public BriefModel updateTime(@javax.annotation.Nullable String updateTime) {
+  public BriefModel updateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
     return this;
   }
@@ -263,12 +263,12 @@ public class BriefModel {
    * Get updateTime
    * @return updateTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdateTime() {
     return updateTime;
   }
 
-  public void setUpdateTime(@javax.annotation.Nullable String updateTime) {
+  public void setUpdateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
   }
 

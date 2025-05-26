@@ -50,22 +50,22 @@ import org.openapitools.client.JSON;
 /**
  * PropertyValues
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class PropertyValues {
   public static final String SERIALIZED_NAME_PROPERTY_PATH = "property_path";
   @SerializedName(SERIALIZED_NAME_PROPERTY_PATH)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String propertyPath;
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> values = new ArrayList<>();
 
   public PropertyValues() {
   }
 
-  public PropertyValues propertyPath(@javax.annotation.Nullable String propertyPath) {
+  public PropertyValues propertyPath(@jakarta.annotation.Nullable String propertyPath) {
     this.propertyPath = propertyPath;
     return this;
   }
@@ -74,17 +74,17 @@ public class PropertyValues {
    * Get propertyPath
    * @return propertyPath
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPropertyPath() {
     return propertyPath;
   }
 
-  public void setPropertyPath(@javax.annotation.Nullable String propertyPath) {
+  public void setPropertyPath(@jakarta.annotation.Nullable String propertyPath) {
     this.propertyPath = propertyPath;
   }
 
 
-  public PropertyValues values(@javax.annotation.Nullable List<String> values) {
+  public PropertyValues values(@jakarta.annotation.Nullable List<String> values) {
     this.values = values;
     return this;
   }
@@ -101,12 +101,12 @@ public class PropertyValues {
    * Get values
    * @return values
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getValues() {
     return values;
   }
 
-  public void setValues(@javax.annotation.Nullable List<String> values) {
+  public void setValues(@jakarta.annotation.Nullable List<String> values) {
     this.values = values;
   }
 

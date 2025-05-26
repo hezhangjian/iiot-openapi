@@ -50,22 +50,22 @@ import org.openapitools.client.JSON;
 /**
  * IndexSchema
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class IndexSchema {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_COLUMNS_IDS = "columns_ids";
   @SerializedName(SERIALIZED_NAME_COLUMNS_IDS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> columnsIds = new ArrayList<>();
 
   public IndexSchema() {
   }
 
-  public IndexSchema name(@javax.annotation.Nonnull String name) {
+  public IndexSchema name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -74,17 +74,17 @@ public class IndexSchema {
    * Get name
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public IndexSchema columnsIds(@javax.annotation.Nonnull List<String> columnsIds) {
+  public IndexSchema columnsIds(@jakarta.annotation.Nonnull List<String> columnsIds) {
     this.columnsIds = columnsIds;
     return this;
   }
@@ -101,12 +101,12 @@ public class IndexSchema {
    * Get columnsIds
    * @return columnsIds
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getColumnsIds() {
     return columnsIds;
   }
 
-  public void setColumnsIds(@javax.annotation.Nonnull List<String> columnsIds) {
+  public void setColumnsIds(@jakarta.annotation.Nonnull List<String> columnsIds) {
     this.columnsIds = columnsIds;
   }
 

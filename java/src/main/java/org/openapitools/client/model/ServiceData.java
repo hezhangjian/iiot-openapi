@@ -20,7 +20,6 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.time.OffsetDateTime;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -51,27 +50,27 @@ import org.openapitools.client.JSON;
 /**
  * ServiceData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class ServiceData {
   public static final String SERIALIZED_NAME_SERVICE_ID = "service_id";
   @SerializedName(SERIALIZED_NAME_SERVICE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String serviceId;
 
   public static final String SERIALIZED_NAME_EVENT_TIME = "event_time";
   @SerializedName(SERIALIZED_NAME_EVENT_TIME)
-  @javax.annotation.Nonnull
-  private OffsetDateTime eventTime;
+  @jakarta.annotation.Nonnull
+  private String eventTime;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Map<String, Object> properties = new HashMap<>();
 
   public ServiceData() {
   }
 
-  public ServiceData serviceId(@javax.annotation.Nonnull String serviceId) {
+  public ServiceData serviceId(@jakarta.annotation.Nonnull String serviceId) {
     this.serviceId = serviceId;
     return this;
   }
@@ -80,17 +79,17 @@ public class ServiceData {
    * Get serviceId
    * @return serviceId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getServiceId() {
     return serviceId;
   }
 
-  public void setServiceId(@javax.annotation.Nonnull String serviceId) {
+  public void setServiceId(@jakarta.annotation.Nonnull String serviceId) {
     this.serviceId = serviceId;
   }
 
 
-  public ServiceData eventTime(@javax.annotation.Nonnull OffsetDateTime eventTime) {
+  public ServiceData eventTime(@jakarta.annotation.Nonnull String eventTime) {
     this.eventTime = eventTime;
     return this;
   }
@@ -99,17 +98,17 @@ public class ServiceData {
    * Get eventTime
    * @return eventTime
    */
-  @javax.annotation.Nonnull
-  public OffsetDateTime getEventTime() {
+  @jakarta.annotation.Nonnull
+  public String getEventTime() {
     return eventTime;
   }
 
-  public void setEventTime(@javax.annotation.Nonnull OffsetDateTime eventTime) {
+  public void setEventTime(@jakarta.annotation.Nonnull String eventTime) {
     this.eventTime = eventTime;
   }
 
 
-  public ServiceData properties(@javax.annotation.Nonnull Map<String, Object> properties) {
+  public ServiceData properties(@jakarta.annotation.Nonnull Map<String, Object> properties) {
     this.properties = properties;
     return this;
   }
@@ -126,12 +125,12 @@ public class ServiceData {
    * Get properties
    * @return properties
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Map<String, Object> getProperties() {
     return properties;
   }
 
-  public void setProperties(@javax.annotation.Nonnull Map<String, Object> properties) {
+  public void setProperties(@jakarta.annotation.Nonnull Map<String, Object> properties) {
     this.properties = properties;
   }
 
@@ -226,6 +225,9 @@ public class ServiceData {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if (!jsonObj.get("service_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `service_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("service_id").toString()));
+      }
+      if (!jsonObj.get("event_time").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `event_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("event_time").toString()));
       }
   }
 

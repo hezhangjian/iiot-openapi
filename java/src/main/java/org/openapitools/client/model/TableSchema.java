@@ -52,27 +52,27 @@ import org.openapitools.client.JSON;
 /**
  * TableSchema
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class TableSchema {
   public static final String SERIALIZED_NAME_COLUMNS = "columns";
   @SerializedName(SERIALIZED_NAME_COLUMNS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<ColumnSchema> columns = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PRIMARY_KEY = "primary_key";
   @SerializedName(SERIALIZED_NAME_PRIMARY_KEY)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> primaryKey = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_INDEXES = "indexes";
   @SerializedName(SERIALIZED_NAME_INDEXES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<IndexSchema> indexes = new ArrayList<>();
 
   public TableSchema() {
   }
 
-  public TableSchema columns(@javax.annotation.Nonnull List<ColumnSchema> columns) {
+  public TableSchema columns(@jakarta.annotation.Nonnull List<ColumnSchema> columns) {
     this.columns = columns;
     return this;
   }
@@ -89,17 +89,17 @@ public class TableSchema {
    * Get columns
    * @return columns
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<ColumnSchema> getColumns() {
     return columns;
   }
 
-  public void setColumns(@javax.annotation.Nonnull List<ColumnSchema> columns) {
+  public void setColumns(@jakarta.annotation.Nonnull List<ColumnSchema> columns) {
     this.columns = columns;
   }
 
 
-  public TableSchema primaryKey(@javax.annotation.Nonnull List<String> primaryKey) {
+  public TableSchema primaryKey(@jakarta.annotation.Nonnull List<String> primaryKey) {
     this.primaryKey = primaryKey;
     return this;
   }
@@ -116,17 +116,17 @@ public class TableSchema {
    * Get primaryKey
    * @return primaryKey
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getPrimaryKey() {
     return primaryKey;
   }
 
-  public void setPrimaryKey(@javax.annotation.Nonnull List<String> primaryKey) {
+  public void setPrimaryKey(@jakarta.annotation.Nonnull List<String> primaryKey) {
     this.primaryKey = primaryKey;
   }
 
 
-  public TableSchema indexes(@javax.annotation.Nullable List<IndexSchema> indexes) {
+  public TableSchema indexes(@jakarta.annotation.Nullable List<IndexSchema> indexes) {
     this.indexes = indexes;
     return this;
   }
@@ -143,12 +143,12 @@ public class TableSchema {
    * Get indexes
    * @return indexes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<IndexSchema> getIndexes() {
     return indexes;
   }
 
-  public void setIndexes(@javax.annotation.Nullable List<IndexSchema> indexes) {
+  public void setIndexes(@jakarta.annotation.Nullable List<IndexSchema> indexes) {
     this.indexes = indexes;
   }
 

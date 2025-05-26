@@ -51,17 +51,17 @@ import org.openapitools.client.JSON;
 /**
  * BatchListThingSnapshotsReq
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class BatchListThingSnapshotsReq {
   public static final String SERIALIZED_NAME_THINGS = "things";
   @SerializedName(SERIALIZED_NAME_THINGS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<BatchListThingSnapshotsReqThingsInner> things = new ArrayList<>();
 
   public BatchListThingSnapshotsReq() {
   }
 
-  public BatchListThingSnapshotsReq things(@javax.annotation.Nonnull List<BatchListThingSnapshotsReqThingsInner> things) {
+  public BatchListThingSnapshotsReq things(@jakarta.annotation.Nonnull List<BatchListThingSnapshotsReqThingsInner> things) {
     this.things = things;
     return this;
   }
@@ -78,12 +78,12 @@ public class BatchListThingSnapshotsReq {
    * Get things
    * @return things
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<BatchListThingSnapshotsReqThingsInner> getThings() {
     return things;
   }
 
-  public void setThings(@javax.annotation.Nonnull List<BatchListThingSnapshotsReqThingsInner> things) {
+  public void setThings(@jakarta.annotation.Nonnull List<BatchListThingSnapshotsReqThingsInner> things) {
     this.things = things;
   }
 

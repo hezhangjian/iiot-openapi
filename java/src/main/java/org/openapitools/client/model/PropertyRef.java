@@ -48,22 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * PropertyRef
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class PropertyRef {
   public static final String SERIALIZED_NAME_THING_ID = "thing_id";
   @SerializedName(SERIALIZED_NAME_THING_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String thingId;
 
   public static final String SERIALIZED_NAME_PROPERTY_PATH = "property_path";
   @SerializedName(SERIALIZED_NAME_PROPERTY_PATH)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String propertyPath;
 
   public PropertyRef() {
   }
 
-  public PropertyRef thingId(@javax.annotation.Nullable String thingId) {
+  public PropertyRef thingId(@jakarta.annotation.Nullable String thingId) {
     this.thingId = thingId;
     return this;
   }
@@ -72,17 +72,17 @@ public class PropertyRef {
    * Get thingId
    * @return thingId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getThingId() {
     return thingId;
   }
 
-  public void setThingId(@javax.annotation.Nullable String thingId) {
+  public void setThingId(@jakarta.annotation.Nullable String thingId) {
     this.thingId = thingId;
   }
 
 
-  public PropertyRef propertyPath(@javax.annotation.Nullable String propertyPath) {
+  public PropertyRef propertyPath(@jakarta.annotation.Nullable String propertyPath) {
     this.propertyPath = propertyPath;
     return this;
   }
@@ -91,12 +91,12 @@ public class PropertyRef {
    * Get propertyPath
    * @return propertyPath
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPropertyPath() {
     return propertyPath;
   }
 
-  public void setPropertyPath(@javax.annotation.Nullable String propertyPath) {
+  public void setPropertyPath(@jakarta.annotation.Nullable String propertyPath) {
     this.propertyPath = propertyPath;
   }
 

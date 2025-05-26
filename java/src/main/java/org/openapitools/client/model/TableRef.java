@@ -50,27 +50,27 @@ import org.openapitools.client.JSON;
 /**
  * TableRef
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class TableRef {
   public static final String SERIALIZED_NAME_TABLE_ID = "table_id";
   @SerializedName(SERIALIZED_NAME_TABLE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String tableId;
 
   public static final String SERIALIZED_NAME_COLUMN_ID = "column_id";
   @SerializedName(SERIALIZED_NAME_COLUMN_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String columnId;
 
   public static final String SERIALIZED_NAME_WHERE = "where";
   @SerializedName(SERIALIZED_NAME_WHERE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Map<String, Object> where = new HashMap<>();
 
   public TableRef() {
   }
 
-  public TableRef tableId(@javax.annotation.Nullable String tableId) {
+  public TableRef tableId(@jakarta.annotation.Nullable String tableId) {
     this.tableId = tableId;
     return this;
   }
@@ -79,17 +79,17 @@ public class TableRef {
    * Get tableId
    * @return tableId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTableId() {
     return tableId;
   }
 
-  public void setTableId(@javax.annotation.Nullable String tableId) {
+  public void setTableId(@jakarta.annotation.Nullable String tableId) {
     this.tableId = tableId;
   }
 
 
-  public TableRef columnId(@javax.annotation.Nullable String columnId) {
+  public TableRef columnId(@jakarta.annotation.Nullable String columnId) {
     this.columnId = columnId;
     return this;
   }
@@ -98,17 +98,17 @@ public class TableRef {
    * Get columnId
    * @return columnId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getColumnId() {
     return columnId;
   }
 
-  public void setColumnId(@javax.annotation.Nullable String columnId) {
+  public void setColumnId(@jakarta.annotation.Nullable String columnId) {
     this.columnId = columnId;
   }
 
 
-  public TableRef where(@javax.annotation.Nullable Map<String, Object> where) {
+  public TableRef where(@jakarta.annotation.Nullable Map<String, Object> where) {
     this.where = where;
     return this;
   }
@@ -125,12 +125,12 @@ public class TableRef {
    * Get where
    * @return where
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Map<String, Object> getWhere() {
     return where;
   }
 
-  public void setWhere(@javax.annotation.Nullable Map<String, Object> where) {
+  public void setWhere(@jakarta.annotation.Nullable Map<String, Object> where) {
     this.where = where;
   }
 

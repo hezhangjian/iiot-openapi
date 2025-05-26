@@ -50,27 +50,27 @@ import org.openapitools.client.JSON;
 /**
  * TagMatcher
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class TagMatcher {
   public static final String SERIALIZED_NAME_MATCH = "match";
   @SerializedName(SERIALIZED_NAME_MATCH)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String match;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String name;
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<String> values = new ArrayList<>();
 
   public TagMatcher() {
   }
 
-  public TagMatcher match(@javax.annotation.Nonnull String match) {
+  public TagMatcher match(@jakarta.annotation.Nonnull String match) {
     this.match = match;
     return this;
   }
@@ -79,17 +79,17 @@ public class TagMatcher {
    * Get match
    * @return match
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getMatch() {
     return match;
   }
 
-  public void setMatch(@javax.annotation.Nonnull String match) {
+  public void setMatch(@jakarta.annotation.Nonnull String match) {
     this.match = match;
   }
 
 
-  public TagMatcher name(@javax.annotation.Nonnull String name) {
+  public TagMatcher name(@jakarta.annotation.Nonnull String name) {
     this.name = name;
     return this;
   }
@@ -98,17 +98,17 @@ public class TagMatcher {
    * Get name
    * @return name
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nonnull String name) {
+  public void setName(@jakarta.annotation.Nonnull String name) {
     this.name = name;
   }
 
 
-  public TagMatcher values(@javax.annotation.Nonnull List<String> values) {
+  public TagMatcher values(@jakarta.annotation.Nonnull List<String> values) {
     this.values = values;
     return this;
   }
@@ -125,12 +125,12 @@ public class TagMatcher {
    * Get values
    * @return values
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<String> getValues() {
     return values;
   }
 
-  public void setValues(@javax.annotation.Nonnull List<String> values) {
+  public void setValues(@jakarta.annotation.Nonnull List<String> values) {
     this.values = values;
   }
 

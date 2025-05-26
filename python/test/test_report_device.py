@@ -39,7 +39,7 @@ class TestReportDevice(unittest.TestCase):
                 services = [
                     iiot_openapi.models.service_data.ServiceData(
                         service_id = '', 
-                        event_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        event_time = '', 
                         properties = { }, )
                     ]
             )
@@ -49,7 +49,7 @@ class TestReportDevice(unittest.TestCase):
                 services = [
                     iiot_openapi.models.service_data.ServiceData(
                         service_id = '', 
-                        event_time = datetime.datetime.strptime('2013-10-20 19:20:30.00', '%Y-%m-%d %H:%M:%S.%f'), 
+                        event_time = '', 
                         properties = { }, )
                     ],
         )

@@ -48,32 +48,32 @@ import org.openapitools.client.JSON;
 /**
  * ITStatReports
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class ITStatReports {
   public static final String SERIALIZED_NAME_STAT_TIME = "stat_time";
   @SerializedName(SERIALIZED_NAME_STAT_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String statTime;
 
   public static final String SERIALIZED_NAME_AGING_TIME = "aging_time";
   @SerializedName(SERIALIZED_NAME_AGING_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String agingTime;
 
   public static final String SERIALIZED_NAME_STAT_STATUS = "stat_status";
   @SerializedName(SERIALIZED_NAME_STAT_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String statStatus;
 
   public static final String SERIALIZED_NAME_STAT_RESULT = "stat_result";
   @SerializedName(SERIALIZED_NAME_STAT_RESULT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String statResult;
 
   public ITStatReports() {
   }
 
-  public ITStatReports statTime(@javax.annotation.Nullable String statTime) {
+  public ITStatReports statTime(@jakarta.annotation.Nullable String statTime) {
     this.statTime = statTime;
     return this;
   }
@@ -82,17 +82,17 @@ public class ITStatReports {
    * Get statTime
    * @return statTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getStatTime() {
     return statTime;
   }
 
-  public void setStatTime(@javax.annotation.Nullable String statTime) {
+  public void setStatTime(@jakarta.annotation.Nullable String statTime) {
     this.statTime = statTime;
   }
 
 
-  public ITStatReports agingTime(@javax.annotation.Nullable String agingTime) {
+  public ITStatReports agingTime(@jakarta.annotation.Nullable String agingTime) {
     this.agingTime = agingTime;
     return this;
   }
@@ -101,17 +101,17 @@ public class ITStatReports {
    * Get agingTime
    * @return agingTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAgingTime() {
     return agingTime;
   }
 
-  public void setAgingTime(@javax.annotation.Nullable String agingTime) {
+  public void setAgingTime(@jakarta.annotation.Nullable String agingTime) {
     this.agingTime = agingTime;
   }
 
 
-  public ITStatReports statStatus(@javax.annotation.Nullable String statStatus) {
+  public ITStatReports statStatus(@jakarta.annotation.Nullable String statStatus) {
     this.statStatus = statStatus;
     return this;
   }
@@ -120,17 +120,17 @@ public class ITStatReports {
    * Get statStatus
    * @return statStatus
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getStatStatus() {
     return statStatus;
   }
 
-  public void setStatStatus(@javax.annotation.Nullable String statStatus) {
+  public void setStatStatus(@jakarta.annotation.Nullable String statStatus) {
     this.statStatus = statStatus;
   }
 
 
-  public ITStatReports statResult(@javax.annotation.Nullable String statResult) {
+  public ITStatReports statResult(@jakarta.annotation.Nullable String statResult) {
     this.statResult = statResult;
     return this;
   }
@@ -139,12 +139,12 @@ public class ITStatReports {
    * Get statResult
    * @return statResult
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getStatResult() {
     return statResult;
   }
 
-  public void setStatResult(@javax.annotation.Nullable String statResult) {
+  public void setStatResult(@jakarta.annotation.Nullable String statResult) {
     this.statResult = statResult;
   }
 

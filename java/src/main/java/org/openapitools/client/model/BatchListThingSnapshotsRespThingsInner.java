@@ -52,27 +52,27 @@ import org.openapitools.client.JSON;
 /**
  * BatchListThingSnapshotsRespThingsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class BatchListThingSnapshotsRespThingsInner {
   public static final String SERIALIZED_NAME_THING_ID = "thing_id";
   @SerializedName(SERIALIZED_NAME_THING_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String thingId;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Map<String, PropertyValueTime> properties = new HashMap<>();
 
   public static final String SERIALIZED_NAME_COMPONENTS = "components";
   @SerializedName(SERIALIZED_NAME_COMPONENTS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Map<String, ListSnapshotResp> components = new HashMap<>();
 
   public BatchListThingSnapshotsRespThingsInner() {
   }
 
-  public BatchListThingSnapshotsRespThingsInner thingId(@javax.annotation.Nullable String thingId) {
+  public BatchListThingSnapshotsRespThingsInner thingId(@jakarta.annotation.Nullable String thingId) {
     this.thingId = thingId;
     return this;
   }
@@ -81,17 +81,17 @@ public class BatchListThingSnapshotsRespThingsInner {
    * Get thingId
    * @return thingId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getThingId() {
     return thingId;
   }
 
-  public void setThingId(@javax.annotation.Nullable String thingId) {
+  public void setThingId(@jakarta.annotation.Nullable String thingId) {
     this.thingId = thingId;
   }
 
 
-  public BatchListThingSnapshotsRespThingsInner properties(@javax.annotation.Nullable Map<String, PropertyValueTime> properties) {
+  public BatchListThingSnapshotsRespThingsInner properties(@jakarta.annotation.Nullable Map<String, PropertyValueTime> properties) {
     this.properties = properties;
     return this;
   }
@@ -108,17 +108,17 @@ public class BatchListThingSnapshotsRespThingsInner {
    * Get properties
    * @return properties
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Map<String, PropertyValueTime> getProperties() {
     return properties;
   }
 
-  public void setProperties(@javax.annotation.Nullable Map<String, PropertyValueTime> properties) {
+  public void setProperties(@jakarta.annotation.Nullable Map<String, PropertyValueTime> properties) {
     this.properties = properties;
   }
 
 
-  public BatchListThingSnapshotsRespThingsInner components(@javax.annotation.Nullable Map<String, ListSnapshotResp> components) {
+  public BatchListThingSnapshotsRespThingsInner components(@jakarta.annotation.Nullable Map<String, ListSnapshotResp> components) {
     this.components = components;
     return this;
   }
@@ -135,12 +135,12 @@ public class BatchListThingSnapshotsRespThingsInner {
    * Get components
    * @return components
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Map<String, ListSnapshotResp> getComponents() {
     return components;
   }
 
-  public void setComponents(@javax.annotation.Nullable Map<String, ListSnapshotResp> components) {
+  public void setComponents(@jakarta.annotation.Nullable Map<String, ListSnapshotResp> components) {
     this.components = components;
   }
 

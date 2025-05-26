@@ -48,72 +48,72 @@ import org.openapitools.client.JSON;
 /**
  * BriefAnalysisTask
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class BriefAnalysisTask {
   public static final String SERIALIZED_NAME_TASK_ID = "task_id";
   @SerializedName(SERIALIZED_NAME_TASK_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String taskId;
 
   public static final String SERIALIZED_NAME_TASK_NAME = "task_name";
   @SerializedName(SERIALIZED_NAME_TASK_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String taskName;
 
   public static final String SERIALIZED_NAME_CALC_TYPE = "calc_type";
   @SerializedName(SERIALIZED_NAME_CALC_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String calcType;
 
   public static final String SERIALIZED_NAME_SCHEDULE_TYPE = "schedule_type";
   @SerializedName(SERIALIZED_NAME_SCHEDULE_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String scheduleType;
 
   public static final String SERIALIZED_NAME_PERIOD = "period";
   @SerializedName(SERIALIZED_NAME_PERIOD)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String period;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_EVENT_CLASS_ID = "event_class_id";
   @SerializedName(SERIALIZED_NAME_EVENT_CLASS_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String eventClassId;
 
   public static final String SERIALIZED_NAME_EVENT_CLASS_NAME = "event_class_name";
   @SerializedName(SERIALIZED_NAME_EVENT_CLASS_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String eventClassName;
 
   public static final String SERIALIZED_NAME_MODEL_ID = "model_id";
   @SerializedName(SERIALIZED_NAME_MODEL_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String modelId;
 
   public static final String SERIALIZED_NAME_MODEL_NAME = "model_name";
   @SerializedName(SERIALIZED_NAME_MODEL_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String modelName;
 
   public static final String SERIALIZED_NAME_CREATE_TIME = "create_time";
   @SerializedName(SERIALIZED_NAME_CREATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createTime;
 
   public static final String SERIALIZED_NAME_UPDATE_TIME = "update_time";
   @SerializedName(SERIALIZED_NAME_UPDATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updateTime;
 
   public BriefAnalysisTask() {
   }
 
-  public BriefAnalysisTask taskId(@javax.annotation.Nullable String taskId) {
+  public BriefAnalysisTask taskId(@jakarta.annotation.Nullable String taskId) {
     this.taskId = taskId;
     return this;
   }
@@ -122,17 +122,17 @@ public class BriefAnalysisTask {
    * Get taskId
    * @return taskId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTaskId() {
     return taskId;
   }
 
-  public void setTaskId(@javax.annotation.Nullable String taskId) {
+  public void setTaskId(@jakarta.annotation.Nullable String taskId) {
     this.taskId = taskId;
   }
 
 
-  public BriefAnalysisTask taskName(@javax.annotation.Nullable String taskName) {
+  public BriefAnalysisTask taskName(@jakarta.annotation.Nullable String taskName) {
     this.taskName = taskName;
     return this;
   }
@@ -141,17 +141,17 @@ public class BriefAnalysisTask {
    * Get taskName
    * @return taskName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTaskName() {
     return taskName;
   }
 
-  public void setTaskName(@javax.annotation.Nullable String taskName) {
+  public void setTaskName(@jakarta.annotation.Nullable String taskName) {
     this.taskName = taskName;
   }
 
 
-  public BriefAnalysisTask calcType(@javax.annotation.Nullable String calcType) {
+  public BriefAnalysisTask calcType(@jakarta.annotation.Nullable String calcType) {
     this.calcType = calcType;
     return this;
   }
@@ -160,17 +160,17 @@ public class BriefAnalysisTask {
    * Get calcType
    * @return calcType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCalcType() {
     return calcType;
   }
 
-  public void setCalcType(@javax.annotation.Nullable String calcType) {
+  public void setCalcType(@jakarta.annotation.Nullable String calcType) {
     this.calcType = calcType;
   }
 
 
-  public BriefAnalysisTask scheduleType(@javax.annotation.Nullable String scheduleType) {
+  public BriefAnalysisTask scheduleType(@jakarta.annotation.Nullable String scheduleType) {
     this.scheduleType = scheduleType;
     return this;
   }
@@ -179,17 +179,17 @@ public class BriefAnalysisTask {
    * Get scheduleType
    * @return scheduleType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getScheduleType() {
     return scheduleType;
   }
 
-  public void setScheduleType(@javax.annotation.Nullable String scheduleType) {
+  public void setScheduleType(@jakarta.annotation.Nullable String scheduleType) {
     this.scheduleType = scheduleType;
   }
 
 
-  public BriefAnalysisTask period(@javax.annotation.Nullable String period) {
+  public BriefAnalysisTask period(@jakarta.annotation.Nullable String period) {
     this.period = period;
     return this;
   }
@@ -198,17 +198,17 @@ public class BriefAnalysisTask {
    * Get period
    * @return period
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPeriod() {
     return period;
   }
 
-  public void setPeriod(@javax.annotation.Nullable String period) {
+  public void setPeriod(@jakarta.annotation.Nullable String period) {
     this.period = period;
   }
 
 
-  public BriefAnalysisTask enabled(@javax.annotation.Nullable Boolean enabled) {
+  public BriefAnalysisTask enabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -217,17 +217,17 @@ public class BriefAnalysisTask {
    * Get enabled
    * @return enabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
+  public void setEnabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public BriefAnalysisTask eventClassId(@javax.annotation.Nullable String eventClassId) {
+  public BriefAnalysisTask eventClassId(@jakarta.annotation.Nullable String eventClassId) {
     this.eventClassId = eventClassId;
     return this;
   }
@@ -236,17 +236,17 @@ public class BriefAnalysisTask {
    * Get eventClassId
    * @return eventClassId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEventClassId() {
     return eventClassId;
   }
 
-  public void setEventClassId(@javax.annotation.Nullable String eventClassId) {
+  public void setEventClassId(@jakarta.annotation.Nullable String eventClassId) {
     this.eventClassId = eventClassId;
   }
 
 
-  public BriefAnalysisTask eventClassName(@javax.annotation.Nullable String eventClassName) {
+  public BriefAnalysisTask eventClassName(@jakarta.annotation.Nullable String eventClassName) {
     this.eventClassName = eventClassName;
     return this;
   }
@@ -255,17 +255,17 @@ public class BriefAnalysisTask {
    * Get eventClassName
    * @return eventClassName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEventClassName() {
     return eventClassName;
   }
 
-  public void setEventClassName(@javax.annotation.Nullable String eventClassName) {
+  public void setEventClassName(@jakarta.annotation.Nullable String eventClassName) {
     this.eventClassName = eventClassName;
   }
 
 
-  public BriefAnalysisTask modelId(@javax.annotation.Nullable String modelId) {
+  public BriefAnalysisTask modelId(@jakarta.annotation.Nullable String modelId) {
     this.modelId = modelId;
     return this;
   }
@@ -274,17 +274,17 @@ public class BriefAnalysisTask {
    * Get modelId
    * @return modelId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getModelId() {
     return modelId;
   }
 
-  public void setModelId(@javax.annotation.Nullable String modelId) {
+  public void setModelId(@jakarta.annotation.Nullable String modelId) {
     this.modelId = modelId;
   }
 
 
-  public BriefAnalysisTask modelName(@javax.annotation.Nullable String modelName) {
+  public BriefAnalysisTask modelName(@jakarta.annotation.Nullable String modelName) {
     this.modelName = modelName;
     return this;
   }
@@ -293,17 +293,17 @@ public class BriefAnalysisTask {
    * Get modelName
    * @return modelName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getModelName() {
     return modelName;
   }
 
-  public void setModelName(@javax.annotation.Nullable String modelName) {
+  public void setModelName(@jakarta.annotation.Nullable String modelName) {
     this.modelName = modelName;
   }
 
 
-  public BriefAnalysisTask createTime(@javax.annotation.Nullable String createTime) {
+  public BriefAnalysisTask createTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
     return this;
   }
@@ -312,17 +312,17 @@ public class BriefAnalysisTask {
    * Get createTime
    * @return createTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(@javax.annotation.Nullable String createTime) {
+  public void setCreateTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
   }
 
 
-  public BriefAnalysisTask updateTime(@javax.annotation.Nullable String updateTime) {
+  public BriefAnalysisTask updateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
     return this;
   }
@@ -331,12 +331,12 @@ public class BriefAnalysisTask {
    * Get updateTime
    * @return updateTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdateTime() {
     return updateTime;
   }
 
-  public void setUpdateTime(@javax.annotation.Nullable String updateTime) {
+  public void setUpdateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
   }
 

@@ -48,22 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * TimeSpan
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class TimeSpan {
   public static final String SERIALIZED_NAME_FROM = "from";
   @SerializedName(SERIALIZED_NAME_FROM)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Long from;
 
   public static final String SERIALIZED_NAME_TO = "to";
   @SerializedName(SERIALIZED_NAME_TO)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Long to;
 
   public TimeSpan() {
   }
 
-  public TimeSpan from(@javax.annotation.Nonnull Long from) {
+  public TimeSpan from(@jakarta.annotation.Nonnull Long from) {
     this.from = from;
     return this;
   }
@@ -72,17 +72,17 @@ public class TimeSpan {
    * Get from
    * @return from
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Long getFrom() {
     return from;
   }
 
-  public void setFrom(@javax.annotation.Nonnull Long from) {
+  public void setFrom(@jakarta.annotation.Nonnull Long from) {
     this.from = from;
   }
 
 
-  public TimeSpan to(@javax.annotation.Nonnull Long to) {
+  public TimeSpan to(@jakarta.annotation.Nonnull Long to) {
     this.to = to;
     return this;
   }
@@ -91,12 +91,12 @@ public class TimeSpan {
    * Get to
    * @return to
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Long getTo() {
     return to;
   }
 
-  public void setTo(@javax.annotation.Nonnull Long to) {
+  public void setTo(@jakarta.annotation.Nonnull Long to) {
     this.to = to;
   }
 

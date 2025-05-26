@@ -48,32 +48,32 @@ import org.openapitools.client.JSON;
 /**
  * ThingDTO
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class ThingDTO {
   public static final String SERIALIZED_NAME_THING_ID = "thing_id";
   @SerializedName(SERIALIZED_NAME_THING_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String thingId;
 
   public static final String SERIALIZED_NAME_THING_NAME = "thing_name";
   @SerializedName(SERIALIZED_NAME_THING_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String thingName;
 
   public static final String SERIALIZED_NAME_MODEL_ID = "model_id";
   @SerializedName(SERIALIZED_NAME_MODEL_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String modelId;
 
   public static final String SERIALIZED_NAME_MODEL_NAME = "model_name";
   @SerializedName(SERIALIZED_NAME_MODEL_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String modelName;
 
   public ThingDTO() {
   }
 
-  public ThingDTO thingId(@javax.annotation.Nullable String thingId) {
+  public ThingDTO thingId(@jakarta.annotation.Nullable String thingId) {
     this.thingId = thingId;
     return this;
   }
@@ -82,17 +82,17 @@ public class ThingDTO {
    * Get thingId
    * @return thingId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getThingId() {
     return thingId;
   }
 
-  public void setThingId(@javax.annotation.Nullable String thingId) {
+  public void setThingId(@jakarta.annotation.Nullable String thingId) {
     this.thingId = thingId;
   }
 
 
-  public ThingDTO thingName(@javax.annotation.Nullable String thingName) {
+  public ThingDTO thingName(@jakarta.annotation.Nullable String thingName) {
     this.thingName = thingName;
     return this;
   }
@@ -101,17 +101,17 @@ public class ThingDTO {
    * Get thingName
    * @return thingName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getThingName() {
     return thingName;
   }
 
-  public void setThingName(@javax.annotation.Nullable String thingName) {
+  public void setThingName(@jakarta.annotation.Nullable String thingName) {
     this.thingName = thingName;
   }
 
 
-  public ThingDTO modelId(@javax.annotation.Nullable String modelId) {
+  public ThingDTO modelId(@jakarta.annotation.Nullable String modelId) {
     this.modelId = modelId;
     return this;
   }
@@ -120,17 +120,17 @@ public class ThingDTO {
    * Get modelId
    * @return modelId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getModelId() {
     return modelId;
   }
 
-  public void setModelId(@javax.annotation.Nullable String modelId) {
+  public void setModelId(@jakarta.annotation.Nullable String modelId) {
     this.modelId = modelId;
   }
 
 
-  public ThingDTO modelName(@javax.annotation.Nullable String modelName) {
+  public ThingDTO modelName(@jakarta.annotation.Nullable String modelName) {
     this.modelName = modelName;
     return this;
   }
@@ -139,12 +139,12 @@ public class ThingDTO {
    * Get modelName
    * @return modelName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getModelName() {
     return modelName;
   }
 
-  public void setModelName(@javax.annotation.Nullable String modelName) {
+  public void setModelName(@jakarta.annotation.Nullable String modelName) {
     this.modelName = modelName;
   }
 

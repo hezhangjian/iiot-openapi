@@ -51,22 +51,22 @@ import org.openapitools.client.JSON;
 /**
  * DataList
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class DataList {
   public static final String SERIALIZED_NAME_TIMESTAMPS = "timestamps";
   @SerializedName(SERIALIZED_NAME_TIMESTAMPS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<Integer> timestamps = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_PROPERTY_VALUES = "property_values";
   @SerializedName(SERIALIZED_NAME_PROPERTY_VALUES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<PropertyValues> propertyValues = new ArrayList<>();
 
   public DataList() {
   }
 
-  public DataList timestamps(@javax.annotation.Nullable List<Integer> timestamps) {
+  public DataList timestamps(@jakarta.annotation.Nullable List<Integer> timestamps) {
     this.timestamps = timestamps;
     return this;
   }
@@ -83,17 +83,17 @@ public class DataList {
    * Get timestamps
    * @return timestamps
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<Integer> getTimestamps() {
     return timestamps;
   }
 
-  public void setTimestamps(@javax.annotation.Nullable List<Integer> timestamps) {
+  public void setTimestamps(@jakarta.annotation.Nullable List<Integer> timestamps) {
     this.timestamps = timestamps;
   }
 
 
-  public DataList propertyValues(@javax.annotation.Nullable List<PropertyValues> propertyValues) {
+  public DataList propertyValues(@jakarta.annotation.Nullable List<PropertyValues> propertyValues) {
     this.propertyValues = propertyValues;
     return this;
   }
@@ -110,12 +110,12 @@ public class DataList {
    * Get propertyValues
    * @return propertyValues
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<PropertyValues> getPropertyValues() {
     return propertyValues;
   }
 
-  public void setPropertyValues(@javax.annotation.Nullable List<PropertyValues> propertyValues) {
+  public void setPropertyValues(@jakarta.annotation.Nullable List<PropertyValues> propertyValues) {
     this.propertyValues = propertyValues;
   }
 

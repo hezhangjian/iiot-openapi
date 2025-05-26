@@ -52,52 +52,52 @@ import org.openapitools.client.JSON;
 /**
  * QueryViewNodesRsp
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class QueryViewNodesRsp {
   public static final String SERIALIZED_NAME_LEVEL_ID = "level_id";
   @SerializedName(SERIALIZED_NAME_LEVEL_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String levelId;
 
   public static final String SERIALIZED_NAME_NODE_ID = "node_id";
   @SerializedName(SERIALIZED_NAME_NODE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String nodeId;
 
   public static final String SERIALIZED_NAME_NODE_NAME = "node_name";
   @SerializedName(SERIALIZED_NAME_NODE_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String nodeName;
 
   public static final String SERIALIZED_NAME_DISPLAY_ORDER = "display_order";
   @SerializedName(SERIALIZED_NAME_DISPLAY_ORDER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer displayOrder;
 
   public static final String SERIALIZED_NAME_CREATE_TIME = "create_time";
   @SerializedName(SERIALIZED_NAME_CREATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createTime;
 
   public static final String SERIALIZED_NAME_UPDATE_TIME = "update_time";
   @SerializedName(SERIALIZED_NAME_UPDATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updateTime;
 
   public static final String SERIALIZED_NAME_CATALOG_NODES = "catalog_nodes";
   @SerializedName(SERIALIZED_NAME_CATALOG_NODES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<EnrichedCatalogNode> catalogNodes = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_THING_NODES = "thing_nodes";
   @SerializedName(SERIALIZED_NAME_THING_NODES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<EnrichedThingNode> thingNodes = new ArrayList<>();
 
   public QueryViewNodesRsp() {
   }
 
-  public QueryViewNodesRsp levelId(@javax.annotation.Nullable String levelId) {
+  public QueryViewNodesRsp levelId(@jakarta.annotation.Nullable String levelId) {
     this.levelId = levelId;
     return this;
   }
@@ -106,17 +106,17 @@ public class QueryViewNodesRsp {
    * Get levelId
    * @return levelId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getLevelId() {
     return levelId;
   }
 
-  public void setLevelId(@javax.annotation.Nullable String levelId) {
+  public void setLevelId(@jakarta.annotation.Nullable String levelId) {
     this.levelId = levelId;
   }
 
 
-  public QueryViewNodesRsp nodeId(@javax.annotation.Nullable String nodeId) {
+  public QueryViewNodesRsp nodeId(@jakarta.annotation.Nullable String nodeId) {
     this.nodeId = nodeId;
     return this;
   }
@@ -125,17 +125,17 @@ public class QueryViewNodesRsp {
    * Get nodeId
    * @return nodeId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getNodeId() {
     return nodeId;
   }
 
-  public void setNodeId(@javax.annotation.Nullable String nodeId) {
+  public void setNodeId(@jakarta.annotation.Nullable String nodeId) {
     this.nodeId = nodeId;
   }
 
 
-  public QueryViewNodesRsp nodeName(@javax.annotation.Nullable String nodeName) {
+  public QueryViewNodesRsp nodeName(@jakarta.annotation.Nullable String nodeName) {
     this.nodeName = nodeName;
     return this;
   }
@@ -144,17 +144,17 @@ public class QueryViewNodesRsp {
    * Get nodeName
    * @return nodeName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getNodeName() {
     return nodeName;
   }
 
-  public void setNodeName(@javax.annotation.Nullable String nodeName) {
+  public void setNodeName(@jakarta.annotation.Nullable String nodeName) {
     this.nodeName = nodeName;
   }
 
 
-  public QueryViewNodesRsp displayOrder(@javax.annotation.Nullable Integer displayOrder) {
+  public QueryViewNodesRsp displayOrder(@jakarta.annotation.Nullable Integer displayOrder) {
     this.displayOrder = displayOrder;
     return this;
   }
@@ -163,17 +163,17 @@ public class QueryViewNodesRsp {
    * Get displayOrder
    * @return displayOrder
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getDisplayOrder() {
     return displayOrder;
   }
 
-  public void setDisplayOrder(@javax.annotation.Nullable Integer displayOrder) {
+  public void setDisplayOrder(@jakarta.annotation.Nullable Integer displayOrder) {
     this.displayOrder = displayOrder;
   }
 
 
-  public QueryViewNodesRsp createTime(@javax.annotation.Nullable String createTime) {
+  public QueryViewNodesRsp createTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
     return this;
   }
@@ -182,17 +182,17 @@ public class QueryViewNodesRsp {
    * Get createTime
    * @return createTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(@javax.annotation.Nullable String createTime) {
+  public void setCreateTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
   }
 
 
-  public QueryViewNodesRsp updateTime(@javax.annotation.Nullable String updateTime) {
+  public QueryViewNodesRsp updateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
     return this;
   }
@@ -201,17 +201,17 @@ public class QueryViewNodesRsp {
    * Get updateTime
    * @return updateTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdateTime() {
     return updateTime;
   }
 
-  public void setUpdateTime(@javax.annotation.Nullable String updateTime) {
+  public void setUpdateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
   }
 
 
-  public QueryViewNodesRsp catalogNodes(@javax.annotation.Nullable List<EnrichedCatalogNode> catalogNodes) {
+  public QueryViewNodesRsp catalogNodes(@jakarta.annotation.Nullable List<EnrichedCatalogNode> catalogNodes) {
     this.catalogNodes = catalogNodes;
     return this;
   }
@@ -228,17 +228,17 @@ public class QueryViewNodesRsp {
    * Get catalogNodes
    * @return catalogNodes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<EnrichedCatalogNode> getCatalogNodes() {
     return catalogNodes;
   }
 
-  public void setCatalogNodes(@javax.annotation.Nullable List<EnrichedCatalogNode> catalogNodes) {
+  public void setCatalogNodes(@jakarta.annotation.Nullable List<EnrichedCatalogNode> catalogNodes) {
     this.catalogNodes = catalogNodes;
   }
 
 
-  public QueryViewNodesRsp thingNodes(@javax.annotation.Nullable List<EnrichedThingNode> thingNodes) {
+  public QueryViewNodesRsp thingNodes(@jakarta.annotation.Nullable List<EnrichedThingNode> thingNodes) {
     this.thingNodes = thingNodes;
     return this;
   }
@@ -255,12 +255,12 @@ public class QueryViewNodesRsp {
    * Get thingNodes
    * @return thingNodes
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<EnrichedThingNode> getThingNodes() {
     return thingNodes;
   }
 
-  public void setThingNodes(@javax.annotation.Nullable List<EnrichedThingNode> thingNodes) {
+  public void setThingNodes(@jakarta.annotation.Nullable List<EnrichedThingNode> thingNodes) {
     this.thingNodes = thingNodes;
   }
 

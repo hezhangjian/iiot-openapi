@@ -48,17 +48,17 @@ import org.openapitools.client.JSON;
 /**
  * DatasourceReportResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class DatasourceReportResponse {
   public static final String SERIALIZED_NAME_SUCCESSFUL = "successful";
   @SerializedName(SERIALIZED_NAME_SUCCESSFUL)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean successful;
 
   public DatasourceReportResponse() {
   }
 
-  public DatasourceReportResponse successful(@javax.annotation.Nullable Boolean successful) {
+  public DatasourceReportResponse successful(@jakarta.annotation.Nullable Boolean successful) {
     this.successful = successful;
     return this;
   }
@@ -67,12 +67,12 @@ public class DatasourceReportResponse {
    * Get successful
    * @return successful
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getSuccessful() {
     return successful;
   }
 
-  public void setSuccessful(@javax.annotation.Nullable Boolean successful) {
+  public void setSuccessful(@jakarta.annotation.Nullable Boolean successful) {
     this.successful = successful;
   }
 

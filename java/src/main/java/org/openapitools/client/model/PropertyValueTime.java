@@ -48,22 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * PropertyValueTime
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class PropertyValueTime {
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Object value;
 
   public static final String SERIALIZED_NAME_TIME = "time";
   @SerializedName(SERIALIZED_NAME_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String time;
 
   public PropertyValueTime() {
   }
 
-  public PropertyValueTime value(@javax.annotation.Nullable Object value) {
+  public PropertyValueTime value(@jakarta.annotation.Nullable Object value) {
     this.value = value;
     return this;
   }
@@ -72,17 +72,17 @@ public class PropertyValueTime {
    * Get value
    * @return value
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Object getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nullable Object value) {
+  public void setValue(@jakarta.annotation.Nullable Object value) {
     this.value = value;
   }
 
 
-  public PropertyValueTime time(@javax.annotation.Nullable String time) {
+  public PropertyValueTime time(@jakarta.annotation.Nullable String time) {
     this.time = time;
     return this;
   }
@@ -91,12 +91,12 @@ public class PropertyValueTime {
    * Get time
    * @return time
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTime() {
     return time;
   }
 
-  public void setTime(@javax.annotation.Nullable String time) {
+  public void setTime(@jakarta.annotation.Nullable String time) {
     this.time = time;
   }
 

@@ -48,17 +48,17 @@ import org.openapitools.client.JSON;
 /**
  * PageInfo
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class PageInfo {
   public static final String SERIALIZED_NAME_NEXT_MARKER = "next_marker";
   @SerializedName(SERIALIZED_NAME_NEXT_MARKER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String nextMarker;
 
   public PageInfo() {
   }
 
-  public PageInfo nextMarker(@javax.annotation.Nullable String nextMarker) {
+  public PageInfo nextMarker(@jakarta.annotation.Nullable String nextMarker) {
     this.nextMarker = nextMarker;
     return this;
   }
@@ -67,12 +67,12 @@ public class PageInfo {
    * Get nextMarker
    * @return nextMarker
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getNextMarker() {
     return nextMarker;
   }
 
-  public void setNextMarker(@javax.annotation.Nullable String nextMarker) {
+  public void setNextMarker(@jakarta.annotation.Nullable String nextMarker) {
     this.nextMarker = nextMarker;
   }
 

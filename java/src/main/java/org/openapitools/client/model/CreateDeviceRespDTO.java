@@ -49,42 +49,42 @@ import org.openapitools.client.JSON;
 /**
  * CreateDeviceRespDTO
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class CreateDeviceRespDTO {
   public static final String SERIALIZED_NAME_DEVICE_ID = "device_id";
   @SerializedName(SERIALIZED_NAME_DEVICE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String deviceId;
 
   public static final String SERIALIZED_NAME_DEVICE_NAME = "device_name";
   @SerializedName(SERIALIZED_NAME_DEVICE_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String deviceName;
 
   public static final String SERIALIZED_NAME_DEVICE_TYPE = "device_type";
   @SerializedName(SERIALIZED_NAME_DEVICE_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String deviceType;
 
   public static final String SERIALIZED_NAME_AUTH_INFO = "auth_info";
   @SerializedName(SERIALIZED_NAME_AUTH_INFO)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private AuthInfoDTO authInfo;
 
   public static final String SERIALIZED_NAME_CREATE_TIME = "create_time";
   @SerializedName(SERIALIZED_NAME_CREATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createTime;
 
   public static final String SERIALIZED_NAME_UPDATE_TIME = "update_time";
   @SerializedName(SERIALIZED_NAME_UPDATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updateTime;
 
   public CreateDeviceRespDTO() {
   }
 
-  public CreateDeviceRespDTO deviceId(@javax.annotation.Nullable String deviceId) {
+  public CreateDeviceRespDTO deviceId(@jakarta.annotation.Nullable String deviceId) {
     this.deviceId = deviceId;
     return this;
   }
@@ -93,17 +93,17 @@ public class CreateDeviceRespDTO {
    * Get deviceId
    * @return deviceId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDeviceId() {
     return deviceId;
   }
 
-  public void setDeviceId(@javax.annotation.Nullable String deviceId) {
+  public void setDeviceId(@jakarta.annotation.Nullable String deviceId) {
     this.deviceId = deviceId;
   }
 
 
-  public CreateDeviceRespDTO deviceName(@javax.annotation.Nullable String deviceName) {
+  public CreateDeviceRespDTO deviceName(@jakarta.annotation.Nullable String deviceName) {
     this.deviceName = deviceName;
     return this;
   }
@@ -112,17 +112,17 @@ public class CreateDeviceRespDTO {
    * Get deviceName
    * @return deviceName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDeviceName() {
     return deviceName;
   }
 
-  public void setDeviceName(@javax.annotation.Nullable String deviceName) {
+  public void setDeviceName(@jakarta.annotation.Nullable String deviceName) {
     this.deviceName = deviceName;
   }
 
 
-  public CreateDeviceRespDTO deviceType(@javax.annotation.Nullable String deviceType) {
+  public CreateDeviceRespDTO deviceType(@jakarta.annotation.Nullable String deviceType) {
     this.deviceType = deviceType;
     return this;
   }
@@ -131,17 +131,17 @@ public class CreateDeviceRespDTO {
    * Get deviceType
    * @return deviceType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDeviceType() {
     return deviceType;
   }
 
-  public void setDeviceType(@javax.annotation.Nullable String deviceType) {
+  public void setDeviceType(@jakarta.annotation.Nullable String deviceType) {
     this.deviceType = deviceType;
   }
 
 
-  public CreateDeviceRespDTO authInfo(@javax.annotation.Nullable AuthInfoDTO authInfo) {
+  public CreateDeviceRespDTO authInfo(@jakarta.annotation.Nullable AuthInfoDTO authInfo) {
     this.authInfo = authInfo;
     return this;
   }
@@ -150,17 +150,17 @@ public class CreateDeviceRespDTO {
    * Get authInfo
    * @return authInfo
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public AuthInfoDTO getAuthInfo() {
     return authInfo;
   }
 
-  public void setAuthInfo(@javax.annotation.Nullable AuthInfoDTO authInfo) {
+  public void setAuthInfo(@jakarta.annotation.Nullable AuthInfoDTO authInfo) {
     this.authInfo = authInfo;
   }
 
 
-  public CreateDeviceRespDTO createTime(@javax.annotation.Nullable String createTime) {
+  public CreateDeviceRespDTO createTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
     return this;
   }
@@ -169,17 +169,17 @@ public class CreateDeviceRespDTO {
    * Get createTime
    * @return createTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(@javax.annotation.Nullable String createTime) {
+  public void setCreateTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
   }
 
 
-  public CreateDeviceRespDTO updateTime(@javax.annotation.Nullable String updateTime) {
+  public CreateDeviceRespDTO updateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
     return this;
   }
@@ -188,12 +188,12 @@ public class CreateDeviceRespDTO {
    * Get updateTime
    * @return updateTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdateTime() {
     return updateTime;
   }
 
-  public void setUpdateTime(@javax.annotation.Nullable String updateTime) {
+  public void setUpdateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
   }
 

@@ -48,27 +48,27 @@ import org.openapitools.client.JSON;
 /**
  * RecordFilter
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class RecordFilter {
   public static final String SERIALIZED_NAME_COLUMN_ID = "column_id";
   @SerializedName(SERIALIZED_NAME_COLUMN_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String columnId;
 
   public static final String SERIALIZED_NAME_OPERATOR = "operator";
   @SerializedName(SERIALIZED_NAME_OPERATOR)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String operator;
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Object value;
 
   public RecordFilter() {
   }
 
-  public RecordFilter columnId(@javax.annotation.Nullable String columnId) {
+  public RecordFilter columnId(@jakarta.annotation.Nullable String columnId) {
     this.columnId = columnId;
     return this;
   }
@@ -77,17 +77,17 @@ public class RecordFilter {
    * Get columnId
    * @return columnId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getColumnId() {
     return columnId;
   }
 
-  public void setColumnId(@javax.annotation.Nullable String columnId) {
+  public void setColumnId(@jakarta.annotation.Nullable String columnId) {
     this.columnId = columnId;
   }
 
 
-  public RecordFilter operator(@javax.annotation.Nullable String operator) {
+  public RecordFilter operator(@jakarta.annotation.Nullable String operator) {
     this.operator = operator;
     return this;
   }
@@ -96,17 +96,17 @@ public class RecordFilter {
    * Get operator
    * @return operator
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getOperator() {
     return operator;
   }
 
-  public void setOperator(@javax.annotation.Nullable String operator) {
+  public void setOperator(@jakarta.annotation.Nullable String operator) {
     this.operator = operator;
   }
 
 
-  public RecordFilter value(@javax.annotation.Nullable Object value) {
+  public RecordFilter value(@jakarta.annotation.Nullable Object value) {
     this.value = value;
     return this;
   }
@@ -115,12 +115,12 @@ public class RecordFilter {
    * Get value
    * @return value
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Object getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nullable Object value) {
+  public void setValue(@jakarta.annotation.Nullable Object value) {
     this.value = value;
   }
 

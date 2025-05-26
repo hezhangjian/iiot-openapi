@@ -51,17 +51,17 @@ import org.openapitools.client.JSON;
 /**
  * DatasourceReportRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class DatasourceReportRequest {
   public static final String SERIALIZED_NAME_DEVICES = "devices";
   @SerializedName(SERIALIZED_NAME_DEVICES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<ReportDevice> devices = new ArrayList<>();
 
   public DatasourceReportRequest() {
   }
 
-  public DatasourceReportRequest devices(@javax.annotation.Nonnull List<ReportDevice> devices) {
+  public DatasourceReportRequest devices(@jakarta.annotation.Nonnull List<ReportDevice> devices) {
     this.devices = devices;
     return this;
   }
@@ -78,12 +78,12 @@ public class DatasourceReportRequest {
    * Get devices
    * @return devices
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<ReportDevice> getDevices() {
     return devices;
   }
 
-  public void setDevices(@javax.annotation.Nonnull List<ReportDevice> devices) {
+  public void setDevices(@jakarta.annotation.Nonnull List<ReportDevice> devices) {
     this.devices = devices;
   }
 

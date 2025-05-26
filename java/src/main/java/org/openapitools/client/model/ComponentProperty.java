@@ -51,22 +51,22 @@ import org.openapitools.client.JSON;
 /**
  * ComponentProperty
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class ComponentProperty {
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Map<String, PropertyValueObject> properties = new HashMap<>();
 
   public static final String SERIALIZED_NAME_COMPONENTS = "components";
   @SerializedName(SERIALIZED_NAME_COMPONENTS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Map<String, ComponentProperty> components = new HashMap<>();
 
   public ComponentProperty() {
   }
 
-  public ComponentProperty properties(@javax.annotation.Nullable Map<String, PropertyValueObject> properties) {
+  public ComponentProperty properties(@jakarta.annotation.Nullable Map<String, PropertyValueObject> properties) {
     this.properties = properties;
     return this;
   }
@@ -83,17 +83,17 @@ public class ComponentProperty {
    * Get properties
    * @return properties
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Map<String, PropertyValueObject> getProperties() {
     return properties;
   }
 
-  public void setProperties(@javax.annotation.Nullable Map<String, PropertyValueObject> properties) {
+  public void setProperties(@jakarta.annotation.Nullable Map<String, PropertyValueObject> properties) {
     this.properties = properties;
   }
 
 
-  public ComponentProperty components(@javax.annotation.Nullable Map<String, ComponentProperty> components) {
+  public ComponentProperty components(@jakarta.annotation.Nullable Map<String, ComponentProperty> components) {
     this.components = components;
     return this;
   }
@@ -110,12 +110,12 @@ public class ComponentProperty {
    * Get components
    * @return components
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Map<String, ComponentProperty> getComponents() {
     return components;
   }
 
-  public void setComponents(@javax.annotation.Nullable Map<String, ComponentProperty> components) {
+  public void setComponents(@jakarta.annotation.Nullable Map<String, ComponentProperty> components) {
     this.components = components;
   }
 

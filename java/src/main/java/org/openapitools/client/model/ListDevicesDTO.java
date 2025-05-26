@@ -51,22 +51,22 @@ import org.openapitools.client.JSON;
 /**
  * ListDevicesDTO
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class ListDevicesDTO {
   public static final String SERIALIZED_NAME_DEVICES = "devices";
   @SerializedName(SERIALIZED_NAME_DEVICES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<DeviceDTO> devices = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer count;
 
   public ListDevicesDTO() {
   }
 
-  public ListDevicesDTO devices(@javax.annotation.Nullable List<DeviceDTO> devices) {
+  public ListDevicesDTO devices(@jakarta.annotation.Nullable List<DeviceDTO> devices) {
     this.devices = devices;
     return this;
   }
@@ -83,17 +83,17 @@ public class ListDevicesDTO {
    * Get devices
    * @return devices
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<DeviceDTO> getDevices() {
     return devices;
   }
 
-  public void setDevices(@javax.annotation.Nullable List<DeviceDTO> devices) {
+  public void setDevices(@jakarta.annotation.Nullable List<DeviceDTO> devices) {
     this.devices = devices;
   }
 
 
-  public ListDevicesDTO count(@javax.annotation.Nullable Integer count) {
+  public ListDevicesDTO count(@jakarta.annotation.Nullable Integer count) {
     this.count = count;
     return this;
   }
@@ -102,12 +102,12 @@ public class ListDevicesDTO {
    * Get count
    * @return count
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getCount() {
     return count;
   }
 
-  public void setCount(@javax.annotation.Nullable Integer count) {
+  public void setCount(@jakarta.annotation.Nullable Integer count) {
     this.count = count;
   }
 

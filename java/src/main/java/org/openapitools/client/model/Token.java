@@ -48,22 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * Token
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class Token {
   public static final String SERIALIZED_NAME_ISSUED_AT = "issued_at";
   @SerializedName(SERIALIZED_NAME_ISSUED_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String issuedAt;
 
   public static final String SERIALIZED_NAME_EXPIRES_AT = "expires_at";
   @SerializedName(SERIALIZED_NAME_EXPIRES_AT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer expiresAt;
 
   public Token() {
   }
 
-  public Token issuedAt(@javax.annotation.Nullable String issuedAt) {
+  public Token issuedAt(@jakarta.annotation.Nullable String issuedAt) {
     this.issuedAt = issuedAt;
     return this;
   }
@@ -72,17 +72,17 @@ public class Token {
    * Get issuedAt
    * @return issuedAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getIssuedAt() {
     return issuedAt;
   }
 
-  public void setIssuedAt(@javax.annotation.Nullable String issuedAt) {
+  public void setIssuedAt(@jakarta.annotation.Nullable String issuedAt) {
     this.issuedAt = issuedAt;
   }
 
 
-  public Token expiresAt(@javax.annotation.Nullable Integer expiresAt) {
+  public Token expiresAt(@jakarta.annotation.Nullable Integer expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
@@ -91,12 +91,12 @@ public class Token {
    * Get expiresAt
    * @return expiresAt
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getExpiresAt() {
     return expiresAt;
   }
 
-  public void setExpiresAt(@javax.annotation.Nullable Integer expiresAt) {
+  public void setExpiresAt(@jakarta.annotation.Nullable Integer expiresAt) {
     this.expiresAt = expiresAt;
   }
 

@@ -48,27 +48,27 @@ import org.openapitools.client.JSON;
 /**
  * BriefProcessSettings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class BriefProcessSettings {
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_SCHEDULE_TYPE = "schedule_type";
   @SerializedName(SERIALIZED_NAME_SCHEDULE_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String scheduleType;
 
   public static final String SERIALIZED_NAME_PERIOD = "period";
   @SerializedName(SERIALIZED_NAME_PERIOD)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String period;
 
   public BriefProcessSettings() {
   }
 
-  public BriefProcessSettings enabled(@javax.annotation.Nonnull Boolean enabled) {
+  public BriefProcessSettings enabled(@jakarta.annotation.Nonnull Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -77,17 +77,17 @@ public class BriefProcessSettings {
    * Get enabled
    * @return enabled
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nonnull Boolean enabled) {
+  public void setEnabled(@jakarta.annotation.Nonnull Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public BriefProcessSettings scheduleType(@javax.annotation.Nonnull String scheduleType) {
+  public BriefProcessSettings scheduleType(@jakarta.annotation.Nonnull String scheduleType) {
     this.scheduleType = scheduleType;
     return this;
   }
@@ -96,17 +96,17 @@ public class BriefProcessSettings {
    * Get scheduleType
    * @return scheduleType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getScheduleType() {
     return scheduleType;
   }
 
-  public void setScheduleType(@javax.annotation.Nonnull String scheduleType) {
+  public void setScheduleType(@jakarta.annotation.Nonnull String scheduleType) {
     this.scheduleType = scheduleType;
   }
 
 
-  public BriefProcessSettings period(@javax.annotation.Nonnull String period) {
+  public BriefProcessSettings period(@jakarta.annotation.Nonnull String period) {
     this.period = period;
     return this;
   }
@@ -115,12 +115,12 @@ public class BriefProcessSettings {
    * Get period
    * @return period
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getPeriod() {
     return period;
   }
 
-  public void setPeriod(@javax.annotation.Nonnull String period) {
+  public void setPeriod(@jakarta.annotation.Nonnull String period) {
     this.period = period;
   }
 

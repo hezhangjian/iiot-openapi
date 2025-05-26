@@ -51,27 +51,27 @@ import org.openapitools.client.JSON;
 /**
  * TimeSeriesQueryResponse
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class TimeSeriesQueryResponse {
   public static final String SERIALIZED_NAME_THING_ID = "thing_id";
   @SerializedName(SERIALIZED_NAME_THING_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String thingId;
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Map<String, DataList> data = new HashMap<>();
 
   public static final String SERIALIZED_NAME_PAGE_INFO = "page_info";
   @SerializedName(SERIALIZED_NAME_PAGE_INFO)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Map<String, Object> pageInfo = new HashMap<>();
 
   public TimeSeriesQueryResponse() {
   }
 
-  public TimeSeriesQueryResponse thingId(@javax.annotation.Nullable String thingId) {
+  public TimeSeriesQueryResponse thingId(@jakarta.annotation.Nullable String thingId) {
     this.thingId = thingId;
     return this;
   }
@@ -80,17 +80,17 @@ public class TimeSeriesQueryResponse {
    * Get thingId
    * @return thingId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getThingId() {
     return thingId;
   }
 
-  public void setThingId(@javax.annotation.Nullable String thingId) {
+  public void setThingId(@jakarta.annotation.Nullable String thingId) {
     this.thingId = thingId;
   }
 
 
-  public TimeSeriesQueryResponse data(@javax.annotation.Nullable Map<String, DataList> data) {
+  public TimeSeriesQueryResponse data(@jakarta.annotation.Nullable Map<String, DataList> data) {
     this.data = data;
     return this;
   }
@@ -107,17 +107,17 @@ public class TimeSeriesQueryResponse {
    * Get data
    * @return data
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Map<String, DataList> getData() {
     return data;
   }
 
-  public void setData(@javax.annotation.Nullable Map<String, DataList> data) {
+  public void setData(@jakarta.annotation.Nullable Map<String, DataList> data) {
     this.data = data;
   }
 
 
-  public TimeSeriesQueryResponse pageInfo(@javax.annotation.Nullable Map<String, Object> pageInfo) {
+  public TimeSeriesQueryResponse pageInfo(@jakarta.annotation.Nullable Map<String, Object> pageInfo) {
     this.pageInfo = pageInfo;
     return this;
   }
@@ -134,12 +134,12 @@ public class TimeSeriesQueryResponse {
    * Get pageInfo
    * @return pageInfo
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Map<String, Object> getPageInfo() {
     return pageInfo;
   }
 
-  public void setPageInfo(@javax.annotation.Nullable Map<String, Object> pageInfo) {
+  public void setPageInfo(@jakarta.annotation.Nullable Map<String, Object> pageInfo) {
     this.pageInfo = pageInfo;
   }
 

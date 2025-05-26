@@ -48,22 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * EventOutputExpression
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class EventOutputExpression {
   public static final String SERIALIZED_NAME_EXPRESSION = "expression";
   @SerializedName(SERIALIZED_NAME_EXPRESSION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String expression;
 
   public static final String SERIALIZED_NAME_COLUMN_ID = "column_id";
   @SerializedName(SERIALIZED_NAME_COLUMN_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String columnId;
 
   public EventOutputExpression() {
   }
 
-  public EventOutputExpression expression(@javax.annotation.Nonnull String expression) {
+  public EventOutputExpression expression(@jakarta.annotation.Nonnull String expression) {
     this.expression = expression;
     return this;
   }
@@ -72,17 +72,17 @@ public class EventOutputExpression {
    * Get expression
    * @return expression
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getExpression() {
     return expression;
   }
 
-  public void setExpression(@javax.annotation.Nonnull String expression) {
+  public void setExpression(@jakarta.annotation.Nonnull String expression) {
     this.expression = expression;
   }
 
 
-  public EventOutputExpression columnId(@javax.annotation.Nonnull String columnId) {
+  public EventOutputExpression columnId(@jakarta.annotation.Nonnull String columnId) {
     this.columnId = columnId;
     return this;
   }
@@ -91,12 +91,12 @@ public class EventOutputExpression {
    * Get columnId
    * @return columnId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getColumnId() {
     return columnId;
   }
 
-  public void setColumnId(@javax.annotation.Nonnull String columnId) {
+  public void setColumnId(@jakarta.annotation.Nonnull String columnId) {
     this.columnId = columnId;
   }
 

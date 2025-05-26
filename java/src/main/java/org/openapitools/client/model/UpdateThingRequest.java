@@ -53,42 +53,42 @@ import org.openapitools.client.JSON;
 /**
  * UpdateThingRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class UpdateThingRequest {
   public static final String SERIALIZED_NAME_THING_NAME = "thing_name";
   @SerializedName(SERIALIZED_NAME_THING_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String thingName;
 
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Map<String, PropertyValue> tags = new HashMap<>();
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ReferenceConfDetails properties;
 
   public static final String SERIALIZED_NAME_COMPONENTS = "components";
   @SerializedName(SERIALIZED_NAME_COMPONENTS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ComponentReferenceConfDetails components;
 
   public static final String SERIALIZED_NAME_CREATE_TIME = "create_time";
   @SerializedName(SERIALIZED_NAME_CREATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createTime;
 
   public static final String SERIALIZED_NAME_UPDATE_TIME = "update_time";
   @SerializedName(SERIALIZED_NAME_UPDATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updateTime;
 
   public UpdateThingRequest() {
   }
 
-  public UpdateThingRequest thingName(@javax.annotation.Nullable String thingName) {
+  public UpdateThingRequest thingName(@jakarta.annotation.Nullable String thingName) {
     this.thingName = thingName;
     return this;
   }
@@ -97,17 +97,17 @@ public class UpdateThingRequest {
    * Get thingName
    * @return thingName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getThingName() {
     return thingName;
   }
 
-  public void setThingName(@javax.annotation.Nullable String thingName) {
+  public void setThingName(@jakarta.annotation.Nullable String thingName) {
     this.thingName = thingName;
   }
 
 
-  public UpdateThingRequest tags(@javax.annotation.Nullable Map<String, PropertyValue> tags) {
+  public UpdateThingRequest tags(@jakarta.annotation.Nullable Map<String, PropertyValue> tags) {
     this.tags = tags;
     return this;
   }
@@ -124,17 +124,17 @@ public class UpdateThingRequest {
    * Get tags
    * @return tags
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Map<String, PropertyValue> getTags() {
     return tags;
   }
 
-  public void setTags(@javax.annotation.Nullable Map<String, PropertyValue> tags) {
+  public void setTags(@jakarta.annotation.Nullable Map<String, PropertyValue> tags) {
     this.tags = tags;
   }
 
 
-  public UpdateThingRequest properties(@javax.annotation.Nullable ReferenceConfDetails properties) {
+  public UpdateThingRequest properties(@jakarta.annotation.Nullable ReferenceConfDetails properties) {
     this.properties = properties;
     return this;
   }
@@ -143,17 +143,17 @@ public class UpdateThingRequest {
    * Get properties
    * @return properties
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ReferenceConfDetails getProperties() {
     return properties;
   }
 
-  public void setProperties(@javax.annotation.Nullable ReferenceConfDetails properties) {
+  public void setProperties(@jakarta.annotation.Nullable ReferenceConfDetails properties) {
     this.properties = properties;
   }
 
 
-  public UpdateThingRequest components(@javax.annotation.Nullable ComponentReferenceConfDetails components) {
+  public UpdateThingRequest components(@jakarta.annotation.Nullable ComponentReferenceConfDetails components) {
     this.components = components;
     return this;
   }
@@ -162,17 +162,17 @@ public class UpdateThingRequest {
    * Get components
    * @return components
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ComponentReferenceConfDetails getComponents() {
     return components;
   }
 
-  public void setComponents(@javax.annotation.Nullable ComponentReferenceConfDetails components) {
+  public void setComponents(@jakarta.annotation.Nullable ComponentReferenceConfDetails components) {
     this.components = components;
   }
 
 
-  public UpdateThingRequest createTime(@javax.annotation.Nullable String createTime) {
+  public UpdateThingRequest createTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
     return this;
   }
@@ -181,17 +181,17 @@ public class UpdateThingRequest {
    * Get createTime
    * @return createTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(@javax.annotation.Nullable String createTime) {
+  public void setCreateTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
   }
 
 
-  public UpdateThingRequest updateTime(@javax.annotation.Nullable String updateTime) {
+  public UpdateThingRequest updateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
     return this;
   }
@@ -200,12 +200,12 @@ public class UpdateThingRequest {
    * Get updateTime
    * @return updateTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdateTime() {
     return updateTime;
   }
 
-  public void setUpdateTime(@javax.annotation.Nullable String updateTime) {
+  public void setUpdateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
   }
 

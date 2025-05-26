@@ -51,27 +51,27 @@ import org.openapitools.client.JSON;
 /**
  * ReferenceConfDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class ReferenceConfDetails {
   public static final String SERIALIZED_NAME_PROPERTY_REF = "property_ref";
   @SerializedName(SERIALIZED_NAME_PROPERTY_REF)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Map<String, PropertyRef> propertyRef = new HashMap<>();
 
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Object value;
 
   public static final String SERIALIZED_NAME_UPDATE_TIME = "update_time";
   @SerializedName(SERIALIZED_NAME_UPDATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updateTime;
 
   public ReferenceConfDetails() {
   }
 
-  public ReferenceConfDetails propertyRef(@javax.annotation.Nullable Map<String, PropertyRef> propertyRef) {
+  public ReferenceConfDetails propertyRef(@jakarta.annotation.Nullable Map<String, PropertyRef> propertyRef) {
     this.propertyRef = propertyRef;
     return this;
   }
@@ -88,17 +88,17 @@ public class ReferenceConfDetails {
    * Get propertyRef
    * @return propertyRef
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Map<String, PropertyRef> getPropertyRef() {
     return propertyRef;
   }
 
-  public void setPropertyRef(@javax.annotation.Nullable Map<String, PropertyRef> propertyRef) {
+  public void setPropertyRef(@jakarta.annotation.Nullable Map<String, PropertyRef> propertyRef) {
     this.propertyRef = propertyRef;
   }
 
 
-  public ReferenceConfDetails value(@javax.annotation.Nullable Object value) {
+  public ReferenceConfDetails value(@jakarta.annotation.Nullable Object value) {
     this.value = value;
     return this;
   }
@@ -107,17 +107,17 @@ public class ReferenceConfDetails {
    * Get value
    * @return value
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Object getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nullable Object value) {
+  public void setValue(@jakarta.annotation.Nullable Object value) {
     this.value = value;
   }
 
 
-  public ReferenceConfDetails updateTime(@javax.annotation.Nullable String updateTime) {
+  public ReferenceConfDetails updateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
     return this;
   }
@@ -126,12 +126,12 @@ public class ReferenceConfDetails {
    * Get updateTime
    * @return updateTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdateTime() {
     return updateTime;
   }
 
-  public void setUpdateTime(@javax.annotation.Nullable String updateTime) {
+  public void setUpdateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
   }
 

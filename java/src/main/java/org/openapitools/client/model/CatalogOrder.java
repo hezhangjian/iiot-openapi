@@ -48,22 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * CatalogOrder
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class CatalogOrder {
   public static final String SERIALIZED_NAME_CATALOG_ID = "catalog_id";
   @SerializedName(SERIALIZED_NAME_CATALOG_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String catalogId;
 
   public static final String SERIALIZED_NAME_DISPLAY_ORDER = "display_order";
   @SerializedName(SERIALIZED_NAME_DISPLAY_ORDER)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Integer displayOrder;
 
   public CatalogOrder() {
   }
 
-  public CatalogOrder catalogId(@javax.annotation.Nonnull String catalogId) {
+  public CatalogOrder catalogId(@jakarta.annotation.Nonnull String catalogId) {
     this.catalogId = catalogId;
     return this;
   }
@@ -72,17 +72,17 @@ public class CatalogOrder {
    * Get catalogId
    * @return catalogId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCatalogId() {
     return catalogId;
   }
 
-  public void setCatalogId(@javax.annotation.Nonnull String catalogId) {
+  public void setCatalogId(@jakarta.annotation.Nonnull String catalogId) {
     this.catalogId = catalogId;
   }
 
 
-  public CatalogOrder displayOrder(@javax.annotation.Nonnull Integer displayOrder) {
+  public CatalogOrder displayOrder(@jakarta.annotation.Nonnull Integer displayOrder) {
     this.displayOrder = displayOrder;
     return this;
   }
@@ -91,12 +91,12 @@ public class CatalogOrder {
    * Get displayOrder
    * @return displayOrder
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Integer getDisplayOrder() {
     return displayOrder;
   }
 
-  public void setDisplayOrder(@javax.annotation.Nonnull Integer displayOrder) {
+  public void setDisplayOrder(@jakarta.annotation.Nonnull Integer displayOrder) {
     this.displayOrder = displayOrder;
   }
 

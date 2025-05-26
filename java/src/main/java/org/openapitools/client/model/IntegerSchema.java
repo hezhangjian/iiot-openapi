@@ -48,22 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * IntegerSchema
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class IntegerSchema {
   public static final String SERIALIZED_NAME_MIN = "min";
   @SerializedName(SERIALIZED_NAME_MIN)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer min;
 
   public static final String SERIALIZED_NAME_MAX = "max";
   @SerializedName(SERIALIZED_NAME_MAX)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer max;
 
   public IntegerSchema() {
   }
 
-  public IntegerSchema min(@javax.annotation.Nullable Integer min) {
+  public IntegerSchema min(@jakarta.annotation.Nullable Integer min) {
     this.min = min;
     return this;
   }
@@ -72,17 +72,17 @@ public class IntegerSchema {
    * Get min
    * @return min
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getMin() {
     return min;
   }
 
-  public void setMin(@javax.annotation.Nullable Integer min) {
+  public void setMin(@jakarta.annotation.Nullable Integer min) {
     this.min = min;
   }
 
 
-  public IntegerSchema max(@javax.annotation.Nullable Integer max) {
+  public IntegerSchema max(@jakarta.annotation.Nullable Integer max) {
     this.max = max;
     return this;
   }
@@ -91,12 +91,12 @@ public class IntegerSchema {
    * Get max
    * @return max
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getMax() {
     return max;
   }
 
-  public void setMax(@javax.annotation.Nullable Integer max) {
+  public void setMax(@jakarta.annotation.Nullable Integer max) {
     this.max = max;
   }
 

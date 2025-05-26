@@ -52,22 +52,22 @@ import org.openapitools.client.JSON;
 /**
  * PropertiesGetReq
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class PropertiesGetReq {
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> properties = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_COMPONENTS = "components";
   @SerializedName(SERIALIZED_NAME_COMPONENTS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Map<String, PropertiesGetReq> components = new HashMap<>();
 
   public PropertiesGetReq() {
   }
 
-  public PropertiesGetReq properties(@javax.annotation.Nullable List<String> properties) {
+  public PropertiesGetReq properties(@jakarta.annotation.Nullable List<String> properties) {
     this.properties = properties;
     return this;
   }
@@ -84,17 +84,17 @@ public class PropertiesGetReq {
    * Get properties
    * @return properties
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getProperties() {
     return properties;
   }
 
-  public void setProperties(@javax.annotation.Nullable List<String> properties) {
+  public void setProperties(@jakarta.annotation.Nullable List<String> properties) {
     this.properties = properties;
   }
 
 
-  public PropertiesGetReq components(@javax.annotation.Nullable Map<String, PropertiesGetReq> components) {
+  public PropertiesGetReq components(@jakarta.annotation.Nullable Map<String, PropertiesGetReq> components) {
     this.components = components;
     return this;
   }
@@ -111,12 +111,12 @@ public class PropertiesGetReq {
    * Get components
    * @return components
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Map<String, PropertiesGetReq> getComponents() {
     return components;
   }
 
-  public void setComponents(@javax.annotation.Nullable Map<String, PropertiesGetReq> components) {
+  public void setComponents(@jakarta.annotation.Nullable Map<String, PropertiesGetReq> components) {
     this.components = components;
   }
 

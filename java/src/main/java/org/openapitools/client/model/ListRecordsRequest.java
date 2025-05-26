@@ -51,17 +51,17 @@ import org.openapitools.client.JSON;
 /**
  * ListRecordsRequest
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class ListRecordsRequest {
   public static final String SERIALIZED_NAME_INDEX_COLUMNS = "index_columns";
   @SerializedName(SERIALIZED_NAME_INDEX_COLUMNS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<RecordFilter> indexColumns = new ArrayList<>();
 
   public ListRecordsRequest() {
   }
 
-  public ListRecordsRequest indexColumns(@javax.annotation.Nullable List<RecordFilter> indexColumns) {
+  public ListRecordsRequest indexColumns(@jakarta.annotation.Nullable List<RecordFilter> indexColumns) {
     this.indexColumns = indexColumns;
     return this;
   }
@@ -78,12 +78,12 @@ public class ListRecordsRequest {
    * Get indexColumns
    * @return indexColumns
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<RecordFilter> getIndexColumns() {
     return indexColumns;
   }
 
-  public void setIndexColumns(@javax.annotation.Nullable List<RecordFilter> indexColumns) {
+  public void setIndexColumns(@jakarta.annotation.Nullable List<RecordFilter> indexColumns) {
     this.indexColumns = indexColumns;
   }
 

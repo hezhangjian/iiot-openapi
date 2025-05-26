@@ -48,32 +48,32 @@ import org.openapitools.client.JSON;
 /**
  * IntegratedReports
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class IntegratedReports {
   public static final String SERIALIZED_NAME_INTEGRATED_TIME = "integrated_time";
   @SerializedName(SERIALIZED_NAME_INTEGRATED_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String integratedTime;
 
   public static final String SERIALIZED_NAME_AGING_TIME = "aging_time";
   @SerializedName(SERIALIZED_NAME_AGING_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String agingTime;
 
   public static final String SERIALIZED_NAME_INTEGRATED_STATUS = "integrated_status";
   @SerializedName(SERIALIZED_NAME_INTEGRATED_STATUS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String integratedStatus;
 
   public static final String SERIALIZED_NAME_INTEGRATED_RESULT = "integrated_result";
   @SerializedName(SERIALIZED_NAME_INTEGRATED_RESULT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String integratedResult;
 
   public IntegratedReports() {
   }
 
-  public IntegratedReports integratedTime(@javax.annotation.Nullable String integratedTime) {
+  public IntegratedReports integratedTime(@jakarta.annotation.Nullable String integratedTime) {
     this.integratedTime = integratedTime;
     return this;
   }
@@ -82,17 +82,17 @@ public class IntegratedReports {
    * Get integratedTime
    * @return integratedTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getIntegratedTime() {
     return integratedTime;
   }
 
-  public void setIntegratedTime(@javax.annotation.Nullable String integratedTime) {
+  public void setIntegratedTime(@jakarta.annotation.Nullable String integratedTime) {
     this.integratedTime = integratedTime;
   }
 
 
-  public IntegratedReports agingTime(@javax.annotation.Nullable String agingTime) {
+  public IntegratedReports agingTime(@jakarta.annotation.Nullable String agingTime) {
     this.agingTime = agingTime;
     return this;
   }
@@ -101,17 +101,17 @@ public class IntegratedReports {
    * Get agingTime
    * @return agingTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getAgingTime() {
     return agingTime;
   }
 
-  public void setAgingTime(@javax.annotation.Nullable String agingTime) {
+  public void setAgingTime(@jakarta.annotation.Nullable String agingTime) {
     this.agingTime = agingTime;
   }
 
 
-  public IntegratedReports integratedStatus(@javax.annotation.Nullable String integratedStatus) {
+  public IntegratedReports integratedStatus(@jakarta.annotation.Nullable String integratedStatus) {
     this.integratedStatus = integratedStatus;
     return this;
   }
@@ -120,17 +120,17 @@ public class IntegratedReports {
    * Get integratedStatus
    * @return integratedStatus
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getIntegratedStatus() {
     return integratedStatus;
   }
 
-  public void setIntegratedStatus(@javax.annotation.Nullable String integratedStatus) {
+  public void setIntegratedStatus(@jakarta.annotation.Nullable String integratedStatus) {
     this.integratedStatus = integratedStatus;
   }
 
 
-  public IntegratedReports integratedResult(@javax.annotation.Nullable String integratedResult) {
+  public IntegratedReports integratedResult(@jakarta.annotation.Nullable String integratedResult) {
     this.integratedResult = integratedResult;
     return this;
   }
@@ -139,12 +139,12 @@ public class IntegratedReports {
    * Get integratedResult
    * @return integratedResult
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getIntegratedResult() {
     return integratedResult;
   }
 
-  public void setIntegratedResult(@javax.annotation.Nullable String integratedResult) {
+  public void setIntegratedResult(@jakarta.annotation.Nullable String integratedResult) {
     this.integratedResult = integratedResult;
   }
 

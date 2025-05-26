@@ -55,82 +55,82 @@ import org.openapitools.client.JSON;
 /**
  * AnalysisTask
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class AnalysisTask {
   public static final String SERIALIZED_NAME_CLEAN_SETTINGS = "clean_settings";
   @SerializedName(SERIALIZED_NAME_CLEAN_SETTINGS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CleanSettings cleanSettings;
 
   public static final String SERIALIZED_NAME_EVENT_CLASS = "event_class";
   @SerializedName(SERIALIZED_NAME_EVENT_CLASS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String eventClass;
 
   public static final String SERIALIZED_NAME_EVENT_GEN_SETTINGS = "event_gen_settings";
   @SerializedName(SERIALIZED_NAME_EVENT_GEN_SETTINGS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private EventGenSetting eventGenSettings;
 
   public static final String SERIALIZED_NAME_COMPLEX_SETTINGS = "complex_settings";
   @SerializedName(SERIALIZED_NAME_COMPLEX_SETTINGS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ComplexSetting complexSettings;
 
   public static final String SERIALIZED_NAME_EXPRESSION_SETTINGS = "expression_settings";
   @SerializedName(SERIALIZED_NAME_EXPRESSION_SETTINGS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ExpressionSettings expressionSettings;
 
   public static final String SERIALIZED_NAME_TASK_ID = "task_id";
   @SerializedName(SERIALIZED_NAME_TASK_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String taskId;
 
   public static final String SERIALIZED_NAME_TASK_NAME = "task_name";
   @SerializedName(SERIALIZED_NAME_TASK_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String taskName;
 
   public static final String SERIALIZED_NAME_ENABLED = "enabled";
   @SerializedName(SERIALIZED_NAME_ENABLED)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean enabled;
 
   public static final String SERIALIZED_NAME_CALC_TYPE = "calc_type";
   @SerializedName(SERIALIZED_NAME_CALC_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String calcType;
 
   public static final String SERIALIZED_NAME_SCHEDULE_TYPE = "schedule_type";
   @SerializedName(SERIALIZED_NAME_SCHEDULE_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String scheduleType;
 
   public static final String SERIALIZED_NAME_PERIOD = "period";
   @SerializedName(SERIALIZED_NAME_PERIOD)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String period;
 
   public static final String SERIALIZED_NAME_TAG_MATCHERS = "tag_matchers";
   @SerializedName(SERIALIZED_NAME_TAG_MATCHERS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<TagMatcher> tagMatchers = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CREATE_TIME = "create_time";
   @SerializedName(SERIALIZED_NAME_CREATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createTime;
 
   public static final String SERIALIZED_NAME_UPDATE_TIME = "update_time";
   @SerializedName(SERIALIZED_NAME_UPDATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updateTime;
 
   public AnalysisTask() {
   }
 
-  public AnalysisTask cleanSettings(@javax.annotation.Nullable CleanSettings cleanSettings) {
+  public AnalysisTask cleanSettings(@jakarta.annotation.Nullable CleanSettings cleanSettings) {
     this.cleanSettings = cleanSettings;
     return this;
   }
@@ -139,17 +139,17 @@ public class AnalysisTask {
    * Get cleanSettings
    * @return cleanSettings
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CleanSettings getCleanSettings() {
     return cleanSettings;
   }
 
-  public void setCleanSettings(@javax.annotation.Nullable CleanSettings cleanSettings) {
+  public void setCleanSettings(@jakarta.annotation.Nullable CleanSettings cleanSettings) {
     this.cleanSettings = cleanSettings;
   }
 
 
-  public AnalysisTask eventClass(@javax.annotation.Nullable String eventClass) {
+  public AnalysisTask eventClass(@jakarta.annotation.Nullable String eventClass) {
     this.eventClass = eventClass;
     return this;
   }
@@ -158,17 +158,17 @@ public class AnalysisTask {
    * Get eventClass
    * @return eventClass
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getEventClass() {
     return eventClass;
   }
 
-  public void setEventClass(@javax.annotation.Nullable String eventClass) {
+  public void setEventClass(@jakarta.annotation.Nullable String eventClass) {
     this.eventClass = eventClass;
   }
 
 
-  public AnalysisTask eventGenSettings(@javax.annotation.Nullable EventGenSetting eventGenSettings) {
+  public AnalysisTask eventGenSettings(@jakarta.annotation.Nullable EventGenSetting eventGenSettings) {
     this.eventGenSettings = eventGenSettings;
     return this;
   }
@@ -177,17 +177,17 @@ public class AnalysisTask {
    * Get eventGenSettings
    * @return eventGenSettings
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public EventGenSetting getEventGenSettings() {
     return eventGenSettings;
   }
 
-  public void setEventGenSettings(@javax.annotation.Nullable EventGenSetting eventGenSettings) {
+  public void setEventGenSettings(@jakarta.annotation.Nullable EventGenSetting eventGenSettings) {
     this.eventGenSettings = eventGenSettings;
   }
 
 
-  public AnalysisTask complexSettings(@javax.annotation.Nullable ComplexSetting complexSettings) {
+  public AnalysisTask complexSettings(@jakarta.annotation.Nullable ComplexSetting complexSettings) {
     this.complexSettings = complexSettings;
     return this;
   }
@@ -196,17 +196,17 @@ public class AnalysisTask {
    * Get complexSettings
    * @return complexSettings
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ComplexSetting getComplexSettings() {
     return complexSettings;
   }
 
-  public void setComplexSettings(@javax.annotation.Nullable ComplexSetting complexSettings) {
+  public void setComplexSettings(@jakarta.annotation.Nullable ComplexSetting complexSettings) {
     this.complexSettings = complexSettings;
   }
 
 
-  public AnalysisTask expressionSettings(@javax.annotation.Nullable ExpressionSettings expressionSettings) {
+  public AnalysisTask expressionSettings(@jakarta.annotation.Nullable ExpressionSettings expressionSettings) {
     this.expressionSettings = expressionSettings;
     return this;
   }
@@ -215,17 +215,17 @@ public class AnalysisTask {
    * Get expressionSettings
    * @return expressionSettings
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ExpressionSettings getExpressionSettings() {
     return expressionSettings;
   }
 
-  public void setExpressionSettings(@javax.annotation.Nullable ExpressionSettings expressionSettings) {
+  public void setExpressionSettings(@jakarta.annotation.Nullable ExpressionSettings expressionSettings) {
     this.expressionSettings = expressionSettings;
   }
 
 
-  public AnalysisTask taskId(@javax.annotation.Nullable String taskId) {
+  public AnalysisTask taskId(@jakarta.annotation.Nullable String taskId) {
     this.taskId = taskId;
     return this;
   }
@@ -234,17 +234,17 @@ public class AnalysisTask {
    * Get taskId
    * @return taskId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTaskId() {
     return taskId;
   }
 
-  public void setTaskId(@javax.annotation.Nullable String taskId) {
+  public void setTaskId(@jakarta.annotation.Nullable String taskId) {
     this.taskId = taskId;
   }
 
 
-  public AnalysisTask taskName(@javax.annotation.Nullable String taskName) {
+  public AnalysisTask taskName(@jakarta.annotation.Nullable String taskName) {
     this.taskName = taskName;
     return this;
   }
@@ -253,17 +253,17 @@ public class AnalysisTask {
    * Get taskName
    * @return taskName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getTaskName() {
     return taskName;
   }
 
-  public void setTaskName(@javax.annotation.Nullable String taskName) {
+  public void setTaskName(@jakarta.annotation.Nullable String taskName) {
     this.taskName = taskName;
   }
 
 
-  public AnalysisTask enabled(@javax.annotation.Nullable Boolean enabled) {
+  public AnalysisTask enabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
     return this;
   }
@@ -272,17 +272,17 @@ public class AnalysisTask {
    * Get enabled
    * @return enabled
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getEnabled() {
     return enabled;
   }
 
-  public void setEnabled(@javax.annotation.Nullable Boolean enabled) {
+  public void setEnabled(@jakarta.annotation.Nullable Boolean enabled) {
     this.enabled = enabled;
   }
 
 
-  public AnalysisTask calcType(@javax.annotation.Nullable String calcType) {
+  public AnalysisTask calcType(@jakarta.annotation.Nullable String calcType) {
     this.calcType = calcType;
     return this;
   }
@@ -291,17 +291,17 @@ public class AnalysisTask {
    * Get calcType
    * @return calcType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCalcType() {
     return calcType;
   }
 
-  public void setCalcType(@javax.annotation.Nullable String calcType) {
+  public void setCalcType(@jakarta.annotation.Nullable String calcType) {
     this.calcType = calcType;
   }
 
 
-  public AnalysisTask scheduleType(@javax.annotation.Nullable String scheduleType) {
+  public AnalysisTask scheduleType(@jakarta.annotation.Nullable String scheduleType) {
     this.scheduleType = scheduleType;
     return this;
   }
@@ -310,17 +310,17 @@ public class AnalysisTask {
    * Get scheduleType
    * @return scheduleType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getScheduleType() {
     return scheduleType;
   }
 
-  public void setScheduleType(@javax.annotation.Nullable String scheduleType) {
+  public void setScheduleType(@jakarta.annotation.Nullable String scheduleType) {
     this.scheduleType = scheduleType;
   }
 
 
-  public AnalysisTask period(@javax.annotation.Nullable String period) {
+  public AnalysisTask period(@jakarta.annotation.Nullable String period) {
     this.period = period;
     return this;
   }
@@ -329,17 +329,17 @@ public class AnalysisTask {
    * Get period
    * @return period
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getPeriod() {
     return period;
   }
 
-  public void setPeriod(@javax.annotation.Nullable String period) {
+  public void setPeriod(@jakarta.annotation.Nullable String period) {
     this.period = period;
   }
 
 
-  public AnalysisTask tagMatchers(@javax.annotation.Nullable List<TagMatcher> tagMatchers) {
+  public AnalysisTask tagMatchers(@jakarta.annotation.Nullable List<TagMatcher> tagMatchers) {
     this.tagMatchers = tagMatchers;
     return this;
   }
@@ -356,17 +356,17 @@ public class AnalysisTask {
    * Get tagMatchers
    * @return tagMatchers
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<TagMatcher> getTagMatchers() {
     return tagMatchers;
   }
 
-  public void setTagMatchers(@javax.annotation.Nullable List<TagMatcher> tagMatchers) {
+  public void setTagMatchers(@jakarta.annotation.Nullable List<TagMatcher> tagMatchers) {
     this.tagMatchers = tagMatchers;
   }
 
 
-  public AnalysisTask createTime(@javax.annotation.Nullable String createTime) {
+  public AnalysisTask createTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
     return this;
   }
@@ -375,17 +375,17 @@ public class AnalysisTask {
    * Get createTime
    * @return createTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(@javax.annotation.Nullable String createTime) {
+  public void setCreateTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
   }
 
 
-  public AnalysisTask updateTime(@javax.annotation.Nullable String updateTime) {
+  public AnalysisTask updateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
     return this;
   }
@@ -394,12 +394,12 @@ public class AnalysisTask {
    * Get updateTime
    * @return updateTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdateTime() {
     return updateTime;
   }
 
-  public void setUpdateTime(@javax.annotation.Nullable String updateTime) {
+  public void setUpdateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
   }
 

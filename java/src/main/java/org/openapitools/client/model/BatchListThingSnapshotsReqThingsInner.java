@@ -51,22 +51,22 @@ import org.openapitools.client.JSON;
 /**
  * BatchListThingSnapshotsReqThingsInner
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class BatchListThingSnapshotsReqThingsInner {
   public static final String SERIALIZED_NAME_THING_ID = "thing_id";
   @SerializedName(SERIALIZED_NAME_THING_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String thingId;
 
   public static final String SERIALIZED_NAME_COMPONENTS = "components";
   @SerializedName(SERIALIZED_NAME_COMPONENTS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Map<String, PropertiesGetReq> components = new HashMap<>();
 
   public BatchListThingSnapshotsReqThingsInner() {
   }
 
-  public BatchListThingSnapshotsReqThingsInner thingId(@javax.annotation.Nonnull String thingId) {
+  public BatchListThingSnapshotsReqThingsInner thingId(@jakarta.annotation.Nonnull String thingId) {
     this.thingId = thingId;
     return this;
   }
@@ -75,17 +75,17 @@ public class BatchListThingSnapshotsReqThingsInner {
    * Get thingId
    * @return thingId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getThingId() {
     return thingId;
   }
 
-  public void setThingId(@javax.annotation.Nonnull String thingId) {
+  public void setThingId(@jakarta.annotation.Nonnull String thingId) {
     this.thingId = thingId;
   }
 
 
-  public BatchListThingSnapshotsReqThingsInner components(@javax.annotation.Nullable Map<String, PropertiesGetReq> components) {
+  public BatchListThingSnapshotsReqThingsInner components(@jakarta.annotation.Nullable Map<String, PropertiesGetReq> components) {
     this.components = components;
     return this;
   }
@@ -102,12 +102,12 @@ public class BatchListThingSnapshotsReqThingsInner {
    * Get components
    * @return components
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Map<String, PropertiesGetReq> getComponents() {
     return components;
   }
 
-  public void setComponents(@javax.annotation.Nullable Map<String, PropertiesGetReq> components) {
+  public void setComponents(@jakarta.annotation.Nullable Map<String, PropertiesGetReq> components) {
     this.components = components;
   }
 

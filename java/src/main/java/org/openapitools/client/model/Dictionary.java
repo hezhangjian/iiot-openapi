@@ -51,47 +51,47 @@ import org.openapitools.client.JSON;
 /**
  * Dictionary
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class Dictionary {
   public static final String SERIALIZED_NAME_DIC_ID = "dic_id";
   @SerializedName(SERIALIZED_NAME_DIC_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String dicId;
 
   public static final String SERIALIZED_NAME_DIC_NAME = "dic_name";
   @SerializedName(SERIALIZED_NAME_DIC_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String dicName;
 
   public static final String SERIALIZED_NAME_DATA_TYPE = "data_type";
   @SerializedName(SERIALIZED_NAME_DATA_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String dataType;
 
   public static final String SERIALIZED_NAME_CATALOG_ID = "catalog_id";
   @SerializedName(SERIALIZED_NAME_CATALOG_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String catalogId;
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<DicItem> values = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_CREATE_TIME = "create_time";
   @SerializedName(SERIALIZED_NAME_CREATE_TIME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String createTime;
 
   public static final String SERIALIZED_NAME_UPDATE_TIME = "update_time";
   @SerializedName(SERIALIZED_NAME_UPDATE_TIME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String updateTime;
 
   public Dictionary() {
   }
 
-  public Dictionary dicId(@javax.annotation.Nonnull String dicId) {
+  public Dictionary dicId(@jakarta.annotation.Nonnull String dicId) {
     this.dicId = dicId;
     return this;
   }
@@ -100,17 +100,17 @@ public class Dictionary {
    * Get dicId
    * @return dicId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getDicId() {
     return dicId;
   }
 
-  public void setDicId(@javax.annotation.Nonnull String dicId) {
+  public void setDicId(@jakarta.annotation.Nonnull String dicId) {
     this.dicId = dicId;
   }
 
 
-  public Dictionary dicName(@javax.annotation.Nonnull String dicName) {
+  public Dictionary dicName(@jakarta.annotation.Nonnull String dicName) {
     this.dicName = dicName;
     return this;
   }
@@ -119,17 +119,17 @@ public class Dictionary {
    * Get dicName
    * @return dicName
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getDicName() {
     return dicName;
   }
 
-  public void setDicName(@javax.annotation.Nonnull String dicName) {
+  public void setDicName(@jakarta.annotation.Nonnull String dicName) {
     this.dicName = dicName;
   }
 
 
-  public Dictionary dataType(@javax.annotation.Nonnull String dataType) {
+  public Dictionary dataType(@jakarta.annotation.Nonnull String dataType) {
     this.dataType = dataType;
     return this;
   }
@@ -138,17 +138,17 @@ public class Dictionary {
    * Get dataType
    * @return dataType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getDataType() {
     return dataType;
   }
 
-  public void setDataType(@javax.annotation.Nonnull String dataType) {
+  public void setDataType(@jakarta.annotation.Nonnull String dataType) {
     this.dataType = dataType;
   }
 
 
-  public Dictionary catalogId(@javax.annotation.Nonnull String catalogId) {
+  public Dictionary catalogId(@jakarta.annotation.Nonnull String catalogId) {
     this.catalogId = catalogId;
     return this;
   }
@@ -157,17 +157,17 @@ public class Dictionary {
    * Get catalogId
    * @return catalogId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCatalogId() {
     return catalogId;
   }
 
-  public void setCatalogId(@javax.annotation.Nonnull String catalogId) {
+  public void setCatalogId(@jakarta.annotation.Nonnull String catalogId) {
     this.catalogId = catalogId;
   }
 
 
-  public Dictionary values(@javax.annotation.Nonnull List<DicItem> values) {
+  public Dictionary values(@jakarta.annotation.Nonnull List<DicItem> values) {
     this.values = values;
     return this;
   }
@@ -184,17 +184,17 @@ public class Dictionary {
    * Get values
    * @return values
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<DicItem> getValues() {
     return values;
   }
 
-  public void setValues(@javax.annotation.Nonnull List<DicItem> values) {
+  public void setValues(@jakarta.annotation.Nonnull List<DicItem> values) {
     this.values = values;
   }
 
 
-  public Dictionary createTime(@javax.annotation.Nonnull String createTime) {
+  public Dictionary createTime(@jakarta.annotation.Nonnull String createTime) {
     this.createTime = createTime;
     return this;
   }
@@ -203,17 +203,17 @@ public class Dictionary {
    * Get createTime
    * @return createTime
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(@javax.annotation.Nonnull String createTime) {
+  public void setCreateTime(@jakarta.annotation.Nonnull String createTime) {
     this.createTime = createTime;
   }
 
 
-  public Dictionary updateTime(@javax.annotation.Nonnull String updateTime) {
+  public Dictionary updateTime(@jakarta.annotation.Nonnull String updateTime) {
     this.updateTime = updateTime;
     return this;
   }
@@ -222,12 +222,12 @@ public class Dictionary {
    * Get updateTime
    * @return updateTime
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getUpdateTime() {
     return updateTime;
   }
 
-  public void setUpdateTime(@javax.annotation.Nonnull String updateTime) {
+  public void setUpdateTime(@jakarta.annotation.Nonnull String updateTime) {
     this.updateTime = updateTime;
   }
 

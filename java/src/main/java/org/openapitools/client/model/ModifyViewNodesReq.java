@@ -51,17 +51,17 @@ import org.openapitools.client.JSON;
 /**
  * ModifyViewNodesReq
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class ModifyViewNodesReq {
   public static final String SERIALIZED_NAME_CATALOG_NODES = "catalog_nodes";
   @SerializedName(SERIALIZED_NAME_CATALOG_NODES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<ModifyCatalogNode> catalogNodes = new ArrayList<>();
 
   public ModifyViewNodesReq() {
   }
 
-  public ModifyViewNodesReq catalogNodes(@javax.annotation.Nonnull List<ModifyCatalogNode> catalogNodes) {
+  public ModifyViewNodesReq catalogNodes(@jakarta.annotation.Nonnull List<ModifyCatalogNode> catalogNodes) {
     this.catalogNodes = catalogNodes;
     return this;
   }
@@ -78,12 +78,12 @@ public class ModifyViewNodesReq {
    * Get catalogNodes
    * @return catalogNodes
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<ModifyCatalogNode> getCatalogNodes() {
     return catalogNodes;
   }
 
-  public void setCatalogNodes(@javax.annotation.Nonnull List<ModifyCatalogNode> catalogNodes) {
+  public void setCatalogNodes(@jakarta.annotation.Nonnull List<ModifyCatalogNode> catalogNodes) {
     this.catalogNodes = catalogNodes;
   }
 

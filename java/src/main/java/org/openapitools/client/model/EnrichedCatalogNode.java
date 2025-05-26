@@ -48,42 +48,42 @@ import org.openapitools.client.JSON;
 /**
  * EnrichedCatalogNode
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class EnrichedCatalogNode {
   public static final String SERIALIZED_NAME_LEVEL_ID = "level_id";
   @SerializedName(SERIALIZED_NAME_LEVEL_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String levelId;
 
   public static final String SERIALIZED_NAME_NODE_ID = "node_id";
   @SerializedName(SERIALIZED_NAME_NODE_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String nodeId;
 
   public static final String SERIALIZED_NAME_NODE_NAME = "node_name";
   @SerializedName(SERIALIZED_NAME_NODE_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String nodeName;
 
   public static final String SERIALIZED_NAME_DISPLAY_ORDER = "display_order";
   @SerializedName(SERIALIZED_NAME_DISPLAY_ORDER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer displayOrder;
 
   public static final String SERIALIZED_NAME_CREATE_TIME = "create_time";
   @SerializedName(SERIALIZED_NAME_CREATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createTime;
 
   public static final String SERIALIZED_NAME_UPDATE_TIME = "update_time";
   @SerializedName(SERIALIZED_NAME_UPDATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updateTime;
 
   public EnrichedCatalogNode() {
   }
 
-  public EnrichedCatalogNode levelId(@javax.annotation.Nullable String levelId) {
+  public EnrichedCatalogNode levelId(@jakarta.annotation.Nullable String levelId) {
     this.levelId = levelId;
     return this;
   }
@@ -92,17 +92,17 @@ public class EnrichedCatalogNode {
    * Get levelId
    * @return levelId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getLevelId() {
     return levelId;
   }
 
-  public void setLevelId(@javax.annotation.Nullable String levelId) {
+  public void setLevelId(@jakarta.annotation.Nullable String levelId) {
     this.levelId = levelId;
   }
 
 
-  public EnrichedCatalogNode nodeId(@javax.annotation.Nullable String nodeId) {
+  public EnrichedCatalogNode nodeId(@jakarta.annotation.Nullable String nodeId) {
     this.nodeId = nodeId;
     return this;
   }
@@ -111,17 +111,17 @@ public class EnrichedCatalogNode {
    * Get nodeId
    * @return nodeId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getNodeId() {
     return nodeId;
   }
 
-  public void setNodeId(@javax.annotation.Nullable String nodeId) {
+  public void setNodeId(@jakarta.annotation.Nullable String nodeId) {
     this.nodeId = nodeId;
   }
 
 
-  public EnrichedCatalogNode nodeName(@javax.annotation.Nullable String nodeName) {
+  public EnrichedCatalogNode nodeName(@jakarta.annotation.Nullable String nodeName) {
     this.nodeName = nodeName;
     return this;
   }
@@ -130,17 +130,17 @@ public class EnrichedCatalogNode {
    * Get nodeName
    * @return nodeName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getNodeName() {
     return nodeName;
   }
 
-  public void setNodeName(@javax.annotation.Nullable String nodeName) {
+  public void setNodeName(@jakarta.annotation.Nullable String nodeName) {
     this.nodeName = nodeName;
   }
 
 
-  public EnrichedCatalogNode displayOrder(@javax.annotation.Nullable Integer displayOrder) {
+  public EnrichedCatalogNode displayOrder(@jakarta.annotation.Nullable Integer displayOrder) {
     this.displayOrder = displayOrder;
     return this;
   }
@@ -149,17 +149,17 @@ public class EnrichedCatalogNode {
    * Get displayOrder
    * @return displayOrder
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getDisplayOrder() {
     return displayOrder;
   }
 
-  public void setDisplayOrder(@javax.annotation.Nullable Integer displayOrder) {
+  public void setDisplayOrder(@jakarta.annotation.Nullable Integer displayOrder) {
     this.displayOrder = displayOrder;
   }
 
 
-  public EnrichedCatalogNode createTime(@javax.annotation.Nullable String createTime) {
+  public EnrichedCatalogNode createTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
     return this;
   }
@@ -168,17 +168,17 @@ public class EnrichedCatalogNode {
    * Get createTime
    * @return createTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(@javax.annotation.Nullable String createTime) {
+  public void setCreateTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
   }
 
 
-  public EnrichedCatalogNode updateTime(@javax.annotation.Nullable String updateTime) {
+  public EnrichedCatalogNode updateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
     return this;
   }
@@ -187,12 +187,12 @@ public class EnrichedCatalogNode {
    * Get updateTime
    * @return updateTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdateTime() {
     return updateTime;
   }
 
-  public void setUpdateTime(@javax.annotation.Nullable String updateTime) {
+  public void setUpdateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
   }
 

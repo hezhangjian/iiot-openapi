@@ -48,17 +48,17 @@ import org.openapitools.client.JSON;
 /**
  * UpdateDeviceDTO
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class UpdateDeviceDTO {
   public static final String SERIALIZED_NAME_DEVICE_NAME = "device_name";
   @SerializedName(SERIALIZED_NAME_DEVICE_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String deviceName;
 
   public UpdateDeviceDTO() {
   }
 
-  public UpdateDeviceDTO deviceName(@javax.annotation.Nullable String deviceName) {
+  public UpdateDeviceDTO deviceName(@jakarta.annotation.Nullable String deviceName) {
     this.deviceName = deviceName;
     return this;
   }
@@ -67,12 +67,12 @@ public class UpdateDeviceDTO {
    * Get deviceName
    * @return deviceName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDeviceName() {
     return deviceName;
   }
 
-  public void setDeviceName(@javax.annotation.Nullable String deviceName) {
+  public void setDeviceName(@jakarta.annotation.Nullable String deviceName) {
     this.deviceName = deviceName;
   }
 

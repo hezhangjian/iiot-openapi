@@ -48,22 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * PropOutputExpression
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class PropOutputExpression {
   public static final String SERIALIZED_NAME_EXPRESSION = "expression";
   @SerializedName(SERIALIZED_NAME_EXPRESSION)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String expression;
 
   public static final String SERIALIZED_NAME_PROPERTY_PATH = "property_path";
   @SerializedName(SERIALIZED_NAME_PROPERTY_PATH)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String propertyPath;
 
   public PropOutputExpression() {
   }
 
-  public PropOutputExpression expression(@javax.annotation.Nonnull String expression) {
+  public PropOutputExpression expression(@jakarta.annotation.Nonnull String expression) {
     this.expression = expression;
     return this;
   }
@@ -72,17 +72,17 @@ public class PropOutputExpression {
    * Get expression
    * @return expression
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getExpression() {
     return expression;
   }
 
-  public void setExpression(@javax.annotation.Nonnull String expression) {
+  public void setExpression(@jakarta.annotation.Nonnull String expression) {
     this.expression = expression;
   }
 
 
-  public PropOutputExpression propertyPath(@javax.annotation.Nonnull String propertyPath) {
+  public PropOutputExpression propertyPath(@jakarta.annotation.Nonnull String propertyPath) {
     this.propertyPath = propertyPath;
     return this;
   }
@@ -91,12 +91,12 @@ public class PropOutputExpression {
    * Get propertyPath
    * @return propertyPath
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getPropertyPath() {
     return propertyPath;
   }
 
-  public void setPropertyPath(@javax.annotation.Nonnull String propertyPath) {
+  public void setPropertyPath(@jakarta.annotation.Nonnull String propertyPath) {
     this.propertyPath = propertyPath;
   }
 

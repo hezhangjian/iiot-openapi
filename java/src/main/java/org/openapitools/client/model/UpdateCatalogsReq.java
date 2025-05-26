@@ -51,17 +51,17 @@ import org.openapitools.client.JSON;
 /**
  * UpdateCatalogsReq
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class UpdateCatalogsReq {
   public static final String SERIALIZED_NAME_CATALOGS = "catalogs";
   @SerializedName(SERIALIZED_NAME_CATALOGS)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<CatalogOrder> catalogs = new ArrayList<>();
 
   public UpdateCatalogsReq() {
   }
 
-  public UpdateCatalogsReq catalogs(@javax.annotation.Nonnull List<CatalogOrder> catalogs) {
+  public UpdateCatalogsReq catalogs(@jakarta.annotation.Nonnull List<CatalogOrder> catalogs) {
     this.catalogs = catalogs;
     return this;
   }
@@ -78,12 +78,12 @@ public class UpdateCatalogsReq {
    * Get catalogs
    * @return catalogs
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<CatalogOrder> getCatalogs() {
     return catalogs;
   }
 
-  public void setCatalogs(@javax.annotation.Nonnull List<CatalogOrder> catalogs) {
+  public void setCatalogs(@jakarta.annotation.Nonnull List<CatalogOrder> catalogs) {
     this.catalogs = catalogs;
   }
 

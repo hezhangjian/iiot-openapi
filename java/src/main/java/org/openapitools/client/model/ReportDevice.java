@@ -51,22 +51,22 @@ import org.openapitools.client.JSON;
 /**
  * ReportDevice
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class ReportDevice {
   public static final String SERIALIZED_NAME_DEVICE_ID = "device_id";
   @SerializedName(SERIALIZED_NAME_DEVICE_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String deviceId;
 
   public static final String SERIALIZED_NAME_SERVICES = "services";
   @SerializedName(SERIALIZED_NAME_SERVICES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<ServiceData> services = new ArrayList<>();
 
   public ReportDevice() {
   }
 
-  public ReportDevice deviceId(@javax.annotation.Nonnull String deviceId) {
+  public ReportDevice deviceId(@jakarta.annotation.Nonnull String deviceId) {
     this.deviceId = deviceId;
     return this;
   }
@@ -75,17 +75,17 @@ public class ReportDevice {
    * Get deviceId
    * @return deviceId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getDeviceId() {
     return deviceId;
   }
 
-  public void setDeviceId(@javax.annotation.Nonnull String deviceId) {
+  public void setDeviceId(@jakarta.annotation.Nonnull String deviceId) {
     this.deviceId = deviceId;
   }
 
 
-  public ReportDevice services(@javax.annotation.Nonnull List<ServiceData> services) {
+  public ReportDevice services(@jakarta.annotation.Nonnull List<ServiceData> services) {
     this.services = services;
     return this;
   }
@@ -102,12 +102,12 @@ public class ReportDevice {
    * Get services
    * @return services
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<ServiceData> getServices() {
     return services;
   }
 
-  public void setServices(@javax.annotation.Nonnull List<ServiceData> services) {
+  public void setServices(@jakarta.annotation.Nonnull List<ServiceData> services) {
     this.services = services;
   }
 

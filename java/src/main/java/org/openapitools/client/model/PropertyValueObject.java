@@ -48,22 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * PropertyValueObject
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class PropertyValueObject {
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String value;
 
   public static final String SERIALIZED_NAME_OBJECT = "object";
   @SerializedName(SERIALIZED_NAME_OBJECT)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private Object _object;
 
   public PropertyValueObject() {
   }
 
-  public PropertyValueObject value(@javax.annotation.Nonnull String value) {
+  public PropertyValueObject value(@jakarta.annotation.Nonnull String value) {
     this.value = value;
     return this;
   }
@@ -72,17 +72,17 @@ public class PropertyValueObject {
    * Get value
    * @return value
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getValue() {
     return value;
   }
 
-  public void setValue(@javax.annotation.Nonnull String value) {
+  public void setValue(@jakarta.annotation.Nonnull String value) {
     this.value = value;
   }
 
 
-  public PropertyValueObject _object(@javax.annotation.Nonnull Object _object) {
+  public PropertyValueObject _object(@jakarta.annotation.Nonnull Object _object) {
     this._object = _object;
     return this;
   }
@@ -91,12 +91,12 @@ public class PropertyValueObject {
    * Get _object
    * @return _object
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public Object getObject() {
     return _object;
   }
 
-  public void setObject(@javax.annotation.Nonnull Object _object) {
+  public void setObject(@jakarta.annotation.Nonnull Object _object) {
     this._object = _object;
   }
 

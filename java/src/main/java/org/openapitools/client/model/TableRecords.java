@@ -50,27 +50,27 @@ import org.openapitools.client.JSON;
 /**
  * TableRecords
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class TableRecords {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer count;
 
   public static final String SERIALIZED_NAME_COLUMNS = "columns";
   @SerializedName(SERIALIZED_NAME_COLUMNS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> columns = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<List<Object>> values = new ArrayList<>();
 
   public TableRecords() {
   }
 
-  public TableRecords count(@javax.annotation.Nullable Integer count) {
+  public TableRecords count(@jakarta.annotation.Nullable Integer count) {
     this.count = count;
     return this;
   }
@@ -79,17 +79,17 @@ public class TableRecords {
    * Get count
    * @return count
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getCount() {
     return count;
   }
 
-  public void setCount(@javax.annotation.Nullable Integer count) {
+  public void setCount(@jakarta.annotation.Nullable Integer count) {
     this.count = count;
   }
 
 
-  public TableRecords columns(@javax.annotation.Nullable List<String> columns) {
+  public TableRecords columns(@jakarta.annotation.Nullable List<String> columns) {
     this.columns = columns;
     return this;
   }
@@ -106,17 +106,17 @@ public class TableRecords {
    * Get columns
    * @return columns
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getColumns() {
     return columns;
   }
 
-  public void setColumns(@javax.annotation.Nullable List<String> columns) {
+  public void setColumns(@jakarta.annotation.Nullable List<String> columns) {
     this.columns = columns;
   }
 
 
-  public TableRecords values(@javax.annotation.Nullable List<List<Object>> values) {
+  public TableRecords values(@jakarta.annotation.Nullable List<List<Object>> values) {
     this.values = values;
     return this;
   }
@@ -133,12 +133,12 @@ public class TableRecords {
    * Get values
    * @return values
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<List<Object>> getValues() {
     return values;
   }
 
-  public void setValues(@javax.annotation.Nullable List<List<Object>> values) {
+  public void setValues(@jakarta.annotation.Nullable List<List<Object>> values) {
     this.values = values;
   }
 

@@ -48,47 +48,47 @@ import org.openapitools.client.JSON;
 /**
  * Catalog
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class Catalog {
   public static final String SERIALIZED_NAME_CATALOG_ID = "catalog_id";
   @SerializedName(SERIALIZED_NAME_CATALOG_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String catalogId;
 
   public static final String SERIALIZED_NAME_CATALOG_NAME = "catalog_name";
   @SerializedName(SERIALIZED_NAME_CATALOG_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String catalogName;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String type;
 
   public static final String SERIALIZED_NAME_DISPLAY_ORDER = "display_order";
   @SerializedName(SERIALIZED_NAME_DISPLAY_ORDER)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer displayOrder;
 
   public static final String SERIALIZED_NAME_PARENT_ID = "parent_id";
   @SerializedName(SERIALIZED_NAME_PARENT_ID)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String parentId;
 
   public static final String SERIALIZED_NAME_CREATE_TIME = "create_time";
   @SerializedName(SERIALIZED_NAME_CREATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createTime;
 
   public static final String SERIALIZED_NAME_UPDATE_TIME = "update_time";
   @SerializedName(SERIALIZED_NAME_UPDATE_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updateTime;
 
   public Catalog() {
   }
 
-  public Catalog catalogId(@javax.annotation.Nullable String catalogId) {
+  public Catalog catalogId(@jakarta.annotation.Nullable String catalogId) {
     this.catalogId = catalogId;
     return this;
   }
@@ -97,17 +97,17 @@ public class Catalog {
    * Get catalogId
    * @return catalogId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCatalogId() {
     return catalogId;
   }
 
-  public void setCatalogId(@javax.annotation.Nullable String catalogId) {
+  public void setCatalogId(@jakarta.annotation.Nullable String catalogId) {
     this.catalogId = catalogId;
   }
 
 
-  public Catalog catalogName(@javax.annotation.Nullable String catalogName) {
+  public Catalog catalogName(@jakarta.annotation.Nullable String catalogName) {
     this.catalogName = catalogName;
     return this;
   }
@@ -116,17 +116,17 @@ public class Catalog {
    * Get catalogName
    * @return catalogName
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCatalogName() {
     return catalogName;
   }
 
-  public void setCatalogName(@javax.annotation.Nullable String catalogName) {
+  public void setCatalogName(@jakarta.annotation.Nullable String catalogName) {
     this.catalogName = catalogName;
   }
 
 
-  public Catalog type(@javax.annotation.Nullable String type) {
+  public Catalog type(@jakarta.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
@@ -135,17 +135,17 @@ public class Catalog {
    * Get type
    * @return type
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nullable String type) {
+  public void setType(@jakarta.annotation.Nullable String type) {
     this.type = type;
   }
 
 
-  public Catalog displayOrder(@javax.annotation.Nullable Integer displayOrder) {
+  public Catalog displayOrder(@jakarta.annotation.Nullable Integer displayOrder) {
     this.displayOrder = displayOrder;
     return this;
   }
@@ -154,17 +154,17 @@ public class Catalog {
    * Get displayOrder
    * @return displayOrder
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getDisplayOrder() {
     return displayOrder;
   }
 
-  public void setDisplayOrder(@javax.annotation.Nullable Integer displayOrder) {
+  public void setDisplayOrder(@jakarta.annotation.Nullable Integer displayOrder) {
     this.displayOrder = displayOrder;
   }
 
 
-  public Catalog parentId(@javax.annotation.Nullable String parentId) {
+  public Catalog parentId(@jakarta.annotation.Nullable String parentId) {
     this.parentId = parentId;
     return this;
   }
@@ -173,17 +173,17 @@ public class Catalog {
    * Get parentId
    * @return parentId
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getParentId() {
     return parentId;
   }
 
-  public void setParentId(@javax.annotation.Nullable String parentId) {
+  public void setParentId(@jakarta.annotation.Nullable String parentId) {
     this.parentId = parentId;
   }
 
 
-  public Catalog createTime(@javax.annotation.Nullable String createTime) {
+  public Catalog createTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
     return this;
   }
@@ -192,17 +192,17 @@ public class Catalog {
    * Get createTime
    * @return createTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreateTime() {
     return createTime;
   }
 
-  public void setCreateTime(@javax.annotation.Nullable String createTime) {
+  public void setCreateTime(@jakarta.annotation.Nullable String createTime) {
     this.createTime = createTime;
   }
 
 
-  public Catalog updateTime(@javax.annotation.Nullable String updateTime) {
+  public Catalog updateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
     return this;
   }
@@ -211,12 +211,12 @@ public class Catalog {
    * Get updateTime
    * @return updateTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdateTime() {
     return updateTime;
   }
 
-  public void setUpdateTime(@javax.annotation.Nullable String updateTime) {
+  public void setUpdateTime(@jakarta.annotation.Nullable String updateTime) {
     this.updateTime = updateTime;
   }
 

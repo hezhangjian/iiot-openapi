@@ -52,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * DataSchema
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class DataSchema {
   /**
    * Gets or Sets type
@@ -116,33 +116,33 @@ public class DataSchema {
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private TypeEnum type;
 
   public static final String SERIALIZED_NAME_INTEGER_SCHEMA = "integer_schema";
   @SerializedName(SERIALIZED_NAME_INTEGER_SCHEMA)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private IntegerSchema integerSchema;
 
   public static final String SERIALIZED_NAME_DOUBLE_SCHEMA = "double_schema";
   @SerializedName(SERIALIZED_NAME_DOUBLE_SCHEMA)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private DoubleSchema doubleSchema;
 
   public static final String SERIALIZED_NAME_STRING_SCHEMA = "string_schema";
   @SerializedName(SERIALIZED_NAME_STRING_SCHEMA)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private StringSchema stringSchema;
 
   public static final String SERIALIZED_NAME_OBJECT_SCHEMA = "object_schema";
   @SerializedName(SERIALIZED_NAME_OBJECT_SCHEMA)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ObjectSchema objectSchema;
 
   public DataSchema() {
   }
 
-  public DataSchema type(@javax.annotation.Nonnull TypeEnum type) {
+  public DataSchema type(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
     return this;
   }
@@ -151,17 +151,17 @@ public class DataSchema {
    * Get type
    * @return type
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public TypeEnum getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nonnull TypeEnum type) {
+  public void setType(@jakarta.annotation.Nonnull TypeEnum type) {
     this.type = type;
   }
 
 
-  public DataSchema integerSchema(@javax.annotation.Nullable IntegerSchema integerSchema) {
+  public DataSchema integerSchema(@jakarta.annotation.Nullable IntegerSchema integerSchema) {
     this.integerSchema = integerSchema;
     return this;
   }
@@ -170,17 +170,17 @@ public class DataSchema {
    * Get integerSchema
    * @return integerSchema
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public IntegerSchema getIntegerSchema() {
     return integerSchema;
   }
 
-  public void setIntegerSchema(@javax.annotation.Nullable IntegerSchema integerSchema) {
+  public void setIntegerSchema(@jakarta.annotation.Nullable IntegerSchema integerSchema) {
     this.integerSchema = integerSchema;
   }
 
 
-  public DataSchema doubleSchema(@javax.annotation.Nullable DoubleSchema doubleSchema) {
+  public DataSchema doubleSchema(@jakarta.annotation.Nullable DoubleSchema doubleSchema) {
     this.doubleSchema = doubleSchema;
     return this;
   }
@@ -189,17 +189,17 @@ public class DataSchema {
    * Get doubleSchema
    * @return doubleSchema
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public DoubleSchema getDoubleSchema() {
     return doubleSchema;
   }
 
-  public void setDoubleSchema(@javax.annotation.Nullable DoubleSchema doubleSchema) {
+  public void setDoubleSchema(@jakarta.annotation.Nullable DoubleSchema doubleSchema) {
     this.doubleSchema = doubleSchema;
   }
 
 
-  public DataSchema stringSchema(@javax.annotation.Nullable StringSchema stringSchema) {
+  public DataSchema stringSchema(@jakarta.annotation.Nullable StringSchema stringSchema) {
     this.stringSchema = stringSchema;
     return this;
   }
@@ -208,17 +208,17 @@ public class DataSchema {
    * Get stringSchema
    * @return stringSchema
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public StringSchema getStringSchema() {
     return stringSchema;
   }
 
-  public void setStringSchema(@javax.annotation.Nullable StringSchema stringSchema) {
+  public void setStringSchema(@jakarta.annotation.Nullable StringSchema stringSchema) {
     this.stringSchema = stringSchema;
   }
 
 
-  public DataSchema objectSchema(@javax.annotation.Nullable ObjectSchema objectSchema) {
+  public DataSchema objectSchema(@jakarta.annotation.Nullable ObjectSchema objectSchema) {
     this.objectSchema = objectSchema;
     return this;
   }
@@ -227,12 +227,12 @@ public class DataSchema {
    * Get objectSchema
    * @return objectSchema
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ObjectSchema getObjectSchema() {
     return objectSchema;
   }
 
-  public void setObjectSchema(@javax.annotation.Nullable ObjectSchema objectSchema) {
+  public void setObjectSchema(@jakarta.annotation.Nullable ObjectSchema objectSchema) {
     this.objectSchema = objectSchema;
   }
 

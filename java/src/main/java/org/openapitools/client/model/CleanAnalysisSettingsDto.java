@@ -49,17 +49,17 @@ import org.openapitools.client.JSON;
 /**
  * CleanAnalysisSettingsDto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class CleanAnalysisSettingsDto {
   public static final String SERIALIZED_NAME_CLEAN_SETTINGS = "clean_settings";
   @SerializedName(SERIALIZED_NAME_CLEAN_SETTINGS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private CleanSettings cleanSettings;
 
   public CleanAnalysisSettingsDto() {
   }
 
-  public CleanAnalysisSettingsDto cleanSettings(@javax.annotation.Nullable CleanSettings cleanSettings) {
+  public CleanAnalysisSettingsDto cleanSettings(@jakarta.annotation.Nullable CleanSettings cleanSettings) {
     this.cleanSettings = cleanSettings;
     return this;
   }
@@ -68,12 +68,12 @@ public class CleanAnalysisSettingsDto {
    * Get cleanSettings
    * @return cleanSettings
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public CleanSettings getCleanSettings() {
     return cleanSettings;
   }
 
-  public void setCleanSettings(@javax.annotation.Nullable CleanSettings cleanSettings) {
+  public void setCleanSettings(@jakarta.annotation.Nullable CleanSettings cleanSettings) {
     this.cleanSettings = cleanSettings;
   }
 

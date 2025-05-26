@@ -2,11 +2,13 @@
 set -e
 
 SPEC_FILE="iiot-openapi.yaml"
+JAVA_DIR="java"
 PYTHON_DIR="python"
 RUST_DIR="rust"
 TS_DIR="typescript"
 
 echo "🧹 Cleaning old generated SDKs..."
+rm -rf "$JAVA_DIR"
 rm -rf "$PYTHON_DIR"
 rm -rf "$RUST_DIR"
 rm -rf "$TS_DIR"
@@ -15,9 +17,9 @@ echo "Java SDK.."
 openapi-generator generate \
   -i "$SPEC_FILE" \
   -g java \
-  -o java \
+  -o "$JAVA_DIR" \
   --global-property models,supportingFiles \
-  --additional-properties=packageName=iiot-openapi,packageVersion=0.0.1
+  --additional-properties=packageName=iiot-openapi,packageVersion=0.0.1,serializationLibrary=jackson,useSpringBoot3=true,useJakartaEe=true
 
 echo "🚀 Generating Python SDK..."
 openapi-generator generate \

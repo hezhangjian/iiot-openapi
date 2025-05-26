@@ -48,22 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * CleanSettings
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class CleanSettings {
   public static final String SERIALIZED_NAME_CONDITION = "condition";
   @SerializedName(SERIALIZED_NAME_CONDITION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String condition;
 
   public static final String SERIALIZED_NAME_EXPRESSIONS = "expressions";
   @SerializedName(SERIALIZED_NAME_EXPRESSIONS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Object expressions = null;
 
   public CleanSettings() {
   }
 
-  public CleanSettings condition(@javax.annotation.Nullable String condition) {
+  public CleanSettings condition(@jakarta.annotation.Nullable String condition) {
     this.condition = condition;
     return this;
   }
@@ -72,17 +72,17 @@ public class CleanSettings {
    * Get condition
    * @return condition
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCondition() {
     return condition;
   }
 
-  public void setCondition(@javax.annotation.Nullable String condition) {
+  public void setCondition(@jakarta.annotation.Nullable String condition) {
     this.condition = condition;
   }
 
 
-  public CleanSettings expressions(@javax.annotation.Nullable Object expressions) {
+  public CleanSettings expressions(@jakarta.annotation.Nullable Object expressions) {
     this.expressions = expressions;
     return this;
   }
@@ -91,12 +91,12 @@ public class CleanSettings {
    * Get expressions
    * @return expressions
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Object getExpressions() {
     return expressions;
   }
 
-  public void setExpressions(@javax.annotation.Nullable Object expressions) {
+  public void setExpressions(@jakarta.annotation.Nullable Object expressions) {
     this.expressions = expressions;
   }
 

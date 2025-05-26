@@ -51,47 +51,47 @@ import org.openapitools.client.JSON;
 /**
  * Thing
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class Thing {
   public static final String SERIALIZED_NAME_THING_ID = "thing_id";
   @SerializedName(SERIALIZED_NAME_THING_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String thingId;
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String name;
 
   public static final String SERIALIZED_NAME_MODEL_ID = "model_id";
   @SerializedName(SERIALIZED_NAME_MODEL_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String modelId;
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Map<String, PropertyValue> properties = new HashMap<>();
 
   public static final String SERIALIZED_NAME_CREATED_TIME = "created_time";
   @SerializedName(SERIALIZED_NAME_CREATED_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String createdTime;
 
   public static final String SERIALIZED_NAME_UPDATED_TIME = "updated_time";
   @SerializedName(SERIALIZED_NAME_UPDATED_TIME)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String updatedTime;
 
   public Thing() {
   }
 
-  public Thing thingId(@javax.annotation.Nonnull String thingId) {
+  public Thing thingId(@jakarta.annotation.Nonnull String thingId) {
     this.thingId = thingId;
     return this;
   }
@@ -100,17 +100,17 @@ public class Thing {
    * Get thingId
    * @return thingId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getThingId() {
     return thingId;
   }
 
-  public void setThingId(@javax.annotation.Nonnull String thingId) {
+  public void setThingId(@jakarta.annotation.Nonnull String thingId) {
     this.thingId = thingId;
   }
 
 
-  public Thing name(@javax.annotation.Nullable String name) {
+  public Thing name(@jakarta.annotation.Nullable String name) {
     this.name = name;
     return this;
   }
@@ -119,17 +119,17 @@ public class Thing {
    * Get name
    * @return name
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getName() {
     return name;
   }
 
-  public void setName(@javax.annotation.Nullable String name) {
+  public void setName(@jakarta.annotation.Nullable String name) {
     this.name = name;
   }
 
 
-  public Thing modelId(@javax.annotation.Nonnull String modelId) {
+  public Thing modelId(@jakarta.annotation.Nonnull String modelId) {
     this.modelId = modelId;
     return this;
   }
@@ -138,17 +138,17 @@ public class Thing {
    * Get modelId
    * @return modelId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getModelId() {
     return modelId;
   }
 
-  public void setModelId(@javax.annotation.Nonnull String modelId) {
+  public void setModelId(@jakarta.annotation.Nonnull String modelId) {
     this.modelId = modelId;
   }
 
 
-  public Thing description(@javax.annotation.Nullable String description) {
+  public Thing description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -157,17 +157,17 @@ public class Thing {
    * Get description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public Thing properties(@javax.annotation.Nullable Map<String, PropertyValue> properties) {
+  public Thing properties(@jakarta.annotation.Nullable Map<String, PropertyValue> properties) {
     this.properties = properties;
     return this;
   }
@@ -184,17 +184,17 @@ public class Thing {
    * Get properties
    * @return properties
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Map<String, PropertyValue> getProperties() {
     return properties;
   }
 
-  public void setProperties(@javax.annotation.Nullable Map<String, PropertyValue> properties) {
+  public void setProperties(@jakarta.annotation.Nullable Map<String, PropertyValue> properties) {
     this.properties = properties;
   }
 
 
-  public Thing createdTime(@javax.annotation.Nullable String createdTime) {
+  public Thing createdTime(@jakarta.annotation.Nullable String createdTime) {
     this.createdTime = createdTime;
     return this;
   }
@@ -203,17 +203,17 @@ public class Thing {
    * Get createdTime
    * @return createdTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getCreatedTime() {
     return createdTime;
   }
 
-  public void setCreatedTime(@javax.annotation.Nullable String createdTime) {
+  public void setCreatedTime(@jakarta.annotation.Nullable String createdTime) {
     this.createdTime = createdTime;
   }
 
 
-  public Thing updatedTime(@javax.annotation.Nullable String updatedTime) {
+  public Thing updatedTime(@jakarta.annotation.Nullable String updatedTime) {
     this.updatedTime = updatedTime;
     return this;
   }
@@ -222,12 +222,12 @@ public class Thing {
    * Get updatedTime
    * @return updatedTime
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUpdatedTime() {
     return updatedTime;
   }
 
-  public void setUpdatedTime(@javax.annotation.Nullable String updatedTime) {
+  public void setUpdatedTime(@jakarta.annotation.Nullable String updatedTime) {
     this.updatedTime = updatedTime;
   }
 

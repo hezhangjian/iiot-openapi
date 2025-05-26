@@ -27,10 +27,10 @@ export interface ServiceData {
     serviceId: string;
     /**
      * 
-     * @type {Date}
+     * @type {string}
      * @memberof ServiceData
      */
-    eventTime: Date;
+    eventTime: string;
     /**
      * 
      * @type {{ [key: string]: any; }}
@@ -60,7 +60,7 @@ export function ServiceDataFromJSONTyped(json: any, ignoreDiscriminator: boolean
     return {
         
         'serviceId': json['service_id'],
-        'eventTime': (new Date(json['event_time'])),
+        'eventTime': json['event_time'],
         'properties': json['properties'],
     };
 }
@@ -77,7 +77,7 @@ export function ServiceDataToJSONTyped(value?: ServiceData | null, ignoreDiscrim
     return {
         
         'service_id': value['serviceId'],
-        'event_time': ((value['eventTime']).toISOString()),
+        'event_time': value['eventTime'],
         'properties': value['properties'],
     };
 }

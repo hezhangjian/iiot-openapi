@@ -48,22 +48,22 @@ import org.openapitools.client.JSON;
 /**
  * PropertiesSetResp
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class PropertiesSetResp {
   public static final String SERIALIZED_NAME_RESULT_CODE = "result_code";
   @SerializedName(SERIALIZED_NAME_RESULT_CODE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Integer resultCode;
 
   public static final String SERIALIZED_NAME_RESULT_DESC = "result_desc";
   @SerializedName(SERIALIZED_NAME_RESULT_DESC)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String resultDesc;
 
   public PropertiesSetResp() {
   }
 
-  public PropertiesSetResp resultCode(@javax.annotation.Nullable Integer resultCode) {
+  public PropertiesSetResp resultCode(@jakarta.annotation.Nullable Integer resultCode) {
     this.resultCode = resultCode;
     return this;
   }
@@ -72,17 +72,17 @@ public class PropertiesSetResp {
    * Get resultCode
    * @return resultCode
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Integer getResultCode() {
     return resultCode;
   }
 
-  public void setResultCode(@javax.annotation.Nullable Integer resultCode) {
+  public void setResultCode(@jakarta.annotation.Nullable Integer resultCode) {
     this.resultCode = resultCode;
   }
 
 
-  public PropertiesSetResp resultDesc(@javax.annotation.Nullable String resultDesc) {
+  public PropertiesSetResp resultDesc(@jakarta.annotation.Nullable String resultDesc) {
     this.resultDesc = resultDesc;
     return this;
   }
@@ -91,12 +91,12 @@ public class PropertiesSetResp {
    * Get resultDesc
    * @return resultDesc
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getResultDesc() {
     return resultDesc;
   }
 
-  public void setResultDesc(@javax.annotation.Nullable String resultDesc) {
+  public void setResultDesc(@jakarta.annotation.Nullable String resultDesc) {
     this.resultDesc = resultDesc;
   }
 

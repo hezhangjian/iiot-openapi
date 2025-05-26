@@ -51,17 +51,17 @@ import org.openapitools.client.JSON;
 /**
  * AnalysisTaskListRsp
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class AnalysisTaskListRsp {
   public static final String SERIALIZED_NAME_TASKS = "tasks";
   @SerializedName(SERIALIZED_NAME_TASKS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<BriefAnalysisTask> tasks = new ArrayList<>();
 
   public AnalysisTaskListRsp() {
   }
 
-  public AnalysisTaskListRsp tasks(@javax.annotation.Nullable List<BriefAnalysisTask> tasks) {
+  public AnalysisTaskListRsp tasks(@jakarta.annotation.Nullable List<BriefAnalysisTask> tasks) {
     this.tasks = tasks;
     return this;
   }
@@ -78,12 +78,12 @@ public class AnalysisTaskListRsp {
    * Get tasks
    * @return tasks
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<BriefAnalysisTask> getTasks() {
     return tasks;
   }
 
-  public void setTasks(@javax.annotation.Nullable List<BriefAnalysisTask> tasks) {
+  public void setTasks(@jakarta.annotation.Nullable List<BriefAnalysisTask> tasks) {
     this.tasks = tasks;
   }
 

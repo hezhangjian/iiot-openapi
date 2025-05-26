@@ -52,41 +52,41 @@ import org.openapitools.client.JSON;
 /**
  * PropertyDto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class PropertyDto {
   public static final String SERIALIZED_NAME_PROPERTY_ID = "property_id";
   @SerializedName(SERIALIZED_NAME_PROPERTY_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String propertyId;
 
   public static final String SERIALIZED_NAME_PROPERTY_NAME = "property_name";
   @SerializedName(SERIALIZED_NAME_PROPERTY_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String propertyName;
 
   public static final String SERIALIZED_NAME_DATA_SCHEMA = "data_schema";
   @SerializedName(SERIALIZED_NAME_DATA_SCHEMA)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private DataSchema dataSchema;
 
   public static final String SERIALIZED_NAME_WRITABLE = "writable";
   @SerializedName(SERIALIZED_NAME_WRITABLE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Boolean writable;
 
   public static final String SERIALIZED_NAME_CATEGORIES = "categories";
   @SerializedName(SERIALIZED_NAME_CATEGORIES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private List<String> categories = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String description;
 
   public static final String SERIALIZED_NAME_UNIT = "unit";
   @SerializedName(SERIALIZED_NAME_UNIT)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private String unit;
 
   /**
@@ -145,18 +145,18 @@ public class PropertyDto {
 
   public static final String SERIALIZED_NAME_REF_TYPE = "ref_type";
   @SerializedName(SERIALIZED_NAME_REF_TYPE)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private RefTypeEnum refType;
 
   public static final String SERIALIZED_NAME_TABLE_REF = "table_ref";
   @SerializedName(SERIALIZED_NAME_TABLE_REF)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private TableRef tableRef;
 
   public PropertyDto() {
   }
 
-  public PropertyDto propertyId(@javax.annotation.Nonnull String propertyId) {
+  public PropertyDto propertyId(@jakarta.annotation.Nonnull String propertyId) {
     this.propertyId = propertyId;
     return this;
   }
@@ -165,17 +165,17 @@ public class PropertyDto {
    * Get propertyId
    * @return propertyId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getPropertyId() {
     return propertyId;
   }
 
-  public void setPropertyId(@javax.annotation.Nonnull String propertyId) {
+  public void setPropertyId(@jakarta.annotation.Nonnull String propertyId) {
     this.propertyId = propertyId;
   }
 
 
-  public PropertyDto propertyName(@javax.annotation.Nonnull String propertyName) {
+  public PropertyDto propertyName(@jakarta.annotation.Nonnull String propertyName) {
     this.propertyName = propertyName;
     return this;
   }
@@ -184,17 +184,17 @@ public class PropertyDto {
    * Get propertyName
    * @return propertyName
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getPropertyName() {
     return propertyName;
   }
 
-  public void setPropertyName(@javax.annotation.Nonnull String propertyName) {
+  public void setPropertyName(@jakarta.annotation.Nonnull String propertyName) {
     this.propertyName = propertyName;
   }
 
 
-  public PropertyDto dataSchema(@javax.annotation.Nonnull DataSchema dataSchema) {
+  public PropertyDto dataSchema(@jakarta.annotation.Nonnull DataSchema dataSchema) {
     this.dataSchema = dataSchema;
     return this;
   }
@@ -203,17 +203,17 @@ public class PropertyDto {
    * Get dataSchema
    * @return dataSchema
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public DataSchema getDataSchema() {
     return dataSchema;
   }
 
-  public void setDataSchema(@javax.annotation.Nonnull DataSchema dataSchema) {
+  public void setDataSchema(@jakarta.annotation.Nonnull DataSchema dataSchema) {
     this.dataSchema = dataSchema;
   }
 
 
-  public PropertyDto writable(@javax.annotation.Nullable Boolean writable) {
+  public PropertyDto writable(@jakarta.annotation.Nullable Boolean writable) {
     this.writable = writable;
     return this;
   }
@@ -222,17 +222,17 @@ public class PropertyDto {
    * Get writable
    * @return writable
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Boolean getWritable() {
     return writable;
   }
 
-  public void setWritable(@javax.annotation.Nullable Boolean writable) {
+  public void setWritable(@jakarta.annotation.Nullable Boolean writable) {
     this.writable = writable;
   }
 
 
-  public PropertyDto categories(@javax.annotation.Nullable List<String> categories) {
+  public PropertyDto categories(@jakarta.annotation.Nullable List<String> categories) {
     this.categories = categories;
     return this;
   }
@@ -249,17 +249,17 @@ public class PropertyDto {
    * Get categories
    * @return categories
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public List<String> getCategories() {
     return categories;
   }
 
-  public void setCategories(@javax.annotation.Nullable List<String> categories) {
+  public void setCategories(@jakarta.annotation.Nullable List<String> categories) {
     this.categories = categories;
   }
 
 
-  public PropertyDto description(@javax.annotation.Nullable String description) {
+  public PropertyDto description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
   }
@@ -268,17 +268,17 @@ public class PropertyDto {
    * Get description
    * @return description
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getDescription() {
     return description;
   }
 
-  public void setDescription(@javax.annotation.Nullable String description) {
+  public void setDescription(@jakarta.annotation.Nullable String description) {
     this.description = description;
   }
 
 
-  public PropertyDto unit(@javax.annotation.Nullable String unit) {
+  public PropertyDto unit(@jakarta.annotation.Nullable String unit) {
     this.unit = unit;
     return this;
   }
@@ -287,17 +287,17 @@ public class PropertyDto {
    * Get unit
    * @return unit
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public String getUnit() {
     return unit;
   }
 
-  public void setUnit(@javax.annotation.Nullable String unit) {
+  public void setUnit(@jakarta.annotation.Nullable String unit) {
     this.unit = unit;
   }
 
 
-  public PropertyDto refType(@javax.annotation.Nullable RefTypeEnum refType) {
+  public PropertyDto refType(@jakarta.annotation.Nullable RefTypeEnum refType) {
     this.refType = refType;
     return this;
   }
@@ -306,17 +306,17 @@ public class PropertyDto {
    * Get refType
    * @return refType
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public RefTypeEnum getRefType() {
     return refType;
   }
 
-  public void setRefType(@javax.annotation.Nullable RefTypeEnum refType) {
+  public void setRefType(@jakarta.annotation.Nullable RefTypeEnum refType) {
     this.refType = refType;
   }
 
 
-  public PropertyDto tableRef(@javax.annotation.Nullable TableRef tableRef) {
+  public PropertyDto tableRef(@jakarta.annotation.Nullable TableRef tableRef) {
     this.tableRef = tableRef;
     return this;
   }
@@ -325,12 +325,12 @@ public class PropertyDto {
    * Get tableRef
    * @return tableRef
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public TableRef getTableRef() {
     return tableRef;
   }
 
-  public void setTableRef(@javax.annotation.Nullable TableRef tableRef) {
+  public void setTableRef(@jakarta.annotation.Nullable TableRef tableRef) {
     this.tableRef = tableRef;
   }
 

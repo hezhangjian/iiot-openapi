@@ -51,37 +51,37 @@ import org.openapitools.client.JSON;
 /**
  * CreateDictionaryReq
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class CreateDictionaryReq {
   public static final String SERIALIZED_NAME_DIC_ID = "dic_id";
   @SerializedName(SERIALIZED_NAME_DIC_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String dicId;
 
   public static final String SERIALIZED_NAME_DIC_NAME = "dic_name";
   @SerializedName(SERIALIZED_NAME_DIC_NAME)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String dicName;
 
   public static final String SERIALIZED_NAME_DATA_TYPE = "data_type";
   @SerializedName(SERIALIZED_NAME_DATA_TYPE)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String dataType;
 
   public static final String SERIALIZED_NAME_CATALOG_ID = "catalog_id";
   @SerializedName(SERIALIZED_NAME_CATALOG_ID)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private String catalogId;
 
   public static final String SERIALIZED_NAME_VALUES = "values";
   @SerializedName(SERIALIZED_NAME_VALUES)
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   private List<DicItem> values = new ArrayList<>();
 
   public CreateDictionaryReq() {
   }
 
-  public CreateDictionaryReq dicId(@javax.annotation.Nonnull String dicId) {
+  public CreateDictionaryReq dicId(@jakarta.annotation.Nonnull String dicId) {
     this.dicId = dicId;
     return this;
   }
@@ -90,17 +90,17 @@ public class CreateDictionaryReq {
    * Get dicId
    * @return dicId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getDicId() {
     return dicId;
   }
 
-  public void setDicId(@javax.annotation.Nonnull String dicId) {
+  public void setDicId(@jakarta.annotation.Nonnull String dicId) {
     this.dicId = dicId;
   }
 
 
-  public CreateDictionaryReq dicName(@javax.annotation.Nonnull String dicName) {
+  public CreateDictionaryReq dicName(@jakarta.annotation.Nonnull String dicName) {
     this.dicName = dicName;
     return this;
   }
@@ -109,17 +109,17 @@ public class CreateDictionaryReq {
    * Get dicName
    * @return dicName
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getDicName() {
     return dicName;
   }
 
-  public void setDicName(@javax.annotation.Nonnull String dicName) {
+  public void setDicName(@jakarta.annotation.Nonnull String dicName) {
     this.dicName = dicName;
   }
 
 
-  public CreateDictionaryReq dataType(@javax.annotation.Nonnull String dataType) {
+  public CreateDictionaryReq dataType(@jakarta.annotation.Nonnull String dataType) {
     this.dataType = dataType;
     return this;
   }
@@ -128,17 +128,17 @@ public class CreateDictionaryReq {
    * Get dataType
    * @return dataType
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getDataType() {
     return dataType;
   }
 
-  public void setDataType(@javax.annotation.Nonnull String dataType) {
+  public void setDataType(@jakarta.annotation.Nonnull String dataType) {
     this.dataType = dataType;
   }
 
 
-  public CreateDictionaryReq catalogId(@javax.annotation.Nonnull String catalogId) {
+  public CreateDictionaryReq catalogId(@jakarta.annotation.Nonnull String catalogId) {
     this.catalogId = catalogId;
     return this;
   }
@@ -147,17 +147,17 @@ public class CreateDictionaryReq {
    * Get catalogId
    * @return catalogId
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public String getCatalogId() {
     return catalogId;
   }
 
-  public void setCatalogId(@javax.annotation.Nonnull String catalogId) {
+  public void setCatalogId(@jakarta.annotation.Nonnull String catalogId) {
     this.catalogId = catalogId;
   }
 
 
-  public CreateDictionaryReq values(@javax.annotation.Nonnull List<DicItem> values) {
+  public CreateDictionaryReq values(@jakarta.annotation.Nonnull List<DicItem> values) {
     this.values = values;
     return this;
   }
@@ -174,12 +174,12 @@ public class CreateDictionaryReq {
    * Get values
    * @return values
    */
-  @javax.annotation.Nonnull
+  @jakarta.annotation.Nonnull
   public List<DicItem> getValues() {
     return values;
   }
 
-  public void setValues(@javax.annotation.Nonnull List<DicItem> values) {
+  public void setValues(@jakarta.annotation.Nonnull List<DicItem> values) {
     this.values = values;
   }
 

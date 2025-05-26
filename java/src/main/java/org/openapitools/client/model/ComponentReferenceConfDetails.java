@@ -51,22 +51,22 @@ import org.openapitools.client.JSON;
 /**
  * ComponentReferenceConfDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-22T08:57:00.546871+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class ComponentReferenceConfDetails {
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private Map<String, ReferenceConfDetails> properties = new HashMap<>();
 
   public static final String SERIALIZED_NAME_COMPONENTS = "components";
   @SerializedName(SERIALIZED_NAME_COMPONENTS)
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   private ComponentReferenceConfDetails components;
 
   public ComponentReferenceConfDetails() {
   }
 
-  public ComponentReferenceConfDetails properties(@javax.annotation.Nullable Map<String, ReferenceConfDetails> properties) {
+  public ComponentReferenceConfDetails properties(@jakarta.annotation.Nullable Map<String, ReferenceConfDetails> properties) {
     this.properties = properties;
     return this;
   }
@@ -83,17 +83,17 @@ public class ComponentReferenceConfDetails {
    * Get properties
    * @return properties
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public Map<String, ReferenceConfDetails> getProperties() {
     return properties;
   }
 
-  public void setProperties(@javax.annotation.Nullable Map<String, ReferenceConfDetails> properties) {
+  public void setProperties(@jakarta.annotation.Nullable Map<String, ReferenceConfDetails> properties) {
     this.properties = properties;
   }
 
 
-  public ComponentReferenceConfDetails components(@javax.annotation.Nullable ComponentReferenceConfDetails components) {
+  public ComponentReferenceConfDetails components(@jakarta.annotation.Nullable ComponentReferenceConfDetails components) {
     this.components = components;
     return this;
   }
@@ -102,12 +102,12 @@ public class ComponentReferenceConfDetails {
    * Get components
    * @return components
    */
-  @javax.annotation.Nullable
+  @jakarta.annotation.Nullable
   public ComponentReferenceConfDetails getComponents() {
     return components;
   }
 
-  public void setComponents(@javax.annotation.Nullable ComponentReferenceConfDetails components) {
+  public void setComponents(@jakarta.annotation.Nullable ComponentReferenceConfDetails components) {
     this.components = components;
   }
 
