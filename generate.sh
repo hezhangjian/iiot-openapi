@@ -19,7 +19,7 @@ openapi-generator generate \
   -g java \
   -o "$JAVA_DIR" \
   --global-property models,supportingFiles \
-  --additional-properties=packageName=iiot-openapi,packageVersion=0.0.1,serializationLibrary=jackson,useSpringBoot3=true,useJakartaEe=true
+  --additional-properties=packageName=iiot-openapi,packageVersion=0.0.2,serializationLibrary=jackson,useSpringBoot3=true,useJakartaEe=true
 
 echo "🚀 Generating Python SDK..."
 openapi-generator generate \
@@ -27,14 +27,14 @@ openapi-generator generate \
   -g python \
   -o "$PYTHON_DIR" \
   --package-name iiot_openapi \
-  --additional-properties=projectName=iiot-openapi,packageVersion=0.0.1
+  --additional-properties=projectName=iiot-openapi,packageVersion=0.0.2
 
 echo "🚀 Generating TypeScript SDK..."
 openapi-generator generate \
   -i "$SPEC_FILE" \
   -g typescript-fetch \
   -o "$TS_DIR" \
-  --additional-properties=npmName=iiot-openapi,npmVersion=0.0.1,typescriptThreePlus=true
+  --additional-properties=npmName=iiot-openapi,npmVersion=0.0.2,typescriptThreePlus=true
 
 echo "🚀 Generating Rust SDK..."
 openapi-generator generate \
@@ -42,6 +42,6 @@ openapi-generator generate \
   -g rust \
   -o "$RUST_DIR" \
   --global-property models,supportingFiles \
-  --additional-properties=packageName=iiot-openapi,packageVersion=0.0.1
+  --additional-properties=packageName=iiot-openapi,packageVersion=0.0.2
 
 echo "✅ SDK generation complete."

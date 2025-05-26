@@ -51,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * CreateDictionaryReq
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:31:18.115216+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:45:51.998201+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class CreateDictionaryReq {
   public static final String SERIALIZED_NAME_DIC_ID = "dic_id";
   @SerializedName(SERIALIZED_NAME_DIC_ID)
