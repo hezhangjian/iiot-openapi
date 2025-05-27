@@ -13,6 +13,14 @@
  */
 
 import { mapValues } from '../runtime';
+import type { Expression } from './Expression';
+import {
+    ExpressionFromJSON,
+    ExpressionFromJSONTyped,
+    ExpressionToJSON,
+    ExpressionToJSONTyped,
+} from './Expression';
+
 /**
  * 
  * @export
@@ -27,10 +35,10 @@ export interface CleanSettings {
     condition?: string;
     /**
      * 
-     * @type {any}
+     * @type {Array<Expression>}
      * @memberof CleanSettings
      */
-    expressions: any | null;
+    expressions: Array<Expression>;
 }
 
 /**
@@ -52,7 +60,7 @@ export function CleanSettingsFromJSONTyped(json: any, ignoreDiscriminator: boole
     return {
         
         'condition': json['condition'] == null ? undefined : json['condition'],
-        'expressions': json['expressions'],
+        'expressions': ((json['expressions'] as Array<any>).map(ExpressionFromJSON)),
     };
 }
 
@@ -68,7 +76,7 @@ export function CleanSettingsToJSONTyped(value?: CleanSettings | null, ignoreDis
     return {
         
         'condition': value['condition'],
-        'expressions': value['expressions'],
+        'expressions': ((value['expressions'] as Array<any>).map(ExpressionToJSON)),
     };
 }
 

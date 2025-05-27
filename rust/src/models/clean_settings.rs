@@ -15,12 +15,12 @@ use serde::{Deserialize, Serialize};
 pub struct CleanSettings {
     #[serde(rename = "condition", skip_serializing_if = "Option::is_none")]
     pub condition: Option<String>,
-    #[serde(rename = "expressions", deserialize_with = "Option::deserialize")]
-    pub expressions: Option<serde_json::Value>,
+    #[serde(rename = "expressions")]
+    pub expressions: Vec<models::Expression>,
 }
 
 impl CleanSettings {
-    pub fn new(expressions: Option<serde_json::Value>) -> CleanSettings {
+    pub fn new(expressions: Vec<models::Expression>) -> CleanSettings {
         CleanSettings {
             condition: None,
             expressions,

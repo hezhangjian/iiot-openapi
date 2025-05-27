@@ -49,11 +49,11 @@ public class CreateThingRequestTest {
     }
 
     /**
-     * Test the property 'name'
+     * Test the property 'thingName'
      */
     @Test
-    public void nameTest() {
-        // TODO: test name
+    public void thingNameTest() {
+        // TODO: test thingName
     }
 
     /**

@@ -30,7 +30,7 @@ class ColumnSchema(BaseModel):
     id: StrictStr
     name: StrictStr
     dic_id: Optional[StrictStr] = None
-    data_schema: List[DataSchema]
+    data_schema: DataSchema
     __properties: ClassVar[List[str]] = ["id", "name", "dic_id", "data_schema"]
 
     model_config = ConfigDict(
@@ -72,13 +72,9 @@ class ColumnSchema(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in data_schema (list)
-        _items = []
+        # override the default output from pydantic by calling `to_dict()` of data_schema
         if self.data_schema:
-            for _item_data_schema in self.data_schema:
-                if _item_data_schema:
-                    _items.append(_item_data_schema.to_dict())
-            _dict['data_schema'] = _items
+            _dict['data_schema'] = self.data_schema.to_dict()
         return _dict
 
     @classmethod
@@ -94,7 +90,7 @@ class ColumnSchema(BaseModel):
             "id": obj.get("id"),
             "name": obj.get("name"),
             "dic_id": obj.get("dic_id"),
-            "data_schema": [DataSchema.from_dict(_item) for _item in obj["data_schema"]] if obj.get("data_schema") is not None else None
+            "data_schema": DataSchema.from_dict(obj["data_schema"]) if obj.get("data_schema") is not None else None
         })
         return _obj
 

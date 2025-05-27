@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 
 # import apis into sdk package
 from iiot_openapi.api.model_api import ModelApi

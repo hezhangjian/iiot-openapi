@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**condition** | **String** |  |  [optional] |
-|**expressions** | **Object** |  |  |
+|**expressions** | [**List&lt;Expression&gt;**](Expression.md) |  |  |
 
 
 

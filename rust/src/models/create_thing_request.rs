@@ -15,8 +15,8 @@ use serde::{Deserialize, Serialize};
 pub struct CreateThingRequest {
     #[serde(rename = "thing_id")]
     pub thing_id: String,
-    #[serde(rename = "name", skip_serializing_if = "Option::is_none")]
-    pub name: Option<String>,
+    #[serde(rename = "thing_name")]
+    pub thing_name: String,
     #[serde(rename = "model_id")]
     pub model_id: String,
     #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
@@ -26,10 +26,10 @@ pub struct CreateThingRequest {
 }
 
 impl CreateThingRequest {
-    pub fn new(thing_id: String, model_id: String) -> CreateThingRequest {
+    pub fn new(thing_id: String, thing_name: String, model_id: String) -> CreateThingRequest {
         CreateThingRequest {
             thing_id,
-            name: None,
+            thing_name,
             model_id,
             description: None,
             properties: None,

@@ -37,7 +37,13 @@ class TestCleanAnalysisSettingsDto(unittest.TestCase):
             return CleanAnalysisSettingsDto(
                 clean_settings = iiot_openapi.models.clean_settings.CleanSettings(
                     condition = '', 
-                    expressions = null, )
+                    expressions = [
+                        iiot_openapi.models.expression.Expression(
+                            name = '', 
+                            condition = '', 
+                            expression = '', 
+                            property_path = '', )
+                        ], )
             )
         else:
             return CleanAnalysisSettingsDto(

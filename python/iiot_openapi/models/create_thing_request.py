@@ -28,11 +28,11 @@ class CreateThingRequest(BaseModel):
     CreateThingRequest
     """ # noqa: E501
     thing_id: StrictStr
-    name: Optional[StrictStr] = None
+    thing_name: StrictStr
     model_id: StrictStr
     description: Optional[StrictStr] = None
     properties: Optional[Dict[str, PropertyValue]] = None
-    __properties: ClassVar[List[str]] = ["thing_id", "name", "model_id", "description", "properties"]
+    __properties: ClassVar[List[str]] = ["thing_id", "thing_name", "model_id", "description", "properties"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -93,7 +93,7 @@ class CreateThingRequest(BaseModel):
 
         _obj = cls.model_validate({
             "thing_id": obj.get("thing_id"),
-            "name": obj.get("name"),
+            "thing_name": obj.get("thing_name"),
             "model_id": obj.get("model_id"),
             "description": obj.get("description"),
             "properties": dict(

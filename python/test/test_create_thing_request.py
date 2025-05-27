@@ -36,7 +36,7 @@ class TestCreateThingRequest(unittest.TestCase):
         if include_optional:
             return CreateThingRequest(
                 thing_id = '',
-                name = '',
+                thing_name = '',
                 model_id = '',
                 description = '',
                 properties = {
@@ -48,6 +48,7 @@ class TestCreateThingRequest(unittest.TestCase):
         else:
             return CreateThingRequest(
                 thing_id = '',
+                thing_name = '',
                 model_id = '',
         )
         """

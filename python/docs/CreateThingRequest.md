@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **thing_id** | **str** |  | 
-**name** | **str** |  | [optional] 
+**thing_name** | **str** |  | 
 **model_id** | **str** |  | 
 **description** | **str** |  | [optional] 
 **properties** | [**Dict[str, PropertyValue]**](PropertyValue.md) |  | [optional] 

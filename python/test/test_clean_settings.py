@@ -36,11 +36,23 @@ class TestCleanSettings(unittest.TestCase):
         if include_optional:
             return CleanSettings(
                 condition = '',
-                expressions = None
+                expressions = [
+                    iiot_openapi.models.expression.Expression(
+                        name = '', 
+                        condition = '', 
+                        expression = '', 
+                        property_path = '', )
+                    ]
             )
         else:
             return CleanSettings(
-                expressions = None,
+                expressions = [
+                    iiot_openapi.models.expression.Expression(
+                        name = '', 
+                        condition = '', 
+                        expression = '', 
+                        property_path = '', )
+                    ],
         )
         """
 

@@ -38,43 +38,39 @@ class TestColumnSchema(unittest.TestCase):
                 id = '',
                 name = '',
                 dic_id = '',
-                data_schema = [
-                    iiot_openapi.models.data_schema.DataSchema(
-                        type = 'bool', 
-                        integer_schema = iiot_openapi.models.integer_schema.IntegerSchema(
-                            min = 56, 
-                            max = 56, ), 
-                        double_schema = iiot_openapi.models.double_schema.DoubleSchema(
-                            min = 1.337, 
-                            max = 1.337, ), 
-                        string_schema = iiot_openapi.models.string_schema.StringSchema(
-                            min_length = 56, 
-                            max_length = 56, ), 
-                        object_schema = iiot_openapi.models.string_schema.StringSchema(
-                            min_length = 56, 
-                            max_length = 56, ), )
-                    ]
+                data_schema = iiot_openapi.models.data_schema.DataSchema(
+                    type = 'bool', 
+                    integer_schema = iiot_openapi.models.integer_schema.IntegerSchema(
+                        min = 56, 
+                        max = 56, ), 
+                    double_schema = iiot_openapi.models.double_schema.DoubleSchema(
+                        min = 1.337, 
+                        max = 1.337, ), 
+                    string_schema = iiot_openapi.models.string_schema.StringSchema(
+                        min_length = 56, 
+                        max_length = 56, ), 
+                    object_schema = iiot_openapi.models.string_schema.StringSchema(
+                        min_length = 56, 
+                        max_length = 56, ), )
             )
         else:
             return ColumnSchema(
                 id = '',
                 name = '',
-                data_schema = [
-                    iiot_openapi.models.data_schema.DataSchema(
-                        type = 'bool', 
-                        integer_schema = iiot_openapi.models.integer_schema.IntegerSchema(
-                            min = 56, 
-                            max = 56, ), 
-                        double_schema = iiot_openapi.models.double_schema.DoubleSchema(
-                            min = 1.337, 
-                            max = 1.337, ), 
-                        string_schema = iiot_openapi.models.string_schema.StringSchema(
-                            min_length = 56, 
-                            max_length = 56, ), 
-                        object_schema = iiot_openapi.models.string_schema.StringSchema(
-                            min_length = 56, 
-                            max_length = 56, ), )
-                    ],
+                data_schema = iiot_openapi.models.data_schema.DataSchema(
+                    type = 'bool', 
+                    integer_schema = iiot_openapi.models.integer_schema.IntegerSchema(
+                        min = 56, 
+                        max = 56, ), 
+                    double_schema = iiot_openapi.models.double_schema.DoubleSchema(
+                        min = 1.337, 
+                        max = 1.337, ), 
+                    string_schema = iiot_openapi.models.string_schema.StringSchema(
+                        min_length = 56, 
+                        max_length = 56, ), 
+                    object_schema = iiot_openapi.models.string_schema.StringSchema(
+                        min_length = 56, 
+                        max_length = 56, ), ),
         )
         """
 

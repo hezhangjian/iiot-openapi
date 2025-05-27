@@ -20,16 +20,16 @@ pub struct ColumnSchema {
     #[serde(rename = "dic_id", skip_serializing_if = "Option::is_none")]
     pub dic_id: Option<String>,
     #[serde(rename = "data_schema")]
-    pub data_schema: Vec<models::DataSchema>,
+    pub data_schema: Box<models::DataSchema>,
 }
 
 impl ColumnSchema {
-    pub fn new(id: String, name: String, data_schema: Vec<models::DataSchema>) -> ColumnSchema {
+    pub fn new(id: String, name: String, data_schema: models::DataSchema) -> ColumnSchema {
         ColumnSchema {
             id,
             name,
             dic_id: None,
-            data_schema,
+            data_schema: Box::new(data_schema),
         }
     }
 }

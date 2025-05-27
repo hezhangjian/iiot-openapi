@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**thingId** | **String** |  |  |
-|**name** | **String** |  |  [optional] |
+|**thingName** | **String** |  |  |
 |**modelId** | **String** |  |  |
 |**description** | **String** |  |  [optional] |
 |**properties** | [**Map&lt;String, PropertyValue&gt;**](PropertyValue.md) |  |  [optional] |

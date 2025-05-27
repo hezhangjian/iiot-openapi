@@ -47,10 +47,10 @@ export interface ColumnSchema {
     dicId?: string;
     /**
      * 
-     * @type {Array<DataSchema>}
+     * @type {DataSchema}
      * @memberof ColumnSchema
      */
-    dataSchema: Array<DataSchema>;
+    dataSchema: DataSchema;
 }
 
 /**
@@ -76,7 +76,7 @@ export function ColumnSchemaFromJSONTyped(json: any, ignoreDiscriminator: boolea
         'id': json['id'],
         'name': json['name'],
         'dicId': json['dic_id'] == null ? undefined : json['dic_id'],
-        'dataSchema': ((json['data_schema'] as Array<any>).map(DataSchemaFromJSON)),
+        'dataSchema': DataSchemaFromJSON(json['data_schema']),
     };
 }
 
@@ -94,7 +94,7 @@ export function ColumnSchemaToJSONTyped(value?: ColumnSchema | null, ignoreDiscr
         'id': value['id'],
         'name': value['name'],
         'dic_id': value['dicId'],
-        'data_schema': ((value['dataSchema'] as Array<any>).map(DataSchemaToJSON)),
+        'data_schema': DataSchemaToJSON(value['dataSchema']),
     };
 }
 

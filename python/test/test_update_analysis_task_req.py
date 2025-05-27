@@ -37,7 +37,13 @@ class TestUpdateAnalysisTaskReq(unittest.TestCase):
             return UpdateAnalysisTaskReq(
                 clean_settings = iiot_openapi.models.clean_settings.CleanSettings(
                     condition = '', 
-                    expressions = null, ),
+                    expressions = [
+                        iiot_openapi.models.expression.Expression(
+                            name = '', 
+                            condition = '', 
+                            expression = '', 
+                            property_path = '', )
+                        ], ),
                 event_class = '',
                 event_gen_settings = iiot_openapi.models.event_gen_setting.EventGenSetting(
                     start_trigger = iiot_openapi.models.event_trigger.EventTrigger(
@@ -95,7 +101,7 @@ class TestUpdateAnalysisTaskReq(unittest.TestCase):
                             name = '', 
                             start_trigger = , )
                         ], ),
-                expression_settings = iiot_openapi.models.expression_settings.ExpressionSettings(
+                expression_settings = iiot_openapi.models.clean_settings.CleanSettings(
                     condition = '', 
                     expressions = [
                         iiot_openapi.models.expression.Expression(

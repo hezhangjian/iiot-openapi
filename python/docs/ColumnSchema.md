@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **id** | **str** |  | 
 **name** | **str** |  | 
 **dic_id** | **str** |  | [optional] 
-**data_schema** | [**List[DataSchema]**](DataSchema.md) |  | 
+**data_schema** | [**DataSchema**](DataSchema.md) |  | 
 
 ## Example
 

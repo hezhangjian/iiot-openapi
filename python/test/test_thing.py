@@ -36,7 +36,7 @@ class TestThing(unittest.TestCase):
         if include_optional:
             return Thing(
                 thing_id = '',
-                name = '',
+                thing_name = '',
                 model_id = '',
                 description = '',
                 properties = {
@@ -50,6 +50,7 @@ class TestThing(unittest.TestCase):
         else:
             return Thing(
                 thing_id = '',
+                thing_name = '',
                 model_id = '',
         )
         """

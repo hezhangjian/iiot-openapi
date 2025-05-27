@@ -1,6 +1,6 @@
 {
   "name": "iiot-openapi",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "OpenAPI client for iiot-openapi",
   "author": "OpenAPI-Generator",
   "repository": {

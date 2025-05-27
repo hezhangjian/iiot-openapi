@@ -51,17 +51,17 @@ import org.openapitools.client.JSON;
 /**
  * Thing
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:45:51.998201+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-27T18:38:37.514966+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class Thing {
   public static final String SERIALIZED_NAME_THING_ID = "thing_id";
   @SerializedName(SERIALIZED_NAME_THING_ID)
   @jakarta.annotation.Nonnull
   private String thingId;
 
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  @jakarta.annotation.Nullable
-  private String name;
+  public static final String SERIALIZED_NAME_THING_NAME = "thing_name";
+  @SerializedName(SERIALIZED_NAME_THING_NAME)
+  @jakarta.annotation.Nonnull
+  private String thingName;
 
   public static final String SERIALIZED_NAME_MODEL_ID = "model_id";
   @SerializedName(SERIALIZED_NAME_MODEL_ID)
@@ -110,22 +110,22 @@ public class Thing {
   }
 
 
-  public Thing name(@jakarta.annotation.Nullable String name) {
-    this.name = name;
+  public Thing thingName(@jakarta.annotation.Nonnull String thingName) {
+    this.thingName = thingName;
     return this;
   }
 
   /**
-   * Get name
-   * @return name
+   * Get thingName
+   * @return thingName
    */
-  @jakarta.annotation.Nullable
-  public String getName() {
-    return name;
+  @jakarta.annotation.Nonnull
+  public String getThingName() {
+    return thingName;
   }
 
-  public void setName(@jakarta.annotation.Nullable String name) {
-    this.name = name;
+  public void setThingName(@jakarta.annotation.Nonnull String thingName) {
+    this.thingName = thingName;
   }
 
 
@@ -243,7 +243,7 @@ public class Thing {
     }
     Thing thing = (Thing) o;
     return Objects.equals(this.thingId, thing.thingId) &&
-        Objects.equals(this.name, thing.name) &&
+        Objects.equals(this.thingName, thing.thingName) &&
         Objects.equals(this.modelId, thing.modelId) &&
         Objects.equals(this.description, thing.description) &&
         Objects.equals(this.properties, thing.properties) &&
@@ -253,7 +253,7 @@ public class Thing {
 
   @Override
   public int hashCode() {
-    return Objects.hash(thingId, name, modelId, description, properties, createdTime, updatedTime);
+    return Objects.hash(thingId, thingName, modelId, description, properties, createdTime, updatedTime);
   }
 
   @Override
@@ -261,7 +261,7 @@ public class Thing {
     StringBuilder sb = new StringBuilder();
     sb.append("class Thing {\n");
     sb.append("    thingId: ").append(toIndentedString(thingId)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    thingName: ").append(toIndentedString(thingName)).append("\n");
     sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
@@ -290,7 +290,7 @@ public class Thing {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("thing_id");
-    openapiFields.add("name");
+    openapiFields.add("thing_name");
     openapiFields.add("model_id");
     openapiFields.add("description");
     openapiFields.add("properties");
@@ -300,6 +300,7 @@ public class Thing {
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("thing_id");
+    openapiRequiredFields.add("thing_name");
     openapiRequiredFields.add("model_id");
   }
 
@@ -334,8 +335,8 @@ public class Thing {
       if (!jsonObj.get("thing_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `thing_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("thing_id").toString()));
       }
-      if ((jsonObj.get("name") != null && !jsonObj.get("name").isJsonNull()) && !jsonObj.get("name").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
+      if (!jsonObj.get("thing_name").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `thing_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("thing_name").toString()));
       }
       if (!jsonObj.get("model_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `model_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("model_id").toString()));

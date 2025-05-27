@@ -35,7 +35,7 @@ class TestExpressionAnalysisSettingsDto(unittest.TestCase):
         model = ExpressionAnalysisSettingsDto()
         if include_optional:
             return ExpressionAnalysisSettingsDto(
-                expression_settings = iiot_openapi.models.expression_settings.ExpressionSettings(
+                expression_settings = iiot_openapi.models.clean_settings.CleanSettings(
                     condition = '', 
                     expressions = [
                         iiot_openapi.models.expression.Expression(

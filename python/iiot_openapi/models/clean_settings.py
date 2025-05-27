@@ -19,6 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from iiot_openapi.models.expression import Expression
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +28,7 @@ class CleanSettings(BaseModel):
     CleanSettings
     """ # noqa: E501
     condition: Optional[StrictStr] = None
-    expressions: Optional[Any]
+    expressions: List[Expression]
     __properties: ClassVar[List[str]] = ["condition", "expressions"]
 
     model_config = ConfigDict(
@@ -69,11 +70,13 @@ class CleanSettings(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # set to None if expressions (nullable) is None
-        # and model_fields_set contains the field
-        if self.expressions is None and "expressions" in self.model_fields_set:
-            _dict['expressions'] = None
-
+        # override the default output from pydantic by calling `to_dict()` of each item in expressions (list)
+        _items = []
+        if self.expressions:
+            for _item_expressions in self.expressions:
+                if _item_expressions:
+                    _items.append(_item_expressions.to_dict())
+            _dict['expressions'] = _items
         return _dict
 
     @classmethod
@@ -87,7 +90,7 @@ class CleanSettings(BaseModel):
 
         _obj = cls.model_validate({
             "condition": obj.get("condition"),
-            "expressions": obj.get("expressions")
+            "expressions": [Expression.from_dict(_item) for _item in obj["expressions"]] if obj.get("expressions") is not None else None
         })
         return _obj
 

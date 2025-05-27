@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **condition** | **str** |  | [optional] 
-**expressions** | **object** |  | 
+**expressions** | [**List[Expression]**](Expression.md) |  | 
 
 ## Example
 

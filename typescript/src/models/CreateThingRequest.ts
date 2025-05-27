@@ -38,7 +38,7 @@ export interface CreateThingRequest {
      * @type {string}
      * @memberof CreateThingRequest
      */
-    name?: string;
+    thingName: string;
     /**
      * 
      * @type {string}
@@ -64,6 +64,7 @@ export interface CreateThingRequest {
  */
 export function instanceOfCreateThingRequest(value: object): value is CreateThingRequest {
     if (!('thingId' in value) || value['thingId'] === undefined) return false;
+    if (!('thingName' in value) || value['thingName'] === undefined) return false;
     if (!('modelId' in value) || value['modelId'] === undefined) return false;
     return true;
 }
@@ -79,7 +80,7 @@ export function CreateThingRequestFromJSONTyped(json: any, ignoreDiscriminator: 
     return {
         
         'thingId': json['thing_id'],
-        'name': json['name'] == null ? undefined : json['name'],
+        'thingName': json['thing_name'],
         'modelId': json['model_id'],
         'description': json['description'] == null ? undefined : json['description'],
         'properties': json['properties'] == null ? undefined : (mapValues(json['properties'], PropertyValueFromJSON)),
@@ -98,7 +99,7 @@ export function CreateThingRequestToJSONTyped(value?: CreateThingRequest | null,
     return {
         
         'thing_id': value['thingId'],
-        'name': value['name'],
+        'thing_name': value['thingName'],
         'model_id': value['modelId'],
         'description': value['description'],
         'properties': value['properties'] == null ? undefined : (mapValues(value['properties'], PropertyValueToJSON)),

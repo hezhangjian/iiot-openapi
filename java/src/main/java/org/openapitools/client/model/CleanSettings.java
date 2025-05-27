@@ -20,7 +20,10 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
+import org.openapitools.client.model.Expression;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -48,7 +51,7 @@ import org.openapitools.client.JSON;
 /**
  * CleanSettings
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:45:51.998201+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-27T18:38:37.514966+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class CleanSettings {
   public static final String SERIALIZED_NAME_CONDITION = "condition";
   @SerializedName(SERIALIZED_NAME_CONDITION)
@@ -57,8 +60,8 @@ public class CleanSettings {
 
   public static final String SERIALIZED_NAME_EXPRESSIONS = "expressions";
   @SerializedName(SERIALIZED_NAME_EXPRESSIONS)
-  @jakarta.annotation.Nullable
-  private Object expressions = null;
+  @jakarta.annotation.Nonnull
+  private List<Expression> expressions = new ArrayList<>();
 
   public CleanSettings() {
   }
@@ -82,8 +85,16 @@ public class CleanSettings {
   }
 
 
-  public CleanSettings expressions(@jakarta.annotation.Nullable Object expressions) {
+  public CleanSettings expressions(@jakarta.annotation.Nonnull List<Expression> expressions) {
     this.expressions = expressions;
+    return this;
+  }
+
+  public CleanSettings addExpressionsItem(Expression expressionsItem) {
+    if (this.expressions == null) {
+      this.expressions = new ArrayList<>();
+    }
+    this.expressions.add(expressionsItem);
     return this;
   }
 
@@ -91,12 +102,12 @@ public class CleanSettings {
    * Get expressions
    * @return expressions
    */
-  @jakarta.annotation.Nullable
-  public Object getExpressions() {
+  @jakarta.annotation.Nonnull
+  public List<Expression> getExpressions() {
     return expressions;
   }
 
-  public void setExpressions(@jakarta.annotation.Nullable Object expressions) {
+  public void setExpressions(@jakarta.annotation.Nonnull List<Expression> expressions) {
     this.expressions = expressions;
   }
 
@@ -187,6 +198,16 @@ public class CleanSettings {
       if ((jsonObj.get("condition") != null && !jsonObj.get("condition").isJsonNull()) && !jsonObj.get("condition").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `condition` to be a primitive type in the JSON string but got `%s`", jsonObj.get("condition").toString()));
       }
+      // ensure the json data is an array
+      if (!jsonObj.get("expressions").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `expressions` to be an array in the JSON string but got `%s`", jsonObj.get("expressions").toString()));
+      }
+
+      JsonArray jsonArrayexpressions = jsonObj.getAsJsonArray("expressions");
+      // validate the required field `expressions` (array)
+      for (int i = 0; i < jsonArrayexpressions.size(); i++) {
+        Expression.validateJsonElement(jsonArrayexpressions.get(i));
+      };
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {

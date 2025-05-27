@@ -20,9 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import org.openapitools.client.model.DataSchema;
 
 import com.google.gson.Gson;
@@ -51,7 +49,7 @@ import org.openapitools.client.JSON;
 /**
  * ColumnSchema
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-26T20:45:51.998201+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-27T18:38:37.514966+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class ColumnSchema {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -71,7 +69,7 @@ public class ColumnSchema {
   public static final String SERIALIZED_NAME_DATA_SCHEMA = "data_schema";
   @SerializedName(SERIALIZED_NAME_DATA_SCHEMA)
   @jakarta.annotation.Nonnull
-  private List<DataSchema> dataSchema = new ArrayList<>();
+  private DataSchema dataSchema;
 
   public ColumnSchema() {
   }
@@ -133,16 +131,8 @@ public class ColumnSchema {
   }
 
 
-  public ColumnSchema dataSchema(@jakarta.annotation.Nonnull List<DataSchema> dataSchema) {
+  public ColumnSchema dataSchema(@jakarta.annotation.Nonnull DataSchema dataSchema) {
     this.dataSchema = dataSchema;
-    return this;
-  }
-
-  public ColumnSchema addDataSchemaItem(DataSchema dataSchemaItem) {
-    if (this.dataSchema == null) {
-      this.dataSchema = new ArrayList<>();
-    }
-    this.dataSchema.add(dataSchemaItem);
     return this;
   }
 
@@ -151,11 +141,11 @@ public class ColumnSchema {
    * @return dataSchema
    */
   @jakarta.annotation.Nonnull
-  public List<DataSchema> getDataSchema() {
+  public DataSchema getDataSchema() {
     return dataSchema;
   }
 
-  public void setDataSchema(@jakarta.annotation.Nonnull List<DataSchema> dataSchema) {
+  public void setDataSchema(@jakarta.annotation.Nonnull DataSchema dataSchema) {
     this.dataSchema = dataSchema;
   }
 
@@ -260,16 +250,8 @@ public class ColumnSchema {
       if ((jsonObj.get("dic_id") != null && !jsonObj.get("dic_id").isJsonNull()) && !jsonObj.get("dic_id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `dic_id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dic_id").toString()));
       }
-      // ensure the json data is an array
-      if (!jsonObj.get("data_schema").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `data_schema` to be an array in the JSON string but got `%s`", jsonObj.get("data_schema").toString()));
-      }
-
-      JsonArray jsonArraydataSchema = jsonObj.getAsJsonArray("data_schema");
-      // validate the required field `data_schema` (array)
-      for (int i = 0; i < jsonArraydataSchema.size(); i++) {
-        DataSchema.validateJsonElement(jsonArraydataSchema.get(i));
-      };
+      // validate the required field `data_schema`
+      DataSchema.validateJsonElement(jsonObj.get("data_schema"));
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
