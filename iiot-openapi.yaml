@@ -1717,9 +1717,7 @@ components:
         dic_id:
           type: string
         data_schema:
-          type: array
-          items:
-            $ref: "#/components/schemas/DataSchema"
+          $ref: "#/components/schemas/DataSchema"
     IndexSchema:
       type: object
       required:
@@ -2212,7 +2210,7 @@ components:
         condition:
           type: string
         expressions:
-          tyep: array
+          type: array
           items:
             $ref: "#/components/schemas/Expression"
     Expression:
