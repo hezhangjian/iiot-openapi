@@ -32,6 +32,7 @@ docs/ComplexSetting.md
 docs/ComponentDto.md
 docs/ComponentProperty.md
 docs/ComponentReferenceConfDetails.md
+docs/ComponentReferenceConfDto.md
 docs/CreateAnalysisTaskReq.md
 docs/CreateCatalogReq.md
 docs/CreateDeviceReqDTO.md
@@ -105,6 +106,7 @@ docs/QueryViewNodesRsp.md
 docs/RecordApi.md
 docs/RecordFilter.md
 docs/ReferenceConfDetails.md
+docs/ReferenceConfDto.md
 docs/ReportDevice.md
 docs/SaveRecordsRequest.md
 docs/ServiceData.md
@@ -180,6 +182,7 @@ iiot_openapi/models/complex_setting.py
 iiot_openapi/models/component_dto.py
 iiot_openapi/models/component_property.py
 iiot_openapi/models/component_reference_conf_details.py
+iiot_openapi/models/component_reference_conf_dto.py
 iiot_openapi/models/create_analysis_task_req.py
 iiot_openapi/models/create_catalog_req.py
 iiot_openapi/models/create_device_req_dto.py
@@ -250,6 +253,7 @@ iiot_openapi/models/query_view_nodes_req.py
 iiot_openapi/models/query_view_nodes_rsp.py
 iiot_openapi/models/record_filter.py
 iiot_openapi/models/reference_conf_details.py
+iiot_openapi/models/reference_conf_dto.py
 iiot_openapi/models/report_device.py
 iiot_openapi/models/save_records_request.py
 iiot_openapi/models/service_data.py
@@ -320,6 +324,7 @@ test/test_complex_setting.py
 test/test_component_dto.py
 test/test_component_property.py
 test/test_component_reference_conf_details.py
+test/test_component_reference_conf_dto.py
 test/test_create_analysis_task_req.py
 test/test_create_catalog_req.py
 test/test_create_device_req_dto.py
@@ -393,6 +398,7 @@ test/test_query_view_nodes_rsp.py
 test/test_record_api.py
 test/test_record_filter.py
 test/test_reference_conf_details.py
+test/test_reference_conf_dto.py
 test/test_report_device.py
 test/test_save_records_request.py
 test/test_service_data.py

@@ -30,7 +30,7 @@ export interface IndexSchema {
      * @type {Array<string>}
      * @memberof IndexSchema
      */
-    columnsIds: Array<string>;
+    columnIds: Array<string>;
 }
 
 /**
@@ -38,7 +38,7 @@ export interface IndexSchema {
  */
 export function instanceOfIndexSchema(value: object): value is IndexSchema {
     if (!('name' in value) || value['name'] === undefined) return false;
-    if (!('columnsIds' in value) || value['columnsIds'] === undefined) return false;
+    if (!('columnIds' in value) || value['columnIds'] === undefined) return false;
     return true;
 }
 
@@ -53,7 +53,7 @@ export function IndexSchemaFromJSONTyped(json: any, ignoreDiscriminator: boolean
     return {
         
         'name': json['name'],
-        'columnsIds': json['columns_ids'],
+        'columnIds': json['column_ids'],
     };
 }
 
@@ -69,7 +69,7 @@ export function IndexSchemaToJSONTyped(value?: IndexSchema | null, ignoreDiscrim
     return {
         
         'name': value['name'],
-        'columns_ids': value['columnsIds'],
+        'column_ids': value['columnIds'],
     };
 }
 

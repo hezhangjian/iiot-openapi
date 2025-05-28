@@ -67,7 +67,7 @@ class TestTableInfo(unittest.TestCase):
                     indexes = [
                         iiot_openapi.models.index_schema.IndexSchema(
                             name = '', 
-                            columns_ids = [
+                            column_ids = [
                                 ''
                                 ], )
                         ], ),
@@ -126,7 +126,7 @@ class TestTableInfo(unittest.TestCase):
                     indexes = [
                         iiot_openapi.models.index_schema.IndexSchema(
                             name = '', 
-                            columns_ids = [
+                            column_ids = [
                                 ''
                                 ], )
                         ], ),

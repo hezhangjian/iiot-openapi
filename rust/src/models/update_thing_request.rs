@@ -16,15 +16,11 @@ pub struct UpdateThingRequest {
     #[serde(rename = "thing_name", skip_serializing_if = "Option::is_none")]
     pub thing_name: Option<String>,
     #[serde(rename = "tags", skip_serializing_if = "Option::is_none")]
-    pub tags: Option<std::collections::HashMap<String, models::PropertyValue>>,
+    pub tags: Option<std::collections::HashMap<String, String>>,
     #[serde(rename = "properties", skip_serializing_if = "Option::is_none")]
-    pub properties: Option<models::ReferenceConfDetails>,
+    pub properties: Option<models::ReferenceConfDto>,
     #[serde(rename = "components", skip_serializing_if = "Option::is_none")]
-    pub components: Option<models::ComponentReferenceConfDetails>,
-    #[serde(rename = "create_time", skip_serializing_if = "Option::is_none")]
-    pub create_time: Option<String>,
-    #[serde(rename = "update_time", skip_serializing_if = "Option::is_none")]
-    pub update_time: Option<String>,
+    pub components: Option<models::ComponentReferenceConfDto>,
 }
 
 impl UpdateThingRequest {
@@ -34,8 +30,6 @@ impl UpdateThingRequest {
             tags: None,
             properties: None,
             components: None,
-            create_time: None,
-            update_time: None,
         }
     }
 }

@@ -36,14 +36,14 @@ class TestIndexSchema(unittest.TestCase):
         if include_optional:
             return IndexSchema(
                 name = '',
-                columns_ids = [
+                column_ids = [
                     ''
                     ]
             )
         else:
             return IndexSchema(
                 name = '',
-                columns_ids = [
+                column_ids = [
                     ''
                     ],
         )

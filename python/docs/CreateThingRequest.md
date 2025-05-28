@@ -8,8 +8,10 @@ Name | Type | Description | Notes
 **thing_id** | **str** |  | 
 **thing_name** | **str** |  | 
 **model_id** | **str** |  | 
+**tags** | **Dict[str, str]** |  | [optional] 
 **description** | **str** |  | [optional] 
-**properties** | [**Dict[str, PropertyValue]**](PropertyValue.md) |  | [optional] 
+**properties** | [**Dict[str, ReferenceConfDto]**](ReferenceConfDto.md) |  | [optional] 
+**components** | [**Dict[str, ComponentReferenceConfDto]**](ComponentReferenceConfDto.md) |  | [optional] 
 
 ## Example
 

@@ -50,17 +50,17 @@ import org.openapitools.client.JSON;
 /**
  * IndexSchema
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-27T18:38:37.514966+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-28T16:46:47.218966+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class IndexSchema {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   @jakarta.annotation.Nonnull
   private String name;
 
-  public static final String SERIALIZED_NAME_COLUMNS_IDS = "columns_ids";
-  @SerializedName(SERIALIZED_NAME_COLUMNS_IDS)
+  public static final String SERIALIZED_NAME_COLUMN_IDS = "column_ids";
+  @SerializedName(SERIALIZED_NAME_COLUMN_IDS)
   @jakarta.annotation.Nonnull
-  private List<String> columnsIds = new ArrayList<>();
+  private List<String> columnIds = new ArrayList<>();
 
   public IndexSchema() {
   }
@@ -84,30 +84,30 @@ public class IndexSchema {
   }
 
 
-  public IndexSchema columnsIds(@jakarta.annotation.Nonnull List<String> columnsIds) {
-    this.columnsIds = columnsIds;
+  public IndexSchema columnIds(@jakarta.annotation.Nonnull List<String> columnIds) {
+    this.columnIds = columnIds;
     return this;
   }
 
-  public IndexSchema addColumnsIdsItem(String columnsIdsItem) {
-    if (this.columnsIds == null) {
-      this.columnsIds = new ArrayList<>();
+  public IndexSchema addColumnIdsItem(String columnIdsItem) {
+    if (this.columnIds == null) {
+      this.columnIds = new ArrayList<>();
     }
-    this.columnsIds.add(columnsIdsItem);
+    this.columnIds.add(columnIdsItem);
     return this;
   }
 
   /**
-   * Get columnsIds
-   * @return columnsIds
+   * Get columnIds
+   * @return columnIds
    */
   @jakarta.annotation.Nonnull
-  public List<String> getColumnsIds() {
-    return columnsIds;
+  public List<String> getColumnIds() {
+    return columnIds;
   }
 
-  public void setColumnsIds(@jakarta.annotation.Nonnull List<String> columnsIds) {
-    this.columnsIds = columnsIds;
+  public void setColumnIds(@jakarta.annotation.Nonnull List<String> columnIds) {
+    this.columnIds = columnIds;
   }
 
 
@@ -122,12 +122,12 @@ public class IndexSchema {
     }
     IndexSchema indexSchema = (IndexSchema) o;
     return Objects.equals(this.name, indexSchema.name) &&
-        Objects.equals(this.columnsIds, indexSchema.columnsIds);
+        Objects.equals(this.columnIds, indexSchema.columnIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, columnsIds);
+    return Objects.hash(name, columnIds);
   }
 
   @Override
@@ -135,7 +135,7 @@ public class IndexSchema {
     StringBuilder sb = new StringBuilder();
     sb.append("class IndexSchema {\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    columnsIds: ").append(toIndentedString(columnsIds)).append("\n");
+    sb.append("    columnIds: ").append(toIndentedString(columnIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -159,12 +159,12 @@ public class IndexSchema {
     // a set of all properties/fields (JSON key names)
     openapiFields = new HashSet<String>();
     openapiFields.add("name");
-    openapiFields.add("columns_ids");
+    openapiFields.add("column_ids");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
     openapiRequiredFields.add("name");
-    openapiRequiredFields.add("columns_ids");
+    openapiRequiredFields.add("column_ids");
   }
 
   /**
@@ -199,10 +199,10 @@ public class IndexSchema {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
       // ensure the required json array is present
-      if (jsonObj.get("columns_ids") == null) {
+      if (jsonObj.get("column_ids") == null) {
         throw new IllegalArgumentException("Expected the field `linkedContent` to be an array in the JSON string but got `null`");
-      } else if (!jsonObj.get("columns_ids").isJsonArray()) {
-        throw new IllegalArgumentException(String.format("Expected the field `columns_ids` to be an array in the JSON string but got `%s`", jsonObj.get("columns_ids").toString()));
+      } else if (!jsonObj.get("column_ids").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `column_ids` to be an array in the JSON string but got `%s`", jsonObj.get("column_ids").toString()));
       }
   }
 

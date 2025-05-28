@@ -23,7 +23,8 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import org.openapitools.client.model.PropertyValue;
+import org.openapitools.client.model.ComponentReferenceConfDto;
+import org.openapitools.client.model.ReferenceConfDto;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * Thing
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-27T18:38:37.514966+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-28T16:46:47.218966+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class Thing {
   public static final String SERIALIZED_NAME_THING_ID = "thing_id";
   @SerializedName(SERIALIZED_NAME_THING_ID)
@@ -68,6 +69,11 @@ public class Thing {
   @jakarta.annotation.Nonnull
   private String modelId;
 
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
+  @jakarta.annotation.Nullable
+  private Map<String, String> tags = new HashMap<>();
+
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @jakarta.annotation.Nullable
@@ -76,7 +82,12 @@ public class Thing {
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
   @jakarta.annotation.Nullable
-  private Map<String, PropertyValue> properties = new HashMap<>();
+  private Map<String, ReferenceConfDto> properties = new HashMap<>();
+
+  public static final String SERIALIZED_NAME_COMPONENTS = "components";
+  @SerializedName(SERIALIZED_NAME_COMPONENTS)
+  @jakarta.annotation.Nullable
+  private Map<String, ComponentReferenceConfDto> components = new HashMap<>();
 
   public static final String SERIALIZED_NAME_CREATED_TIME = "created_time";
   @SerializedName(SERIALIZED_NAME_CREATED_TIME)
@@ -148,6 +159,33 @@ public class Thing {
   }
 
 
+  public Thing tags(@jakarta.annotation.Nullable Map<String, String> tags) {
+    this.tags = tags;
+    return this;
+  }
+
+  public Thing putTagsItem(String key, String tagsItem) {
+    if (this.tags == null) {
+      this.tags = new HashMap<>();
+    }
+    this.tags.put(key, tagsItem);
+    return this;
+  }
+
+  /**
+   * Get tags
+   * @return tags
+   */
+  @jakarta.annotation.Nullable
+  public Map<String, String> getTags() {
+    return tags;
+  }
+
+  public void setTags(@jakarta.annotation.Nullable Map<String, String> tags) {
+    this.tags = tags;
+  }
+
+
   public Thing description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
@@ -167,12 +205,12 @@ public class Thing {
   }
 
 
-  public Thing properties(@jakarta.annotation.Nullable Map<String, PropertyValue> properties) {
+  public Thing properties(@jakarta.annotation.Nullable Map<String, ReferenceConfDto> properties) {
     this.properties = properties;
     return this;
   }
 
-  public Thing putPropertiesItem(String key, PropertyValue propertiesItem) {
+  public Thing putPropertiesItem(String key, ReferenceConfDto propertiesItem) {
     if (this.properties == null) {
       this.properties = new HashMap<>();
     }
@@ -185,12 +223,39 @@ public class Thing {
    * @return properties
    */
   @jakarta.annotation.Nullable
-  public Map<String, PropertyValue> getProperties() {
+  public Map<String, ReferenceConfDto> getProperties() {
     return properties;
   }
 
-  public void setProperties(@jakarta.annotation.Nullable Map<String, PropertyValue> properties) {
+  public void setProperties(@jakarta.annotation.Nullable Map<String, ReferenceConfDto> properties) {
     this.properties = properties;
+  }
+
+
+  public Thing components(@jakarta.annotation.Nullable Map<String, ComponentReferenceConfDto> components) {
+    this.components = components;
+    return this;
+  }
+
+  public Thing putComponentsItem(String key, ComponentReferenceConfDto componentsItem) {
+    if (this.components == null) {
+      this.components = new HashMap<>();
+    }
+    this.components.put(key, componentsItem);
+    return this;
+  }
+
+  /**
+   * Get components
+   * @return components
+   */
+  @jakarta.annotation.Nullable
+  public Map<String, ComponentReferenceConfDto> getComponents() {
+    return components;
+  }
+
+  public void setComponents(@jakarta.annotation.Nullable Map<String, ComponentReferenceConfDto> components) {
+    this.components = components;
   }
 
 
@@ -245,15 +310,17 @@ public class Thing {
     return Objects.equals(this.thingId, thing.thingId) &&
         Objects.equals(this.thingName, thing.thingName) &&
         Objects.equals(this.modelId, thing.modelId) &&
+        Objects.equals(this.tags, thing.tags) &&
         Objects.equals(this.description, thing.description) &&
         Objects.equals(this.properties, thing.properties) &&
+        Objects.equals(this.components, thing.components) &&
         Objects.equals(this.createdTime, thing.createdTime) &&
         Objects.equals(this.updatedTime, thing.updatedTime);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(thingId, thingName, modelId, description, properties, createdTime, updatedTime);
+    return Objects.hash(thingId, thingName, modelId, tags, description, properties, components, createdTime, updatedTime);
   }
 
   @Override
@@ -263,8 +330,10 @@ public class Thing {
     sb.append("    thingId: ").append(toIndentedString(thingId)).append("\n");
     sb.append("    thingName: ").append(toIndentedString(thingName)).append("\n");
     sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
+    sb.append("    components: ").append(toIndentedString(components)).append("\n");
     sb.append("    createdTime: ").append(toIndentedString(createdTime)).append("\n");
     sb.append("    updatedTime: ").append(toIndentedString(updatedTime)).append("\n");
     sb.append("}");
@@ -292,8 +361,10 @@ public class Thing {
     openapiFields.add("thing_id");
     openapiFields.add("thing_name");
     openapiFields.add("model_id");
+    openapiFields.add("tags");
     openapiFields.add("description");
     openapiFields.add("properties");
+    openapiFields.add("components");
     openapiFields.add("created_time");
     openapiFields.add("updated_time");
 

@@ -37,32 +37,24 @@ class TestUpdateThingRequest(unittest.TestCase):
             return UpdateThingRequest(
                 thing_name = '',
                 tags = {
-                    'key' : iiot_openapi.models.property_value.PropertyValue(
-                        value = '', 
-                        type = 'bool', )
+                    'key' : ''
                     },
-                properties = iiot_openapi.models.reference_conf_details.ReferenceConfDetails(
-                    property_ref = {
-                        'key' : iiot_openapi.models.property_ref.PropertyRef(
-                            thing_id = '', 
-                            property_path = '', )
-                        }, 
-                    value = iiot_openapi.models.value.value(), 
-                    update_time = '', ),
-                components = iiot_openapi.models.component_reference_conf_details.ComponentReferenceConfDetails(
+                properties = iiot_openapi.models.reference_conf_dto.ReferenceConfDto(
+                    property_ref = iiot_openapi.models.property_ref.PropertyRef(
+                        thing_id = '', 
+                        property_path = '', ), 
+                    value = iiot_openapi.models.value.value(), ),
+                components = iiot_openapi.models.component_reference_conf_dto.ComponentReferenceConfDto(
                     properties = {
-                        'key' : iiot_openapi.models.reference_conf_details.ReferenceConfDetails(
-                            property_ref = {
-                                'key' : iiot_openapi.models.property_ref.PropertyRef(
-                                    thing_id = '', 
-                                    property_path = '', )
-                                }, 
-                            value = iiot_openapi.models.value.value(), 
-                            update_time = '', )
+                        'key' : iiot_openapi.models.reference_conf_dto.ReferenceConfDto(
+                            property_ref = iiot_openapi.models.property_ref.PropertyRef(
+                                thing_id = '', 
+                                property_path = '', ), 
+                            value = iiot_openapi.models.value.value(), )
                         }, 
-                    components = iiot_openapi.models.component_reference_conf_details.ComponentReferenceConfDetails(), ),
-                create_time = '',
-                update_time = ''
+                    components = {
+                        'key' : iiot_openapi.models.component_reference_conf_dto.ComponentReferenceConfDto()
+                        }, )
             )
         else:
             return UpdateThingRequest(

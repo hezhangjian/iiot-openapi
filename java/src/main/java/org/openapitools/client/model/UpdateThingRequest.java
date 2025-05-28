@@ -23,9 +23,8 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import org.openapitools.client.model.ComponentReferenceConfDetails;
-import org.openapitools.client.model.PropertyValue;
-import org.openapitools.client.model.ReferenceConfDetails;
+import org.openapitools.client.model.ComponentReferenceConfDto;
+import org.openapitools.client.model.ReferenceConfDto;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * UpdateThingRequest
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-27T18:38:37.514966+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-28T16:46:47.218966+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class UpdateThingRequest {
   public static final String SERIALIZED_NAME_THING_NAME = "thing_name";
   @SerializedName(SERIALIZED_NAME_THING_NAME)
@@ -63,27 +62,17 @@ public class UpdateThingRequest {
   public static final String SERIALIZED_NAME_TAGS = "tags";
   @SerializedName(SERIALIZED_NAME_TAGS)
   @jakarta.annotation.Nullable
-  private Map<String, PropertyValue> tags = new HashMap<>();
+  private Map<String, String> tags = new HashMap<>();
 
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
   @jakarta.annotation.Nullable
-  private ReferenceConfDetails properties;
+  private ReferenceConfDto properties;
 
   public static final String SERIALIZED_NAME_COMPONENTS = "components";
   @SerializedName(SERIALIZED_NAME_COMPONENTS)
   @jakarta.annotation.Nullable
-  private ComponentReferenceConfDetails components;
-
-  public static final String SERIALIZED_NAME_CREATE_TIME = "create_time";
-  @SerializedName(SERIALIZED_NAME_CREATE_TIME)
-  @jakarta.annotation.Nullable
-  private String createTime;
-
-  public static final String SERIALIZED_NAME_UPDATE_TIME = "update_time";
-  @SerializedName(SERIALIZED_NAME_UPDATE_TIME)
-  @jakarta.annotation.Nullable
-  private String updateTime;
+  private ComponentReferenceConfDto components;
 
   public UpdateThingRequest() {
   }
@@ -107,12 +96,12 @@ public class UpdateThingRequest {
   }
 
 
-  public UpdateThingRequest tags(@jakarta.annotation.Nullable Map<String, PropertyValue> tags) {
+  public UpdateThingRequest tags(@jakarta.annotation.Nullable Map<String, String> tags) {
     this.tags = tags;
     return this;
   }
 
-  public UpdateThingRequest putTagsItem(String key, PropertyValue tagsItem) {
+  public UpdateThingRequest putTagsItem(String key, String tagsItem) {
     if (this.tags == null) {
       this.tags = new HashMap<>();
     }
@@ -125,16 +114,16 @@ public class UpdateThingRequest {
    * @return tags
    */
   @jakarta.annotation.Nullable
-  public Map<String, PropertyValue> getTags() {
+  public Map<String, String> getTags() {
     return tags;
   }
 
-  public void setTags(@jakarta.annotation.Nullable Map<String, PropertyValue> tags) {
+  public void setTags(@jakarta.annotation.Nullable Map<String, String> tags) {
     this.tags = tags;
   }
 
 
-  public UpdateThingRequest properties(@jakarta.annotation.Nullable ReferenceConfDetails properties) {
+  public UpdateThingRequest properties(@jakarta.annotation.Nullable ReferenceConfDto properties) {
     this.properties = properties;
     return this;
   }
@@ -144,16 +133,16 @@ public class UpdateThingRequest {
    * @return properties
    */
   @jakarta.annotation.Nullable
-  public ReferenceConfDetails getProperties() {
+  public ReferenceConfDto getProperties() {
     return properties;
   }
 
-  public void setProperties(@jakarta.annotation.Nullable ReferenceConfDetails properties) {
+  public void setProperties(@jakarta.annotation.Nullable ReferenceConfDto properties) {
     this.properties = properties;
   }
 
 
-  public UpdateThingRequest components(@jakarta.annotation.Nullable ComponentReferenceConfDetails components) {
+  public UpdateThingRequest components(@jakarta.annotation.Nullable ComponentReferenceConfDto components) {
     this.components = components;
     return this;
   }
@@ -163,50 +152,12 @@ public class UpdateThingRequest {
    * @return components
    */
   @jakarta.annotation.Nullable
-  public ComponentReferenceConfDetails getComponents() {
+  public ComponentReferenceConfDto getComponents() {
     return components;
   }
 
-  public void setComponents(@jakarta.annotation.Nullable ComponentReferenceConfDetails components) {
+  public void setComponents(@jakarta.annotation.Nullable ComponentReferenceConfDto components) {
     this.components = components;
-  }
-
-
-  public UpdateThingRequest createTime(@jakarta.annotation.Nullable String createTime) {
-    this.createTime = createTime;
-    return this;
-  }
-
-  /**
-   * Get createTime
-   * @return createTime
-   */
-  @jakarta.annotation.Nullable
-  public String getCreateTime() {
-    return createTime;
-  }
-
-  public void setCreateTime(@jakarta.annotation.Nullable String createTime) {
-    this.createTime = createTime;
-  }
-
-
-  public UpdateThingRequest updateTime(@jakarta.annotation.Nullable String updateTime) {
-    this.updateTime = updateTime;
-    return this;
-  }
-
-  /**
-   * Get updateTime
-   * @return updateTime
-   */
-  @jakarta.annotation.Nullable
-  public String getUpdateTime() {
-    return updateTime;
-  }
-
-  public void setUpdateTime(@jakarta.annotation.Nullable String updateTime) {
-    this.updateTime = updateTime;
   }
 
 
@@ -223,14 +174,12 @@ public class UpdateThingRequest {
     return Objects.equals(this.thingName, updateThingRequest.thingName) &&
         Objects.equals(this.tags, updateThingRequest.tags) &&
         Objects.equals(this.properties, updateThingRequest.properties) &&
-        Objects.equals(this.components, updateThingRequest.components) &&
-        Objects.equals(this.createTime, updateThingRequest.createTime) &&
-        Objects.equals(this.updateTime, updateThingRequest.updateTime);
+        Objects.equals(this.components, updateThingRequest.components);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(thingName, tags, properties, components, createTime, updateTime);
+    return Objects.hash(thingName, tags, properties, components);
   }
 
   @Override
@@ -241,8 +190,6 @@ public class UpdateThingRequest {
     sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("    components: ").append(toIndentedString(components)).append("\n");
-    sb.append("    createTime: ").append(toIndentedString(createTime)).append("\n");
-    sb.append("    updateTime: ").append(toIndentedString(updateTime)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -269,8 +216,6 @@ public class UpdateThingRequest {
     openapiFields.add("tags");
     openapiFields.add("properties");
     openapiFields.add("components");
-    openapiFields.add("create_time");
-    openapiFields.add("update_time");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -299,12 +244,6 @@ public class UpdateThingRequest {
         JsonObject jsonObj = jsonElement.getAsJsonObject();
       if ((jsonObj.get("thing_name") != null && !jsonObj.get("thing_name").isJsonNull()) && !jsonObj.get("thing_name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `thing_name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("thing_name").toString()));
-      }
-      if ((jsonObj.get("create_time") != null && !jsonObj.get("create_time").isJsonNull()) && !jsonObj.get("create_time").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `create_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("create_time").toString()));
-      }
-      if ((jsonObj.get("update_time") != null && !jsonObj.get("update_time").isJsonNull()) && !jsonObj.get("update_time").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `update_time` to be a primitive type in the JSON string but got `%s`", jsonObj.get("update_time").toString()));
       }
   }
 

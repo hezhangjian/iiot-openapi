@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "iiot_openapi"
-version = "0.0.3"
+version = "0.0.4"
 description = "IIoT OpenAPI"
 authors = ["OpenAPI Generator Community <team@openapitools.org>"]
 license = "NoLicense"

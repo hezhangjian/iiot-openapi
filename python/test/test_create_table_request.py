@@ -67,7 +67,7 @@ class TestCreateTableRequest(unittest.TestCase):
                     indexes = [
                         iiot_openapi.models.index_schema.IndexSchema(
                             name = '', 
-                            columns_ids = [
+                            column_ids = [
                                 ''
                                 ], )
                         ], ),
@@ -106,7 +106,7 @@ class TestCreateTableRequest(unittest.TestCase):
                     indexes = [
                         iiot_openapi.models.index_schema.IndexSchema(
                             name = '', 
-                            columns_ids = [
+                            column_ids = [
                                 ''
                                 ], )
                         ], ),

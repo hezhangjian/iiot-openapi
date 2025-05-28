@@ -50,7 +50,7 @@ import org.openapitools.client.JSON;
 /**
  * ViewData
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-27T18:38:37.514966+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-28T16:46:47.218966+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class ViewData {
   public static final String SERIALIZED_NAME_COUNT = "count";
   @SerializedName(SERIALIZED_NAME_COUNT)

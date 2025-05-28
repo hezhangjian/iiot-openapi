@@ -13,27 +13,20 @@
  */
 
 import { mapValues } from '../runtime';
-import type { ComponentReferenceConfDetails } from './ComponentReferenceConfDetails';
+import type { ReferenceConfDto } from './ReferenceConfDto';
 import {
-    ComponentReferenceConfDetailsFromJSON,
-    ComponentReferenceConfDetailsFromJSONTyped,
-    ComponentReferenceConfDetailsToJSON,
-    ComponentReferenceConfDetailsToJSONTyped,
-} from './ComponentReferenceConfDetails';
-import type { ReferenceConfDetails } from './ReferenceConfDetails';
+    ReferenceConfDtoFromJSON,
+    ReferenceConfDtoFromJSONTyped,
+    ReferenceConfDtoToJSON,
+    ReferenceConfDtoToJSONTyped,
+} from './ReferenceConfDto';
+import type { ComponentReferenceConfDto } from './ComponentReferenceConfDto';
 import {
-    ReferenceConfDetailsFromJSON,
-    ReferenceConfDetailsFromJSONTyped,
-    ReferenceConfDetailsToJSON,
-    ReferenceConfDetailsToJSONTyped,
-} from './ReferenceConfDetails';
-import type { PropertyValue } from './PropertyValue';
-import {
-    PropertyValueFromJSON,
-    PropertyValueFromJSONTyped,
-    PropertyValueToJSON,
-    PropertyValueToJSONTyped,
-} from './PropertyValue';
+    ComponentReferenceConfDtoFromJSON,
+    ComponentReferenceConfDtoFromJSONTyped,
+    ComponentReferenceConfDtoToJSON,
+    ComponentReferenceConfDtoToJSONTyped,
+} from './ComponentReferenceConfDto';
 
 /**
  * 
@@ -49,34 +42,22 @@ export interface UpdateThingRequest {
     thingName?: string;
     /**
      * 
-     * @type {{ [key: string]: PropertyValue; }}
+     * @type {{ [key: string]: string; }}
      * @memberof UpdateThingRequest
      */
-    tags?: { [key: string]: PropertyValue; };
+    tags?: { [key: string]: string; };
     /**
      * 
-     * @type {ReferenceConfDetails}
+     * @type {ReferenceConfDto}
      * @memberof UpdateThingRequest
      */
-    properties?: ReferenceConfDetails;
+    properties?: ReferenceConfDto;
     /**
      * 
-     * @type {ComponentReferenceConfDetails}
+     * @type {ComponentReferenceConfDto}
      * @memberof UpdateThingRequest
      */
-    components?: ComponentReferenceConfDetails;
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateThingRequest
-     */
-    createTime?: string;
-    /**
-     * 
-     * @type {string}
-     * @memberof UpdateThingRequest
-     */
-    updateTime?: string;
+    components?: ComponentReferenceConfDto;
 }
 
 /**
@@ -97,11 +78,9 @@ export function UpdateThingRequestFromJSONTyped(json: any, ignoreDiscriminator: 
     return {
         
         'thingName': json['thing_name'] == null ? undefined : json['thing_name'],
-        'tags': json['tags'] == null ? undefined : (mapValues(json['tags'], PropertyValueFromJSON)),
+        'tags': json['tags'] == null ? undefined : json['tags'],
         'properties': json['properties'] == null ? undefined : json['properties'],
         'components': json['components'] == null ? undefined : json['components'],
-        'createTime': json['create_time'] == null ? undefined : json['create_time'],
-        'updateTime': json['update_time'] == null ? undefined : json['update_time'],
     };
 }
 
@@ -117,11 +96,9 @@ export function UpdateThingRequestToJSONTyped(value?: UpdateThingRequest | null,
     return {
         
         'thing_name': value['thingName'],
-        'tags': value['tags'] == null ? undefined : (mapValues(value['tags'], PropertyValueToJSON)),
+        'tags': value['tags'],
         'properties': value['properties'],
         'components': value['components'],
-        'create_time': value['createTime'],
-        'update_time': value['updateTime'],
     };
 }
 

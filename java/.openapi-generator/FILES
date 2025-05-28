@@ -34,6 +34,7 @@ docs/ComplexSetting.md
 docs/ComponentDto.md
 docs/ComponentProperty.md
 docs/ComponentReferenceConfDetails.md
+docs/ComponentReferenceConfDto.md
 docs/CreateAnalysisTaskReq.md
 docs/CreateCatalogReq.md
 docs/CreateDeviceReqDTO.md
@@ -104,6 +105,7 @@ docs/QueryViewNodesReq.md
 docs/QueryViewNodesRsp.md
 docs/RecordFilter.md
 docs/ReferenceConfDetails.md
+docs/ReferenceConfDto.md
 docs/ReportDevice.md
 docs/SaveRecordsRequest.md
 docs/ServiceData.md
@@ -193,6 +195,7 @@ src/main/java/org/openapitools/client/model/ComplexSetting.java
 src/main/java/org/openapitools/client/model/ComponentDto.java
 src/main/java/org/openapitools/client/model/ComponentProperty.java
 src/main/java/org/openapitools/client/model/ComponentReferenceConfDetails.java
+src/main/java/org/openapitools/client/model/ComponentReferenceConfDto.java
 src/main/java/org/openapitools/client/model/CreateAnalysisTaskReq.java
 src/main/java/org/openapitools/client/model/CreateCatalogReq.java
 src/main/java/org/openapitools/client/model/CreateDeviceReqDTO.java
@@ -263,6 +266,7 @@ src/main/java/org/openapitools/client/model/QueryViewNodesReq.java
 src/main/java/org/openapitools/client/model/QueryViewNodesRsp.java
 src/main/java/org/openapitools/client/model/RecordFilter.java
 src/main/java/org/openapitools/client/model/ReferenceConfDetails.java
+src/main/java/org/openapitools/client/model/ReferenceConfDto.java
 src/main/java/org/openapitools/client/model/ReportDevice.java
 src/main/java/org/openapitools/client/model/SaveRecordsRequest.java
 src/main/java/org/openapitools/client/model/ServiceData.java
@@ -325,6 +329,7 @@ src/test/java/org/openapitools/client/model/ComplexSettingTest.java
 src/test/java/org/openapitools/client/model/ComponentDtoTest.java
 src/test/java/org/openapitools/client/model/ComponentPropertyTest.java
 src/test/java/org/openapitools/client/model/ComponentReferenceConfDetailsTest.java
+src/test/java/org/openapitools/client/model/ComponentReferenceConfDtoTest.java
 src/test/java/org/openapitools/client/model/CreateAnalysisTaskReqTest.java
 src/test/java/org/openapitools/client/model/CreateCatalogReqTest.java
 src/test/java/org/openapitools/client/model/CreateDeviceReqDTOTest.java
@@ -395,6 +400,7 @@ src/test/java/org/openapitools/client/model/QueryViewNodesReqTest.java
 src/test/java/org/openapitools/client/model/QueryViewNodesRspTest.java
 src/test/java/org/openapitools/client/model/RecordFilterTest.java
 src/test/java/org/openapitools/client/model/ReferenceConfDetailsTest.java
+src/test/java/org/openapitools/client/model/ReferenceConfDtoTest.java
 src/test/java/org/openapitools/client/model/ReportDeviceTest.java
 src/test/java/org/openapitools/client/model/SaveRecordsRequestTest.java
 src/test/java/org/openapitools/client/model/ServiceDataTest.java

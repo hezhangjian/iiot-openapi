@@ -6,11 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **thing_name** | **str** |  | [optional] 
-**tags** | [**Dict[str, PropertyValue]**](PropertyValue.md) |  | [optional] 
-**properties** | [**ReferenceConfDetails**](.md) |  | [optional] 
-**components** | [**ComponentReferenceConfDetails**](.md) |  | [optional] 
-**create_time** | **str** |  | [optional] 
-**update_time** | **str** |  | [optional] 
+**tags** | **Dict[str, str]** |  | [optional] 
+**properties** | [**ReferenceConfDto**](.md) |  | [optional] 
+**components** | [**ComponentReferenceConfDto**](.md) |  | [optional] 
 
 ## Example
 

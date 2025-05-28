@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
-**columns_ids** | **List[str]** |  | 
+**column_ids** | **List[str]** |  | 
 
 ## Example
 

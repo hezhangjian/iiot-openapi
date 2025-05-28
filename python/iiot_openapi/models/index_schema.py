@@ -27,8 +27,8 @@ class IndexSchema(BaseModel):
     IndexSchema
     """ # noqa: E501
     name: StrictStr
-    columns_ids: List[StrictStr]
-    __properties: ClassVar[List[str]] = ["name", "columns_ids"]
+    column_ids: List[StrictStr]
+    __properties: ClassVar[List[str]] = ["name", "column_ids"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,7 +82,7 @@ class IndexSchema(BaseModel):
 
         _obj = cls.model_validate({
             "name": obj.get("name"),
-            "columns_ids": obj.get("columns_ids")
+            "column_ids": obj.get("column_ids")
         })
         return _obj
 

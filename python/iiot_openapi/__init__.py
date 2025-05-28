@@ -14,7 +14,7 @@
 """  # noqa: E501
 
 
-__version__ = "0.0.3"
+__version__ = "0.0.4"
 
 # import apis into sdk package
 from iiot_openapi.api.model_api import ModelApi
@@ -62,6 +62,7 @@ from iiot_openapi.models.complex_setting import ComplexSetting
 from iiot_openapi.models.component_dto import ComponentDto
 from iiot_openapi.models.component_property import ComponentProperty
 from iiot_openapi.models.component_reference_conf_details import ComponentReferenceConfDetails
+from iiot_openapi.models.component_reference_conf_dto import ComponentReferenceConfDto
 from iiot_openapi.models.create_analysis_task_req import CreateAnalysisTaskReq
 from iiot_openapi.models.create_catalog_req import CreateCatalogReq
 from iiot_openapi.models.create_device_req_dto import CreateDeviceReqDTO
@@ -132,6 +133,7 @@ from iiot_openapi.models.query_view_nodes_req import QueryViewNodesReq
 from iiot_openapi.models.query_view_nodes_rsp import QueryViewNodesRsp
 from iiot_openapi.models.record_filter import RecordFilter
 from iiot_openapi.models.reference_conf_details import ReferenceConfDetails
+from iiot_openapi.models.reference_conf_dto import ReferenceConfDto
 from iiot_openapi.models.report_device import ReportDevice
 from iiot_openapi.models.save_records_request import SaveRecordsRequest
 from iiot_openapi.models.service_data import ServiceData

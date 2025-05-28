@@ -38,11 +38,29 @@ class TestCreateThingRequest(unittest.TestCase):
                 thing_id = '',
                 thing_name = '',
                 model_id = '',
+                tags = {
+                    'key' : ''
+                    },
                 description = '',
                 properties = {
-                    'key' : iiot_openapi.models.property_value.PropertyValue(
-                        value = '', 
-                        type = 'bool', )
+                    'key' : iiot_openapi.models.reference_conf_dto.ReferenceConfDto(
+                        property_ref = iiot_openapi.models.property_ref.PropertyRef(
+                            thing_id = '', 
+                            property_path = '', ), 
+                        value = iiot_openapi.models.value.value(), )
+                    },
+                components = {
+                    'key' : iiot_openapi.models.component_reference_conf_dto.ComponentReferenceConfDto(
+                        properties = {
+                            'key' : iiot_openapi.models.reference_conf_dto.ReferenceConfDto(
+                                property_ref = iiot_openapi.models.property_ref.PropertyRef(
+                                    thing_id = '', 
+                                    property_path = '', ), 
+                                value = iiot_openapi.models.value.value(), )
+                            }, 
+                        components = {
+                            'key' : iiot_openapi.models.component_reference_conf_dto.ComponentReferenceConfDto()
+                            }, )
                     }
             )
         else:

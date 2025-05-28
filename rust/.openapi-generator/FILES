@@ -31,6 +31,7 @@ docs/ComplexSetting.md
 docs/ComponentDto.md
 docs/ComponentProperty.md
 docs/ComponentReferenceConfDetails.md
+docs/ComponentReferenceConfDto.md
 docs/CreateAnalysisTaskReq.md
 docs/CreateCatalogReq.md
 docs/CreateDeviceReqDto.md
@@ -101,6 +102,7 @@ docs/QueryViewNodesReq.md
 docs/QueryViewNodesRsp.md
 docs/RecordFilter.md
 docs/ReferenceConfDetails.md
+docs/ReferenceConfDto.md
 docs/ReportDevice.md
 docs/SaveRecordsRequest.md
 docs/ServiceData.md
@@ -167,6 +169,7 @@ src/models/complex_setting.rs
 src/models/component_dto.rs
 src/models/component_property.rs
 src/models/component_reference_conf_details.rs
+src/models/component_reference_conf_dto.rs
 src/models/create_analysis_task_req.rs
 src/models/create_catalog_req.rs
 src/models/create_device_req_dto.rs
@@ -238,6 +241,7 @@ src/models/query_view_nodes_req.rs
 src/models/query_view_nodes_rsp.rs
 src/models/record_filter.rs
 src/models/reference_conf_details.rs
+src/models/reference_conf_dto.rs
 src/models/report_device.rs
 src/models/save_records_request.rs
 src/models/service_data.rs

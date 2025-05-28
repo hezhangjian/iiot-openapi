@@ -19,10 +19,14 @@ pub struct Thing {
     pub thing_name: String,
     #[serde(rename = "model_id")]
     pub model_id: String,
+    #[serde(rename = "tags", skip_serializing_if = "Option::is_none")]
+    pub tags: Option<std::collections::HashMap<String, String>>,
     #[serde(rename = "description", skip_serializing_if = "Option::is_none")]
     pub description: Option<String>,
     #[serde(rename = "properties", skip_serializing_if = "Option::is_none")]
-    pub properties: Option<std::collections::HashMap<String, models::PropertyValue>>,
+    pub properties: Option<std::collections::HashMap<String, models::ReferenceConfDto>>,
+    #[serde(rename = "components", skip_serializing_if = "Option::is_none")]
+    pub components: Option<std::collections::HashMap<String, models::ComponentReferenceConfDto>>,
     #[serde(rename = "created_time", skip_serializing_if = "Option::is_none")]
     pub created_time: Option<String>,
     #[serde(rename = "updated_time", skip_serializing_if = "Option::is_none")]
@@ -35,8 +39,10 @@ impl Thing {
             thing_id,
             thing_name,
             model_id,
+            tags: None,
             description: None,
             properties: None,
+            components: None,
             created_time: None,
             updated_time: None,
         }

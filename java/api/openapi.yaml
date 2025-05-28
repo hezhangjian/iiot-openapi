@@ -1683,30 +1683,46 @@ components:
           type: string
         model_id:
           type: string
+        tags:
+          additionalProperties:
+            type: string
         description:
           type: string
         properties:
           additionalProperties:
-            $ref: '#/components/schemas/PropertyValue'
+            $ref: '#/components/schemas/ReferenceConfDto'
+        components:
+          additionalProperties:
+            $ref: '#/components/schemas/ComponentReferenceConfDto'
       required:
       - model_id
       - thing_id
       - thing_name
+    ComponentReferenceConfDto:
+      properties:
+        properties:
+          additionalProperties:
+            $ref: '#/components/schemas/ReferenceConfDto'
+        components:
+          additionalProperties:
+            $ref: '#/components/schemas/ComponentReferenceConfDto'
+    ReferenceConfDto:
+      properties:
+        property_ref:
+          $ref: '#/components/schemas/PropertyRef'
+        value:
+          type: object
     UpdateThingRequest:
       properties:
         thing_name:
           type: string
         tags:
           additionalProperties:
-            $ref: '#/components/schemas/PropertyValue'
+            type: string
         properties:
-          $ref: '#/components/schemas/ReferenceConfDetails'
+          $ref: '#/components/schemas/ReferenceConfDto'
         components:
-          $ref: '#/components/schemas/ComponentReferenceConfDetails'
-        create_time:
-          type: string
-        update_time:
-          type: string
+          $ref: '#/components/schemas/ComponentReferenceConfDto'
     ReferenceConfDetails:
       properties:
         property_ref:
@@ -1936,12 +1952,12 @@ components:
       properties:
         name:
           type: string
-        columns_ids:
+        column_ids:
           items:
             type: string
           type: array
       required:
-      - columns_ids
+      - column_ids
       - name
     AgingSettings:
       properties:

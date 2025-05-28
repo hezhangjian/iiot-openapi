@@ -37,6 +37,7 @@ src/models/ComplexSetting.ts
 src/models/ComponentDto.ts
 src/models/ComponentProperty.ts
 src/models/ComponentReferenceConfDetails.ts
+src/models/ComponentReferenceConfDto.ts
 src/models/CreateAnalysisTaskReq.ts
 src/models/CreateCatalogReq.ts
 src/models/CreateDeviceReqDTO.ts
@@ -107,6 +108,7 @@ src/models/QueryViewNodesReq.ts
 src/models/QueryViewNodesRsp.ts
 src/models/RecordFilter.ts
 src/models/ReferenceConfDetails.ts
+src/models/ReferenceConfDto.ts
 src/models/ReportDevice.ts
 src/models/SaveRecordsRequest.ts
 src/models/ServiceData.ts

@@ -22,9 +22,8 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import org.openapitools.client.model.ComponentReferenceConfDetails;
-import org.openapitools.client.model.PropertyValue;
-import org.openapitools.client.model.ReferenceConfDetails;
+import org.openapitools.client.model.ComponentReferenceConfDto;
+import org.openapitools.client.model.ReferenceConfDto;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
@@ -72,22 +71,6 @@ public class UpdateThingRequestTest {
     @Test
     public void componentsTest() {
         // TODO: test components
-    }
-
-    /**
-     * Test the property 'createTime'
-     */
-    @Test
-    public void createTimeTest() {
-        // TODO: test createTime
-    }
-
-    /**
-     * Test the property 'updateTime'
-     */
-    @Test
-    public void updateTimeTest() {
-        // TODO: test updateTime
     }
 
 }

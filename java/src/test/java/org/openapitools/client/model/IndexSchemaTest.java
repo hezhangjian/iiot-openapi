@@ -48,11 +48,11 @@ public class IndexSchemaTest {
     }
 
     /**
-     * Test the property 'columnsIds'
+     * Test the property 'columnIds'
      */
     @Test
-    public void columnsIdsTest() {
-        // TODO: test columnsIds
+    public void columnIdsTest() {
+        // TODO: test columnIds
     }
 
 }

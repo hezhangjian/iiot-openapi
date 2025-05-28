@@ -15,15 +15,15 @@ use serde::{Deserialize, Serialize};
 pub struct IndexSchema {
     #[serde(rename = "name")]
     pub name: String,
-    #[serde(rename = "columns_ids")]
-    pub columns_ids: Vec<String>,
+    #[serde(rename = "column_ids")]
+    pub column_ids: Vec<String>,
 }
 
 impl IndexSchema {
-    pub fn new(name: String, columns_ids: Vec<String>) -> IndexSchema {
+    pub fn new(name: String, column_ids: Vec<String>) -> IndexSchema {
         IndexSchema {
             name,
-            columns_ids,
+            column_ids,
         }
     }
 }

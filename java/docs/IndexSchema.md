@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**name** | **String** |  |  |
-|**columnsIds** | **List&lt;String&gt;** |  |  |
+|**columnIds** | **List&lt;String&gt;** |  |  |
 
 
 

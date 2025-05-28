@@ -23,7 +23,8 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-import org.openapitools.client.model.PropertyValue;
+import org.openapitools.client.model.ComponentReferenceConfDto;
+import org.openapitools.client.model.ReferenceConfDto;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,7 +52,7 @@ import org.openapitools.client.JSON;
 /**
  * CreateThingRequest
  */
-@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-27T18:38:37.514966+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
+@jakarta.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2025-05-28T16:46:47.218966+08:00[Asia/Shanghai]", comments = "Generator version: 7.12.0")
 public class CreateThingRequest {
   public static final String SERIALIZED_NAME_THING_ID = "thing_id";
   @SerializedName(SERIALIZED_NAME_THING_ID)
@@ -68,6 +69,11 @@ public class CreateThingRequest {
   @jakarta.annotation.Nonnull
   private String modelId;
 
+  public static final String SERIALIZED_NAME_TAGS = "tags";
+  @SerializedName(SERIALIZED_NAME_TAGS)
+  @jakarta.annotation.Nullable
+  private Map<String, String> tags = new HashMap<>();
+
   public static final String SERIALIZED_NAME_DESCRIPTION = "description";
   @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   @jakarta.annotation.Nullable
@@ -76,7 +82,12 @@ public class CreateThingRequest {
   public static final String SERIALIZED_NAME_PROPERTIES = "properties";
   @SerializedName(SERIALIZED_NAME_PROPERTIES)
   @jakarta.annotation.Nullable
-  private Map<String, PropertyValue> properties = new HashMap<>();
+  private Map<String, ReferenceConfDto> properties = new HashMap<>();
+
+  public static final String SERIALIZED_NAME_COMPONENTS = "components";
+  @SerializedName(SERIALIZED_NAME_COMPONENTS)
+  @jakarta.annotation.Nullable
+  private Map<String, ComponentReferenceConfDto> components = new HashMap<>();
 
   public CreateThingRequest() {
   }
@@ -138,6 +149,33 @@ public class CreateThingRequest {
   }
 
 
+  public CreateThingRequest tags(@jakarta.annotation.Nullable Map<String, String> tags) {
+    this.tags = tags;
+    return this;
+  }
+
+  public CreateThingRequest putTagsItem(String key, String tagsItem) {
+    if (this.tags == null) {
+      this.tags = new HashMap<>();
+    }
+    this.tags.put(key, tagsItem);
+    return this;
+  }
+
+  /**
+   * Get tags
+   * @return tags
+   */
+  @jakarta.annotation.Nullable
+  public Map<String, String> getTags() {
+    return tags;
+  }
+
+  public void setTags(@jakarta.annotation.Nullable Map<String, String> tags) {
+    this.tags = tags;
+  }
+
+
   public CreateThingRequest description(@jakarta.annotation.Nullable String description) {
     this.description = description;
     return this;
@@ -157,12 +195,12 @@ public class CreateThingRequest {
   }
 
 
-  public CreateThingRequest properties(@jakarta.annotation.Nullable Map<String, PropertyValue> properties) {
+  public CreateThingRequest properties(@jakarta.annotation.Nullable Map<String, ReferenceConfDto> properties) {
     this.properties = properties;
     return this;
   }
 
-  public CreateThingRequest putPropertiesItem(String key, PropertyValue propertiesItem) {
+  public CreateThingRequest putPropertiesItem(String key, ReferenceConfDto propertiesItem) {
     if (this.properties == null) {
       this.properties = new HashMap<>();
     }
@@ -175,12 +213,39 @@ public class CreateThingRequest {
    * @return properties
    */
   @jakarta.annotation.Nullable
-  public Map<String, PropertyValue> getProperties() {
+  public Map<String, ReferenceConfDto> getProperties() {
     return properties;
   }
 
-  public void setProperties(@jakarta.annotation.Nullable Map<String, PropertyValue> properties) {
+  public void setProperties(@jakarta.annotation.Nullable Map<String, ReferenceConfDto> properties) {
     this.properties = properties;
+  }
+
+
+  public CreateThingRequest components(@jakarta.annotation.Nullable Map<String, ComponentReferenceConfDto> components) {
+    this.components = components;
+    return this;
+  }
+
+  public CreateThingRequest putComponentsItem(String key, ComponentReferenceConfDto componentsItem) {
+    if (this.components == null) {
+      this.components = new HashMap<>();
+    }
+    this.components.put(key, componentsItem);
+    return this;
+  }
+
+  /**
+   * Get components
+   * @return components
+   */
+  @jakarta.annotation.Nullable
+  public Map<String, ComponentReferenceConfDto> getComponents() {
+    return components;
+  }
+
+  public void setComponents(@jakarta.annotation.Nullable Map<String, ComponentReferenceConfDto> components) {
+    this.components = components;
   }
 
 
@@ -197,13 +262,15 @@ public class CreateThingRequest {
     return Objects.equals(this.thingId, createThingRequest.thingId) &&
         Objects.equals(this.thingName, createThingRequest.thingName) &&
         Objects.equals(this.modelId, createThingRequest.modelId) &&
+        Objects.equals(this.tags, createThingRequest.tags) &&
         Objects.equals(this.description, createThingRequest.description) &&
-        Objects.equals(this.properties, createThingRequest.properties);
+        Objects.equals(this.properties, createThingRequest.properties) &&
+        Objects.equals(this.components, createThingRequest.components);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(thingId, thingName, modelId, description, properties);
+    return Objects.hash(thingId, thingName, modelId, tags, description, properties, components);
   }
 
   @Override
@@ -213,8 +280,10 @@ public class CreateThingRequest {
     sb.append("    thingId: ").append(toIndentedString(thingId)).append("\n");
     sb.append("    thingName: ").append(toIndentedString(thingName)).append("\n");
     sb.append("    modelId: ").append(toIndentedString(modelId)).append("\n");
+    sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
+    sb.append("    components: ").append(toIndentedString(components)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -240,8 +309,10 @@ public class CreateThingRequest {
     openapiFields.add("thing_id");
     openapiFields.add("thing_name");
     openapiFields.add("model_id");
+    openapiFields.add("tags");
     openapiFields.add("description");
     openapiFields.add("properties");
+    openapiFields.add("components");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();

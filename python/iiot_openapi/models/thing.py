@@ -19,7 +19,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from iiot_openapi.models.property_value import PropertyValue
+from iiot_openapi.models.component_reference_conf_dto import ComponentReferenceConfDto
+from iiot_openapi.models.reference_conf_dto import ReferenceConfDto
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -30,11 +31,13 @@ class Thing(BaseModel):
     thing_id: StrictStr
     thing_name: StrictStr
     model_id: StrictStr
+    tags: Optional[Dict[str, StrictStr]] = None
     description: Optional[StrictStr] = None
-    properties: Optional[Dict[str, PropertyValue]] = None
+    properties: Optional[Dict[str, ReferenceConfDto]] = None
+    components: Optional[Dict[str, ComponentReferenceConfDto]] = None
     created_time: Optional[StrictStr] = None
     updated_time: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["thing_id", "thing_name", "model_id", "description", "properties", "created_time", "updated_time"]
+    __properties: ClassVar[List[str]] = ["thing_id", "thing_name", "model_id", "tags", "description", "properties", "components", "created_time", "updated_time"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,6 +85,13 @@ class Thing(BaseModel):
                 if self.properties[_key_properties]:
                     _field_dict[_key_properties] = self.properties[_key_properties].to_dict()
             _dict['properties'] = _field_dict
+        # override the default output from pydantic by calling `to_dict()` of each value in components (dict)
+        _field_dict = {}
+        if self.components:
+            for _key_components in self.components:
+                if self.components[_key_components]:
+                    _field_dict[_key_components] = self.components[_key_components].to_dict()
+            _dict['components'] = _field_dict
         return _dict
 
     @classmethod
@@ -97,12 +107,19 @@ class Thing(BaseModel):
             "thing_id": obj.get("thing_id"),
             "thing_name": obj.get("thing_name"),
             "model_id": obj.get("model_id"),
+            "tags": obj.get("tags"),
             "description": obj.get("description"),
             "properties": dict(
-                (_k, PropertyValue.from_dict(_v))
+                (_k, ReferenceConfDto.from_dict(_v))
                 for _k, _v in obj["properties"].items()
             )
             if obj.get("properties") is not None
+            else None,
+            "components": dict(
+                (_k, ComponentReferenceConfDto.from_dict(_v))
+                for _k, _v in obj["components"].items()
+            )
+            if obj.get("components") is not None
             else None,
             "created_time": obj.get("created_time"),
             "updated_time": obj.get("updated_time")

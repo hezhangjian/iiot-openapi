@@ -19,7 +19,6 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from iiot_openapi.models.property_value import PropertyValue
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,12 +27,10 @@ class UpdateThingRequest(BaseModel):
     UpdateThingRequest
     """ # noqa: E501
     thing_name: Optional[StrictStr] = None
-    tags: Optional[Dict[str, PropertyValue]] = None
+    tags: Optional[Dict[str, StrictStr]] = None
     properties: Optional[Dict[str, Any]] = None
     components: Optional[Dict[str, Any]] = None
-    create_time: Optional[StrictStr] = None
-    update_time: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["thing_name", "tags", "properties", "components", "create_time", "update_time"]
+    __properties: ClassVar[List[str]] = ["thing_name", "tags", "properties", "components"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -74,13 +71,6 @@ class UpdateThingRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each value in tags (dict)
-        _field_dict = {}
-        if self.tags:
-            for _key_tags in self.tags:
-                if self.tags[_key_tags]:
-                    _field_dict[_key_tags] = self.tags[_key_tags].to_dict()
-            _dict['tags'] = _field_dict
         # override the default output from pydantic by calling `to_dict()` of properties
         if self.properties:
             _dict['properties'] = self.properties.to_dict()
@@ -100,16 +90,9 @@ class UpdateThingRequest(BaseModel):
 
         _obj = cls.model_validate({
             "thing_name": obj.get("thing_name"),
-            "tags": dict(
-                (_k, PropertyValue.from_dict(_v))
-                for _k, _v in obj["tags"].items()
-            )
-            if obj.get("tags") is not None
-            else None,
-            "properties": ReferenceConfDetails.from_dict(obj["properties"]) if obj.get("properties") is not None else None,
-            "components": ComponentReferenceConfDetails.from_dict(obj["components"]) if obj.get("components") is not None else None,
-            "create_time": obj.get("create_time"),
-            "update_time": obj.get("update_time")
+            "tags": obj.get("tags"),
+            "properties": ReferenceConfDto.from_dict(obj["properties"]) if obj.get("properties") is not None else None,
+            "components": ComponentReferenceConfDto.from_dict(obj["components"]) if obj.get("components") is not None else None
         })
         return _obj
 

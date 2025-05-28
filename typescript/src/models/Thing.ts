@@ -13,13 +13,20 @@
  */
 
 import { mapValues } from '../runtime';
-import type { PropertyValue } from './PropertyValue';
+import type { ReferenceConfDto } from './ReferenceConfDto';
 import {
-    PropertyValueFromJSON,
-    PropertyValueFromJSONTyped,
-    PropertyValueToJSON,
-    PropertyValueToJSONTyped,
-} from './PropertyValue';
+    ReferenceConfDtoFromJSON,
+    ReferenceConfDtoFromJSONTyped,
+    ReferenceConfDtoToJSON,
+    ReferenceConfDtoToJSONTyped,
+} from './ReferenceConfDto';
+import type { ComponentReferenceConfDto } from './ComponentReferenceConfDto';
+import {
+    ComponentReferenceConfDtoFromJSON,
+    ComponentReferenceConfDtoFromJSONTyped,
+    ComponentReferenceConfDtoToJSON,
+    ComponentReferenceConfDtoToJSONTyped,
+} from './ComponentReferenceConfDto';
 
 /**
  * 
@@ -47,16 +54,28 @@ export interface Thing {
     modelId: string;
     /**
      * 
+     * @type {{ [key: string]: string; }}
+     * @memberof Thing
+     */
+    tags?: { [key: string]: string; };
+    /**
+     * 
      * @type {string}
      * @memberof Thing
      */
     description?: string;
     /**
      * 
-     * @type {{ [key: string]: PropertyValue; }}
+     * @type {{ [key: string]: ReferenceConfDto; }}
      * @memberof Thing
      */
-    properties?: { [key: string]: PropertyValue; };
+    properties?: { [key: string]: ReferenceConfDto; };
+    /**
+     * 
+     * @type {{ [key: string]: ComponentReferenceConfDto; }}
+     * @memberof Thing
+     */
+    components?: { [key: string]: ComponentReferenceConfDto; };
     /**
      * 
      * @type {string}
@@ -94,8 +113,10 @@ export function ThingFromJSONTyped(json: any, ignoreDiscriminator: boolean): Thi
         'thingId': json['thing_id'],
         'thingName': json['thing_name'],
         'modelId': json['model_id'],
+        'tags': json['tags'] == null ? undefined : json['tags'],
         'description': json['description'] == null ? undefined : json['description'],
-        'properties': json['properties'] == null ? undefined : (mapValues(json['properties'], PropertyValueFromJSON)),
+        'properties': json['properties'] == null ? undefined : (mapValues(json['properties'], ReferenceConfDtoFromJSON)),
+        'components': json['components'] == null ? undefined : (mapValues(json['components'], ComponentReferenceConfDtoFromJSON)),
         'createdTime': json['created_time'] == null ? undefined : json['created_time'],
         'updatedTime': json['updated_time'] == null ? undefined : json['updated_time'],
     };
@@ -115,8 +136,10 @@ export function ThingToJSONTyped(value?: Thing | null, ignoreDiscriminator: bool
         'thing_id': value['thingId'],
         'thing_name': value['thingName'],
         'model_id': value['modelId'],
+        'tags': value['tags'],
         'description': value['description'],
-        'properties': value['properties'] == null ? undefined : (mapValues(value['properties'], PropertyValueToJSON)),
+        'properties': value['properties'] == null ? undefined : (mapValues(value['properties'], ReferenceConfDtoToJSON)),
+        'components': value['components'] == null ? undefined : (mapValues(value['components'], ComponentReferenceConfDtoToJSON)),
         'created_time': value['createdTime'],
         'updated_time': value['updatedTime'],
     };

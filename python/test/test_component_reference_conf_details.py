@@ -55,7 +55,8 @@ class TestComponentReferenceConfDetails(unittest.TestCase):
                                 }, 
                             value = iiot_openapi.models.value.value(), 
                             update_time = '', )
-                        }, )
+                        }, 
+                    components = iiot_openapi.models.component_reference_conf_details.ComponentReferenceConfDetails(), )
             )
         else:
             return ComponentReferenceConfDetails(
