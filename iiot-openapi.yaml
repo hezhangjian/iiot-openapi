@@ -1448,12 +1448,38 @@ components:
           type: string
         model_id:
           type: string
+        tags:
+          type: object
+          additionalProperties:
+            type: string
         description:
           type: string
         properties:
           type: object
           additionalProperties:
-            $ref: "#/components/schemas/PropertyValue"
+            $ref: "#/components/schemas/ReferenceConfDto"
+        components:
+          type: object
+          additionalProperties:
+            $ref: "#/components/schemas/ComponentReferenceConfDto"
+    ComponentReferenceConfDto:
+      type: object
+      properties:
+        properties:
+          type: object
+          additionalProperties:
+            $ref: "#/components/schemas/ReferenceConfDto"
+        components:
+          type: object
+          additionalProperties:
+            $ref: "#/components/schemas/ComponentReferenceConfDto"
+    ReferenceConfDto:
+      type: object
+      properties:
+        property_ref:
+          $ref: "#/components/schemas/PropertyRef"
+        value:
+          type: object
     UpdateThingRequest:
       type: object
       properties:
@@ -1462,17 +1488,13 @@ components:
         tags:
           type: object
           additionalProperties:
-            $ref: "#/components/schemas/PropertyValue"
+            type: string
         properties:
           type: object
-          $ref: "#/components/schemas/ReferenceConfDetails"
+          $ref: "#/components/schemas/ReferenceConfDto"
         components:
           type: object
-          $ref: "#/components/schemas/ComponentReferenceConfDetails"
-        create_time:
-          type: string
-        update_time:
-          type: string
+          $ref: "#/components/schemas/ComponentReferenceConfDto"
     ReferenceConfDetails:
       type: object
       properties:
@@ -1722,11 +1744,11 @@ components:
       type: object
       required:
         - name
-        - columns_ids
+        - column_ids
       properties:
         name:
           type: string
-        columns_ids:
+        column_ids:
           type: array
           items:
             type: string

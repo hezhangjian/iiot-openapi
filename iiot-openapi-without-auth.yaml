@@ -2095,7 +2095,7 @@ components:
         condition:
           type: string
         expressions:
-          tyep: array
+          type: array
           items:
             $ref: '#/components/schemas/Expression'
     Expression:
